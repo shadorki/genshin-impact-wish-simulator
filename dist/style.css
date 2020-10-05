@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banners {
+  background-image: url('assets/images/ui/background.png');
+}
+.container.banners > .heading {
+  height: 15vh;
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container.banners > .heading > .current-banner {
+  color: #d4bc8f;
+  font-size: 1.2rem;
+}
+.container.banners > .heading > .current-banner {
+  margin-left: 1.2rem;
+}
+.container.banners > .heading > .close-window {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('./assets/images/ui/closing-button.png');
+  height: 40px;
+  width: 40px;
+  margin-right: 1.2rem;
+}
+.container.banners > .heading > .close-window:hover {
+  cursor: pointer;
+}
+.container.banners > .heading > .select-banner {
+  display: flex;
+  justify-content: space-around;
+}
+.banner-button {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.banner-button.novice-wishes {
+  background-image: url('./assets/images/ui/noelle.png');
+}
+.banner-button.novice-wishes.selected {
+  background-image: url('./assets/images/ui/noelle-selected.png');
+}
+.banner-button.character-event-wish {
+  background-image: url('./assets/images/ui/venti.png');
+}
+.banner-button.character-event-wish.selected {
+  background-image: url('./assets/images/ui/venti-selected.png');
+}
+.banner-button.weapon-event-wish {
+  background-image: url('./assets/images/ui/weapon.png');
+}
+.banner-button.weapon-event-wish.selected {
+  background-image: url('./assets/images/ui/weapon-selected.png');
+}
+.banner-button.standard-wish {
+  background-image: url('./assets/images/ui/wanderlust.png');
+}
+.banner-button.standard-wish.selected{
+  background-image: url('./assets/images/ui/wanderlust-selected.png');
+}
