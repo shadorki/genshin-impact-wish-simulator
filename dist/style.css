@@ -23,7 +23,9 @@ body {
 }
 .container.banners > .heading > .current-banner {
   color: #d4bc8f;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 3px 2px 2px rgb(50, 50, 50);
   width: 200px;
   margin-left: 1.2rem;
   text-align: center;
@@ -79,4 +81,14 @@ body {
 }
 .banner-button.standard-wish.selected{
   background-image: url('./assets/images/ui/wanderlust-selected.png');
+}
+.carousel-container {
+  position: relative;
+  height: 65vh;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 15rem;
+}
+.carousel {
+  height: 100%;
 }

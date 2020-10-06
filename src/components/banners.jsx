@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BannerButton from './banner-button';
+import { Carousel } from 'react-responsive-carousel';
 export default class Banners extends Component {
   constructor(props) {
     super(props)
@@ -41,8 +42,30 @@ export default class Banners extends Component {
           </div>
           <div className="close-window"></div>
         </div>
-        <div className="carousel">
-
+        <div className="carousel-container">
+          <Carousel
+            className={"carousel"}
+            showThumbs={false}
+            showIndicators={false}
+            showStatus={false}
+            swipeable={true}
+            emulateTouch={true}
+            dynamicHeight={true}
+            infiniteLoop={true}
+          >
+            <div>
+              <img src="../assets/images/banners/beginners-wish.png" />
+            </div>
+            <div>
+              <img src="../assets/images/banners/ballad-in-goblets.png" />
+            </div>
+            <div>
+              <img src="../assets/images/banners/epitome-invocation.png" />
+            </div>
+            <div>
+              <img src="../assets/images/banners/wanderlust-invocation.png" />
+            </div>
+          </Carousel>
         </div>
       </div>
     )
