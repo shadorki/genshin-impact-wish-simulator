@@ -6,7 +6,7 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 .container {
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,7 +84,10 @@ body {
 .carousel-container {
   position: relative;
   height: 65vh;
-  margin: 2rem 15rem;
+  margin: 2rem 5rem;
+}
+.carousel.carousel-slider {
+  display: flex;
 }
 .carousel {
   height: 100%;
@@ -104,6 +107,7 @@ body {
 }
 button {
   border: none;
+  outline: none;
   border-radius: 12px;
   border: 1px solid black;
   padding: 5px 25px;
@@ -130,4 +134,49 @@ button:hover {
 .wish-button:hover {
   cursor: pointer;
   color: gold;
+}
+
+@media (max-width: 1200px) {
+  .banner-button {
+    height: 81px;
+    width: 162px;
+  }
+  .carousel-container {
+    margin: 2rem;
+  }
+}
+@media (max-width: 992px) {
+  .banner-button {
+    height: 61px;
+    width: 128px;
+  }
+  .container.banners > .heading > .close-window {
+    height: 35px;
+    width: 35px;
+  }
+
+}
+@media (max-width: 768px) {
+  .container.banners > .heading > .select-banner {
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .container.banners > .heading > .close-window {
+    display: none;
+  }
+  .wish-button {
+    width:  150px;
+  }
+}
+@media (max-width: 576px) {
+  .banner-button {
+    height: 50px;
+    width: 100px;
+  }
+  .container.banners > .heading > .current-banner {
+    font-size: 1rem;
+    width: 100px;
+    margin-left: 1.2rem;
+    text-align: center;
+  }
 }
