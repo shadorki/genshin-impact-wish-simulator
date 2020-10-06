@@ -85,8 +85,6 @@ body {
 .carousel-container {
   position: relative;
   height: 65vh;
-  justify-content: center;
-  align-items: center;
   margin: 2rem 15rem;
 }
 .carousel {

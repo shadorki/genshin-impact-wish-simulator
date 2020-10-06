@@ -14,6 +14,9 @@ export default class Banners extends Component {
       'standard-wish': 'Standard Wish'
     }
   }
+  onCarouselChange(index) {
+    this.switchBanner(Object.keys(this.banners)[index])
+  }
   switchBanner(selectedBanner) {
     this.setState({selectedBanner})
   }
@@ -22,6 +25,9 @@ export default class Banners extends Component {
   }
   render() {
     const { selectedBanner } = this.state
+    const bannerKeys = Object.keys(this.banners);
+    const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
+    console.log(selectedBannerIndex)
     return (
       <div className="container banners">
         <div className="heading">
@@ -30,7 +36,7 @@ export default class Banners extends Component {
           </div>
           <div className="select-banner">
             {
-              Object.keys(this.banners).map(banner => (
+              bannerKeys.map(banner => (
                 <BannerButton
                 key={banner}
                 isSelected={banner === selectedBanner}
@@ -48,10 +54,11 @@ export default class Banners extends Component {
             showThumbs={false}
             showIndicators={false}
             showStatus={false}
-            swipeable={true}
             emulateTouch={true}
-            dynamicHeight={true}
+            showArrows={false}
             infiniteLoop={true}
+            selectedItem={selectedBannerIndex}
+            onChange={this.onCarouselChange.bind(this)}
           >
             <div>
               <img src="../assets/images/banners/beginners-wish.png" />
