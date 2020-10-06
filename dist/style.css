@@ -17,7 +17,6 @@ body {
 }
 .container.banners > .heading {
   height: 15vh;
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,9 +24,9 @@ body {
 .container.banners > .heading > .current-banner {
   color: #d4bc8f;
   font-size: 1.2rem;
-}
-.container.banners > .heading > .current-banner {
+  width: 200px;
   margin-left: 1.2rem;
+  text-align: center;
 }
 .container.banners > .heading > .close-window {
   background-size: cover;
@@ -46,11 +45,16 @@ body {
   justify-content: space-around;
 }
 .banner-button {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 180px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0 1.2rem;
+  transition-duration: 500ms;
+}
+.banner-button:hover {
+  cursor: pointer;
 }
 .banner-button.novice-wishes {
   background-image: url('./assets/images/ui/noelle.png');
