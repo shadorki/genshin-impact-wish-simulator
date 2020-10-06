@@ -27,7 +27,6 @@ export default class Banners extends Component {
     const { selectedBanner } = this.state
     const bannerKeys = Object.keys(this.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
-    console.log(selectedBannerIndex)
     return (
       <div className="container banners">
         <div className="heading">
@@ -73,6 +72,17 @@ export default class Banners extends Component {
               <img src="../assets/images/banners/wanderlust-invocation.png" />
             </div>
           </Carousel>
+        </div>
+        <div className="action-container">
+            <div className="button-container">
+              <button>Details</button>
+              <button>History</button>
+            </div>
+            <div className="wish-container">
+              <div className="wish-button">
+                Wish x10
+              </div>
+            </div>
         </div>
       </div>
     )

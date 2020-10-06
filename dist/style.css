@@ -3,7 +3,7 @@
 }
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 .container {
   height: 100vh;
@@ -24,7 +24,6 @@ body {
 .container.banners > .heading > .current-banner {
   color: #d4bc8f;
   font-size: 1.5rem;
-  font-weight: bold;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
   width: 200px;
   margin-left: 1.2rem;
@@ -89,4 +88,46 @@ body {
 }
 .carousel {
   height: 100%;
+}
+.action-container {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+}
+.button-container > button {
+  margin: auto 5px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  border: none;
+  border-radius: 12px;
+  border: 1px solid black;
+  padding: 5px 25px;
+  background-color: rgb(221, 221, 221);
+  color: black;
+  transition: color 250ms ease-in;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(230, 227, 227);
+}
+.wish-button {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('./assets/images/ui/wish-button.png');
+  color: #d4bc8f;
+  height: 100%;
+  width:  240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wish-button:hover {
+  cursor: pointer;
+  color: gold;
 }
