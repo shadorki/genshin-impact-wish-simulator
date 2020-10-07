@@ -1,0 +1,462 @@
+[
+    {
+        "name": "Aquila Favonia",
+        "rating": 5,
+        "class": "Sword"
+    },
+    {
+        "name": "Blackcliff Longsword",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Cool Steel",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Dark Iron Sword",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Dull Blade",
+        "rating": 1,
+        "class": "Sword"
+    },
+    {
+        "name": "Favonius Sword",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Fillet Blade",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Harbinger of Dawn",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Iron Sting",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Lions Roar",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Prototype Rancour",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Royal Longsword",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Sacrificial Sword",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Silver Sword",
+        "rating": 2,
+        "class": "Sword"
+    },
+    {
+        "name": "Skyrider Sword",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Skyward Blade",
+        "rating": 5,
+        "class": "Sword"
+    },
+    {
+        "name": "The Alley Flash",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "The Black Sword",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "The Flute",
+        "rating": 4,
+        "class": "Sword"
+    },
+    {
+        "name": "Travelers Handy Sword",
+        "rating": 3,
+        "class": "Sword"
+    },
+    {
+        "name": "Alley Hunter",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Amos Bow",
+        "rating": 5,
+        "class": "Bow"
+    },
+    {
+        "name": "Blackcliff Warbow",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Compound Bow",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Ebony Bow",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "Favonius Warbow",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Hunters Bow",
+        "rating": 1,
+        "class": "Bow"
+    },
+    {
+        "name": "Messenger",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "Prototype Crescent",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Raven Bow",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "Recurve Bow",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "Royal Bow",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Rust",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Sacrificial Bow",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Seasoned Hunter's Bow",
+        "rating": 2,
+        "class": "Bow"
+    },
+    {
+        "name": "Sharpshooter's Oath",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "Skyward Harp",
+        "rating": 5,
+        "class": "Bow"
+    },
+    {
+        "name": "Slingshot",
+        "rating": 3,
+        "class": "Bow"
+    },
+    {
+        "name": "The Stringless",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "The Viridescent Hunt",
+        "rating": 4,
+        "class": "Bow"
+    },
+    {
+        "name": "Beginner's Protector",
+        "rating": 1,
+        "class": "Polearm"
+    },
+    {
+        "name": "Black Tassel",
+        "rating": 3,
+        "class": "Polearm"
+    },
+    {
+        "name": "Blackcliff Pole",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "Crescent Pike",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "Deathmatch",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "Dragon's Bane",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "Halberd",
+        "rating": 3,
+        "class": "Polearm"
+    },
+    {
+        "name": "Iron Point",
+        "rating": 2,
+        "class": "Polearm"
+    },
+    {
+        "name": "Kunwu's Iris Rift",
+        "rating": 5,
+        "class": "Polearm"
+    },
+    {
+        "name": "Lithic Spear",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "Primordial Jade Winged-Spear",
+        "rating": 5,
+        "class": "Polearm"
+    },
+    {
+        "name": "Prototype Grudge",
+        "rating": 4,
+        "class": "Polearm"
+    },
+    {
+        "name": "White Tassel",
+        "rating": 3,
+        "class": "Polearm"
+    },
+    {
+        "name": "Blackcliff Slasher",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Bloodtainted Greatsword",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Debate Club",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Favonius Greatsword",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Ferrous Shadow",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Lithic Blade",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Old Merc's Pal",
+        "rating": 2,
+        "class": "Claymore"
+    },
+    {
+        "name": "Prototype Aminus",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Quartz",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Raincutter",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Royal Greatsword",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Serpent Spine",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Skyrider Greatsword",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Skyward Pride",
+        "rating": 5,
+        "class": "Claymore"
+    },
+    {
+        "name": "The Bell",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Waster Greatsword",
+        "rating": 1,
+        "class": "Claymore"
+    },
+    {
+        "name": "White Iron Greatsword",
+        "rating": 3,
+        "class": "Claymore"
+    },
+    {
+        "name": "Whiteblind",
+        "rating": 4,
+        "class": "Claymore"
+    },
+    {
+        "name": "Wolf's Gravestone",
+        "rating": 5,
+        "class": "Claymore"
+    },
+    {
+        "name": "Amber Catalyst",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Apprentice's Notes",
+        "rating": 1,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Blackcliff Amulet",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Eye of Perception",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Favonius Codex",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Jade Orb",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Lost Prayer to the Sacred Winds",
+        "rating": 5,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Magic Guide",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Mappa Mare",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Otherworldly Story",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Pocket Grimoire",
+        "rating": 2,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Prototype Malice",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Royal Grimoire",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Sacrificial Fragments",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Skyward Atlas",
+        "rating": 5,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Solar Pearl",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "The Widsith",
+        "rating": 4,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Thrilling Tales of Dragon Slayers",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Twin Nephrite",
+        "rating": 3,
+        "class": "Catalyst"
+    },
+    {
+        "name": "Wine and Song",
+        "rating": 4,
+        "class": "Catalyst"
+    }
+]

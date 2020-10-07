@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Venti",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031464883978310"
+  },
+  {
+    "name": "Keqing",
+    "element": "Electro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031397896749127"
+  }
+  {
+    "name": "Mona",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031417895452754"
+  },
+  {
+    "name": "Qiqi",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031442494914661"
+  },
+  {
+    "name": "Diluc",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031368255602861"
+  },
+  {
+    "name": "Jean",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031380716879922"
+  },
+  {
+    "name": "Fischl",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031374052393120"
+  },
+  {
+    "name": "Xiangling",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031470726905977"
+  },
+  {
+    "name": "Barbara",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031327726174398"
+  },
+  {
+    "name": "Sucrose",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031457019658401"
+  },
+  {
+    "name": "Chongyun",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031361934917682"
+  },
+  {
+    "name": "Noelle",
+    "element": "Geo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031431132545057"
+  },
+  {
+    "name": "Bennett",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031351533043772"
+  },
+  {
+    "name": "Ningguang",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031423905759253"
+  },
+  {
+    "name": "Xingqiu",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031483263680563"
+  },
+  {
+    "name": "Beidou",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031334273613904"
+  },
+  {
+    "name": "Razor",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031449864306719"
+  }
+]

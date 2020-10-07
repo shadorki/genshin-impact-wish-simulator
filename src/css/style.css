@@ -5,6 +5,9 @@ body {
   margin: 0;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
+p {
+  font-size: 1.2rem
+}
 .wrapper {
   min-height: 100vh;
   background-size: cover;
@@ -135,9 +138,45 @@ button:hover {
   color: gold;
 }
 
-.container.details {
+.details {
   background-color: #ebebeb;
 }
+
+.react-stars-container > div {
+  justify-content: center;
+}
+
+.details-box {
+  height: 120px;
+  width: 340px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.details-box > div > div:last-child > hr {
+  border-top: 2px solid white;
+}
+
+.teal {
+  color: #359697;
+}
+.aqua {
+  color: #25c0f5;
+}
+.purple {
+  color: #9763c4;
+}
+.orange {
+  color: #ec4923;
+}
+.brass {
+  color: #a38052;
+}
+.dark-gray-bg {
+  background-color: #dbdbdb;
+}
+
 
 @media (max-width: 1200px) {
   .banner-button {
