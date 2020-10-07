@@ -84,7 +84,7 @@ body {
 .carousel-container {
   position: relative;
   height: 65vh;
-  margin: 2rem 5rem;
+  margin: 2rem 15rem;
 }
 .carousel.carousel-slider {
   display: flex;
