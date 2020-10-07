@@ -75,7 +75,9 @@ export default class Banners extends Component {
         </div>
         <div className="action-container">
             <div className="button-container">
-              <button>Details</button>
+              <button
+              onClick={() => this.props.setView('details')}
+              >Details</button>
               <button>History</button>
             </div>
             <div className="wish-container">
