@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import BannerButton from './banner-button';
 import { Carousel } from 'react-responsive-carousel';
+const banners = require.context('../assets/images/banners', true);
 export default class Banners extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedBanner: 'novice-wishes',
+      selectedBanner: 'beginners-wish',
     }
     this.banners = {
-      'novice-wishes': 'Novice Wishes',
-      'character-event-wish': 'Character Event Wish',
-      'weapon-event-wish': 'Weapon Event Wish',
-      'standard-wish': 'Standard Wish'
+      'beginners-wish': 'Novice Wishes',
+      'ballad-in-goblets': 'Character Event Wish',
+      'epitome-invocation': 'Weapon Event Wish',
+      'wanderlust-invocation': 'Standard Wish'
     }
   }
   onCarouselChange(index) {
@@ -28,7 +29,7 @@ export default class Banners extends Component {
     const bannerKeys = Object.keys(this.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
     return (
-      <div className="container banners">
+      <div className="wrapper banners">
         <div className="heading">
           <div className="current-banner">
             <div>{this.bannerText}</div>
@@ -59,18 +60,15 @@ export default class Banners extends Component {
             selectedItem={selectedBannerIndex}
             onChange={this.onCarouselChange.bind(this)}
           >
-            <div>
-              <img src="../assets/images/banners/beginners-wish.png" />
-            </div>
-            <div>
-              <img src="../assets/images/banners/ballad-in-goblets.png" />
-            </div>
-            <div>
-              <img src="../assets/images/banners/epitome-invocation.png" />
-            </div>
-            <div>
-              <img src="../assets/images/banners/wanderlust-invocation.png" />
-            </div>
+          {
+            bannerKeys.map(banner => {
+             return (
+                <div key={banner}>
+                  <img src={banners(`./${banner}.png`).default} />
+                </div>
+              )
+            })
+          }
           </Carousel>
         </div>
         <div className="action-container">

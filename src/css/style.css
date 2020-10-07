@@ -5,23 +5,22 @@ body {
   margin: 0;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
-.container {
+.wrapper {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .banners {
-  background-image: url('assets/images/ui/background.png');
+  background-image: url('../assets/images/ui/background.png');
 }
-.container.banners > .heading {
+.wrapper.banners > .heading {
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container.banners > .heading > .current-banner {
+.wrapper.banners > .heading > .current-banner {
   color: #d4bc8f;
   font-size: 1.5rem;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
@@ -29,19 +28,19 @@ body {
   margin-left: 1.2rem;
   text-align: center;
 }
-.container.banners > .heading > .close-window {
+.wrapper.banners > .heading > .close-window {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('./assets/images/ui/closing-button.png');
+  background-image: url('../assets/images/ui/closing-button.png');
   height: 40px;
   width: 40px;
   margin-right: 1.2rem;
 }
-.container.banners > .heading > .close-window:hover {
+.wrapper.banners > .heading > .close-window:hover {
   cursor: pointer;
 }
-.container.banners > .heading > .select-banner {
+.wrapper.banners > .heading > .select-banner {
   display: flex;
   justify-content: space-around;
 }
@@ -57,29 +56,29 @@ body {
 .banner-button:hover {
   cursor: pointer;
 }
-.banner-button.novice-wishes {
-  background-image: url('./assets/images/ui/noelle.png');
+.banner-button.beginners-wish {
+  background-image: url('../assets/images/ui/noelle.png');
 }
-.banner-button.novice-wishes.selected {
-  background-image: url('./assets/images/ui/noelle-selected.png');
+.banner-button.beginners-wish.selected {
+  background-image: url('../assets/images/ui/noelle-selected.png');
 }
-.banner-button.character-event-wish {
-  background-image: url('./assets/images/ui/venti.png');
+.banner-button.ballad-in-goblets {
+  background-image: url('../assets/images/ui/venti.png');
 }
-.banner-button.character-event-wish.selected {
-  background-image: url('./assets/images/ui/venti-selected.png');
+.banner-button.ballad-in-goblets.selected {
+  background-image: url('../assets/images/ui/venti-selected.png');
 }
-.banner-button.weapon-event-wish {
-  background-image: url('./assets/images/ui/weapon.png');
+.banner-button.epitome-invocation {
+  background-image: url('../assets/images/ui/weapon.png');
 }
-.banner-button.weapon-event-wish.selected {
-  background-image: url('./assets/images/ui/weapon-selected.png');
+.banner-button.epitome-invocation.selected {
+  background-image: url('../assets/images/ui/weapon-selected.png');
 }
-.banner-button.standard-wish {
-  background-image: url('./assets/images/ui/wanderlust.png');
+.banner-button.wanderlust-invocation {
+  background-image: url('../assets/images/ui/wanderlust.png');
 }
-.banner-button.standard-wish.selected{
-  background-image: url('./assets/images/ui/wanderlust-selected.png');
+.banner-button.wanderlust-invocation.selected{
+  background-image: url('../assets/images/ui/wanderlust-selected.png');
 }
 .carousel-container {
   position: relative;
@@ -123,7 +122,7 @@ button:hover {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('./assets/images/ui/wish-button.png');
+  background-image: url('../assets/images/ui/wish-button.png');
   color: #d4bc8f;
   height: 100%;
   width:  240px;
@@ -134,6 +133,10 @@ button:hover {
 .wish-button:hover {
   cursor: pointer;
   color: gold;
+}
+
+.container.details {
+  background-color: #ebebeb;
 }
 
 @media (max-width: 1200px) {
@@ -150,18 +153,18 @@ button:hover {
     height: 61px;
     width: 128px;
   }
-  .container.banners > .heading > .close-window {
+  .wrapper.banners > .heading > .close-window {
     height: 35px;
     width: 35px;
   }
 
 }
 @media (max-width: 768px) {
-  .container.banners > .heading > .select-banner {
+  .wrapper.banners > .heading > .select-banner {
     margin-top: 1.2rem;
     flex-wrap: wrap;
   }
-  .container.banners > .heading > .close-window {
+  .wrapper.banners > .heading > .close-window {
     display: none;
   }
   .wish-button {
@@ -173,7 +176,7 @@ button:hover {
     height: 50px;
     width: 100px;
   }
-  .container.banners > .heading > .current-banner {
+  .wrapper.banners > .heading > .current-banner {
     font-size: 1rem;
     width: 100px;
     margin-left: 1.2rem;

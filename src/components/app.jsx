@@ -16,7 +16,7 @@ export default class App extends Component {
     this.setState({currentDetails})
   }
   render () {
-    {currentDetails} = this.state
+    const {currentDetails} = this.state
         switch(this.state.view) {
           case 'banners':
             return <Banners
