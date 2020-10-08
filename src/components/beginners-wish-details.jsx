@@ -3,11 +3,12 @@ import { Container, Row, Col } from 'reactstrap';
 import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
-import WanderlustInvocation from '../models/wanderlust-invocation'
+import BeginnersWish from '../models/beginners-wish'
 import Table from './details-components/table'
 import Title from './details-components/title'
 
 export default function BeginnersWishDetails() {
+  const beginners = new BeginnersWish()
   return (
     <div className="details pt-5">
       <Container>
@@ -47,6 +48,30 @@ export default function BeginnersWishDetails() {
             </h4>
           </Col>
         </Row>
+        <StarsBar
+          starCount={5}
+          content="Base Probability for 5-Star Item Drops: 0.600%"
+          bgColor="#dcbba5"
+        />
+        <Table
+          items={beginners.getDrops(5)}
+        />
+        <StarsBar
+          starCount={4}
+          content="Base Probability for 4-Star Item Drops: 5.100%"
+          bgColor="#b6abbf"
+        />
+        <Table
+          items={beginners.getDrops(4)}
+        />
+        <StarsBar
+          starCount={3}
+          content="Base Probability for 3-Star Item Drops: 94.300%"
+          bgColor="#a5bacc"
+        />
+        <Table
+          items={beginners.getDrops(3)}
+        />
       </Container>
     </div>
   )
