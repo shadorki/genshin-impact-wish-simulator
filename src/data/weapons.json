@@ -24,6 +24,13 @@
         "src": "dark-iron-sword.png"
     },
     {
+        "name": "Favonius Lance",
+        "rating": 4,
+        "class": "Lance",
+        "type": "weapon",
+        "src": "favonius-lance.png"
+    },
+    {
         "name": "Dull Blade",
         "rating": 1,
         "class": "Sword",

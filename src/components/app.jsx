@@ -5,8 +5,8 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      view: 'banners',
-      currentDetails: null
+      view: 'details',
+      currentDetails: 'epitome-invocation'
     }
     this.setView = this.setView.bind(this)
   }
