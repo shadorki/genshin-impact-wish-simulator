@@ -1,14 +1,8 @@
+import BaseGacha from './base-gacha'
 import drops from '../data/ballad-in-goblets.json'
 
-export default class BalladInGoblets {
+export default class BalladInGoblets extends BaseGacha {
   constructor() {
-    this.drops = drops
-    }
-    getDrops(rating) {
-      if(!rating) {
-        return this.drops
-      } else {
-        return this.drops.filter(drop => drop.rating === rating)
-      }
-    }
+    super(drops)
   }
+}
