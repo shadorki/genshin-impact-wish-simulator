@@ -24,16 +24,22 @@ describe('Testing suite for genshin impact gacha', () => {
       expect(ballad.attemptsCount).to.be.equal(10)
       done()
     })
+    it('should give us a total of 10 items', done => {
+      const results = ballad.roll()
+      expect(results.length === 10).to.be.true
+      done()
+    })
     it('should have a guaranteed 5 star item', done => {
-      for(let i = 0; i < 7; i++) {
+      for(let i = 0; i < 6; i++) {
         ballad.roll()
       }
       const results = ballad.roll()
+      console.log(results)
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
-    it('should register 100 attempts', done => {
+    it('should register 90 attempts', done => {
       expect(ballad.attemptsCount).to.be.equal(90)
       done()
     })

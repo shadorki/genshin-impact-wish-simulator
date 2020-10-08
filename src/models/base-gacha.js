@@ -25,6 +25,21 @@ export default class BaseGacha {
     }
     return randomNumbers
   }
+  // Takes three arguments for each star rating goes 3 4 5
+  generateProbabilityRange(...args) {
+    const range = []
+    args.forEach((star, i) => range.push(...this.generateProbabilityCount(star, i + 3)))
+    this.shuffle(range)
+    return range
+  }
+  generateProbabilityCount(amount, rating) {
+    const result = []
+    while (amount) {
+      result.push(rating)
+      amount--
+    }
+    return result
+  }
   shuffle(array) {
     for(let i = 0; i < array.length; i++) {
       var randomNumber = this.generateRandomNumber(array.length)
