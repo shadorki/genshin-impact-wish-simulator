@@ -190,6 +190,23 @@ td {
   text-transform: capitalize;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  background-color: #111315;
+  width: 100%;
+  z-index: 2;
+}
+.navbar > svg {
+  color: #5b5c5d;
+  font-size: 1.2rem;
+}
+.navbar > svg:hover {
+  cursor: pointer;
+  color: goldenrod;
+}
+
 @media (max-width: 1200px) {
   .banner-button {
     height: 81px;

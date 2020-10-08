@@ -19,7 +19,7 @@ export default class Banners extends Component {
     this.switchBanner(Object.keys(this.banners)[index])
   }
   switchBanner(selectedBanner) {
-    this.setState({selectedBanner})
+    this.setState({selectedBanner}, () => this.props.setCurrentDetails(selectedBanner))
   }
   get bannerText() {
     return this.banners[this.state.selectedBanner]
