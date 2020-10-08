@@ -4,10 +4,13 @@ import DetailsBox from './details-components/details-box';
 import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
+import BalladsInGoblets from '../models/ballad-in-goblets'
 
 
 export default class Details extends Component {
   render() {
+    const ballads = new BalladsInGoblets()
+    console.log(ballads.getDrops(3))
     return (
       <div className="details">
         <Container>

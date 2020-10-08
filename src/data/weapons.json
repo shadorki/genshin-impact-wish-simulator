@@ -2,461 +2,553 @@
     {
         "name": "Aquila Favonia",
         "rating": 5,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "aquila-favonia.png"
     },
     {
         "name": "Blackcliff Longsword",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "blackcliff-longsword.png"
     },
     {
         "name": "Cool Steel",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "cool-steel.png"
     },
     {
         "name": "Dark Iron Sword",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "dark-iron-sword.png"
     },
     {
         "name": "Dull Blade",
         "rating": 1,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "dull-blade.png"
     },
     {
         "name": "Favonius Sword",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "favonius-sword.png"
     },
     {
         "name": "Fillet Blade",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "fillet-blade.png"
     },
     {
         "name": "Harbinger of Dawn",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "harbinger-of-dawn.png"
     },
     {
         "name": "Iron Sting",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "iron-sting.png"
     },
     {
         "name": "Lions Roar",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "lions-roar.png"
     },
     {
         "name": "Prototype Rancour",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "prototype-rancour.png"
     },
     {
         "name": "Royal Longsword",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "royal-longsword.png"
     },
     {
         "name": "Sacrificial Sword",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "sacrificial-sword.png"
     },
     {
         "name": "Silver Sword",
         "rating": 2,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "silver-sword.png"
     },
     {
         "name": "Skyrider Sword",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "skyrider-sword.png"
     },
     {
         "name": "Skyward Blade",
         "rating": 5,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "skyward-blade.png"
     },
     {
         "name": "The Alley Flash",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "the-alley-flash.png"
     },
     {
         "name": "The Black Sword",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "the-black-sword.png"
     },
     {
         "name": "The Flute",
         "rating": 4,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "the-flute.png"
     },
     {
         "name": "Travelers Handy Sword",
         "rating": 3,
-        "class": "Sword"
+        "class": "Sword",
+        "src": "travelers-handy-sword.png"
     },
     {
         "name": "Alley Hunter",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "alley-hunter.png"
     },
     {
         "name": "Amos Bow",
         "rating": 5,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "amos-bow.png"
     },
     {
         "name": "Blackcliff Warbow",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "blackcliff-warbow.png"
     },
     {
         "name": "Compound Bow",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "compound-bow.png"
     },
     {
         "name": "Ebony Bow",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "ebony-bow.png"
     },
     {
         "name": "Favonius Warbow",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "favonius-warbow.png"
     },
     {
         "name": "Hunters Bow",
         "rating": 1,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "hunters-bow.png"
     },
     {
         "name": "Messenger",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "messenger.png"
     },
     {
         "name": "Prototype Crescent",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "prototype-crescent.png"
     },
     {
         "name": "Raven Bow",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "raven-bow.png"
     },
     {
         "name": "Recurve Bow",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "recurve-bow.png"
     },
     {
         "name": "Royal Bow",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "royal-bow.png"
     },
     {
         "name": "Rust",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "rust.png"
     },
     {
         "name": "Sacrificial Bow",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "sacrificial-bow.png"
     },
     {
         "name": "Seasoned Hunter's Bow",
         "rating": 2,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "seasoned-hunter's-bow.png"
     },
     {
         "name": "Sharpshooter's Oath",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "sharpshooter's-oath.png"
     },
     {
         "name": "Skyward Harp",
         "rating": 5,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "skyward-harp.png"
     },
     {
         "name": "Slingshot",
         "rating": 3,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "slingshot.png"
     },
     {
         "name": "The Stringless",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "the-stringless.png"
     },
     {
         "name": "The Viridescent Hunt",
         "rating": 4,
-        "class": "Bow"
+        "class": "Bow",
+        "src": "the-viridescent-hunt.png"
     },
     {
         "name": "Beginner's Protector",
         "rating": 1,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "beginner's-protector.png"
     },
     {
         "name": "Black Tassel",
         "rating": 3,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "black-tassel.png"
     },
     {
         "name": "Blackcliff Pole",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "blackcliff-pole.png"
     },
     {
         "name": "Crescent Pike",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "crescent-pike.png"
     },
     {
         "name": "Deathmatch",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "deathmatch.png"
     },
     {
         "name": "Dragon's Bane",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "dragon's-bane.png"
     },
     {
         "name": "Halberd",
         "rating": 3,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "halberd.png"
     },
     {
         "name": "Iron Point",
         "rating": 2,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "iron-point.png"
     },
     {
         "name": "Kunwu's Iris Rift",
         "rating": 5,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "kunwu's-iris-rift.png"
     },
     {
         "name": "Lithic Spear",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "lithic-spear.png"
     },
     {
         "name": "Primordial Jade Winged-Spear",
         "rating": 5,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "primordial-jade-winged-spear.png"
     },
     {
         "name": "Prototype Grudge",
         "rating": 4,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "prototype-grudge.png"
     },
     {
         "name": "White Tassel",
         "rating": 3,
-        "class": "Polearm"
+        "class": "Polearm",
+        "src": "white-tassel.png"
     },
     {
         "name": "Blackcliff Slasher",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "blackcliff-slasher.png"
     },
     {
         "name": "Bloodtainted Greatsword",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "bloodtainted-greatsword.png"
     },
     {
         "name": "Debate Club",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "debate-club.png"
     },
     {
         "name": "Favonius Greatsword",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "favonius-greatsword.png"
     },
     {
         "name": "Ferrous Shadow",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "ferrous-shadow.png"
     },
     {
         "name": "Lithic Blade",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "lithic-blade.png"
     },
     {
         "name": "Old Merc's Pal",
         "rating": 2,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "old-merc's-pal.png"
     },
     {
         "name": "Prototype Aminus",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "prototype-aminus.png"
     },
     {
         "name": "Quartz",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "quartz.png"
     },
     {
         "name": "Raincutter",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "raincutter.png"
     },
     {
         "name": "Royal Greatsword",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "royal-greatsword.png"
     },
     {
         "name": "Serpent Spine",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "serpent-spine.png"
     },
     {
         "name": "Skyrider Greatsword",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "skyrider-greatsword.png"
     },
     {
         "name": "Skyward Pride",
         "rating": 5,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "skyward-pride.png"
     },
     {
         "name": "The Bell",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "the-bell.png"
     },
     {
         "name": "Waster Greatsword",
         "rating": 1,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "waster-greatsword.png"
     },
     {
         "name": "White Iron Greatsword",
         "rating": 3,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "white-iron-greatsword.png"
     },
     {
         "name": "Whiteblind",
         "rating": 4,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "whiteblind.png"
     },
     {
         "name": "Wolf's Gravestone",
         "rating": 5,
-        "class": "Claymore"
+        "class": "Claymore",
+        "src": "wolf's-gravestone.png"
     },
     {
         "name": "Amber Catalyst",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "amber-catalyst.png"
     },
     {
         "name": "Apprentice's Notes",
         "rating": 1,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "apprentice's-notes.png"
     },
     {
         "name": "Blackcliff Amulet",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "blackcliff-amulet.png"
     },
     {
         "name": "Eye of Perception",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "eye-of-perception.png"
     },
     {
         "name": "Favonius Codex",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "favonius-codex.png"
     },
     {
         "name": "Jade Orb",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "jade-orb.png"
     },
     {
         "name": "Lost Prayer to the Sacred Winds",
         "rating": 5,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "lost-prayer-to-the-sacred-winds.png"
     },
     {
         "name": "Magic Guide",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "magic-guide.png"
     },
     {
         "name": "Mappa Mare",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "mappa-mare.png"
     },
     {
         "name": "Otherworldly Story",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "otherworldly-story.png"
     },
     {
         "name": "Pocket Grimoire",
         "rating": 2,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "pocket-grimoire.png"
     },
     {
         "name": "Prototype Malice",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "prototype-malice.png"
     },
     {
         "name": "Royal Grimoire",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "royal-grimoire.png"
     },
     {
         "name": "Sacrificial Fragments",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "sacrificial-fragments.png"
     },
     {
         "name": "Skyward Atlas",
         "rating": 5,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "skyward-atlas.png"
     },
     {
         "name": "Solar Pearl",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "solar-pearl.png"
     },
     {
         "name": "The Widsith",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "the-widsith.png"
     },
     {
         "name": "Thrilling Tales of Dragon Slayers",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "thrilling-tales-of-dragon-slayers.png"
     },
     {
         "name": "Twin Nephrite",
         "rating": 3,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "twin-nephrite.png"
     },
     {
         "name": "Wine and Song",
         "rating": 4,
-        "class": "Catalyst"
+        "class": "Catalyst",
+        "src": "wine-and-song.png"
     }
 ]
