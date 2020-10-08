@@ -11,6 +11,8 @@ export default class BalladInGoblets extends BaseGacha {
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
     this.guaranteedVenti = false
+    this.probabilityRange = this.generateProbabilityRange()
+    console.log(this.probabilityRange)
   }
   set attempts(amount) {
     this.attemptsCount += amount
@@ -32,6 +34,25 @@ export default class BalladInGoblets extends BaseGacha {
 
 
     return roll
+  }
+  generateProbabilityRange() {
+    const fiveStarProbability = 6
+    const fourStarProbability = 51
+    const threeStarProbability = 943
+    const range = []
+    range.push(...this.generateProbabilityCount(fiveStarProbability, 5))
+    range.push(...this.generateProbabilityCount(fourStarProbability, 4))
+    range.push(...this.generateProbabilityCount(threeStarProbability, 3))
+    this.shuffle(range)
+    return range
+  }
+  generateProbabilityCount(amount, rating) {
+    const result = []
+    while(amount) {
+      result.push(rating)
+      amount--
+    }
+    return result
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)

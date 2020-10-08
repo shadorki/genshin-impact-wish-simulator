@@ -25,4 +25,12 @@ export default class BaseGacha {
     }
     return randomNumbers
   }
+  shuffle(array) {
+    for(let i = 0; i < array.length; i++) {
+      var randomNumber = this.generateRandomNumber(array.length)
+      var placeHolder = array[i]
+      array[i] = array[randomNumber]
+      array[randomNumber] = placeHolder
+    }
+  }
 }
