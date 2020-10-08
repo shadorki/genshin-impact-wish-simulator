@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Banners from './banners'
 import Details from './details'
+import Wish from './wish'
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -34,6 +35,10 @@ export default class App extends Component {
             return <Details
             backToHome={this.backToHome.bind(this)}
             selectedDetail={currentDetails}
+            />
+          case 'wish':
+            return <Wish
+            setView={this.setView}
             />
         }
   }

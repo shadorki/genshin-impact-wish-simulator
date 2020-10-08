@@ -8,6 +8,9 @@ body {
 p {
   font-size: 1.2rem
 }
+video {
+  object-fit: cover;
+}
 .wrapper {
   min-height: 100vh;
   background-size: cover;
