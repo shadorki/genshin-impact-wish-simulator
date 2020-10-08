@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import DetailsBox from './details-components/details-box';
 import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
