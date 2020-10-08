@@ -5,13 +5,19 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      view: 'details',
+      view: 'banners',
       currentDetails: 'beginners-wish'
     }
     this.setView = this.setView.bind(this)
   }
   setView(view) {
     this.setState({view})
+  }
+  backToHome() {
+    this.setState({
+      view: 'banners',
+      currentDetails: 'beginners-wish'
+    })
   }
   setCurrentDetails(currentDetails) {
     this.setState({currentDetails})
@@ -26,7 +32,7 @@ export default class App extends Component {
             />
           case 'details':
             return <Details
-            backToHome={() => this.setView('banners')}
+            backToHome={this.backToHome.bind(this)}
             selectedDetail={currentDetails}
             />
         }
