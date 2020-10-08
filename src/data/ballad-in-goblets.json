@@ -4,7 +4,8 @@
     "element": "Anemo",
     "type": "character",
     "rating": 5,
-    "id": "749031464883978310"
+    "id": "749031464883978310",
+    "isFeatured": true
   },
   {
     "name": "Keqing",
@@ -46,21 +47,24 @@
     "element": "Electro",
     "type": "character",
     "rating": 4,
-    "id": "749031374052393120"
+    "id": "749031374052393120",
+    "isFeatured": true
   },
   {
     "name": "Xiangling",
     "element": "Pyro",
     "type": "character",
     "rating": 4,
-    "id": "749031470726905977"
+    "id": "749031470726905977",
+    "isFeatured": true
   },
   {
     "name": "Barbara",
     "element": "Hydro",
     "type": "character",
     "rating": 4,
-    "id": "749031327726174398"
+    "id": "749031327726174398",
+    "isFeatured": true
   },
   {
     "name": "Sucrose",

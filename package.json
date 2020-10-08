@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "mocha -r esm"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "bootstrap": "^4.5.2",
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mocha": "^8.1.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-rating-stars-component": "^2.2.0",
