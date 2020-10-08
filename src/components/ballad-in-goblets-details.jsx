@@ -6,6 +6,7 @@ import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
 import BalladsInGoblets from '../models/ballad-in-goblets'
 import Table from './details-components/table'
+import Title from './details-components/title'
 
 
 export default function BalladsInGobletsDetails() {
@@ -13,11 +14,9 @@ export default function BalladsInGobletsDetails() {
   return (
     <div className="details pt-5">
       <Container>
-        <Row className="py-4">
-          <Col xs="12" className="text-left dark-gray-bg pl-5">
-            <h1>| Event Wish "<span className="teal">Ballad</span> in Goblets"</h1>
-          </Col>
-        </Row>
+        <Title>
+          <h1>| Event Wish "<span className="teal">Ballad</span> in Goblets"</h1>
+        </Title>
         <SubheadingSeparator
           content="Increased Drop Rates!"
         />
