@@ -5,6 +5,7 @@ import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
 import BalladsInGoblets from '../models/ballad-in-goblets'
+import Table from './details-components/table'
 
 
 export default class Details extends Component {
@@ -108,6 +109,25 @@ export default class Details extends Component {
             starCount={5}
             content="Base Probability for 5-Star Item Drops: 0.600% (Incl. guarantee: 1.600%)"
             bgColor="#dcbba5"
+          />
+          <Table
+          items={ballads.getDrops(5)}
+          />
+          <StarsBar
+            starCount={4}
+            content="Base Probability for 4-Star Item Drops: 5.100% (Incl. guarantee: 13.000%)"
+            bgColor="#b6abbf"
+          />
+          <Table
+            items={ballads.getDrops(4)}
+          />
+          <StarsBar
+            starCount={3}
+            content="Base Probability for 3-Star Item Drops: 94.300% (Incl. guarantee: 85.400%)"
+            bgColor="#a5bacc"
+          />
+          <Table
+            items={ballads.getDrops(3)}
           />
         </Container>
       </div>

@@ -8,7 +8,9 @@ export default function DetailsBox(props) {
   const {src, title, isWeapon, element} = props
   return (
     <Col
-    xs="4"
+    xs="12"
+    sm="6"
+    md="4"
     className="details-box my-3"
     style={{
       backgroundImage: `url('${isWeapon ? weaponBackgrounds('./background.png').default : characterBackgrounds(`./background-${element}.png`).default}')`

@@ -10,7 +10,10 @@ export default function StarsBar(props) {
         backgroundColor: bgColor
       }}>
         <Row className="align-items-center">
-          <Col xs="2" className="react-stars-container">
+          <Col
+            xs="5"
+            md="2"
+            className="react-stars-container">
             <ReactStars
               count={starCount}
               size={24}
@@ -18,7 +21,10 @@ export default function StarsBar(props) {
               color="#ffd700"
             />
           </Col>
-          <Col xs="10" className="text-left">
+          <Col
+            xs="7"
+            md="10"
+            className="text-left">
             {content}
           </Col>
         </Row>

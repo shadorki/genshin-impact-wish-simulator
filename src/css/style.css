@@ -176,7 +176,19 @@ button:hover {
 .dark-gray-bg {
   background-color: #dbdbdb;
 }
-
+table {
+  text-align: center;
+}
+table, th, td {
+  border: 2px solid #d0cfcd;
+}
+th {
+  background-color: #dbd7d3;
+}
+td {
+  color: #a7865a;
+  text-transform: capitalize;
+}
 
 @media (max-width: 1200px) {
   .banner-button {
