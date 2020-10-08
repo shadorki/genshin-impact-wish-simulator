@@ -1,17 +1,45 @@
 [
   {
+    "name": "Keqing",
+    "element": "Electro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031397896749127"
+  },
+  {
+    "name": "Mona",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031417895452754"
+  },
+  {
+    "name": "Qiqi",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031442494914661"
+  },
+  {
+    "name": "Diluc",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031368255602861"
+  },
+  {
+    "name": "Jean",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031380716879922"
+  },
+  {
     "name": "Amos Bow",
     "rating": 5,
     "class": "Bow",
     "type": "weapon",
     "src": "amos-bow.png"
-  },
-  {
-    "name": "Aquila Favonia",
-    "rating": 5,
-    "class": "Sword",
-    "type": "weapon",
-    "src": "aquila-favonia.png"
   },
   {
     "name": "Skyward Harp",
@@ -70,39 +98,11 @@
     "src": "skyward-blade.png"
   },
   {
-    "name": "The Stringless",
-    "rating": 4,
-    "class": "Bow",
-    "type": "weapon",
-    "src": "the-stringless.png"
-  },
-  {
-    "name": "The Widsith",
-    "rating": 4,
-    "class": "Catalyst",
-    "type": "weapon",
-    "src": "the-widsith.png"
-  },
-  {
-    "name": "Favonius Lance",
-    "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
-    "src": "favonius-lance.png"
-  },
-  {
-    "name": "The Bell",
-    "rating": 4,
-    "class": "Claymore",
-    "type": "weapon",
-    "src": "the-bell.png"
-  },
-  {
-    "name": "The Flute",
-    "rating": 4,
+    "name": "Aquila Favonia",
+    "rating": 5,
     "class": "Sword",
     "type": "weapon",
-    "src": "the-flute.png"
+    "src": "aquila-favonia.png"
   },
   {
     "name": "Sucrose",
@@ -168,6 +168,13 @@
     "id": "749031470726905977"
   },
   {
+    "name": "Amber",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031317492203611"
+  },
+  {
     "name": "Razor",
     "element": "Electro",
     "type": "character",
@@ -175,11 +182,25 @@
     "id": "749031449864306719"
   },
   {
+    "name": "Kaeya",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031390867095731"
+  },
+  {
     "name": "Barbara",
     "element": "Hydro",
     "type": "character",
     "rating": 4,
     "id": "749031327726174398"
+  },
+  {
+    "name": "Lisa",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031410358288396"
   },
   {
     "name": "Rust",
@@ -194,6 +215,13 @@
     "class": "Bow",
     "type": "weapon",
     "src": "sacrificial-bow.png"
+  },
+  {
+    "name": "The Stringless",
+    "rating": 4,
+    "class": "Bow",
+    "type": "weapon",
+    "src": "the-stringless.png"
   },
   {
     "name": "Favonius Warbow",
@@ -217,11 +245,25 @@
     "src": "sacrificial-fragments.png"
   },
   {
+    "name": "The Widsith",
+    "rating": 4,
+    "class": "Catalyst",
+    "type": "weapon",
+    "src": "the-widsith.png"
+  },
+  {
     "name": "Favonius Codex",
     "rating": 4,
     "class": "Catalyst",
     "type": "weapon",
     "src": "favonius-codex.png"
+  },
+  {
+    "name": "Favonius Lance",
+    "rating": 4,
+    "class": "Lance",
+    "type": "weapon",
+    "src": "favonius-lance.png"
   },
   {
     "name": "Dragon's Bane",
@@ -245,6 +287,13 @@
     "src": "sacrificial-greatsword.png"
   },
   {
+    "name": "The Bell",
+    "rating": 4,
+    "class": "Claymore",
+    "type": "weapon",
+    "src": "the-bell.png"
+  },
+  {
     "name": "Favonius Greatsword",
     "rating": 4,
     "class": "Claymore",
@@ -264,6 +313,13 @@
     "class": "Sword",
     "type": "weapon",
     "src": "sacrificial-sword.png"
+  },
+  {
+    "name": "The Flute",
+    "rating": 4,
+    "class": "Sword",
+    "type": "weapon",
+    "src": "the-flute.png"
   },
   {
     "name": "Favonius Sword",
