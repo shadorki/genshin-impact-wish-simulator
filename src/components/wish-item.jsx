@@ -7,19 +7,21 @@ export default function WishItem(props) {
   const {src, name, rating, type} = props.item
   return (
     <Col
-    xs="1"
+    xs="2"
+    md="1"
     style={{
       backgroundImage: `url('${type === 'character' ? characterImages('./' + src).default : weaponImages('./' + src).default}')`
     }}
-    className={`wish-item ${type} mx-1`}>
+    className={`wish-item ${type} mx-1 px-0`}>
       <div
-      className="h-100 d-flex flex-column align-content-center justify-content-end pb-2">
-        <div className="text-center pb-1">{name}</div>
+      className="h-100 react-stars-container d-flex flex-column align-content-center justify-content-end pb-2">
+        <div className="text-center text-wrap pb-1">{name}</div>
         <ReactStars
           count={rating}
           size={12}
           edit={false}
           color="#ffd700"
+          classNames={"justify-content-center"}
         />
       </div>
     </Col>
