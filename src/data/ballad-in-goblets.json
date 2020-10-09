@@ -5,42 +5,48 @@
     "type": "character",
     "rating": 5,
     "id": "749031464883978310",
-    "isFeatured": true
+    "isFeatured": true,
+    "src": "Venti.png"
   },
   {
     "name": "Keqing",
     "element": "Electro",
     "type": "character",
     "rating": 5,
-    "id": "749031397896749127"
+    "id": "749031397896749127",
+    "src": "Keqing.png"
   },
   {
     "name": "Mona",
     "element": "Hydro",
     "type": "character",
     "rating": 5,
-    "id": "749031417895452754"
+    "id": "749031417895452754",
+    "src": "Mona.png"
   },
   {
     "name": "Qiqi",
     "element": "Cryo",
     "type": "character",
     "rating": 5,
-    "id": "749031442494914661"
+    "id": "749031442494914661",
+    "src": "Qiqi.png"
   },
   {
     "name": "Diluc",
     "element": "Pyro",
     "type": "character",
     "rating": 5,
-    "id": "749031368255602861"
+    "id": "749031368255602861",
+    "src": "Diluc.png"
   },
   {
     "name": "Jean",
     "element": "Anemo",
     "type": "character",
     "rating": 5,
-    "id": "749031380716879922"
+    "id": "749031380716879922",
+    "src": "Jean.png"
   },
   {
     "name": "Fischl",
@@ -48,7 +54,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031374052393120",
-    "isFeatured": true
+    "isFeatured": true,
+    "src": "Fischl.png"
   },
   {
     "name": "Xiangling",
@@ -56,7 +63,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031470726905977",
-    "isFeatured": true
+    "isFeatured": true,
+    "src": "Xiangling.png"
   },
   {
     "name": "Barbara",
@@ -64,63 +72,72 @@
     "type": "character",
     "rating": 4,
     "id": "749031327726174398",
-    "isFeatured": true
+    "isFeatured": true,
+    "src": "Barbara.png"
   },
   {
     "name": "Sucrose",
     "element": "Anemo",
     "type": "character",
     "rating": 4,
-    "id": "749031457019658401"
+    "id": "749031457019658401",
+    "src": "Sucrose.png"
   },
   {
     "name": "Chongyun",
     "element": "Cryo",
     "type": "character",
     "rating": 4,
-    "id": "749031361934917682"
+    "id": "749031361934917682",
+    "src": "Chongyun.png"
   },
   {
     "name": "Noelle",
     "element": "Geo",
     "type": "character",
     "rating": 4,
-    "id": "749031431132545057"
+    "id": "749031431132545057",
+    "src": "Noelle.png"
   },
   {
     "name": "Bennett",
     "element": "Pyro",
     "type": "character",
     "rating": 4,
-    "id": "749031351533043772"
+    "id": "749031351533043772",
+    "src": "Bennett.png"
   },
   {
     "name": "Ningguang",
     "element": "Electro",
     "type": "character",
     "rating": 4,
-    "id": "749031423905759253"
+    "id": "749031423905759253",
+    "src": "Ningguang.png"
   },
   {
     "name": "Xingqiu",
     "element": "Hydro",
     "type": "character",
     "rating": 4,
-    "id": "749031483263680563"
+    "id": "749031483263680563",
+    "src": "Xingqiu.png"
   },
   {
     "name": "Beidou",
     "element": "Electro",
     "type": "character",
     "rating": 4,
-    "id": "749031334273613904"
+    "id": "749031334273613904",
+    "src": "Beidou.png"
   },
   {
     "name": "Razor",
     "element": "Electro",
     "type": "character",
     "rating": 4,
-    "id": "749031449864306719"
+    "id": "749031449864306719",
+    "src": "Razor.png"
   },
   {
     "name": "Sacrificial Bow",

@@ -11,7 +11,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      view: 'wish-results',
+      view: 'banners',
       currentDetails: 'beginners-wish',
       selectedWish: 'beginnersWish'
     }
@@ -61,6 +61,7 @@ export default class App extends Component {
           case 'wish-results':
             return <WishResults
             wishData={this.wish()}
+            setView={this.setView}
             />
         }
   }
