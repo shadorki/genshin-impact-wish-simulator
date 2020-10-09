@@ -7,7 +7,7 @@ export default function Wish(props) {
     <video
     autoPlay={true}
     className="min-vh-100 w-100 overflow-hidden"
-    onEnded={() => setView('banners')}
+    onEnded={() => setView('wish-results')}
     >
       <source
         src={gachaClip}

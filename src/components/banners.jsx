@@ -14,6 +14,12 @@ export default class Banners extends Component {
       'epitome-invocation': 'Weapon Event Wish',
       'wanderlust-invocation': 'Standard Wish'
     }
+    this.wishes = {
+      'beginners-wish': 'beginnersWish',
+      'ballad-in-goblets': 'balladInGoblets',
+      'epitome-invocation': 'epitomeInvocation',
+      'wanderlust-invocation': 'wanderlustInvocation'
+    }
   }
   onCarouselChange(index) {
     this.switchBanner(Object.keys(this.banners)[index])
@@ -81,7 +87,10 @@ export default class Banners extends Component {
             <div className="wish-container">
               <div
               className="wish-button"
-              onClick={() => this.props.setView('wish')}
+              onClick={() => {
+                this.props.setView('wish')
+                this.props.setSelectedWish(this.wishes[selectedBanner])
+              }}
               >
                 Wish x10
               </div>
