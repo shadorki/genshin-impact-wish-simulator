@@ -59,7 +59,8 @@ export default class BeginnersWish extends BaseGacha {
       name: "Noelle",
       element: "Geo",
       type: "character",
-      rating: 4
+      rating: 4,
+      src: "Noelle.png"
     }
   }
 }

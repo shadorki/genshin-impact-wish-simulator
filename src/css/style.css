@@ -221,6 +221,28 @@ td {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.wish-item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(50, 50, 50, 0.9);
+  border-radius: 15px;
+  height: 400px;
+  color: white;
+  font-size: .9rem;
+  text-shadow: 3px 2px 2px rgb(29, 29, 29);
+}
+.wish-item.character {
+  background-size: cover;
+}
+.wish-item.weapon {
+  background-size: contain;
+}
+.vh-90 {
+  height: 90vh !important;
+}
+.vh-10 {
+  height: 10vh !important;
+}
 
 @media (max-width: 1200px) {
   .banner-button {
