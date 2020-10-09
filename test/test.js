@@ -3,9 +3,11 @@ const { expect } = chai
 import BalladInGoblets from '../src/models/ballad-in-goblets'
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
+import WanderlustInvocation from '../src/models/wanderlust-invocation'
 let ballad = null
 let beginners = null
 let epitome = null
+let wanderlust = null
 
 describe('Testing suite for genshin impact gacha', () => {
   ////////////////////////////////////////////////////////////////////////////////
@@ -147,6 +149,58 @@ describe('Testing suite for genshin impact gacha', () => {
     })
     it('should register 160 attempts', done => {
       expect(epitome.attemptsCount).to.be.equal(160)
+      done()
+    })
+  })
+  ////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////Testing Wanderlust Invocation//////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+
+  describe('Wanderlust Invocation', () => {
+    it('should return an instance of Wanderlust Invocation', done => {
+      wanderlust = new WanderlustInvocation()
+      expect(wanderlust instanceof WanderlustInvocation).to.be.true
+      done()
+    })
+    it('should have a 4 or 5 star item', done => {
+      const results = wanderlust.roll()
+      const item = results.find(item => item.rating === 4 || item.rating === 5)
+      expect(!!(item)).to.be.true
+      done()
+    })
+    it('should register 10 attempts', done => {
+      expect(wanderlust.attemptsCount).to.be.equal(10)
+      done()
+    })
+    it('should give us a total of 10 items', done => {
+      const results = wanderlust.roll()
+      expect(results.length === 10).to.be.true
+      done()
+    })
+    it('should have a guaranteed 5 star item', done => {
+      for (let i = 0; i < 6; i++) {
+        wanderlust.roll()
+      }
+      const results = wanderlust.roll()
+      const item = results.find(item => item.rating === 5)
+      expect(!!(item)).to.be.true
+      done()
+    })
+    it('should register 90 attempts', done => {
+      expect(wanderlust.attemptsCount).to.be.equal(90)
+      done()
+    })
+    it('should have another guaranteed 5 star item', done => {
+      for (let i = 0; i < 8; i++) {
+        wanderlust.roll()
+      }
+      const results = wanderlust.roll()
+      const item = results.find(item => item.rating === 5)
+      expect(!!(item)).to.be.true
+      done()
+    })
+    it('should register 180 attempts', done => {
+      expect(wanderlust.attemptsCount).to.be.equal(180)
       done()
     })
   })
