@@ -4,6 +4,7 @@
     "rating": 5,
     "class": "Bow",
     "type": "weapon",
+    "isFeatured": true,
     "src": "amos-bow.png"
   },
   {
@@ -11,6 +12,7 @@
     "rating": 5,
     "class": "Sword",
     "type": "weapon",
+    "isFeatured": true,
     "src": "aquila-favonia.png"
   },
   {
@@ -74,6 +76,7 @@
     "rating": 4,
     "class": "Bow",
     "type": "weapon",
+    "isFeatured": true,
     "src": "the-stringless.png"
   },
   {
@@ -81,6 +84,7 @@
     "rating": 4,
     "class": "Catalyst",
     "type": "weapon",
+    "isFeatured": true,
     "src": "the-widsith.png"
   },
   {
@@ -88,6 +92,7 @@
     "rating": 4,
     "class": "Lance",
     "type": "weapon",
+    "isFeatured": true,
     "src": "favonius-lance.png"
   },
   {
@@ -95,6 +100,7 @@
     "rating": 4,
     "class": "Claymore",
     "type": "weapon",
+    "isFeatured": true,
     "src": "the-bell.png"
   },
   {
@@ -102,6 +108,7 @@
     "rating": 4,
     "class": "Sword",
     "type": "weapon",
+    "isFeatured": true,
     "src": "the-flute.png"
   },
   {

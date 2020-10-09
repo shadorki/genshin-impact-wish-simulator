@@ -15,11 +15,7 @@ export default class BalladInGoblets extends BaseGacha {
   }
   set attempts(amount) {
     this.attemptsCount += amount
-    if (!(this.attemptsCount % 90)) {
-      this.guaranteed5Star = true
-    } else {
-      this.guaranteed5Star = false
-    }
+    this.guaranteed5Star = !(this.attemptsCount % 90)
   }
   roll() {
     const roll = []
