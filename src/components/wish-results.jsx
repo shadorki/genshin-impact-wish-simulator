@@ -16,7 +16,7 @@ export default function WishResults(props) {
         </Row>
         <Row className="vh-90 justify-content-center align-items-center">
         {
-          wishData.map((item, index) => (
+          wishData.sort((item1, item2) => item2.rating - item1.rating).map((item, index) => (
             <WishItem
             key={index}
             item={item}

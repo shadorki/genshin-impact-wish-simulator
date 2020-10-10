@@ -200,7 +200,7 @@
     "rating": 4,
     "class": "Polearm",
     "type": "weapon",
-    "src": "dragon's-bane.png"
+    "src": "dragons-bane.png"
   },
   {
     "name": "Rainslasher",
@@ -270,7 +270,7 @@
     "rating": 3,
     "class": "Bow",
     "type": "weapon",
-    "src": "sharpshooter's-oath.png"
+    "src": "sharpshooters-oath.png"
   },
   {
     "name": "Raven Bow",

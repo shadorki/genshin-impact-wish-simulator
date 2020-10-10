@@ -55,7 +55,7 @@
     "rating": 5,
     "class": "Claymore",
     "type": "weapon",
-    "src": "wolf's-gravestone.png"
+    "src": "wolfs-gravestone.png"
   },
   {
     "name": "Skyward Pride",
@@ -246,7 +246,7 @@
     "rating": 4,
     "class": "Polearm",
     "type": "weapon",
-    "src": "dragon's-bane.png"
+    "src": "dragons-bane.png"
   },
   {
     "name": "Rainslasher",
@@ -302,7 +302,7 @@
     "rating": 3,
     "class": "Bow",
     "type": "weapon",
-    "src": "sharpshooter's-oath.png"
+    "src": "sharpshooters-oath.png"
   },
   {
     "name": "Raven Bow",
