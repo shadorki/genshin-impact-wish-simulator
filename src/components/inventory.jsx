@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Title from './details-components/title'
 import Navbar from './details-components/navbar'
 import ListView from './inventory-components/list-view'
+import sadPaimon from '../assets/images/sad-paimon.png'
 
 export default class Inventory extends Component {
   constructor(props) {
@@ -41,7 +42,10 @@ export default class Inventory extends Component {
                   ))
                 )
                 : (
-                  'No Items'
+                  <Col xs='12' className="card p-4 d-flex justify-content-center align-items-center">
+                    <h4 className="text-center mb-5">No Items :(</h4>
+                    <img src={sadPaimon} alt="Sad paimon" className="mw-50"/>
+                  </Col>
                 )
               }
             </Row>

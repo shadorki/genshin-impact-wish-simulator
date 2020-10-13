@@ -261,6 +261,9 @@ td {
 .vh-10 {
   height: 10vh !important;
 }
+.mw-50 {
+  max-width: 50% !important;
+}
 
 @media (max-width: 1200px) {
   .banner-button {
