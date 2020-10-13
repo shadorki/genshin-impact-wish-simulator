@@ -12,8 +12,11 @@ export default class WishResults extends Component {
     const wishData = this.props.wish()
     this.setState({ wishData })
   }
+  isNewItem(key) {
+    return !this.props.inventory[key]
+  }
   render() {
-    const { wish, setView } = this.props
+    const { wish, setView, updateInventory } = this.props
     const { wishData } = this.state
     return (
       <div className="wish-results">
@@ -21,7 +24,10 @@ export default class WishResults extends Component {
           <Row className="vh-10">
             <Col xs="12">
               <div className="d-flex justify-content-end mt-2">
-                <div onClick={() => setView('banners')} className="close-button"></div>
+                <div onClick={() => {
+                  setView('banners');
+                  updateInventory(wishData);
+                }} className="close-button"></div>
               </div>
             </Col>
           </Row>
@@ -31,6 +37,7 @@ export default class WishResults extends Component {
                 <WishItem
                   key={index}
                   item={item}
+                  isNewItem={this.isNewItem(item.name)}
                 />
               ))
             }

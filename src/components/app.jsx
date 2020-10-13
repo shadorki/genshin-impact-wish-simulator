@@ -14,7 +14,8 @@ export default class App extends Component {
       view: 'banners',
       currentDetails: 'beginners-wish',
       selectedWish: 'beginnersWish',
-      isBeginnersWishLimited: false
+      isBeginnersWishLimited: false,
+      inventory: {}
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
@@ -42,6 +43,24 @@ export default class App extends Component {
   wish() {
     return this[this.state.selectedWish].roll()
   }
+  updateInventory(items) {
+    // Deep copy inventory
+    let { inventory } = this.state
+    inventory = Object.assign({}, inventory)
+    for(const item in inventory) {
+      inventory[item] = Object.assign({}, inventory[item])
+    }
+    // Organize the items to update quantity
+    for(let i = 0; i < items.length; i++) {
+      if(inventory[items[i].name]) {
+        inventory[items[i].name].quantity++
+      } else {
+        inventory[items[i].name] = items[i]
+        inventory[items[i].name].quantity = 1
+      }
+    }
+    this.setState({inventory})
+  }
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
@@ -49,7 +68,12 @@ export default class App extends Component {
     })
   }
   render () {
-    const {currentDetails, view, isBeginnersWishLimited} = this.state
+    const {
+          currentDetails,
+          view,
+          isBeginnersWishLimited,
+          inventory
+        } = this.state
         switch(view) {
           case 'banners':
             return <Banners
@@ -70,7 +94,9 @@ export default class App extends Component {
           case 'wish-results':
             return <WishResults
             wish={this.wish.bind(this)}
+            updateInventory={this.updateInventory.bind(this)}
             setView={this.setView}
+            inventory={inventory}
             />
         }
   }

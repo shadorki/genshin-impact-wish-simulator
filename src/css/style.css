@@ -226,7 +226,19 @@ td {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.new-badge {
+  position: absolute;
+  top: -7px;
+  right: -4px;
+  color: white;
+  padding: 1px 2px;
+  border-radius: 6px;
+  font-size: .8rem;
+  background-color: darkgoldenrod;
+  opacity: 0.9;
+}
 .wish-item {
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(50, 50, 50, 0.9);
