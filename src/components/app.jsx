@@ -60,7 +60,6 @@ export default class App extends Component {
         inventory[items[i].name].quantity = 1
       }
     }
-    console.log(inventory)
     this.setState({inventory})
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
