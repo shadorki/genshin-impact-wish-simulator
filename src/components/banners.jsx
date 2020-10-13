@@ -7,33 +7,50 @@ export default class Banners extends Component {
     super(props)
     this.state = {
       selectedBanner: 'beginners-wish',
-    }
-    this.banners = {
-      'beginners-wish': 'Novice Wishes',
-      'ballad-in-goblets': 'Character Event Wish',
-      'epitome-invocation': 'Weapon Event Wish',
-      'wanderlust-invocation': 'Standard Wish'
-    }
-    this.wishes = {
-      'beginners-wish': 'beginnersWish',
-      'ballad-in-goblets': 'balladInGoblets',
-      'epitome-invocation': 'epitomeInvocation',
-      'wanderlust-invocation': 'wanderlustInvocation'
+      banners: {
+        'beginners-wish': 'Novice Wishes',
+        'ballad-in-goblets': 'Character Event Wish',
+        'epitome-invocation': 'Weapon Event Wish',
+        'wanderlust-invocation': 'Standard Wish'
+      },
+      wishes: {
+        'beginners-wish': 'beginnersWish',
+        'ballad-in-goblets': 'balladInGoblets',
+        'epitome-invocation': 'epitomeInvocation',
+        'wanderlust-invocation': 'wanderlustInvocation'
+      },
+      wasBeginnersWishDisabled: false
     }
   }
   onCarouselChange(index) {
-    this.switchBanner(Object.keys(this.banners)[index])
+    this.switchBanner(Object.keys(this.state.banners)[index])
   }
   switchBanner(selectedBanner) {
     this.setState({selectedBanner}, () => this.props.setCurrentDetails(selectedBanner))
   }
   get bannerText() {
-    return this.banners[this.state.selectedBanner]
+    return this.state.banners[this.state.selectedBanner]
+  }
+  disableBeginnersWish() {
+    if(this.state.wasBeginnersWishDisabled) return;
+    let { banners, wishes } = this.state
+    banners = Object.assign({}, banners)
+    wishes = Object.assign({}, wishes)
+    delete banners['beginners-wish']
+    delete wishes['beginners-wish']
+    this.setState({
+      banners,
+      wishes,
+      wasBeginnersWishDisabled: true
+    })
   }
   render() {
     const { selectedBanner } = this.state
-    const bannerKeys = Object.keys(this.banners);
+    const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
+    if(this.props.isBeginnersWishLimited) {
+      this.disableBeginnersWish()
+    }
     return (
       <div className="wrapper banners">
         <div className="heading">
@@ -89,7 +106,7 @@ export default class Banners extends Component {
               className="wish-button"
               onClick={() => {
                 this.props.setView('wish')
-                this.props.setSelectedWish(this.wishes[selectedBanner])
+                this.props.setSelectedWish(this.state.wishes[selectedBanner])
               }}
               >
                 Wish x10

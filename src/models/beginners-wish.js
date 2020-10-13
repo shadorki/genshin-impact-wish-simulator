@@ -2,14 +2,18 @@ import BaseGacha from './base-gacha'
 import drops from '../data/beginners-wish.json'
 
 export default class BeginnersWish extends BaseGacha {
-  constructor() {
+  constructor(setBeginnersWishDisable = () => {}) {
     super(drops)
     this.attemptsCount = 0;
     this.guaranteedNoelle = true
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    this.setBeginnersWishDisable = setBeginnersWishDisable
   }
   set attempts(amount) {
     this.attemptsCount += amount
+    if(this.attemptsCount === 20) {
+      this.setBeginnersWishDisable(true)
+    }
   }
   roll() {
     // Beginners wish is limited to 20 rolls

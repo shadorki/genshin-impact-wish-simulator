@@ -91,7 +91,7 @@ describe('Testing suite for genshin impact gacha', () => {
     it('should have a 4 or 5 star item on the second roll', done => {
       secondResult = beginners.roll()
       const item = secondResult.find(item => item.rating === 4 || item.rating === 5)
-      expect(!!(item)).to.be.true
+      expect(item.rating === 4 || item.rating === 5).to.be.true
       done()
     })
     it('should return null for the third roll', done => {

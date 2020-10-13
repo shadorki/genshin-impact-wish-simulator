@@ -13,13 +13,15 @@ export default class App extends Component {
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
-      selectedWish: 'beginnersWish'
+      selectedWish: 'beginnersWish',
+      isBeginnersWishLimited: false
     }
+    this.setView = this.setView.bind(this)
+    this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.balladInGoblets = new BalladInGoblets()
-    this.beginnersWish = new BeginnersWish()
+    this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
-    this.setView = this.setView.bind(this)
   }
   setView(view) {
     this.setState({view})
@@ -40,14 +42,18 @@ export default class App extends Component {
     console.log('hit')
     return this[this.state.selectedWish].roll()
   }
+  setBeginnersWishDisable(isBeginnersWishLimited) {
+    this.setState({isBeginnersWishLimited})
+  }
   render () {
-    const {currentDetails, view} = this.state
+    const {currentDetails, view, isBeginnersWishLimited} = this.state
         switch(view) {
           case 'banners':
             return <Banners
               setView={this.setView}
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
+              isBeginnersWishLimited={isBeginnersWishLimited}
             />
           case 'details':
             return <Details
@@ -60,7 +66,7 @@ export default class App extends Component {
             />
           case 'wish-results':
             return <WishResults
-            wishData={this.wish()}
+            wish={this.wish.bind(this)}
             setView={this.setView}
             />
         }
