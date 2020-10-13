@@ -15,7 +15,6 @@ export default class WishResults extends Component {
   render() {
     const { wish, setView } = this.props
     const { wishData } = this.state
-    console.log(wishData)
     return (
       <div className="wish-results">
         <Container>

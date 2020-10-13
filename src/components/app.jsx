@@ -27,9 +27,10 @@ export default class App extends Component {
     this.setState({view})
   }
   backToHome() {
+    const { isBeginnersWishLimited } = this.state
     this.setState({
       view: 'banners',
-      currentDetails: 'beginners-wish'
+      currentDetails: this.beginnersWish.attemptsCount === 20 ? 'ballad-in-goblets' : 'beginners-wish'
     })
   }
   setCurrentDetails(currentDetails) {
@@ -39,11 +40,13 @@ export default class App extends Component {
     this.setState({selectedWish})
   }
   wish() {
-    console.log('hit')
     return this[this.state.selectedWish].roll()
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
-    this.setState({isBeginnersWishLimited})
+    this.setState({
+      isBeginnersWishLimited,
+      currentDetails: 'ballad-in-goblets'
+    })
   }
   render () {
     const {currentDetails, view, isBeginnersWishLimited} = this.state

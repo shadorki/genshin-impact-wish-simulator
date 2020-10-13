@@ -22,6 +22,11 @@ export default class Banners extends Component {
       wasBeginnersWishDisabled: false
     }
   }
+  componentDidMount() {
+    if(this.props.isBeginnersWishLimited) {
+      this.disableBeginnersWish()
+    }
+  }
   onCarouselChange(index) {
     this.switchBanner(Object.keys(this.state.banners)[index])
   }
@@ -41,16 +46,14 @@ export default class Banners extends Component {
     this.setState({
       banners,
       wishes,
-      wasBeginnersWishDisabled: true
+      wasBeginnersWishDisabled: true,
+      selectedBanner: 'ballad-in-goblets',
     })
   }
   render() {
     const { selectedBanner } = this.state
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
-    if(this.props.isBeginnersWishLimited) {
-      this.disableBeginnersWish()
-    }
     return (
       <div className="wrapper banners">
         <div className="heading">
