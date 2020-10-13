@@ -31,19 +31,19 @@ export default class WanderlustInvocation extends BaseGacha {
     return roll
   }
   rollBasedOffProbability() {
-    const itemRating = this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-    return this.getRandomItem(itemRating)
+    return this.getRandomItem(this.getRandomRating())
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
     return item
   }
+  getRandomRating() {
+    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
+  }
   getGuaranteed4StarItemOrHigher() {
-    // 12% chance of getting 5 star item
-    const twelveRandomNumbers = this.generateRandomNumbers(12, 100)
-    const randomNumber = this.generateRandomNumber(100)
-    const didUserGet5StarItem = twelveRandomNumbers.has(randomNumber)
+    // .6% chance of getting 5 star item
+    const didUserGet5StarItem = this.getRandomRating() === 5
     if (didUserGet5StarItem) {
       return this.getRandomItem(5)
     }

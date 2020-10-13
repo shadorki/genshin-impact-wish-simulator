@@ -38,8 +38,7 @@ export default class EpitomeInvocation extends BaseGacha {
     return roll
   }
   rollBasedOffProbability() {
-    const itemRating = this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-    return this.getRandomItem(itemRating)
+    return this.getRandomItem(this.getRandomRating())
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
@@ -55,6 +54,9 @@ export default class EpitomeInvocation extends BaseGacha {
     this.guaranteedFeatured5Star = true
     return this.getRandomItem(5)
   }
+  getRandomRating() {
+    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
+  }
   getGuaranteed4StarItemOrHigher() {
     // check if user got featuredItem
     // there are 75 5s in there, so if it is 5 its true if 4 false
@@ -62,10 +64,8 @@ export default class EpitomeInvocation extends BaseGacha {
     // because 75 random numbers out of 100 every time can be dependent on random odds
     const didUserGetFeaturedItem = this.chanceRange[this.generateRandomNumber(100)] === 5
     // shuffle the range of
-    // 12% chance of getting 5 star item
-    const twelveRandomNumbers = this.generateRandomNumbers(12, 100)
-    const randomNumber = this.generateRandomNumber(100)
-    const didUserGet5StarItem = twelveRandomNumbers.has(randomNumber)
+    // .5% chance of getting 5 star item
+    const didUserGet5StarItem = this.getRandomRating() === 5
 
     if(this.guaranteedFeatured5Star && didUserGet5StarItem) {
       this.guaranteedFeatured5Star = false

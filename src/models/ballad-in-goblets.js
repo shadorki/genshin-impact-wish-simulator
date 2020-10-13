@@ -36,8 +36,10 @@ export default class BalladInGoblets extends BaseGacha {
     return roll
   }
   rollBasedOffProbability() {
-    const itemRating = this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-    return this.getRandomItem(itemRating)
+    return this.getRandomItem(this.getRandomRating())
+  }
+  getRandomRating() {
+    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
@@ -53,10 +55,9 @@ export default class BalladInGoblets extends BaseGacha {
     return this.getRandomItem(5)
   }
   getGuaranteed4StarItemOrHigher() {
-    // 12% chance of getting 5 star item
-    const twelveRandomNumbers = this.generateRandomNumbers(12, 100)
-    const randomNumber = this.generateRandomNumber(100)
-    const didUserGet5StarItem = twelveRandomNumbers.has(randomNumber)
+    // .5% chance of getting 5 star item
+    const itemRating = this.getRandomRating()
+    const didUserGet5StarItem = itemRating === 5
     if(didUserGet5StarItem) {
       return this.getRandomItem(5)
     }
