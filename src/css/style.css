@@ -3,6 +3,7 @@
 }
 body {
   margin: 0;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 p {
@@ -52,7 +53,7 @@ video {
   margin: 0;
 }
 .wrapper.banners > .heading > .close-window:hover {
-  cursor: pointer;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
 }
 .wrapper.banners > .heading > .select-banner {
   display: flex;
@@ -68,7 +69,7 @@ video {
   transition-duration: 500ms;
 }
 .banner-button:hover {
-  cursor: pointer;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
 }
 .banner-button.beginners-wish {
   background-image: url('../assets/images/ui/noelle.png');
@@ -129,7 +130,7 @@ button {
   transition: color 250ms ease-in;
 }
 button:hover {
-  cursor: pointer;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
   background-color: rgb(230, 227, 227);
 }
 .wish-button {
@@ -145,7 +146,7 @@ button:hover {
   justify-content: center;
 }
 .wish-button:hover {
-  cursor: pointer;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
   color: gold;
 }
 
@@ -217,7 +218,7 @@ td {
   font-size: 1.2rem;
 }
 .navbar > svg:hover {
-  cursor: pointer;
+  cursor: url('../assets/images/ui/cursor.png'), auto;
   color: goldenrod;
 }
 .wish-results {

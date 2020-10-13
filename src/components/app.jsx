@@ -3,6 +3,7 @@ import Banners from './banners'
 import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
+import Inventory from './inventory'
 import BalladInGoblets from '../models/ballad-in-goblets'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
@@ -59,6 +60,7 @@ export default class App extends Component {
         inventory[items[i].name].quantity = 1
       }
     }
+    console.log(inventory)
     this.setState({inventory})
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
@@ -97,6 +99,11 @@ export default class App extends Component {
             updateInventory={this.updateInventory.bind(this)}
             setView={this.setView}
             inventory={inventory}
+            />
+          case 'inventory':
+            return <Inventory
+            inventory={inventory}
+            backToHome={this.backToHome.bind(this)}
             />
         }
   }
