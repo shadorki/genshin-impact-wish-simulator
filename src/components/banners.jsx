@@ -60,7 +60,7 @@ export default class Banners extends Component {
             showThumbs={false}
             showIndicators={false}
             showStatus={false}
-            emulateTouch={true}
+            emulateTouch={false}
             showArrows={false}
             infiniteLoop={true}
             selectedItem={selectedBannerIndex}

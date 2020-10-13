@@ -8,6 +8,7 @@ export default function Wish(props) {
     autoPlay={true}
     className="min-vh-100 w-100 overflow-hidden"
     onEnded={() => setView('wish-results')}
+    playsInline={true}
     >
       <source
         src={gachaClip}
