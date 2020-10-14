@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Container, Row, Col, Badge, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Title from './details-components/title'
 import Navbar from './details-components/navbar'
 import ListView from './inventory-components/list-view'
 import sadPaimon from '../assets/images/sad-paimon.png'
+import IconView from './inventory-components/icon-view';
 
 export default class Inventory extends Component {
   constructor(props) {
@@ -18,15 +18,21 @@ export default class Inventory extends Component {
   onChange({target: {name, value}}) {
     this.setState({[name]: value})
   }
+  calculateAmountSpent(list) {
+    let wishes = list.reduce((acc, curr) => acc + curr.quantity, 0)
+    return `$${((0.0129 * 160) * wishes).toFixed(2)}`
+  }
   render() {
     const { backToHome, inventory } = this.props
-    const { orderBy } = this.state
+    const { orderBy, view } = this.state
     const inventoryList = Object.values(inventory)
     const sorting = {
       rating: (item1, item2) => item2.rating - item1.rating,
       quantity: (item1, item2) => item2.quantity - item1.quantity,
       name: (item1, item2) => item1.name.localeCompare(item2.name),
     }
+    // est cost per primogen, 1600 gems per 10 wishes
+    const amountSpent = this.calculateAmountSpent(inventoryList)
     return (
       <>
         <Navbar
@@ -41,7 +47,7 @@ export default class Inventory extends Component {
             onSubmit={e => e.preventDefault()}
             >
               <Row>
-                <Col xs="6">
+                <Col xs="4">
                   <FormGroup>
                     <Label for="orderBy">Order By</Label>
                     <Input
@@ -56,7 +62,7 @@ export default class Inventory extends Component {
                     </Input>
                   </FormGroup>
                 </Col>
-                <Col xs="6">
+                <Col xs="4">
                   <FormGroup>
                     <Label for="view">View</Label>
                     <Input
@@ -70,17 +76,37 @@ export default class Inventory extends Component {
                     </Input>
                   </FormGroup>
                 </Col>
+                <Col xs="4">
+                  <FormGroup>
+                    <Label>Spent</Label>
+                      <Badge
+                        color="warning"
+                        className="amount-spent-badge"
+                      >
+                        {amountSpent}
+                      </Badge>
+                  </FormGroup>
+                </Col>
               </Row>
             </Form>
-            <Row>
+            <Row className='justify-content-center'>
               {
                 inventoryList.length
                 ? (
                   inventoryList.sort(sorting[orderBy]).map(item => (
-                    <ListView
-                    key={item.name}
-                    item={item}
-                    />
+                    view === 'listView'
+                    ? (
+                        <ListView
+                          key={item.name}
+                          item={item}
+                        />
+                    )
+                    : (
+                      <IconView
+                        key={item.name}
+                        item={item}
+                      />
+                    )
                   ))
                 )
                 : (

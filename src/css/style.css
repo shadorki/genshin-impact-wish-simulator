@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+*:hover {
+  cursor: url('../assets/images/ui/cursor.png'), auto !important;
+}
 body {
   margin: 0;
   cursor: url('../assets/images/ui/cursor.png'), auto;
@@ -254,6 +257,27 @@ td {
 }
 .wish-item.weapon {
   background-size: contain;
+}
+.amount-spent-badge {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+.icon-item {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 340px !important;
+  color: white;
+  font-size: .8rem;
 }
 .vh-90 {
   height: 90vh !important;
