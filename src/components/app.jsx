@@ -25,6 +25,9 @@ export default class App extends Component {
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
   }
+  componentDidMount() {
+    this.loadData()
+  }
   setView(view) {
     this.setState({view})
   }
@@ -60,7 +63,38 @@ export default class App extends Component {
         inventory[items[i].name].quantity = 1
       }
     }
-    this.setState({inventory})
+    this.setState({inventory}, this.saveData)
+  }
+  saveData() {
+    const {
+      isBeginnersWishLimited,
+      inventory
+    } = this.state
+    const data = {
+      isBeginnersWishLimited,
+      inventory,
+      beginnersWishCount: this.beginnersWish.attemptsCount,
+      balladInGobletsCount: this.balladInGoblets.attemptsCount,
+      wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
+      epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
+    }
+    localStorage.setItem('data', JSON.stringify(data))
+  }
+  loadData(){
+    const data = JSON.parse(localStorage.getItem('data'))
+    if(!data) return;
+    const {
+      isBeginnersWishLimited,
+      inventory,
+    } = data
+    this.beginnersWish.attempts = data.beginnersWishCount
+    this.balladInGoblets.attempts = data.balladInGobletsCount
+    this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
+    this.epitomeInvocation.attempts = data.epitomeInvocationCount
+    this.setState({
+      isBeginnersWishLimited,
+      inventory
+    }, this.backToHome)
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({

@@ -27,6 +27,11 @@ export default class Banners extends Component {
       this.disableBeginnersWish()
     }
   }
+  componentDidUpdate(prevProps) {
+    if(prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
+      this.disableBeginnersWish()
+    }
+  }
   onCarouselChange(index) {
     this.switchBanner(Object.keys(this.state.banners)[index])
   }
