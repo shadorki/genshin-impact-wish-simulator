@@ -16,7 +16,8 @@ export default class App extends Component {
       currentDetails: 'beginners-wish',
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
-      inventory: {}
+      inventory: {},
+      wasDisclaimerSeen: false
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
@@ -36,6 +37,11 @@ export default class App extends Component {
     this.setState({
       view: 'banners',
       currentDetails: this.beginnersWish.attemptsCount === 20 ? 'ballad-in-goblets' : 'beginners-wish'
+    })
+  }
+  hideModal() {
+    this.setState({
+      wasDisclaimerSeen: true
     })
   }
   setCurrentDetails(currentDetails) {
@@ -107,7 +113,8 @@ export default class App extends Component {
           currentDetails,
           view,
           isBeginnersWishLimited,
-          inventory
+          inventory,
+          wasDisclaimerSeen
         } = this.state
         switch(view) {
           case 'banners':
@@ -116,6 +123,8 @@ export default class App extends Component {
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
               isBeginnersWishLimited={isBeginnersWishLimited}
+              wasDisclaimerSeen={wasDisclaimerSeen}
+              hideModal={this.hideModal.bind(this)}
             />
           case 'details':
             return <Details

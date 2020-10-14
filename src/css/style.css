@@ -279,6 +279,32 @@ td {
   color: white;
   font-size: .8rem;
 }
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(50, 50, 50, 0.7);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.disclaimer-modal-content {
+  background-color: #ebebeb;
+  text-align: center;
+  position: relative;
+}
+.disclaimer-modal-content > .close-button {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+.disclaimer-modal-content > p {
+  font-size: 1rem;
+  margin: .2rem;
+}
 .vh-90 {
   height: 90vh !important;
 }

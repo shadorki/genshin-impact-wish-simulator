@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BannerButton from './banner-button';
 import { Carousel } from 'react-responsive-carousel';
+import Modal from './modal';
 const banners = require.context('../assets/images/banners', true);
 export default class Banners extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ export default class Banners extends Component {
   get bannerText() {
     return this.state.banners[this.state.selectedBanner]
   }
+
   disableBeginnersWish() {
     if(this.state.wasBeginnersWishDisabled) return;
     let { banners, wishes } = this.state
@@ -57,9 +59,21 @@ export default class Banners extends Component {
   }
   render() {
     const { selectedBanner } = this.state
+    const {
+      wasDisclaimerSeen,
+      setView,
+      setSelectedWish,
+      hideModal
+      } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
     return (
+      <>
+      {
+        wasDisclaimerSeen
+        ? null
+        : <Modal hideModal={hideModal}/>
+      }
       <div className="wrapper banners">
         <div className="heading">
           <div className="current-banner">
@@ -105,18 +119,18 @@ export default class Banners extends Component {
         <div className="action-container">
             <div className="button-container">
               <button
-              onClick={() => this.props.setView('details')}
+              onClick={() => setView('details')}
               >Details</button>
               <button
-              onClick={() => this.props.setView('inventory')}
+              onClick={() => setView('inventory')}
               >Inventory</button>
             </div>
             <div className="wish-container">
               <div
               className="wish-button"
               onClick={() => {
-                this.props.setView('wish')
-                this.props.setSelectedWish(this.state.wishes[selectedBanner])
+                setView('wish')
+                setSelectedWish(this.state.wishes[selectedBanner])
               }}
               >
                 Wish x10
@@ -124,6 +138,7 @@ export default class Banners extends Component {
             </div>
         </div>
       </div>
+      </>
     )
   }
 }
