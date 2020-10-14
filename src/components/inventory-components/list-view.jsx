@@ -27,7 +27,7 @@ export default function ListView(props) {
           <Col xs='3' className="d-flex justify-content-center align-items-center">
             <ReactStars
               count={rating}
-              size={16}
+              size={15}
               edit={false}
               color="#ffd700"
             />
