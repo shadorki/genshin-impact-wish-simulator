@@ -136,6 +136,17 @@ button:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
   background-color: rgb(230, 227, 227);
 }
+.skip-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
+  opacity: 0.4;
+  transition: opacity 500ms;
+}
+.skip-button:hover {
+  opacity: 1;
+}
 .wish-button {
   background-size: contain;
   background-position: center;
