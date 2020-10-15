@@ -73,6 +73,7 @@ export default class App extends Component {
   }
   reset() {
     this.beginnersWish.attemptsCount = 0
+    this.beginnersWish.guaranteedNoelle = true
     this.balladInGoblets.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
