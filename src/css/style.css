@@ -138,8 +138,8 @@ button:hover {
 }
 .skip-button {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 7px;
+  right: 5px;
   z-index: 10;
   opacity: 0.4;
   transition: opacity 500ms;
@@ -368,5 +368,12 @@ td {
     width: 100px;
     margin-left: 1.2rem;
     text-align: center;
+  }
+  .wish-container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .wish-button {
+    width:  123px;
   }
 }

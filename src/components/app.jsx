@@ -71,6 +71,17 @@ export default class App extends Component {
     }
     this.setState({inventory}, this.saveData)
   }
+  reset() {
+    this.beginnersWish.attemptsCount = 0
+    this.balladInGoblets.attemptsCount = 0
+    this.wanderlustInvocation.attemptsCount = 0
+    this.epitomeInvocation.attemptsCount = 0
+    this.setState({
+      isBeginnersWishLimited: false,
+      currentDetails: 'beginners-wish',
+      inventory: {}
+    }, this.saveData)
+  }
   saveData() {
     const {
       isBeginnersWishLimited,
@@ -105,7 +116,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: 'ballad-in-goblets'
+      currentDetails: isBeginnersWishLimited ? 'ballad-in-goblets' : 'beginners-wish'
     })
   }
   render () {
@@ -125,6 +136,7 @@ export default class App extends Component {
               isBeginnersWishLimited={isBeginnersWishLimited}
               wasDisclaimerSeen={wasDisclaimerSeen}
               hideModal={this.hideModal.bind(this)}
+              reset={this.reset.bind(this)}
             />
           case 'details':
             return <Details

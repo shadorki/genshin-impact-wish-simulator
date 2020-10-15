@@ -24,13 +24,11 @@ export default class Banners extends Component {
     }
   }
   componentDidMount() {
-    if(this.props.isBeginnersWishLimited) {
-      this.disableBeginnersWish()
-    }
+      this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
   }
   componentDidUpdate(prevProps) {
     if(prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
-      this.disableBeginnersWish()
+      this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
     }
   }
   onCarouselChange(index) {
@@ -43,19 +41,40 @@ export default class Banners extends Component {
     return this.state.banners[this.state.selectedBanner]
   }
 
-  disableBeginnersWish() {
-    if(this.state.wasBeginnersWishDisabled) return;
-    let { banners, wishes } = this.state
-    banners = Object.assign({}, banners)
-    wishes = Object.assign({}, wishes)
-    delete banners['beginners-wish']
-    delete wishes['beginners-wish']
-    this.setState({
-      banners,
-      wishes,
-      wasBeginnersWishDisabled: true,
-      selectedBanner: 'ballad-in-goblets',
-    })
+  toggleBeginnersWish(isLimited) {
+    if(isLimited) {
+      this.setState({
+        selectedBanner: 'ballad-in-goblets',
+        banners: {
+          'ballad-in-goblets': 'Character Event Wish',
+          'epitome-invocation': 'Weapon Event Wish',
+          'wanderlust-invocation': 'Standard Wish'
+        },
+        wishes: {
+          'ballad-in-goblets': 'balladInGoblets',
+          'epitome-invocation': 'epitomeInvocation',
+          'wanderlust-invocation': 'wanderlustInvocation'
+        },
+        wasBeginnersWishDisabled: isLimited
+      })
+    } else {
+      this.setState({
+        selectedBanner: 'beginners-wish',
+        banners: {
+          'beginners-wish': 'Novice Wishes',
+          'ballad-in-goblets': 'Character Event Wish',
+          'epitome-invocation': 'Weapon Event Wish',
+          'wanderlust-invocation': 'Standard Wish'
+        },
+        wishes: {
+          'beginners-wish': 'beginnersWish',
+          'ballad-in-goblets': 'balladInGoblets',
+          'epitome-invocation': 'epitomeInvocation',
+          'wanderlust-invocation': 'wanderlustInvocation'
+        },
+        wasBeginnersWishDisabled: isLimited
+      })
+    }
   }
   render() {
     const { selectedBanner } = this.state
@@ -63,7 +82,8 @@ export default class Banners extends Component {
       wasDisclaimerSeen,
       setView,
       setSelectedWish,
-      hideModal
+      hideModal,
+      reset
       } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -91,7 +111,7 @@ export default class Banners extends Component {
               ))
             }
           </div>
-          <div className="close-window"></div>
+            <div className="close-window"></div>
         </div>
         <div className="carousel-container">
           <Carousel
@@ -125,7 +145,7 @@ export default class Banners extends Component {
               onClick={() => setView('inventory')}
               >Inventory</button>
             </div>
-            <div className="wish-container">
+            <div className="wish-container d-flex justify-content-center">
               <div
               className="wish-button"
               onClick={() => {
@@ -135,6 +155,10 @@ export default class Banners extends Component {
               >
                 Wish x10
               </div>
+              <div
+                onClick={reset}
+                className="wish-button"
+                >Reset</div>
             </div>
         </div>
       </div>
