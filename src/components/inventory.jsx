@@ -11,7 +11,8 @@ export default class Inventory extends Component {
     super(props)
     this.state = {
       view: 'listView',
-      orderBy: 'rating'
+      orderBy: 'rating',
+      showOnly: 'all'
     }
     this.onChange = this.onChange.bind(this)
   }
@@ -24,12 +25,20 @@ export default class Inventory extends Component {
   }
   render() {
     const { backToHome, inventory } = this.props
-    const { orderBy, view } = this.state
+    const { orderBy, view, showOnly } = this.state
     const inventoryList = Object.values(inventory)
     const sorting = {
       rating: (item1, item2) => item2.rating - item1.rating,
       quantity: (item1, item2) => item2.quantity - item1.quantity,
       name: (item1, item2) => item1.name.localeCompare(item2.name),
+    }
+    const showFilter = {
+      all: item => item,
+      characters: item => item.type === 'character',
+      weapons: item => item.type === 'weapon',
+      fiveStars: item => item.rating === 5,
+      fourStars: item => item.rating === 4,
+      threeStars: item => item.rating === 3
     }
     // est cost per primogen, 1600 gems per 10 wishes
     const amountSpent = this.calculateAmountSpent(inventoryList)
@@ -47,7 +56,7 @@ export default class Inventory extends Component {
             onSubmit={e => e.preventDefault()}
             >
               <Row>
-                <Col xs="4">
+                <Col xs="6" sm="3">
                   <FormGroup>
                     <Label for="orderBy">Order By</Label>
                     <Input
@@ -62,7 +71,25 @@ export default class Inventory extends Component {
                     </Input>
                   </FormGroup>
                 </Col>
-                <Col xs="4">
+                <Col xs="6" sm="3">
+                  <FormGroup>
+                    <Label for="showOnly">Show Only</Label>
+                    <Input
+                      type="select"
+                      name="showOnly"
+                      id="showOnly"
+                      onChange={this.onChange}
+                    >
+                      <option value="all">All</option>
+                      <option value="characters">Characters</option>
+                      <option value="weapons">Weapons</option>
+                      <option value="fiveStars">5 Stars</option>
+                      <option value="fourStars">4 Stars</option>
+                      <option value="threeStars">3 Stars</option>
+                    </Input>
+                  </FormGroup>
+                </Col>
+                <Col xs="6" sm="3">
                   <FormGroup>
                     <Label for="view">View</Label>
                     <Input
@@ -76,7 +103,7 @@ export default class Inventory extends Component {
                     </Input>
                   </FormGroup>
                 </Col>
-                <Col xs="4">
+                <Col xs="6" sm="3">
                   <FormGroup>
                     <Label>Spent</Label>
                       <Badge
@@ -93,7 +120,10 @@ export default class Inventory extends Component {
               {
                 inventoryList.length
                 ? (
-                  inventoryList.sort(sorting[orderBy]).map(item => (
+                  inventoryList
+                  .sort(sorting[orderBy])
+                  .filter(showFilter[showOnly])
+                  .map(item => (
                     view === 'listView'
                     ? (
                         <ListView
