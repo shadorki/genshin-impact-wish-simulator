@@ -17,7 +17,8 @@ export default class App extends Component {
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
       inventory: {},
-      wasDisclaimerSeen: false
+      wasDisclaimerSeen: false,
+      currentWishes: []
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
@@ -50,8 +51,11 @@ export default class App extends Component {
   setSelectedWish(selectedWish) {
     this.setState({selectedWish})
   }
-  wish() {
-    return this[this.state.selectedWish].roll()
+  wish(selectedWish) {
+    this.setState({
+      currentWishes: this[selectedWish].roll(),
+      selectedWish
+    }, () => this.setView('wish'))
   }
   updateInventory(items) {
     // Deep copy inventory
@@ -69,7 +73,7 @@ export default class App extends Component {
         inventory[items[i].name].quantity = 1
       }
     }
-    this.setState({inventory}, this.saveData)
+    this.setState({inventory, currentWishes: []}, this.saveData)
   }
   reset() {
     this.beginnersWish.attemptsCount = 0
@@ -126,7 +130,8 @@ export default class App extends Component {
           view,
           isBeginnersWishLimited,
           inventory,
-          wasDisclaimerSeen
+          wasDisclaimerSeen,
+          currentWishes
         } = this.state
         switch(view) {
           case 'banners':
@@ -136,6 +141,7 @@ export default class App extends Component {
               setSelectedWish={this.setSelectedWish.bind(this)}
               isBeginnersWishLimited={isBeginnersWishLimited}
               wasDisclaimerSeen={wasDisclaimerSeen}
+              wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
               reset={this.reset.bind(this)}
             />
@@ -147,10 +153,11 @@ export default class App extends Component {
           case 'wish':
             return <Wish
             setView={this.setView}
+            is5StarItem={currentWishes.some(item => item.rating === 5)}
             />
           case 'wish-results':
             return <WishResults
-            wish={this.wish.bind(this)}
+            wishes={currentWishes}
             updateInventory={this.updateInventory.bind(this)}
             setView={this.setView}
             inventory={inventory}

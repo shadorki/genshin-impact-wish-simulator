@@ -83,7 +83,8 @@ export default class Banners extends Component {
       setView,
       setSelectedWish,
       hideModal,
-      reset
+      reset,
+      wish
       } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -149,8 +150,7 @@ export default class Banners extends Component {
               <div
               className="wish-button"
               onClick={() => {
-                setView('wish')
-                setSelectedWish(this.state.wishes[selectedBanner])
+                wish(this.state.wishes[selectedBanner])
               }}
               >
                 Wish x10

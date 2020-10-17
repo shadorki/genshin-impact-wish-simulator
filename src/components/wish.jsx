@@ -1,8 +1,9 @@
 import React from 'react';
-import gachaClip from '../assets/images/ui/gacha.mp4'
+import fourStarClip from '../assets/images/ui/4starwish.mp4'
+import fiveStarClip from '../assets/images/ui/5starwish.mp4'
 
 export default function Wish(props) {
-  const { setView } = props
+  const { setView, is5StarItem } = props
   return (
     <>
     <button
@@ -15,7 +16,7 @@ export default function Wish(props) {
     playsInline={true}
     >
       <source
-        src={gachaClip}
+        src={is5StarItem ? fiveStarClip : fourStarClip}
         type="video/mp4"/>
     </video>
     </>
