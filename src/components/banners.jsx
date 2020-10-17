@@ -25,6 +25,7 @@ export default class Banners extends Component {
   }
   componentDidMount() {
       this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
+      this.setState({selectedBanner: this.props.selectedBanner})
   }
   componentDidUpdate(prevProps) {
     if(prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {

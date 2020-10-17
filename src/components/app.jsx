@@ -36,8 +36,7 @@ export default class App extends Component {
   backToHome() {
     const { isBeginnersWishLimited } = this.state
     this.setState({
-      view: 'banners',
-      currentDetails: this.beginnersWish.attemptsCount === 20 ? 'ballad-in-goblets' : 'beginners-wish'
+      view: 'banners'
     })
   }
   hideModal() {
@@ -131,6 +130,7 @@ export default class App extends Component {
           isBeginnersWishLimited,
           inventory,
           wasDisclaimerSeen,
+          selectedDetail,
           currentWishes
         } = this.state
         switch(view) {
@@ -139,6 +139,7 @@ export default class App extends Component {
               setView={this.setView}
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
+              selectedBanner={currentDetails}
               isBeginnersWishLimited={isBeginnersWishLimited}
               wasDisclaimerSeen={wasDisclaimerSeen}
               wish={this.wish.bind(this)}
