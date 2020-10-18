@@ -59,9 +59,13 @@ Try the application live at [https://gi-wish-simulator.uzairashraf.dev/](https:/
 - User can wish
 - User can view banners
 - User can switch banners
+- User can preserve the banner they wished for
 - User can view inventory
+- User can reset inventory
+- User can filter between characters, weapons, and ratings in inventory
 - User can see estimated money spent in USD
 - User can see wish animation before seeing pulls
+- User can see both 4 and 5 star animation for pulls
 - User can skip animation
 - User's inventory and attempts persists in local storage
 - User won't sue me (pls)
