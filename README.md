@@ -17,7 +17,7 @@ A React web application to simulate Genshin Impact gacha in the browser
   Pls don't get me in trouble this was just for fun T_T
 </p>
 <p>
-  All product names, logos, and brands are property of their respective owners in the United States and/or other countries.
+  All product names, logos, and brands are the property of their respective owners in the United States and/or other countries.
 </p>
 
 ## Technologies Used
