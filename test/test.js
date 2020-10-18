@@ -61,6 +61,28 @@ describe('Testing suite for genshin impact gacha', () => {
       expect(ballad.attemptsCount).to.be.equal(180)
       done()
     })
+    it('should have guaranteed Venti', done => {
+      // Initialize required variables.
+      const results = [];
+      const balladVenti = new BalladInGoblets();
+      const guaranteedGachaLimit = 18;
+      let hasVenti = false;
+
+      // Logically, we'll get Venti after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Venti). 
+      // Henceforth, it is the maximum pull.
+      for (let i = 0; i < guaranteedGachaLimit; i++) {
+        results.push(balladVenti.roll());
+
+        // Then, if we get Venti in less than 180 pulls, set 'hasVenti' to true and exit the loop.
+        if (results[i].find((item) => item.rating === 5 && item.name === 'Venti')) {
+          hasVenti = true;
+          break;
+        }
+      }
+
+      expect(hasVenti).to.be.true;
+      done();
+    })
   })
 
   ////////////////////////////////////////////////////////////////////////////////
