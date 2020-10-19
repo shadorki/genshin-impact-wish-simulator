@@ -47,8 +47,7 @@ export default class BalladInGoblets extends BaseGacha {
 
     // If our previous SSR didn't drop a Venti, then this time, we'll get him.
     if (this.guaranteedVenti && rating === 5) {
-      item = this.drops.find((el) => el.name === 'Venti');
-      this.guaranteedVenti = false;
+      return this.grabAVenti();
     } else {
       item = itemsList[this.generateRandomNumber(itemsList.length)];
     }

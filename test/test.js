@@ -1,6 +1,5 @@
 const chai = require('chai')
 const { expect } = chai
-import { assert } from 'chai'
 import BalladInGoblets from '../src/models/ballad-in-goblets'
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
@@ -92,18 +91,19 @@ describe('Testing suite for genshin impact gacha', () => {
 
       // Infinite loop, we want to keep pulling until we discovered a Venti.
       while (true) {
-        results.push(balladVenti.roll());
+        const roll = balladVenti.roll();
+        results.push(roll);
         
         // Filter all the results by its five star.
         // If there are any results, store its name in a new array for easier checking.
-        const filteredResults = results[results.length - 1].filter((item) => item.rating === 5);
-        const names = filteredResults.map((e) => e.name);
-        const areNamesFilled = names.length > 0 ? true : false;
+        const filteredResults = results[results.length - 1].filter(item => item.rating === 5);
+        const names = filteredResults.map(e => e.name);
+        const areNamesFilled = names.length > 0;
         
         // This step will fail if the second SSR is not Venti.
         // We'll also have to check if we pulled any SSR, hence the 'names.length' to prevent false negatives.
         if (hasSSR && !names.includes('Venti') && areNamesFilled) {
-          assert.fail('The second SSR pulled was not Venti!');
+          expect.fail('The second SSR pulled was not Venti!');
         }
 
         // If the first SSR is not Venti, set 'hasSSR' to true.
