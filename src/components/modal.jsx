@@ -33,6 +33,10 @@ export default function Modal(props) {
           <p>
             All product names, logos, and brands are property of their respective owners in the United States and/or other countries.
           </p>
+          <p className="font-weight-bold">
+            Please be warned that this tool is not guaranteed to reflect your true gacha experience. 
+            You might earn a 5 star here, but not in Genshin Impact, and in reverse. Use this tool with responsibility!
+          </p>
         </div>
       </div>
     </div>
