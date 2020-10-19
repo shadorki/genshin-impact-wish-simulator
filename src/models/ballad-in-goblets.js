@@ -42,8 +42,22 @@ export default class BalladInGoblets extends BaseGacha {
     return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
   getRandomItem(rating) {
-    const itemsList = this.getDrops(rating)
-    const item = itemsList[this.generateRandomNumber(itemsList.length)]
+    const itemsList = this.getDrops(rating);
+    let item;
+
+    // If our previous SSR didn't drop a Venti, then this time, we'll get him.
+    if (this.guaranteedVenti && rating === 5) {
+      item = this.drops.find((el) => el.name === 'Venti');
+      this.guaranteedVenti = false;
+    } else {
+      item = itemsList[this.generateRandomNumber(itemsList.length)];
+    }
+
+    // This is a checker to check if our current pull does not contain a Venti.
+    if (item.rating === 5 && item.name !== 'Venti') {
+      this.guaranteedVenti = true;
+    }
+
     return item
   }
   getGuaranteed5StarItem() {
@@ -51,7 +65,6 @@ export default class BalladInGoblets extends BaseGacha {
     if(this.guaranteedVenti || isVenti) {
       return this.grabAVenti()
     }
-    this.guaranteedVenti = true
     return this.getRandomItem(5)
   }
   getGuaranteed4StarItemOrHigher() {
