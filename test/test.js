@@ -96,7 +96,7 @@ describe('Testing suite for genshin impact gacha', () => {
         
         // Filter all the results by its five star.
         // If there are any results, store its name in a new array for easier checking.
-        const filteredResults = results[results.length - 1].filter(item => item.rating === 5);
+        const filteredResults = roll.filter(item => item.rating === 5);
         const names = filteredResults.map(e => e.name);
         const areNamesFilled = names.length > 0;
         
