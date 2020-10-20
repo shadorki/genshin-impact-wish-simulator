@@ -83,6 +83,50 @@ describe('Testing suite for genshin impact gacha', () => {
       expect(hasVenti).to.be.true;
       done();
     })
+    it('should give a Venti after pulling an SSR that is not Venti (first Venti pull is also acceptable)', done => {
+      const results = [];
+      const balladVenti = new BalladInGoblets();
+      let hasVenti = false;
+      let hasSSR = false;
+
+      // Infinite loop, we want to keep pulling until we discovered a Venti.
+      while (true) {
+        const roll = balladVenti.roll();
+        results.push(roll);
+        
+        // Filter all the results by its five star.
+        // If there are any results, store its name in a new array for easier checking.
+        const filteredResults = roll.filter(item => item.rating === 5);
+        const names = filteredResults.map(e => e.name);
+        const areNamesFilled = names.length > 0;
+        
+        // This step will fail if the second SSR is not Venti.
+        // We'll also have to check if we pulled any SSR, hence the 'names.length' to prevent false negatives.
+        if (hasSSR && !names.includes('Venti') && areNamesFilled) {
+          expect.fail('The second SSR pulled was not Venti!');
+        }
+
+        // If the first SSR is not Venti, set 'hasSSR' to true.
+        if (!names.includes('Venti') && areNamesFilled) {
+          hasSSR = true;
+        }
+
+        // The next SSR, we have to check if it is truly Venti.
+        if (hasSSR && names.includes('Venti') && areNamesFilled) {
+          hasVenti = true;
+          break;
+        }
+
+        // If the SSR is Venti, then exit.
+        if (names.includes('Venti') && areNamesFilled) {
+          hasVenti = true;
+          break;
+        }
+      }
+
+      expect(hasVenti).to.be.true;
+      done();
+    })
   })
 
   ////////////////////////////////////////////////////////////////////////////////
