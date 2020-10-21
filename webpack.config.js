@@ -11,7 +11,7 @@ module.exports = {
   "entry": "./src",
   "output": {
     "path": __dirname + '/dist',
-    "filename": "main.js"
+    "filename": 'main.[contenthash].js'
   },
   plugins: [
     new HTMLWebpackPlugin({
