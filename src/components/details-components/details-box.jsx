@@ -22,9 +22,9 @@ export default function DetailsBox(props) {
           <img src={isWeapon ? weaponDetailsThumbs(`./${src}`).default : characterDetailsThumbs(`./${title}.png`).default} className="img-fluid" />
         </Col>
         <Col xs="8">
-          <h3 className="text-white text-capitalize">
+          <h5 className="text-white text-capitalize">
             {title}
-          </h3>
+          </h5>
           <hr className="text-white"/>
         </Col>
       </Row>
