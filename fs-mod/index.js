@@ -1,17 +1,13 @@
 const fs = require('fs')
 const util = require('util')
-const p = require('path')
+const p = require('path');
 const readdir = util.promisify(fs.readdir);
-const path = p.join(__dirname, '../src/assets/images/details/character-icons/')
+const path = p.join(__dirname, '../src/assets/images/weapons/')
+const epitomeWeapons = require('../src/data/epitome-invocation.json').map(weapon => weapon.src)
 const run = async () => {
   try {
     const files = await readdir(path)
-    const newFiles = files.map(file => file.split(" ").join("-"))
-    files.forEach((filePath, i) => {
-      fs.rename(path + '/' + filePath, path + '/' + newFiles[i], () => {
-        console.log('success!')
-      })
-    })
+    console.log(epitomeWeapons)
   } catch(err) {
     console.log(err)
   }
