@@ -86,6 +86,12 @@ video {
 .banner-button.ballad-in-goblets.selected {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
+.banner-button.sparkling-steps {
+  background-image: url('../assets/images/ui/klee.png');
+}
+.banner-button.sparkling-steps.selected {
+  background-image: url('../assets/images/ui/klee-selected.png');
+}
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }

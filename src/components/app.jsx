@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import BalladInGoblets from '../models/ballad-in-goblets'
+import SparklingSteps from '../models/sparkling-steps'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -22,7 +22,7 @@ export default class App extends Component {
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
-    this.balladInGoblets = new BalladInGoblets()
+    this.sparklingSteps = new SparklingSteps()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -77,7 +77,7 @@ export default class App extends Component {
   reset() {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.balladInGoblets.attemptsCount = 0
+    this.sparklingSteps.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
@@ -95,7 +95,7 @@ export default class App extends Component {
       isBeginnersWishLimited,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      balladInGobletsCount: this.balladInGoblets.attemptsCount,
+      sparklingStepsCount: this.sparklingSteps.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
     }
@@ -109,7 +109,7 @@ export default class App extends Component {
       inventory,
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
-    this.balladInGoblets.attempts = data.balladInGobletsCount
+    this.sparklingSteps.attempts = data.sparklingStepsCount
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
@@ -120,7 +120,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'ballad-in-goblets' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'sparkling-steps' : 'beginners-wish'
     })
   }
   render () {

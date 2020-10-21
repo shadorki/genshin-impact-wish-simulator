@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'ballad-in-goblets': 'Character Event Wish',
+        'sparkling-steps': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'ballad-in-goblets': 'balladInGoblets',
+        'sparkling-steps': 'sparklingSteps',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if(isLimited) {
       this.setState({
-        selectedBanner: 'ballad-in-goblets',
+        selectedBanner: 'sparkling-steps',
         banners: {
-          'ballad-in-goblets': 'Character Event Wish',
+          'sparkling-steps': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'ballad-in-goblets': 'balladInGoblets',
+          'sparkling-steps': 'sparklingSteps',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -63,13 +63,13 @@ export default class Banners extends Component {
         selectedBanner: 'beginners-wish',
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'ballad-in-goblets': 'Character Event Wish',
+          'sparkling-steps': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'ballad-in-goblets': 'balladInGoblets',
+          'sparkling-steps': 'sparklingSteps',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
