@@ -8,6 +8,8 @@ import SparklingSteps from '../models/sparkling-steps'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
+import { version } from '../../package.json';
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -28,6 +30,7 @@ export default class App extends Component {
     this.wanderlustInvocation = new WanderlustInvocation()
   }
   componentDidMount() {
+    this.clearLocalStorageEveryNewBuild();
     this.loadData()
   }
   setView(view) {
@@ -122,6 +125,15 @@ export default class App extends Component {
       isBeginnersWishLimited,
       currentDetails: isBeginnersWishLimited ? 'sparkling-steps' : 'beginners-wish'
     })
+  }
+  clearLocalStorageEveryNewBuild() {
+    // If there is a new update or the user does not have the 'appVersion', we'll give one.
+    // We will also reset the local storage every time a new build occurs to avoid cache problems.
+    // We have to make sure to always bump the version number every time a new banner comes out, though.
+    if (!localStorage.getItem("appVersion") || localStorage.getItem("appVersion") !== version) {
+      localStorage.clear();
+      localStorage.setItem("appVersion", version);
+    }
   }
   render () {
     const {
