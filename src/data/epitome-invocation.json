@@ -1,115 +1,115 @@
 [
   {
-    "name": "Amos Bow",
+    "name": "Lost Prayer to the Sacred Winds",
     "rating": 5,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Catalyst",
     "isFeatured": true,
-    "src": "amos-bow.png"
+    "src": "lost-prayer-to-the-sacred-winds.png"
   },
   {
-    "name": "Aquila Favonia",
+    "name": "Wolf's Gravestone",
     "rating": 5,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Claymore",
     "isFeatured": true,
-    "src": "aquila-favonia.png"
+    "src": "wolfs-gravestone.png"
+  },
+  {
+    "name": "Amos Bow",
+    "rating": 5,
+    "type": "weapon",
+    "class": "Bow",
+    "src": "amos-bow.png"
   },
   {
     "name": "Skyward Harp",
     "rating": 5,
+    "type": "weapon",
     "class": "Bow",
-    "type": "weapon",
     "src": "skyward-harp.png"
-  },
-  {
-    "name": "Lost Prayer to the Sacred Winds",
-    "rating": 5,
-    "class": "Catalyst",
-    "type": "weapon",
-    "src": "lost-prayer-to-the-sacred-winds.png"
   },
   {
     "name": "Skyward Atlas",
     "rating": 5,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "skyward-atlas.png"
   },
   {
     "name": "Primordial Jade Winged-Spear",
     "rating": 5,
-    "class": "Polearm",
     "type": "weapon",
+    "class": "Polearm",
     "src": "primordial-jade-winged-spear.png"
   },
   {
     "name": "Skyward Spine",
     "rating": 5,
+    "type": "weapon",
     "class": "Polearm",
-    "type": "weapon",
     "src": "skyward-spine.png"
-  },
-  {
-    "name": "Wolf's Gravestone",
-    "rating": 5,
-    "class": "Claymore",
-    "type": "weapon",
-    "src": "wolfs-gravestone.png"
   },
   {
     "name": "Skyward Pride",
     "rating": 5,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "skyward-pride.png"
   },
   {
     "name": "Skyward Blade",
     "rating": 5,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "skyward-blade.png"
   },
   {
-    "name": "The Stringless",
-    "rating": 4,
-    "class": "Bow",
+    "name": "Aquila Favonia",
+    "rating": 5,
     "type": "weapon",
-    "isFeatured": true,
-    "src": "the-stringless.png"
-  },
-  {
-    "name": "The Widsith",
-    "rating": 4,
-    "class": "Catalyst",
-    "type": "weapon",
-    "isFeatured": true,
-    "src": "the-widsith.png"
-  },
-  {
-    "name": "Favonius Lance",
-    "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
-    "isFeatured": true,
-    "src": "favonius-lance.png"
-  },
-  {
-    "name": "The Bell",
-    "rating": 4,
-    "class": "Claymore",
-    "type": "weapon",
-    "isFeatured": true,
-    "src": "the-bell.png"
-  },
-  {
-    "name": "The Flute",
-    "rating": 4,
     "class": "Sword",
+    "src": "aquila-favonia.png"
+  },
+  {
+    "name": "Sacrificial Bow",
+    "rating": 4,
     "type": "weapon",
+    "class": "Bow",
     "isFeatured": true,
-    "src": "the-flute.png"
+    "src": "sacrificial-bow.png"
+  },
+  {
+    "name": "Sacrificial Fragments",
+    "rating": 4,
+    "type": "weapon",
+    "class": "Catalyst",
+    "isFeatured": true,
+    "src": "sacrificial-fragments.png"
+  },
+  {
+    "name": "Dragon's Bane",
+    "rating": 4,
+    "type": "weapon",
+    "class": "Polearm",
+    "isFeatured": true,
+    "src": "dragons-bane.png"
+  },
+  {
+    "name": "Sacrificial Greatsword",
+    "rating": 4,
+    "type": "weapon",
+    "class": "Sword",
+    "isFeatured": true,
+    "src": "sacrificial-greatsword.png"
+  },
+  {
+    "name": "Sacrificial Sword",
+    "rating": 4,
+    "type": "weapon",
+    "class": "Sword",
+    "isFeatured": true,
+    "src": "sacrificial-sword.png"
   },
   {
     "name": "Sucrose",
@@ -202,183 +202,183 @@
   {
     "name": "Rust",
     "rating": 4,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Bow",
     "src": "rust.png"
   },
   {
-    "name": "Sacrificial Bow",
+    "name": "The Stringless",
     "rating": 4,
-    "class": "Bow",
     "type": "weapon",
-    "src": "sacrificial-bow.png"
+    "class": "Bow",
+    "src": "the-stringless.png"
   },
   {
     "name": "Favonius Warbow",
     "rating": 4,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Bow",
     "src": "favonius-warbow.png"
   },
   {
     "name": "Eye of Perception",
     "rating": 4,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "eye-of-perception.png"
   },
   {
-    "name": "Sacrificial Fragments",
+    "name": "The Widsith",
     "rating": 4,
-    "class": "Catalyst",
     "type": "weapon",
-    "src": "sacrificial-fragments.png"
+    "class": "Catalyst",
+    "src": "the-widsith.png"
   },
   {
     "name": "Favonius Codex",
     "rating": 4,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "favonius-codex.png"
   },
   {
-    "name": "Dragon's Bane",
+    "name": "Favonius Lance",
     "rating": 4,
-    "class": "Polearm",
     "type": "weapon",
-    "src": "dragons-bane.png"
+    "class": "Lance",
+    "src": "favonius-lance.png"
   },
   {
     "name": "Rainslasher",
     "rating": 4,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "rainslasher.png"
   },
   {
-    "name": "Sacrificial Greatsword",
+    "name": "The Bell",
     "rating": 4,
-    "class": "Sword",
     "type": "weapon",
-    "src": "sacrificial-greatsword.png"
+    "class": "Claymore",
+    "src": "the-bell.png"
   },
   {
     "name": "Favonius Greatsword",
     "rating": 4,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "favonius-greatsword.png"
   },
   {
     "name": "Lions Roar",
     "rating": 4,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "lions-roar.png"
   },
   {
-    "name": "Sacrificial Sword",
+    "name": "The Flute",
     "rating": 4,
-    "class": "Sword",
     "type": "weapon",
-    "src": "sacrificial-sword.png"
+    "class": "Sword",
+    "src": "the-flute.png"
   },
   {
     "name": "Favonius Sword",
     "rating": 4,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "favonius-sword.png"
   },
   {
     "name": "Slingshot",
     "rating": 3,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Bow",
     "src": "slingshot.png"
   },
   {
     "name": "Sharpshooter's Oath",
     "rating": 3,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Bow",
     "src": "sharpshooters-oath.png"
   },
   {
     "name": "Raven Bow",
     "rating": 3,
-    "class": "Bow",
     "type": "weapon",
+    "class": "Bow",
     "src": "raven-bow.png"
   },
   {
     "name": "Emerald Orb",
     "rating": 3,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "emerald-orb.png"
   },
   {
     "name": "Thrilling Tales of Dragon Slayers",
     "rating": 3,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "thrilling-tales-of-dragon-slayers.png"
   },
   {
     "name": "Magic Guide",
     "rating": 3,
-    "class": "Catalyst",
     "type": "weapon",
+    "class": "Catalyst",
     "src": "magic-guide.png"
   },
   {
     "name": "Black Tassel",
     "rating": 3,
-    "class": "Polearm",
     "type": "weapon",
+    "class": "Polearm",
     "src": "black-tassel.png"
   },
   {
     "name": "Debate Club",
     "rating": 3,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "debate-club.png"
   },
   {
     "name": "Bloodtainted Greatsword",
     "rating": 3,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "bloodtainted-greatsword.png"
   },
   {
     "name": "Ferrous Shadow",
     "rating": 3,
-    "class": "Claymore",
     "type": "weapon",
+    "class": "Claymore",
     "src": "ferrous-shadow.png"
   },
   {
     "name": "Skyrider Sword",
     "rating": 3,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "skyrider-sword.png"
   },
   {
     "name": "Harbinger of Dawn",
     "rating": 3,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "harbinger-of-dawn.png"
   },
   {
     "name": "Cool Steel",
     "rating": 3,
-    "class": "Sword",
     "type": "weapon",
+    "class": "Sword",
     "src": "cool-steel.png"
   }
 ]
