@@ -1,130 +1,130 @@
 const chai = require('chai')
 const { expect } = chai
-import BalladInGoblets from '../src/models/ballad-in-goblets'
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
 import WanderlustInvocation from '../src/models/wanderlust-invocation'
-let ballad = null
+import SparklingSteps from '../src/models/sparkling-steps'
+let sparkling = null
 let beginners = null
 let epitome = null
 let wanderlust = null
 
 describe('Testing suite for genshin impact gacha', () => {
   ////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////Testing Ballad In Goblets//////////////////////////
+  /////////////////////////////Testing Sparkling Steps//////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  describe('Ballad In Goblets', () => {
-    it('should return an instance of Ballad In Goblets', done => {
-      ballad = new BalladInGoblets()
-      expect(ballad instanceof BalladInGoblets).to.be.true
+  describe('Sparkling Steps', () => {
+    it('should return an instance of Sparkling Steps', done => {
+      sparkling = new SparklingSteps()
+      expect(sparkling instanceof SparklingSteps).to.be.true
       done()
     })
     it('should have a 4 or 5 star item', done => {
-      const results = ballad.roll()
+      const results = sparkling.roll()
       const item = results.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 10 attempts', done => {
-      expect(ballad.attemptsCount).to.be.equal(10)
+      expect(sparkling.attemptsCount).to.be.equal(10)
       done()
     })
     it('should give us a total of 10 items', done => {
-      const results = ballad.roll()
+      const results = sparkling.roll()
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
       for(let i = 0; i < 6; i++) {
-        ballad.roll()
+        sparkling.roll()
       }
-      const results = ballad.roll()
+      const results = sparkling.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 90 attempts', done => {
-      expect(ballad.attemptsCount).to.be.equal(90)
+      expect(sparkling.attemptsCount).to.be.equal(90)
       done()
     })
     it('should have another guaranteed 5 star item', done => {
       for (let i = 0; i < 8; i++) {
-        ballad.roll()
+        sparkling.roll()
       }
-      const results = ballad.roll()
+      const results = sparkling.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 180 attempts', done => {
-      expect(ballad.attemptsCount).to.be.equal(180)
+      expect(sparkling.attemptsCount).to.be.equal(180)
       done()
     })
-    it('should have guaranteed Venti', done => {
+    it('should have guaranteed Klee', done => {
       // Initialize required variables.
       const results = [];
-      const balladVenti = new BalladInGoblets();
+      const sparklingKlee = new SparklingSteps();
       const guaranteedGachaLimit = 18;
-      let hasVenti = false;
+      let hasKlee = false;
 
-      // Logically, we'll get Venti after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Venti). 
+      // Logically, we'll get Klee after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Klee).
       // Henceforth, it is the maximum pull.
       for (let i = 0; i < guaranteedGachaLimit; i++) {
-        results.push(balladVenti.roll());
+        results.push(sparklingKlee.roll());
 
-        // Then, if we get Venti in less than 180 pulls, set 'hasVenti' to true and exit the loop.
-        if (results[i].find((item) => item.rating === 5 && item.name === 'Venti')) {
-          hasVenti = true;
+        // Then, if we get Klee in less than 180 pulls, set 'hasKlee' to true and exit the loop.
+        if (results[i].find(item => item.rating === 5 && item.name === 'Klee')) {
+          hasKlee = true;
           break;
         }
       }
 
-      expect(hasVenti).to.be.true;
+      expect(hasKlee).to.be.true;
       done();
     })
-    it('should give a Venti after pulling an SSR that is not Venti (first Venti pull is also acceptable)', done => {
+    it('should give a Klee after pulling an SSR that is not Klee (first Klee pull is also acceptable)', done => {
       const results = [];
-      const balladVenti = new BalladInGoblets();
-      let hasVenti = false;
+      const sparklingKlee = new SparklingSteps();
+      let hasKlee = false;
       let hasSSR = false;
 
-      // Infinite loop, we want to keep pulling until we discovered a Venti.
+      // Infinite loop, we want to keep pulling until we discovered a Klee.
       while (true) {
-        const roll = balladVenti.roll();
+        const roll = sparklingKlee.roll();
         results.push(roll);
-        
+
         // Filter all the results by its five star.
         // If there are any results, store its name in a new array for easier checking.
         const filteredResults = roll.filter(item => item.rating === 5);
         const names = filteredResults.map(e => e.name);
         const areNamesFilled = names.length > 0;
-        
-        // This step will fail if the second SSR is not Venti.
+
+        // This step will fail if the second SSR is not Klee.
         // We'll also have to check if we pulled any SSR, hence the 'names.length' to prevent false negatives.
-        if (hasSSR && !names.includes('Venti') && areNamesFilled) {
-          expect.fail('The second SSR pulled was not Venti!');
+        if (hasSSR && !names.includes('Klee') && areNamesFilled) {
+          expect.fail('The second SSR pulled was not Klee!');
         }
 
-        // If the first SSR is not Venti, set 'hasSSR' to true.
-        if (!names.includes('Venti') && areNamesFilled) {
+        // If the first SSR is not Klee, set 'hasSSR' to true.
+        if (!names.includes('Klee') && areNamesFilled) {
           hasSSR = true;
         }
 
-        // The next SSR, we have to check if it is truly Venti.
-        if (hasSSR && names.includes('Venti') && areNamesFilled) {
-          hasVenti = true;
+        // The next SSR, we have to check if it is truly Klee.
+        if (hasSSR && names.includes('Klee') && areNamesFilled) {
+          hasKlee = true;
           break;
         }
 
-        // If the SSR is Venti, then exit.
-        if (names.includes('Venti') && areNamesFilled) {
-          hasVenti = true;
+        // If the SSR is Klee, then exit.
+        if (names.includes('Klee') && areNamesFilled) {
+          hasKlee = true;
           break;
         }
       }
 
-      expect(hasVenti).to.be.true;
+      expect(hasKlee).to.be.true;
       done();
     })
   })
