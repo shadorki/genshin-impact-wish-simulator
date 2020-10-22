@@ -16,9 +16,13 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       hash: true,
-      title: 'Genshin Impact Wish Sim',
+      title: 'Genshin Impact Wish Simulator',
       template: `${__dirname}/src/index.html`,
       filename: `${__dirname}/dist/index.html`,
+      metaName: 'Genshin Impact Wish Simulator',
+      metaDesc: 'A simulator to let your wish come true. Test your luck here',
+      metaUrl: 'https://uzair-ashraf.github.io/genshin-impact-wish-simulator',
+      // metaImage: `${__dirname}/src/assets/images/banners/sparkling-steps.png`
     })
   ],
   devServer: {

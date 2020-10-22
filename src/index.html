@@ -5,6 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <meta name="title" content="<%= htmlWebpackPlugin.options.metaName %>">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.metaDesc %>">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= htmlWebpackPlugin.options.metaUrl %>">
+  <meta property="og:title" content="<%= htmlWebpackPlugin.options.metaName %>">
+  <meta property="og:description" content="<%= htmlWebpackPlugin.options.metaDesc %>">
+  <meta property="og:image" content="<%=require('./assets/images/banners/sparkling-steps.png').default%>">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="<%= htmlWebpackPlugin.options.metaUrl %>">
+  <meta property="twitter:title" content="<%= htmlWebpackPlugin.options.metaName %>">
+  <meta property="twitter:description" content="<%= htmlWebpackPlugin.options.metaDesc %>">
+  <meta property="twitter:image" content="<%=require('./assets/images/banners/sparkling-steps.png').default%>">
 </head>
 
 <body>
