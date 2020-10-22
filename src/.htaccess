@@ -1,0 +1,16 @@
+# It appears that the problem lies in the 'index.html' being cached. This script disables caching for the HTML files.
+# This script is for Apache Web Server only!
+<filesMatch "\.(html)$">
+  FileETag None
+  <ifModule mod_headers.c>
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+  </ifModule>
+</filesMatch>
+
+# This script is used for Apache Web Servers to auto-redirect itself with the HTTPS protocol.
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
