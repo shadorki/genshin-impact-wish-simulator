@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const srcPath = path.resolve(__dirname, 'src');
 
@@ -8,17 +9,22 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  "entry": "./src",
-  "output": {
-    "path": __dirname + '/dist',
-    "filename": 'main.[contenthash].js'
+  entry: srcPath,
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.[contenthash].js'
   },
   plugins: [
     new HTMLWebpackPlugin({
       hash: true,
       title: 'Genshin Impact Wish Sim',
-      template: `${__dirname}/src/index.html`,
-      filename: `${__dirname}/dist/index.html`,
+      template: path.resolve(__dirname, 'src', 'index.html'),
+      filename: path.resolve(__dirname, 'dist', 'index.html'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'src', '.htaccess') },
+      ],
     })
   ],
   devServer: {
@@ -52,13 +58,13 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'file-loader?name=images/[contenthash].[ext]',
           },
         ],
       },
       {
         test: /\.mp4$/,
-        use: 'file-loader?name=videos/[name].[ext]',
+        use: 'file-loader?name=videos/[contenthash].[ext]',
       }
     ]
   }
