@@ -1,11 +1,11 @@
 {
   "name": "genshin-impact-wish-simulator",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A React.js web application to simulate Genshin Impact gacha in the browser",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build": "rimraf ./dist && webpack",
     "test": "mocha -r esm"
   },
   "dependencies": {
@@ -29,9 +29,11 @@
     "@babel/preset-env": "^7.11.5",
     "babel-eslint": "10.0.1",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "rimraf": "^3.0.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
