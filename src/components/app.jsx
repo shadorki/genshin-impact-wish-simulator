@@ -77,7 +77,7 @@ export default class App extends Component {
     }
     this.setState({inventory, currentWishes: []}, this.saveData)
   }
-  reset() {
+  reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
     this.sparklingSteps.attemptsCount = 0
@@ -85,7 +85,7 @@ export default class App extends Component {
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
       isBeginnersWishLimited: false,
-      currentDetails: 'beginners-wish',
+      selectedWish: previouslySelectedWish,
       inventory: {}
     }, this.saveData)
   }
