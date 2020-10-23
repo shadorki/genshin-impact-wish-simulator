@@ -60,7 +60,6 @@ export default class Banners extends Component {
       })
     } else {
       this.setState({
-        selectedBanner: 'beginners-wish',
         banners: {
           'beginners-wish': 'Novice Wishes',
           'sparkling-steps': 'Character Event Wish',
@@ -157,7 +156,9 @@ export default class Banners extends Component {
                 Wish x10
               </div>
               <div
-                onClick={reset}
+                onClick={() => {
+                  reset(selectedBanner);
+                }}
                 className="wish-button"
                 >Reset</div>
             </div>
