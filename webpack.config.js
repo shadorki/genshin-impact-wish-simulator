@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const srcPath = path.resolve(__dirname, 'src');
 
@@ -19,6 +20,21 @@ module.exports = {
       title: 'Genshin Impact Wish Sim',
       template: `${__dirname}/src/index.html`,
       filename: `${__dirname}/dist/index.html`,
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      exclude: [/\.(?:png|jpg|jpeg|svg|mp4)$/],
+      runtimeCaching: [{
+        urlPattern: /\.(?:png|jpg|jpeg|svg|mp4)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'media',
+          expiration: {
+            maxEntries: 20,
+          },
+        },
+      }],
     })
   ],
   devServer: {
