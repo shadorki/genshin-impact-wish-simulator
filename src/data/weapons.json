@@ -557,5 +557,29 @@
         "rating": 4,
         "class": "Catalyst",
         "src": "wine-and-song.png"
+    },
+    {
+        "name": "Memory of Dust",
+        "rating": 5,
+        "class": "Catalyst",
+        "src": "memory-of-dust.png"
+    },
+    {
+        "name": "Vortex Vanquisher",
+        "rating": 5,
+        "class": "Polearm",
+        "src": "vortex-vanquisher.png"
+    },
+    {
+        "name": "The Unforged",
+        "rating": 5,
+        "class": "Claymore",
+        "src": "the-unforged.png"
+    },
+    {
+        "name": "Royal Spear",
+        "rating": 4,
+        "class": "Polearm",
+        "src": "royal-spear.png"
     }
 ]
