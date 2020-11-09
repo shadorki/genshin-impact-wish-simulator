@@ -1,156 +1,180 @@
 [
-        {
-            "name": "Jean",
-            "element": "Anemo",
-            "type": "character",
-            "rating": 5,
-            "id": "749031380716879922"
-        },
-        {
-            "name": "Amber",
-            "element": "Pyro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031317492203611"
-        },
-        {
-            "name": "Lisa",
-            "element": "Electro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031410358288396"
-        },
-        {
-            "name": "Kaeya",
-            "element": "Cryo",
-            "type": "character",
-            "rating": 4,
-            "id": "749031390867095731"
-        },
-        {
-            "name": "Barbara",
-            "element": "Hydro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031327726174398"
-        },
-        {
-            "name": "Diluc",
-            "element": "Pyro",
-            "type": "character",
-            "rating": 5,
-            "id": "749031368255602861"
-        },
-        {
-            "name": "Razor",
-            "element": "Electro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031449864306719"
-        },
-        {
-            "name": "Venti",
-            "element": "Anemo",
-            "type": "character",
-            "rating": 5,
-            "id": "749031464883978310"
-        },
-        {
-            "name": "Klee",
-            "element": "Pyro",
-            "type": "character",
-            "rating": 5,
-            "id": "749031404964151376"
-        },
-        {
-            "name": "Bennett",
-            "element": "Pyro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031351533043772"
-        },
-        {
-            "name": "Noelle",
-            "element": "Geo",
-            "type": "character",
-            "rating": 4,
-            "id": "749031431132545057"
-        },
-        {
-            "name": "Fischl",
-            "element": "Electro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031374052393120"
-        },
-        {
-            "name": "Sucrose",
-            "element": "Anemo",
-            "type": "character",
-            "rating": 4,
-            "id": "749031457019658401"
-        },
-        {
-            "name": "Mona",
-            "element": "Hydro",
-            "type": "character",
-            "rating": 5,
-            "id": "749031417895452754"
-        },
-        {
-            "name": "Xiao",
-            "element": "Anemo",
-            "type": "character",
-            "rating": 5,
-            "id": "749031476665778347"
-        },
-        {
-            "name": "Beidou",
-            "element": "Electro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031334273613904"
-        },
-        {
-            "name": "Ningguang",
-            "element": "Electro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031423905759253"
-        },
-        {
-            "name": "Xiangling",
-            "element": "Pyro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031470726905977"
-        },
-        {
-            "name": "Xingqiu",
-            "element": "Hydro",
-            "type": "character",
-            "rating": 4,
-            "id": "749031483263680563"
-        },
-        {
-            "name": "Chongyun",
-            "element": "Cryo",
-            "type": "character",
-            "rating": 4,
-            "id": "749031361934917682"
-        },
-        {
-            "name": "Qiqi",
-            "element": "Cryo",
-            "type": "character",
-            "rating": 5,
-            "id": "749031442494914661"
-        },
-        {
-            "name": "Keqing",
-            "element": "Electro",
-            "type": "character",
-            "rating": 5,
-            "id": "749031397896749127"
-        }
+    {
+        "name": "Jean",
+        "element": "Anemo",
+        "type": "character",
+        "rating": 5,
+        "id": "749031380716879922"
+    },
+    {
+        "name": "Amber",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031317492203611"
+    },
+    {
+        "name": "Lisa",
+        "element": "Electro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031410358288396"
+    },
+    {
+        "name": "Kaeya",
+        "element": "Cryo",
+        "type": "character",
+        "rating": 4,
+        "id": "749031390867095731"
+    },
+    {
+        "name": "Barbara",
+        "element": "Hydro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031327726174398"
+    },
+    {
+        "name": "Diluc",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 5,
+        "id": "749031368255602861"
+    },
+    {
+        "name": "Razor",
+        "element": "Electro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031449864306719"
+    },
+    {
+        "name": "Venti",
+        "element": "Anemo",
+        "type": "character",
+        "rating": 5,
+        "id": "749031464883978310"
+    },
+    {
+        "name": "Klee",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 5,
+        "id": "749031404964151376"
+    },
+    {
+        "name": "Bennett",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031351533043772"
+    },
+    {
+        "name": "Noelle",
+        "element": "Geo",
+        "type": "character",
+        "rating": 4,
+        "id": "749031431132545057"
+    },
+    {
+        "name": "Fischl",
+        "element": "Electro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031374052393120"
+    },
+    {
+        "name": "Sucrose",
+        "element": "Anemo",
+        "type": "character",
+        "rating": 4,
+        "id": "749031457019658401"
+    },
+    {
+        "name": "Mona",
+        "element": "Hydro",
+        "type": "character",
+        "rating": 5,
+        "id": "749031417895452754"
+    },
+    {
+        "name": "Xiao",
+        "element": "Anemo",
+        "type": "character",
+        "rating": 5,
+        "id": "749031476665778347"
+    },
+    {
+        "name": "Beidou",
+        "element": "Electro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031334273613904"
+    },
+    {
+        "name": "Ningguang",
+        "element": "Electro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031423905759253"
+    },
+    {
+        "name": "Xiangling",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031470726905977"
+    },
+    {
+        "name": "Xingqiu",
+        "element": "Hydro",
+        "type": "character",
+        "rating": 4,
+        "id": "749031483263680563"
+    },
+    {
+        "name": "Chongyun",
+        "element": "Cryo",
+        "type": "character",
+        "rating": 4,
+        "id": "749031361934917682"
+    },
+    {
+        "name": "Qiqi",
+        "element": "Cryo",
+        "type": "character",
+        "rating": 5,
+        "id": "749031442494914661"
+    },
+    {
+        "name": "Keqing",
+        "element": "Electro",
+        "type": "character",
+        "rating": 5,
+        "id": "749031397896749127"
+    },
+    {
+        "name": "Tartaglia",
+        "element": "Hydro",
+        "type": "character",
+        "rating": 5
+    },
+    {
+        "name": "Diona",
+        "element": "Cryo",
+        "type": "character",
+        "rating": 4
+    },
+    {
+        "name": "Zhongli",
+        "element": "Geo",
+        "type": "character",
+        "rating": 5
+    },
+    {
+        "name": "Xinyan",
+        "element": "Pyro",
+        "type": "character",
+        "rating": 5
+    }
 ]
