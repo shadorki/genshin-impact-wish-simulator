@@ -15,7 +15,7 @@ export default class App extends Component {
     super(props)
     this.state = {
       view: 'details',
-      currentDetails: 'farewell-of-snezhnaya',
+      currentDetails: 'epitome-invocation',
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
       inventory: {},
