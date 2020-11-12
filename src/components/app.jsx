@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import SparklingSteps from '../models/sparkling-steps'
+import FarewellOfSnezhnaya from '../models/farewell-of-snezhnaya'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -14,8 +14,8 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      view: 'banners',
-      currentDetails: 'beginners-wish',
+      view: 'details',
+      currentDetails: 'farewell-of-snezhnaya',
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
       inventory: {},
@@ -24,7 +24,7 @@ export default class App extends Component {
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
-    this.sparklingSteps = new SparklingSteps()
+    this.farewellOfSnezhnaya = new FarewellOfSnezhnaya()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -80,7 +80,7 @@ export default class App extends Component {
   reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.sparklingSteps.attemptsCount = 0
+    this.farewellOfSnezhnaya.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
@@ -98,7 +98,7 @@ export default class App extends Component {
       isBeginnersWishLimited,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      sparklingStepsCount: this.sparklingSteps.attemptsCount,
+      farewellOfSnezhnayaCount: this.farewellOfSnezhnaya.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
     }
@@ -112,7 +112,7 @@ export default class App extends Component {
       inventory,
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
-    this.sparklingSteps.attempts = data.sparklingStepsCount
+    this.farewellOfSnezhnaya.attempts = data.farewellOfSnezhnayaCount
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
@@ -123,7 +123,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'sparkling-steps' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'farewell-of-snezhnaya' : 'beginners-wish'
     })
   }
   clearLocalStorageEveryNewBuild() {

@@ -16,7 +16,7 @@ export default class Banners extends Component {
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'farewell-of-snezhnaya': 'sparklingSteps',
+        'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -52,7 +52,7 @@ export default class Banners extends Component {
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'farewell-of-snezhnaya': 'sparklingSteps',
+          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
