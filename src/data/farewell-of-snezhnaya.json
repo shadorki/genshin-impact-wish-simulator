@@ -4,6 +4,7 @@
     "element": "Hydro",
     "type": "character",
     "rating": 5,
+    "isFeatured": true,
     "src": "Tartaglia.png"
   },
   {
@@ -51,6 +52,7 @@
     "element": "Cryo",
     "type": "character",
     "rating": 4,
+    "isFeatured": true,
     "src": "Diona.png"
   },
   {
@@ -59,6 +61,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031423905759253",
+    "isFeatured": true,
     "src": "Ningguang.png"
   },
   {
@@ -67,6 +70,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031334273613904",
+    "isFeatured": true,
     "src": "Beidou.png"
   },
   {
