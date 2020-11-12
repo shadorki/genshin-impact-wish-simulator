@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'sparkling-steps': 'Character Event Wish',
+        'farewell-of-snezhnaya': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'sparkling-steps': 'sparklingSteps',
+        'farewell-of-snezhnaya': 'sparklingSteps',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if(isLimited) {
       this.setState({
-        selectedBanner: 'sparkling-steps',
+        selectedBanner: 'farewell-of-snezhnaya',
         banners: {
-          'sparkling-steps': 'Character Event Wish',
+          'farewell-of-snezhnaya': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'sparkling-steps': 'sparklingSteps',
+          'farewell-of-snezhnaya': 'sparklingSteps',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +62,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'sparkling-steps': 'Character Event Wish',
+          'farewell-of-snezhnaya': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'sparkling-steps': 'sparklingSteps',
+          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },

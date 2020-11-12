@@ -86,11 +86,11 @@ video {
 .banner-button.ballad-in-goblets.selected {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
-.banner-button.sparkling-steps {
-  background-image: url('../assets/images/ui/klee.png');
+.banner-button.farewell-of-snezhnaya {
+  background-image: url('../assets/images/ui/childe.png');
 }
-.banner-button.sparkling-steps.selected {
-  background-image: url('../assets/images/ui/klee-selected.png');
+.banner-button.farewell-of-snezhnaya.selected {
+  background-image: url('../assets/images/ui/childe-selected.png');
 }
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
