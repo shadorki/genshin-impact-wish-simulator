@@ -85,6 +85,35 @@
         "src": "sacrificial-sword.png"
     },
     {
+        "name": "Rainslasher",
+        "rating": 4,
+        "type": "weapon",
+        "class": "Claymore",
+        "src": "rainslasher.png"
+    },
+    {
+        "name": "Sacrificial Greatsword",
+        "rating": 4,
+        "type": "weapon",
+        "class": "Sword",
+        "isFeatured": true,
+        "src": "sacrificial-greatsword.png"
+    },
+    {
+        "name": "Lions Roar",
+        "rating": 4,
+        "type": "weapon",
+        "class": "Sword",
+        "src": "lions-roar.png"
+    },
+    {
+        "name": "Emerald Orb",
+        "rating": 3,
+        "type": "weapon",
+        "class": "Catalyst",
+        "src": "emerald-orb.png"
+    },
+    {
         "name": "Silver Sword",
         "rating": 2,
         "class": "Sword",
@@ -101,6 +130,13 @@
         "rating": 5,
         "class": "Sword",
         "src": "skyward-blade.png"
+    },
+    {
+        "name": "Skyward Spine",
+        "rating": 5,
+        "type": "weapon",
+        "class": "Polearm",
+        "src": "skyward-spine.png"
     },
     {
         "name": "The Alley Flash",
@@ -135,6 +171,7 @@
     {
         "name": "Amos Bow",
         "rating": 5,
+        "type": "weapon",
         "class": "Bow",
         "src": "amos-bow.png"
     },
