@@ -7,8 +7,8 @@ const { expect } = chai
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
 import WanderlustInvocation from '../src/models/wanderlust-invocation'
-import SparklingSteps from '../src/models/sparkling-steps'
-let sparkling = null
+import FarewellOfSnezhnaya from '../src/models/farewell-of-snezhnaya'
+let farewell = null
 let beginners = null
 let epitome = null
 let wanderlust = null
@@ -45,87 +45,87 @@ describe('Validate that all data has valid images', () => {
 
 describe('Testing suite for genshin impact gacha', () => {
   ////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////Testing Sparkling Steps//////////////////////////
+  /////////////////////////////Testing Farewell Of Snezhnaya//////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  describe('Sparkling Steps', () => {
-    it('should return an instance of Sparkling Steps', done => {
-      sparkling = new SparklingSteps()
-      expect(sparkling instanceof SparklingSteps).to.be.true
+  describe('Farewell Of Snezhnaya', () => {
+    it('should return an instance of Farewell Of Snezhnaya', done => {
+      farewell = new FarewellOfSnezhnaya()
+      expect(farewell instanceof FarewellOfSnezhnaya).to.be.true
       done()
     })
     it('should have a 4 or 5 star item', done => {
-      const results = sparkling.roll()
+      const results = farewell.roll()
       const item = results.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 10 attempts', done => {
-      expect(sparkling.attemptsCount).to.be.equal(10)
+      expect(farewell.attemptsCount).to.be.equal(10)
       done()
     })
     it('should give us a total of 10 items', done => {
-      const results = sparkling.roll()
+      const results = farewell.roll()
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
       for(let i = 0; i < 6; i++) {
-        sparkling.roll()
+        farewell.roll()
       }
-      const results = sparkling.roll()
+      const results = farewell.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 90 attempts', done => {
-      expect(sparkling.attemptsCount).to.be.equal(90)
+      expect(farewell.attemptsCount).to.be.equal(90)
       done()
     })
     it('should have another guaranteed 5 star item', done => {
       for (let i = 0; i < 8; i++) {
-        sparkling.roll()
+        farewell.roll()
       }
-      const results = sparkling.roll()
+      const results = farewell.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 180 attempts', done => {
-      expect(sparkling.attemptsCount).to.be.equal(180)
+      expect(farewell.attemptsCount).to.be.equal(180)
       done()
     })
-    it('should have guaranteed Klee', done => {
+    it('should have guaranteed Tartaglia', done => {
       // Initialize required variables.
       const results = [];
-      const sparklingKlee = new SparklingSteps();
+      const farewellTartaglia = new FarewellOfSnezhnaya();
       const guaranteedGachaLimit = 18;
-      let hasKlee = false;
+      let hasTartaglia = false;
 
-      // Logically, we'll get Klee after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Klee).
+      // Logically, we'll get Tartaglia after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Tartaglia).
       // Henceforth, it is the maximum pull.
       for (let i = 0; i < guaranteedGachaLimit; i++) {
-        results.push(sparklingKlee.roll());
+        results.push(farewellTartaglia.roll());
 
-        // Then, if we get Klee in less than 180 pulls, set 'hasKlee' to true and exit the loop.
-        if (results[i].find(item => item.rating === 5 && item.name === 'Klee')) {
-          hasKlee = true;
+        // Then, if we get Tartaglia in less than 180 pulls, set 'hasTartaglia' to true and exit the loop.
+        if (results[i].find(item => item.rating === 5 && item.name === 'Tartaglia')) {
+          hasTartaglia = true;
           break;
         }
       }
 
-      expect(hasKlee).to.be.true;
+      expect(hasTartaglia).to.be.true;
       done();
     })
-    it('should give a Klee after pulling an SSR that is not Klee (first Klee pull is also acceptable)', done => {
+    it('should give a Tartaglia after pulling an SSR that is not Tartaglia (first Tartaglia pull is also acceptable)', done => {
       const results = [];
-      const sparklingKlee = new SparklingSteps();
-      let hasKlee = false;
+      const farewellTartaglia = new FarewellOfSnezhnaya();
+      let hasTartaglia = false;
       let hasSSR = false;
 
-      // Infinite loop, we want to keep pulling until we discovered a Klee.
+      // Infinite loop, we want to keep pulling until we discovered a Tartaglia.
       while (true) {
-        const roll = sparklingKlee.roll();
+        const roll = farewellTartaglia.roll();
         results.push(roll);
 
         // Filter all the results by its five star.
@@ -134,31 +134,31 @@ describe('Testing suite for genshin impact gacha', () => {
         const names = filteredResults.map(e => e.name);
         const areNamesFilled = names.length > 0;
 
-        // This step will fail if the second SSR is not Klee.
+        // This step will fail if the second SSR is not Tartaglia.
         // We'll also have to check if we pulled any SSR, hence the 'names.length' to prevent false negatives.
-        if (hasSSR && !names.includes('Klee') && areNamesFilled) {
-          expect.fail('The second SSR pulled was not Klee!');
+        if (hasSSR && !names.includes('Tartaglia') && areNamesFilled) {
+          expect.fail('The second SSR pulled was not Tartaglia!');
         }
 
-        // If the first SSR is not Klee, set 'hasSSR' to true.
-        if (!names.includes('Klee') && areNamesFilled) {
+        // If the first SSR is not Tartaglia, set 'hasSSR' to true.
+        if (!names.includes('Tartaglia') && areNamesFilled) {
           hasSSR = true;
         }
 
-        // The next SSR, we have to check if it is truly Klee.
-        if (hasSSR && names.includes('Klee') && areNamesFilled) {
-          hasKlee = true;
+        // The next SSR, we have to check if it is truly Tartaglia.
+        if (hasSSR && names.includes('Tartaglia') && areNamesFilled) {
+          hasTartaglia = true;
           break;
         }
 
-        // If the SSR is Klee, then exit.
-        if (names.includes('Klee') && areNamesFilled) {
-          hasKlee = true;
+        // If the SSR is Tartaglia, then exit.
+        if (names.includes('Tartaglia') && areNamesFilled) {
+          hasTartaglia = true;
           break;
         }
       }
 
-      expect(hasKlee).to.be.true;
+      expect(hasTartaglia).to.be.true;
       done();
     })
   })
