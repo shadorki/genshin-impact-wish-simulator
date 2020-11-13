@@ -7,7 +7,7 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     this.attemptsCount = 0;
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
-    this.guaranteedKlee = false
+    this.guaranteedTartaglia = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   set attempts(amount) {
@@ -42,24 +42,22 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
 
-    // If our previous SSR didn't drop a Klee, then this time, we'll get her.
-    if (this.guaranteedKlee && rating === 5) {
-      return this.grabAKlee();
+    if (this.guaranteedTartaglia && rating === 5) {
+      return this.grabATartaglia();
     } else {
       item = itemsList[this.generateRandomNumber(itemsList.length)];
     }
 
-    // This is a checker to check if our current pull does not contain a Klee.
-    if (item.rating === 5 && item.name !== 'Klee') {
-      this.guaranteedKlee = true;
+    if (item.rating === 5 && item.name !== 'Tartaglia') {
+      this.guaranteedTartaglia = true;
     }
 
     return item
   }
   getGuaranteed5StarItem() {
-    const isKlee = this.flipACoin()
-    if (this.guaranteedKlee || isKlee) {
-      return this.grabAKlee()
+    const isTartaglia = this.flipACoin()
+    if (this.guaranteedTartaglia || isTartaglia) {
+      return this.grabATartaglia()
     }
     return this.getRandomItem(5)
   }
@@ -72,6 +70,7 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     }
     const isFeatured4StarCharacter = this.flipACoin()
     if (isFeatured4StarCharacter || this.guaranteedFeatured4Star) {
+      this.guaranteedFeatured4Star = false
       return this.getRandomFeatured4StarItem()
     } else {
       this.guaranteedFeatured4Star = true
@@ -84,8 +83,8 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     const featuredItems = items.filter(item => item.rating === 4 && item.isFeatured === true)
     return featuredItems[this.generateRandomNumber(featuredItems.length)]
   }
-  grabAKlee() {
-    this.guaranteedKlee = false
-    return this.drops.find(item => item.name === 'Klee')
+  grabATartaglia() {
+    this.guaranteedTartaglia = false
+    return this.drops.find(item => item.name === 'Tartaglia')
   }
 }
