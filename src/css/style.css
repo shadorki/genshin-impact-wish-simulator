@@ -115,6 +115,10 @@ video {
 .carousel {
   height: 100%;
 }
+.carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+}
 .action-container {
   height: 10vh;
   display: flex;
@@ -333,6 +337,32 @@ td {
 }
 .mw-50 {
   max-width: 50% !important;
+}
+
+/* 4K screen in Chrome DevTools. */
+@media (max-width: 3840px) and (min-width: 2550px) {
+  .carousel-container {
+    width: 50vw;
+    min-height: 75vh;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 2549px) and (min-width: 2030px) {
+  .carousel-container {
+    width: 60vw;
+    min-height: 75vh;
+    margin: 0 auto;
+  }
+}
+
+/* To get a better resolution in a smaller screen (1440px) */
+@media (max-width: 2029px) and (min-width: 1441px) {
+  .carousel-container {
+    width: 65vw;
+    min-height: 75vh;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 1200px) {
