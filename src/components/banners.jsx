@@ -128,10 +128,8 @@ export default class Banners extends Component {
           >
           {
             bannerKeys.map(banner => {
-             return (
-                <div key={banner}>
-                  <img src={banners(`./${banner}.png`).default} />
-                </div>
+              return (
+                <img key={banner} className="carousel-image" src={banners(`./${banner}.png`).default} />
               )
             })
           }
