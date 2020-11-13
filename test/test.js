@@ -1,4 +1,8 @@
 const chai = require('chai')
+const fs = require('fs')
+const util = require('util')
+const p = require('path');
+const readdir = util.promisify(fs.readdir);
 const { expect } = chai
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
@@ -8,6 +12,36 @@ let sparkling = null
 let beginners = null
 let epitome = null
 let wanderlust = null
+
+describe('Validate that all data has valid images', () => {
+  it('should have an image for each item', async () => {
+      try {
+        let farewell = require('../src/data/farewell-of-snezhnaya.json')
+        let wanderlust = require('../src/data/wanderlust-invocation.json')
+        let epitome = require('../src/data/epitome-invocation.json')
+        const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
+        const characterPix = await readdir(p.join(__dirname, '../src/assets/images/characters'))
+        const pics = [...weaponPix, ...characterPix]
+        const arrs = [farewell, wanderlust, epitome]
+        const missingImages = []
+        arrs.forEach((arr, i) => {
+          arr.forEach(item => {
+            if (!pics.some(pic => pic === item.src)) {
+              missingImages.push({
+                name: item.name,
+                i
+              })
+            }
+          })
+        })
+        if(missingImages.length) {
+          throw missingImages
+        }
+      } catch(err) {
+        expect.fail(`There are some missing images, here is the data ${JSON.stringify(err)}`)
+      }
+  })
+})
 
 describe('Testing suite for genshin impact gacha', () => {
   ////////////////////////////////////////////////////////////////////////////////
