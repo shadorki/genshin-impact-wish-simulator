@@ -37,11 +37,11 @@ video {
 }
 .wrapper.banners > .heading > .current-banner {
   color: #d4bc8f;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
-  width: 200px;
-  margin-left: 1.2rem;
+  width: 250px;
   text-align: center;
+  font-weight: 600;
 }
 .wrapper.banners > .heading > .close-window, .close-button {
   background-size: cover;
