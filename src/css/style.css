@@ -402,11 +402,15 @@ td {
     height: 50px;
     width: 100px;
   }
+  .heading {
+    flex-direction: column;
+    justify-content: center;
+  }
   .wrapper.banners > .heading > .current-banner {
-    font-size: 1rem;
-    width: 100px;
-    margin-left: 1.2rem;
-    text-align: center;
+    font-size: 1.8rem;
+    width: 100%;
+    margin-top: 10px;
+    align-self: center;
   }
   .wish-container {
     flex-direction: column;
