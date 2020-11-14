@@ -366,9 +366,9 @@ td {
 }
 
 /* For large-width, small-height screens */
-@media (min-height: 800px) and (max-height: 1200px) {
+@media (max-height: 800px) and (max-height: 1000px) {
   .carousel-container {
-    width: 30vw;
+    width: 45vw;
     min-height: 60vh;
     margin: 0 auto;
   }
@@ -378,9 +378,6 @@ td {
   .banner-button {
     height: 81px;
     width: 162px;
-  }
-  .carousel-container {
-    margin: 2rem;
   }
 }
 @media (max-width: 992px) {
@@ -425,7 +422,23 @@ td {
     flex-direction: column;
     margin-bottom: 1rem;
   }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    margin-top: -20px;
+  }
+  .button-container > button {
+    margin: 0;
+    width: 100px;
+  }
+  .button-container > button:last-of-type {
+    margin-top: 2px;
+  }
+  .action-container {
+    margin-top: -10px;
+  }
   .wish-button {
-    width:  123px;
+    width: 115px;
   }
 }
