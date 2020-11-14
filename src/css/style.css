@@ -365,6 +365,15 @@ td {
   }
 }
 
+/* For large-width, small-height screens */
+@media (min-height: 800px) and (max-height: 1200px) {
+  .carousel-container {
+    width: 30vw;
+    min-height: 60vh;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 1200px) {
   .banner-button {
     height: 81px;
