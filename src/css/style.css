@@ -106,8 +106,9 @@ video {
 }
 .carousel-container {
   position: relative;
-  height: 65vh;
-  margin: 2rem 15rem;
+  height: 75vh;
+  width: 65vw;
+  margin: 0 auto;
 }
 .carousel.carousel-slider {
   display: flex;
@@ -340,37 +341,50 @@ td {
 }
 
 /* 4K screen in Chrome DevTools. */
-@media (max-width: 3840px) and (min-width: 2550px) {
+@media (max-width: 4000px) {
   .carousel-container {
-    width: 50vw;
-    min-height: 75vh;
-    margin: 0 auto;
+    width: 30vw;
   }
 }
 
-@media (max-width: 2549px) and (min-width: 2030px) {
+@media (max-width: 2560px) {
   .carousel-container {
-    width: 60vw;
-    min-height: 75vh;
-    margin: 0 auto;
+    width: 40vw;
   }
 }
 
 /* To get a better resolution in a smaller screen (1440px) */
-@media (max-width: 2029px) and (min-width: 1441px) {
+@media (max-width: 2100px) {
   .carousel-container {
-    width: 65vw;
-    min-height: 75vh;
-    margin: 0 auto;
+    width: 50vw;
   }
 }
 
-/* For large-width, small-height screens */
-@media (max-height: 800px) and (max-height: 1000px) {
+/* Ordinary laptop screens */
+@media (max-width: 1600px) {
   .carousel-container {
-    width: 45vw;
-    min-height: 60vh;
-    margin: 0 auto;
+    width: 60vw;
+  }
+}
+
+/* iPad Pro */
+@media (max-height: 1400px) and (max-width: 1024px) {
+  .carousel-container {
+    width: 80vw;
+  }
+}
+
+/* High resolution phones (iPhone X) */
+@media (max-height: 1025px) and (max-width: 1024px) {
+  .carousel-container {
+    width: 85vw;
+  }
+}
+
+/* For small-height screens */
+@media (max-height: 800px) and (max-width: 1024px) {
+  .carousel-container {
+    width: 95vw;
   }
 }
 
