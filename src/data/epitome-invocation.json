@@ -4,6 +4,7 @@
     "rating": 5,
     "class": "Polearm",
     "src": "vortex-vanquisher.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -11,6 +12,7 @@
     "rating": 5,
     "class": "Claymore",
     "src": "the-unforged.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -88,6 +90,7 @@
     "rating": 4,
     "class": "Bow",
     "src": "favonius-warbow.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -95,6 +98,7 @@
     "rating": 4,
     "class": "Catalyst",
     "src": "favonius-codex.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -102,6 +106,7 @@
     "rating": 4,
     "class": "Polearm",
     "src": "dragons-bane.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -109,12 +114,14 @@
     "rating": 4,
     "class": "Claymore",
     "src": "the-bell.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
     "name": "Lions Roar",
     "rating": 4,
     "class": "Sword",
+    "isFeatured": true,
     "src": "lions-roar.png"
   },
   {

@@ -4,6 +4,7 @@
     "element": "Geo",
     "type": "character",
     "rating": 5,
+    "isFeatured": true,
     "src": "Zhongli.png"
   },
   {
@@ -51,6 +52,7 @@
     "element": "Pyro",
     "type": "character",
     "rating": 4,
+    "isFeatured": true,
     "src": "Xinyan.png"
   },
   {
@@ -59,6 +61,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031361934917682",
+    "isFeatured": true,
     "src": "Chongyun.png"
   },
   {
@@ -67,6 +70,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031449864306719",
+    "isFeatured": true,
     "src": "Razor.png"
   },
   {
