@@ -28,14 +28,14 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'Skyward Harp'}
+            title={'Vortex Vanquisher'}
             isWeapon={true}
-            src={'skyward-harp.png'}
+            src={'vortex-vanquisher.png'}
           />
           <DetailsBox
-            title={'Memory of Dust'}
+            title={'The Unforged'}
             isWeapon={true}
-            src={'memory-of-dust.png'}
+            src={'the-unforged.png'}
           />
         </Row>
         <StarsBar
@@ -45,29 +45,29 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'Rust'}
+            title={'Favonius Warbow'}
             isWeapon={true}
-            src={'rust.png'}
+            src={'favonius-warbow.png'}
           />
           <DetailsBox
-            title={'Eye of Perception'}
+            title={'Favonius Codex'}
             isWeapon={true}
-            src={'eye-of-perception.png'}
+            src={'favonius-codex.png'}
           />
           <DetailsBox
-            title={'Favonius Lance'}
+            title={'Dragon\'s Bane'}
             isWeapon={true}
-            src={'favonius-lance.png'}
+            src={'dragons-bane.png'}
           />
           <DetailsBox
-            title={'Rainslasher'}
+            title={'The Bell'}
             isWeapon={true}
-            src={'rainslasher.png'}
+            src={'the-bell.png'}
           />
           <DetailsBox
-            title={'The Flute'}
+            title={'Lions Roar'}
             isWeapon={true}
-            src={'the-flute.png'}
+            src={'lions-roar.png'}
           />
         </Row>
         <SubheadingSeparator
@@ -79,7 +79,7 @@ export default function EpitomeInvocationDetails(props) {
         <Row>
           <Col xs="12">
             <p className="my-3">
-              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star weapon <span className="brass">Memory of Dust (Catalyst)</span> and the 5-star weapon <span className="brass">Skyward Harp (Bow)</span> as well as 4-star weapons <span className="purple">Rust (Bow)</span>, <span className="purple">The Flute (Sword)</span>, <span className="purple">Rainslasher (Claymore)</span>, <span className="purple">Favonius Lance (Polearm)</span>, and <span className="purple">Eye of Perception (Catalyst)</span> will get a <span className="orange">huge drop-rate boost</span>!
+              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star weapons <span className="brass">Vortex Vanquisher (Polearm)</span> and <span className="brass">The Unforged (Claymore)</span> as well as 4-star weapons <span className="purple">The Bell (Claymore)</span>, <span className="purple">Dragon's Bane (Polearm)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Favonius Codex (Catalyst)</span>, and <span className="purple">Favonius Warbow (Bow)</span> will get a <span className="orange">huge drop-rate boost</span>!
               <br/>
               <span className="orange">※ Of the above weapons, the event-exclusive weapon will not be available in the standard wish "Wanderlust Invocation".</span>
             </p>
@@ -91,7 +91,7 @@ export default function EpitomeInvocationDetails(props) {
             </p>
             <p className="my-3">
               For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 5-star weapon = <span className="orange">0.700%</span>; consolidated probability (incl. guarantee) = <span className="orange">1.850%</span>; guaranteed to win 5-star weapon at least once per <span className="orange">80</span> attempts. <br/>
-              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="orange">Memory of Dust (Catalyst)</span> and <span className="orange">Skyward Harp (Bow)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
+              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="orange">Vortex Vanquisher (Polearm)</span> and <span className="orange">The Unforged (Claymore)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
             </p>
             <p className="my-3">
               4-Star Items
@@ -99,7 +99,7 @@ export default function EpitomeInvocationDetails(props) {
             <p className="my-3">
               For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 4-star item = <span className="orange">6.000%</span>; base probability of winning 4-star character = <span className="orange">3.000%</span>, and base probability of winning 4-star weapon = <span className="orange">3.000%</span>; consolidated probability (incl. guarantee) of winning 4-star item = <span className="orange">14.500%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts.
               <br/>
-              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">Rust (Bow)</span>, <span className="purple">The Flute (Sword)</span>, <span className="purple">Rainslasher (Claymore)</span>, <span className="purple">Favonius Lance (Polearm)</span>, and <span className="purple">Eye of Perception (Catalyst)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
+              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">The Bell (Claymore)</span>, <span className="purple">Dragon's Bane (Polearm)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Favonius Codex (Catalyst)</span>, and <span className="purple">Favonius Warbow (Bow)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
             </p>
             <p className="my-3">
               5-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×10; 4-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×2; 3-star weapons won in this wish come with <span className="purple">Masterless Stardust</span> ×15.
