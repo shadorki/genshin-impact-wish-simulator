@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'farewell-of-snezhnaya': 'Character Event Wish',
+        'gentry-of-hermitrage': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
+        'gentry-of-hermitrage': 'gentryOfHermitrage',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if(isLimited) {
       this.setState({
-        selectedBanner: 'farewell-of-snezhnaya',
+        selectedBanner: 'gentry-of-hermitrage',
         banners: {
-          'farewell-of-snezhnaya': 'Character Event Wish',
+          'gentry-of-hermitrage': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
+          'gentry-of-hermitrage': 'gentryOfHermitrage',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +62,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'farewell-of-snezhnaya': 'Character Event Wish',
+          'gentry-of-hermitrage': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
+          'gentry-of-hermitrage': 'gentryOfHermitrage',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },

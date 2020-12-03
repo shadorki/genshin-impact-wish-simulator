@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import FarewellOfSnezhnaya from '../models/farewell-of-snezhnaya'
+import GentryOfHermitrage from '../models/gentry-of-hermitrage'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -24,7 +24,7 @@ export default class App extends Component {
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
-    this.farewellOfSnezhnaya = new FarewellOfSnezhnaya()
+    this.gentryOfHermitrage = new GentryOfHermitrage()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -123,7 +123,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'farewell-of-snezhnaya' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'gentry-of-hermitrage' : 'beginners-wish'
     })
   }
   clearLocalStorageEveryNewBuild() {
