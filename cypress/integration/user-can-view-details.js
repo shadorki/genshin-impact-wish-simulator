@@ -14,7 +14,7 @@ const validateItems = (elements, items) => {
 }
 
 describe('User can view details', () => {
-  it('visits the app and resets inventory', () => {
+  before(() => {
     cy.visit('/')
     cy.get('.close-button')
       .click()
@@ -22,15 +22,21 @@ describe('User can view details', () => {
       .contains('Reset')
       .click()
   })
-  it('validates beginners wish details', () => {
-    cy.get('.banner-button')
-      .first()
+  afterEach(() => {
+    cy.get('[data-icon="undo"]')
       .click()
-    cy.get('button')
-      .contains('Details')
-      .click()
-    cy.get('h1')
-      .contains('| Beginners')
-      .should('be.visible')
+  })
+
+  it('validates Beginners Wish details', () => {
+      cy.details(0, '| Beginners', beginnersWish)
     })
+  it('validates Character Event Wish details', () => {
+      cy.details(1, '| Event Wish', characterEventWish)
+  })
+  it('validates Weapon Wish details', () => {
+      cy.details(2, '| Event Wish', weaponWish)
+  })
+  it('validates Standard Wish details', () => {
+      cy.details(3, '| Standard Wish "Wanderlust', standardWish)
+  })
 })
