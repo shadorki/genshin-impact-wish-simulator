@@ -122,7 +122,8 @@
     "rating": 4,
     "class": "Sword",
     "isFeatured": true,
-    "src": "lions-roar.png"
+    "src": "lions-roar.png",
+    "type": "weapon"
   },
   {
     "name": "Sucrose",

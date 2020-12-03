@@ -162,7 +162,7 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let gentry = require('../src/data/gentry-of-hermitrage.json')
+  let gentry = require('../src/data/gentry-of-hermitage.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))

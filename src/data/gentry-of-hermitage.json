@@ -248,7 +248,8 @@
     "name": "Lions Roar",
     "rating": 4,
     "class": "Sword",
-    "src": "lions-roar.png"
+    "src": "lions-roar.png",
+    "type": "weapon"
   },
   {
     "name": "Sacrificial Sword",

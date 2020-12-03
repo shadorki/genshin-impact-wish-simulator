@@ -1,7 +1,7 @@
 import BaseGacha from './base-gacha'
-import drops from '../data/gentry-of-hermitrage.json'
+import drops from '../data/gentry-of-hermitage.json'
 
-export default class GentryOfHermitrage extends BaseGacha {
+export default class GentryOfHermitage extends BaseGacha {
   constructor() {
     super(drops)
     this.attemptsCount = 0;

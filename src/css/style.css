@@ -92,10 +92,10 @@ video {
 .banner-button.farewell-of-snezhnaya.selected {
   background-image: url('../assets/images/ui/childe-selected.png');
 }
-.banner-button.gentry-of-hermitrage {
+.banner-button.gentry-of-hermitage {
   background-image: url('../assets/images/ui/zhongli.png');
 }
-.banner-button.gentry-of-hermitrage.selected {
+.banner-button.gentry-of-hermitage.selected {
   background-image: url('../assets/images/ui/zhongli-selected.png');
 }
 .banner-button.epitome-invocation {
