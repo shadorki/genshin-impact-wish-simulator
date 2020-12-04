@@ -8,11 +8,6 @@ const standardWish = new StandardWish()
 const weaponWish = new WeaponWish()
 const beginnersWish = new BeginnersWish()
 
-const validateItems = (elements, items) => {
-  console.log(elements)
-  console.log(items)
-}
-
 describe('User can view details', () => {
   before(() => {
     cy.visit('/')

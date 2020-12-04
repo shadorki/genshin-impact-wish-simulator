@@ -1,15 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
 Cypress.Commands.add("details", (bannerPosition, header, modelData) => {
       cy.get('.banner-button')
       .eq(bannerPosition)
@@ -51,15 +39,15 @@ Cypress.Commands.add("details", (bannerPosition, header, modelData) => {
           })
       })
 })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("wish", banner => {
+  cy.get(`.banner-button.${banner}`)
+    .click()
+  cy.get('.wish-button')
+    .contains('Wish x10')
+    .click()
+  cy.get('.skip-button')
+    .click()
+  cy.get('.close-button')
+    .click()
+})
