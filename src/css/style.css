@@ -29,13 +29,17 @@ video {
 .banners {
   background-image: url('../assets/images/ui/background.png');
 }
-.wrapper.banners > .heading {
+.banners-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.banners-container > .heading {
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.wrapper.banners > .heading > .current-banner {
+.banners-container > .heading > .current-banner {
   color: #d4bc8f;
   font-size: 1.5rem;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
@@ -43,7 +47,7 @@ video {
   margin-left: 1.2rem;
   text-align: center;
 }
-.wrapper.banners > .heading > .close-window, .close-button {
+.banners-container > .heading > .close-window, .close-button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,10 +59,10 @@ video {
 .close-button {
   margin: 0;
 }
-.wrapper.banners > .heading > .close-window:hover {
+.banners-container > .heading > .close-window:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
 }
-.wrapper.banners > .heading > .select-banner {
+.banners-container > .heading > .select-banner {
   display: flex;
   justify-content: space-around;
 }
@@ -355,18 +359,18 @@ td {
     height: 61px;
     width: 128px;
   }
-  .wrapper.banners > .heading > .close-window {
+  .banners-container > .heading > .close-window {
     height: 35px;
     width: 35px;
   }
 
 }
 @media (max-width: 768px) {
-  .wrapper.banners > .heading > .select-banner {
+  .banners-container > .heading > .select-banner {
     margin-top: 1.2rem;
     flex-wrap: wrap;
   }
-  .wrapper.banners > .heading > .close-window {
+  .banners-container > .heading > .close-window {
     display: none;
   }
   .wish-button {
@@ -378,7 +382,7 @@ td {
     height: 50px;
     width: 100px;
   }
-  .wrapper.banners > .heading > .current-banner {
+  .banners-container > .heading > .current-banner {
     font-size: 1rem;
     width: 100px;
     margin-left: 1.2rem;

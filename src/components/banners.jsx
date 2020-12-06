@@ -24,11 +24,11 @@ export default class Banners extends Component {
     }
   }
   componentDidMount() {
-      this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
-      this.setState({selectedBanner: this.props.selectedBanner})
+    this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
+    this.setState({ selectedBanner: this.props.selectedBanner })
   }
   componentDidUpdate(prevProps) {
-    if(prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
+    if (prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
       this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
     }
   }
@@ -36,14 +36,14 @@ export default class Banners extends Component {
     this.switchBanner(Object.keys(this.state.banners)[index])
   }
   switchBanner(selectedBanner) {
-    this.setState({selectedBanner}, () => this.props.setCurrentDetails(selectedBanner))
+    this.setState({ selectedBanner }, () => this.props.setCurrentDetails(selectedBanner))
   }
   get bannerText() {
     return this.state.banners[this.state.selectedBanner]
   }
 
   toggleBeginnersWish(isLimited) {
-    if(isLimited) {
+    if (isLimited) {
       this.setState({
         selectedBanner: 'gentry-of-hermitage',
         banners: {
@@ -85,85 +85,87 @@ export default class Banners extends Component {
       hideModal,
       reset,
       wish
-      } = this.props
+    } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
     return (
       <>
-      {
-        wasDisclaimerSeen
-        ? null
-        : <Modal hideModal={hideModal}/>
-      }
-      <div className="wrapper banners">
-        <div className="heading">
-          <div className="current-banner">
-            <div>{this.bannerText}</div>
-          </div>
-          <div className="select-banner">
-            {
-              bannerKeys.map(banner => (
-                <BannerButton
-                key={banner}
-                isSelected={banner === selectedBanner}
-                className={banner}
-                onClick={() => this.switchBanner(banner)}
-                />
-              ))
-            }
-          </div>
-            <div className="close-window"></div>
-        </div>
-        <div className="carousel-container">
-          <Carousel
-            className={"carousel"}
-            showThumbs={false}
-            showIndicators={false}
-            showStatus={false}
-            emulateTouch={false}
-            showArrows={false}
-            infiniteLoop={true}
-            selectedItem={selectedBannerIndex}
-            onChange={this.onCarouselChange.bind(this)}
-          >
-          {
-            bannerKeys.map(banner => {
-             return (
-                <div key={banner}>
-                  <img src={banners(`./${banner}.png`).default} />
-                </div>
-              )
-            })
-          }
-          </Carousel>
-        </div>
-        <div className="action-container">
-            <div className="button-container">
-              <button
-              onClick={() => setView('details')}
-              >Details</button>
-              <button
-              onClick={() => setView('inventory')}
-              >Inventory</button>
-            </div>
-            <div className="wish-container d-flex justify-content-center">
-              <div
-              className="wish-button"
-              onClick={() => {
-                wish(this.state.wishes[selectedBanner])
-              }}
-              >
-                Wish x10
+        {
+          wasDisclaimerSeen
+            ? null
+            : <Modal hideModal={hideModal} />
+        }
+        <div className="wrapper banners">
+          <div className="banners-container">
+            <div className="heading">
+              <div className="current-banner">
+                <div>{this.bannerText}</div>
               </div>
-              <div
-                onClick={() => {
-                  reset(selectedBanner);
-                }}
-                className="wish-button"
-                >Reset</div>
+              <div className="select-banner">
+                {
+                  bannerKeys.map(banner => (
+                    <BannerButton
+                      key={banner}
+                      isSelected={banner === selectedBanner}
+                      className={banner}
+                      onClick={() => this.switchBanner(banner)}
+                    />
+                  ))
+                }
+              </div>
+              <div className="close-window"></div>
             </div>
+            <div className="carousel-container">
+              <Carousel
+                className={"carousel"}
+                showThumbs={false}
+                showIndicators={false}
+                showStatus={false}
+                emulateTouch={false}
+                showArrows={false}
+                infiniteLoop={true}
+                selectedItem={selectedBannerIndex}
+                onChange={this.onCarouselChange.bind(this)}
+              >
+                {
+                  bannerKeys.map(banner => {
+                    return (
+                      <div key={banner}>
+                        <img src={banners(`./${banner}.png`).default} />
+                      </div>
+                    )
+                  })
+                }
+              </Carousel>
+            </div>
+            <div className="action-container">
+              <div className="button-container">
+                <button
+                  onClick={() => setView('details')}
+                >Details</button>
+                <button
+                  onClick={() => setView('inventory')}
+                >Inventory</button>
+              </div>
+              <div className="wish-container d-flex justify-content-center">
+                <div
+                  className="wish-button"
+                  onClick={() => {
+                    wish(this.state.wishes[selectedBanner])
+                  }}
+                >
+                  Wish x10
+              </div>
+                <div
+                  onClick={() => {
+                    reset(selectedBanner);
+                  }}
+                  className="wish-button"
+                >Reset</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
       </>
     )
   }
