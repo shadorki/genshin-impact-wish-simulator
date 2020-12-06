@@ -38,9 +38,6 @@ export default class WanderlustInvocation extends BaseGacha {
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
     return item
   }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-  }
   getGuaranteed4StarItemOrHigher() {
     // .6% chance of getting 5 star item
     const didUserGet5StarItem = this.getRandomRating() === 5

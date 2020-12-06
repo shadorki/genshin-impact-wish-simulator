@@ -47,9 +47,6 @@ export default class BeginnersWish extends BaseGacha {
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
     return item
   }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-  }
   getGuaranteed4StarItemOrHigher() {
     // .5% chance of getting 5 star item
     const didUserGet5StarItem = this.getRandomRating() === 5

@@ -9,6 +9,9 @@ export default class BaseGacha {
       return this.drops.filter(drop => drop.rating === rating)
     }
   }
+  getRandomRating() {
+    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
+  }
   flipACoin() {
     return !!(Math.round(Math.random()))
   }

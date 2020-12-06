@@ -35,9 +35,6 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
   rollBasedOffProbability() {
     return this.getRandomItem(this.getRandomRating())
   }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-  }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;

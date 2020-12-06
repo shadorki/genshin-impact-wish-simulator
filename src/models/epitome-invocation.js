@@ -54,9 +54,6 @@ export default class EpitomeInvocation extends BaseGacha {
     this.guaranteedFeatured5Star = true
     return this.getRandomItem(5)
   }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-  }
   getGuaranteed4StarItemOrHigher() {
     // check if user got featuredItem
     // there are 75 5s in there, so if it is 5 its true if 4 false
