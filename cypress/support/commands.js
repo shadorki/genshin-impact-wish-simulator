@@ -1,3 +1,6 @@
+let LOCAL_STORAGE_MEMORY = {};
+
+
 Cypress.Commands.add("details", (bannerPosition, header, modelData) => {
       cy.get('.banner-button')
       .eq(bannerPosition)
@@ -51,3 +54,33 @@ Cypress.Commands.add("wish", banner => {
   cy.get('.close-button')
     .click()
 })
+
+Cypress.Commands.add("validateInventory", (amountSpent, inventoryList) => {
+  cy.get('button')
+    .contains('Inventory')
+    .click()
+  cy.get('.amount-spent-badge')
+    .contains(amountSpent)
+  cy.get('.list-item > .row')
+    .each($row => {
+      const [, $item, , $quantity] = [...$row.children()]
+      const itemName = $item.innerText
+      const quantityAmount = $quantity.innerText.replace('X', '')
+      const previousItemCount = inventoryList.length
+      inventoryList = inventoryList.filter(item => item.item !== itemName && item.quantity !== quantityAmount)
+      expect(inventoryList.length).to.equal(previousItemCount - 1)
+    })
+})
+
+
+Cypress.Commands.add("saveLocalStorage", () => {
+  Object.keys(localStorage).forEach(key => {
+    LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+  });
+});
+
+Cypress.Commands.add("restoreLocalStorage", () => {
+  Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
+    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+  });
+});
