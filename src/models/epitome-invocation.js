@@ -37,6 +37,18 @@ export default class EpitomeInvocation extends BaseGacha {
     }
     return roll
   }
+  rollOnce() {
+    this.attempts = 1
+    this.shuffle(this.chanceRange)
+    if(this.guaranteed5Star) {
+      return this.getGuaranteed5StarItem()
+    }
+    const guaranteed4Star = !(this.attemptsCount % 10)
+    if(guaranteed4Star) {
+      return this.getGuaranteed4StarItemOrHigher()
+    }
+    return this.singlePull()
+  }
   rollBasedOffProbability() {
     return this.getRandomItem(this.getRandomRating())
   }

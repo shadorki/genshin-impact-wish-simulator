@@ -13,7 +13,6 @@ export default class BaseGacha {
     return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
   singlePull() {
-    this.attempts = 1
     this.shuffle(this.probabilityRange)
     const rating = this.getRandomRating()
     const items = this.getDrops(rating)
