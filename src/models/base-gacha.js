@@ -12,6 +12,13 @@ export default class BaseGacha {
   getRandomRating() {
     return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
+  singlePull() {
+    this.attempts = 1
+    this.shuffle(this.probabilityRange)
+    const rating = this.getRandomRating()
+    const items = this.getDrops(rating)
+    return items[this.generateRandomNumber(items.length)]
+  }
   flipACoin() {
     return !!(Math.round(Math.random()))
   }
