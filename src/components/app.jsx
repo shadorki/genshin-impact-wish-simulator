@@ -53,9 +53,9 @@ export default class App extends Component {
   setSelectedWish(selectedWish) {
     this.setState({selectedWish})
   }
-  wish(selectedWish) {
+  wish(selectedWish, isOneWish = false) {
     this.setState({
-      currentWishes: this[selectedWish].roll(),
+      currentWishes: isOneWish ? [this[selectedWish].rollOnce()] : this[selectedWish].roll(),
       selectedWish
     }, () => this.setView('wish'))
   }
@@ -167,6 +167,7 @@ export default class App extends Component {
             return <Wish
             setView={this.setView}
             is5StarItem={currentWishes.some(item => item.rating === 5)}
+            isSingleItem={currentWishes.length === 1}
             />
           case 'wish-results':
             return <WishResults

@@ -149,6 +149,13 @@ export default class Banners extends Component {
               </div>
               <div className="wish-container d-flex justify-content-center">
                 <div
+                  onClick={() => {
+                    wish(this.state.wishes[selectedBanner], true)
+                    // reset(selectedBanner);
+                  }}
+                  className="wish-button"
+                >Wish</div>
+                <div
                   className="wish-button"
                   onClick={() => {
                     wish(this.state.wishes[selectedBanner])
@@ -156,12 +163,6 @@ export default class Banners extends Component {
                 >
                   Wish x10
               </div>
-                <div
-                  onClick={() => {
-                    reset(selectedBanner);
-                  }}
-                  className="wish-button"
-                >Reset</div>
               </div>
             </div>
           </div>
