@@ -288,6 +288,17 @@ td {
 .wish-item.weapon {
   background-size: contain;
 }
+.wish-item-single {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wish-item-single-container {
+  position: relative;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 5px;
+  color: white;
+  font-size: 2rem;
+}
 .amount-spent-badge {
   display: block;
   width: 100%;
@@ -367,6 +378,14 @@ td {
     width: 35px;
   }
 
+}
+@media (max-width: 769px) {
+  .wish-item-single-content {
+    height: 20% !important;
+  }
+  .wish-item-single {
+    height: 80% !important;
+  }
 }
 @media (max-width: 768px) {
   .giws-banners-container > .heading > .select-banner {
