@@ -8,6 +8,7 @@ import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
 import WanderlustInvocation from '../src/models/wanderlust-invocation'
 import GentryOfHermitage from '../src/models/gentry-of-hermitage'
+import itemSchema from './schema/item'
 let gentry = null
 let beginners = null
 let epitome = null
@@ -43,7 +44,7 @@ describe('Validate that all data has valid images', () => {
   })
 })
 
-describe('Testing suite for genshin impact gacha', () => {
+describe('User can Wish x10', () => {
   ////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////Testing Gentry of Hermitrage//////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -303,5 +304,54 @@ describe('Testing suite for genshin impact gacha', () => {
       expect(wanderlust.attemptsCount).to.be.equal(180)
       done()
     })
+  })
+})
+
+describe('User can Wish x1', () => {
+  it('Should pull 10 times and the 10th time should be a 4 star item', () => {
+    const gentry = new GentryOfHermitage()
+    const epitome = new EpitomeInvocation()
+    const wanderlust = new WanderlustInvocation()
+    for(let i = 0; i < 9; i++) {
+      const itemGentry = gentry.rollOnce()
+      const itemEpitome = epitome.rollOnce()
+      const itemWanderlust = wanderlust.rollOnce()
+      expect(itemSchema.isValidSync(itemGentry)).to.be.true
+      expect(itemSchema.isValidSync(itemEpitome)).to.be.true
+      expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
+    }
+    const itemGentry = gentry.rollOnce()
+    const itemEpitome = epitome.rollOnce()
+    const itemWanderlust = wanderlust.rollOnce()
+    expect(itemSchema.isValidSync(itemGentry)).to.be.true
+    expect(itemSchema.isValidSync(itemEpitome)).to.be.true
+    expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
+    expect(itemGentry.rating === 4 || itemGentry.rating === 5).to.be.true
+    expect(itemEpitome.rating === 4 || itemEpitome.rating === 5).to.be.true
+    expect(itemWanderlust.rating === 4 || itemWanderlust.rating === 5).to.be.true
+  })
+  it('Beginners wish should be blocked from doing 10 wishes', () => {
+    let canUserWishFor10Items = true
+    const disableUserCanWishFor10Items = () => {
+      canUserWishFor10Items = false
+    }
+    let beginners = new BeginnersWish(() => {}, disableUserCanWishFor10Items)
+    for(let i = 0; i < 11; i++) {
+      const item = beginners.rollOnce()
+      expect(itemSchema.isValidSync(item)).to.be.true
+    }
+    expect(canUserWishFor10Items).to.be.false
+    const noItems = beginners.roll()
+    expect(noItems).to.be.null
+    for (let i = 0; i < 8; i++) {
+      const item = beginners.rollOnce()
+      expect(itemSchema.isValidSync(item)).to.be.true
+    }
+    const noItemsAgain = beginners.roll()
+    expect(noItemsAgain).to.be.null
+    const lastItem = beginners.rollOnce()
+    expect(itemSchema.isValidSync(lastItem)).to.be.true
+    const lastItemIsNull = beginners.rollOnce()
+    expect(lastItemIsNull).to.be.null
   })
 })
