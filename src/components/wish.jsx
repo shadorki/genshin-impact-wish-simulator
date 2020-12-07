@@ -12,10 +12,11 @@ export default function Wish(props) {
     onClick={() => setView('wish-results')}
     className="skip-button">Skip</button>
     <video
-    autoPlay={true}
     className="min-vh-100 w-100 overflow-hidden"
     onEnded={() => setView('wish-results')}
-    playsInline={true}
+    playsInline
+    autoPlay
+    muted
     >
       <source
         src={

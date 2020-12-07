@@ -96,7 +96,7 @@ export default class Banners extends Component {
             : <Modal hideModal={hideModal} />
         }
         <div className="wrapper banners">
-          <div className="banners-container">
+          <div className="giws-banners-container">
             <div className="heading">
               <div className="current-banner">
                 <div>{this.bannerText}</div>
