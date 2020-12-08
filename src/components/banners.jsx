@@ -142,6 +142,9 @@ export default class Banners extends Component {
             <div className="action-container">
               <div className="button-container">
                 <button
+                  onClick={() => reset(selectedBanner)}
+                >Reset</button>
+                <button
                   onClick={() => setView('details')}
                 >Details</button>
                 <button
@@ -152,7 +155,6 @@ export default class Banners extends Component {
                 <div
                   onClick={() => {
                     wish(this.state.wishes[selectedBanner], true)
-                    // reset(selectedBanner);
                   }}
                   className="wish-button"
                 >Wish</div>

@@ -87,6 +87,7 @@ export default class App extends Component {
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
       isBeginnersWishLimited: false,
+      isBeginnersWishOver10: false,
       selectedWish: previouslySelectedWish,
       inventory: {}
     }, this.saveData)
