@@ -2,7 +2,7 @@ let LOCAL_STORAGE_MEMORY = {};
 
 
 Cypress.Commands.add("details", (bannerPosition, header, modelData) => {
-      cy.get('.banner-button')
+    cy.get('.banner-button')
       .eq(bannerPosition)
       .click()
     cy.get('button')
@@ -55,6 +55,18 @@ Cypress.Commands.add("wish", banner => {
     .click()
 })
 
+Cypress.Commands.add("wishOnce", banner => {
+  cy.get(`.banner-button.${banner}`)
+    .click()
+  cy.get('.wish-button')
+    .contains('Wish')
+    .click()
+  cy.get('.skip-button')
+    .click()
+  cy.get('.close-button')
+    .click()
+})
+
 Cypress.Commands.add("validateInventory", (amountSpent, inventoryList) => {
   cy.get('button')
     .contains('Inventory')
@@ -84,3 +96,9 @@ Cypress.Commands.add("restoreLocalStorage", () => {
     localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
   });
 });
+
+Cypress.Commands.add("resetInventory", () => {
+  cy.get('button')
+    .contains('Reset')
+    .click()
+})

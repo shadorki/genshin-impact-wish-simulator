@@ -28,9 +28,7 @@ describe('User can use inventory', () => {
     cy.visit('/')
     cy.get('.close-button')
       .click()
-    cy.get('.wish-button')
-      .contains('Reset')
-      .click()
+    cy.resetInventory()
   })
   it('Validates the inventory', () => {
     const banners = [
@@ -40,14 +38,19 @@ describe('User can use inventory', () => {
     ]
     for (let i = 0; i < 10; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
+      const wishOnce = !!Math.round(Math.random())
       cy.get(`.banner-button.${banner}`)
         .click()
       cy.get('.wish-button')
-        .contains('Wish x10')
+        .contains(wishOnce ? 'Wish' : 'Wish x10')
         .click()
       cy.get('.skip-button')
         .click()
-      cy.get('.wish-item > div > div:first-child')
+      cy.get(
+        wishOnce
+          ? '.wish-item-single-content > div:first-child'
+          : '.wish-item > div > div:first-child'
+      )
         .each($wish => {
           updateInventory($wish.text())
         })
@@ -114,9 +117,7 @@ describe('User can use inventory', () => {
     cy.validateInventory(amountSpent, inventoryList)
     cy.get('[data-icon="undo"]')
       .click()
-    cy.get('.wish-button')
-      .contains('Reset')
-      .click()
+    cy.resetInventory()
     cy.get('button')
       .contains('Inventory')
       .click()

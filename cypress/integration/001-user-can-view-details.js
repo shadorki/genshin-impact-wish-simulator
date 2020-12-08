@@ -13,9 +13,7 @@ describe('User can view details', () => {
     cy.visit('/')
     cy.get('.close-button')
       .click()
-    cy.get('.wish-button')
-      .contains('Reset')
-      .click()
+    cy.resetInventory()
   })
   afterEach(() => {
     cy.get('[data-icon="undo"]')

@@ -3,9 +3,7 @@ describe('User can wish', () => {
     cy.visit('/')
     cy.get('.close-button')
       .click()
-    cy.get('.wish-button')
-      .contains('Reset')
-      .click()
+    cy.resetInventory()
   })
   it('Beginners wish should contain noelle', () => {
     cy.get('.banner-button.beginners-wish')
@@ -31,7 +29,7 @@ describe('User can wish', () => {
       'epitome-invocation',
       'wanderlust-invocation'
     ]
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < 20; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
       cy.wish(banner)
     }
