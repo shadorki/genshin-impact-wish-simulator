@@ -18,14 +18,16 @@ export default class App extends Component {
       currentDetails: 'beginners-wish',
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
+      isBeginnersWishOver10: false,
       inventory: {},
       wasDisclaimerSeen: false,
       currentWishes: []
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
+    this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
     this.gentryOfHermitage = new GentryOfHermitage()
-    this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
+    this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
   }
@@ -92,10 +94,12 @@ export default class App extends Component {
   saveData() {
     const {
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory
     } = this.state
     const data = {
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
       gentryOfHermitage: this.gentryOfHermitage.attemptsCount,
@@ -109,7 +113,8 @@ export default class App extends Component {
     if(!data) return;
     const {
       isBeginnersWishLimited,
-      inventory,
+      isBeginnersWishOver10,
+      inventory
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
     this.gentryOfHermitage.attempts = data.gentryOfHermitage
@@ -117,6 +122,7 @@ export default class App extends Component {
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory
     }, this.backToHome)
   }
@@ -125,6 +131,9 @@ export default class App extends Component {
       isBeginnersWishLimited,
       currentDetails: isBeginnersWishLimited ? 'gentry-of-hermitage' : 'beginners-wish'
     })
+  }
+  setBeginnersWishOver10() {
+    this.setState({isBeginnersWishOver10: true})
   }
   clearLocalStorageEveryNewBuild() {
     // If there is a new update or the user does not have the 'appVersion', we'll give one.
@@ -140,6 +149,7 @@ export default class App extends Component {
           currentDetails,
           view,
           isBeginnersWishLimited,
+          isBeginnersWishOver10,
           inventory,
           wasDisclaimerSeen,
           selectedDetail,
@@ -153,6 +163,7 @@ export default class App extends Component {
               setSelectedWish={this.setSelectedWish.bind(this)}
               selectedBanner={currentDetails}
               isBeginnersWishLimited={isBeginnersWishLimited}
+              isBeginnersWishOver10={isBeginnersWishOver10}
               wasDisclaimerSeen={wasDisclaimerSeen}
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}

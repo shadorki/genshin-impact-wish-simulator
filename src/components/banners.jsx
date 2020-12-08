@@ -84,7 +84,8 @@ export default class Banners extends Component {
       setSelectedWish,
       hideModal,
       reset,
-      wish
+      wish,
+      isBeginnersWishOver10
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -156,8 +157,9 @@ export default class Banners extends Component {
                   className="wish-button"
                 >Wish</div>
                 <div
-                  className="wish-button"
+                  className={`wish-button ${selectedBanner === 'beginners-wish' && isBeginnersWishOver10 && 'disabled'}`}
                   onClick={() => {
+                    if(isBeginnersWishOver10 && selectedBanner === 'beginners-wish') return;
                     wish(this.state.wishes[selectedBanner])
                   }}
                 >
