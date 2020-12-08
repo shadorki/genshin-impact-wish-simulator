@@ -386,7 +386,15 @@ td {
     height: 35px;
     width: 35px;
   }
-
+  .action-container > .button-container > button {
+    font-size: .8rem;
+  }
+  .giws-banners-container > .heading > .close-window {
+    display: none;
+  }
+  .wish-button {
+    width:  160px;
+  }
 }
 @media (max-width: 769px) {
   .wish-item-single-content {
@@ -401,11 +409,12 @@ td {
     margin-top: 1.2rem;
     flex-wrap: wrap;
   }
-  .giws-banners-container > .heading > .close-window {
-    display: none;
-  }
   .wish-button {
     width:  150px;
+  }
+  .action-container > .button-container > button {
+    font-size: .8rem;
+    padding: 5px 15px;
   }
 }
 @media (max-width: 576px) {
@@ -425,5 +434,18 @@ td {
   }
   .wish-button {
     width:  123px;
+  }
+}
+@media (max-width: 320px) {
+  .current-banner {
+    display: none;
+  }
+
+  .action-container > .button-container{
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  .action-container > .button-container > button {
+    width: 100%;
   }
 }
