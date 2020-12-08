@@ -32,11 +32,19 @@ export default class GentryOfHermitage extends BaseGacha {
     }
     return roll
   }
+  rollOnce() {
+    this.attempts = 1
+    if (this.guaranteed5Star) {
+      return this.getRandomItem(5)
+    }
+    const guaranteed4Star = !(this.attemptsCount % 10)
+    if (guaranteed4Star) {
+      return this.getGuaranteed4StarItemOrHigher()
+    }
+    return this.singlePull()
+  }
   rollBasedOffProbability() {
     return this.getRandomItem(this.getRandomRating())
-  }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);

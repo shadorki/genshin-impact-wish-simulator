@@ -84,7 +84,8 @@ export default class Banners extends Component {
       setSelectedWish,
       hideModal,
       reset,
-      wish
+      wish,
+      isBeginnersWishOver10
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -96,7 +97,7 @@ export default class Banners extends Component {
             : <Modal hideModal={hideModal} />
         }
         <div className="wrapper banners">
-          <div className="banners-container">
+          <div className="giws-banners-container">
             <div className="heading">
               <div className="current-banner">
                 <div>{this.bannerText}</div>
@@ -141,6 +142,9 @@ export default class Banners extends Component {
             <div className="action-container">
               <div className="button-container">
                 <button
+                  onClick={() => reset(selectedBanner)}
+                >Reset</button>
+                <button
                   onClick={() => setView('details')}
                 >Details</button>
                 <button
@@ -149,19 +153,20 @@ export default class Banners extends Component {
               </div>
               <div className="wish-container d-flex justify-content-center">
                 <div
-                  className="wish-button"
                   onClick={() => {
+                    wish(this.state.wishes[selectedBanner], true)
+                  }}
+                  className="wish-button"
+                >Wish</div>
+                <div
+                  className={`wish-button ${selectedBanner === 'beginners-wish' && isBeginnersWishOver10 && 'disabled'}`}
+                  onClick={() => {
+                    if(isBeginnersWishOver10 && selectedBanner === 'beginners-wish') return;
                     wish(this.state.wishes[selectedBanner])
                   }}
                 >
                   Wish x10
               </div>
-                <div
-                  onClick={() => {
-                    reset(selectedBanner);
-                  }}
-                  className="wish-button"
-                >Reset</div>
               </div>
             </div>
           </div>

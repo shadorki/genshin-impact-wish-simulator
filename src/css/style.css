@@ -29,17 +29,17 @@ video {
 .banners {
   background-image: url('../assets/images/ui/background.png');
 }
-.banners-container {
+.giws-banners-container {
   max-width: 1440px;
   margin: 0 auto;
 }
-.banners-container > .heading {
+.giws-banners-container > .heading {
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.banners-container > .heading > .current-banner {
+.giws-banners-container > .heading > .current-banner {
   color: #d4bc8f;
   font-size: 1.5rem;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
@@ -47,7 +47,7 @@ video {
   margin-left: 1.2rem;
   text-align: center;
 }
-.banners-container > .heading > .close-window, .close-button {
+.giws-banners-container > .heading > .close-window, .close-button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -59,10 +59,10 @@ video {
 .close-button {
   margin: 0;
 }
-.banners-container > .heading > .close-window:hover {
+.giws-banners-container > .heading > .close-window:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
 }
-.banners-container > .heading > .select-banner {
+.giws-banners-container > .heading > .select-banner {
   display: flex;
   justify-content: space-around;
 }
@@ -174,6 +174,15 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.wish-button.disabled {
+  filter: grayscale(100%); /* Current draft standard */
+  -webkit-filter: grayscale(100%); /* New WebKit */
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */
+  filter: gray; /* IE */
+  -webkit-filter: grayscale(1); /* Old WebKit */
 }
 .wish-button:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
@@ -288,6 +297,17 @@ td {
 .wish-item.weapon {
   background-size: contain;
 }
+.wish-item-single {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wish-item-single-container {
+  position: relative;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 5px;
+  color: white;
+  font-size: 2rem;
+}
 .amount-spent-badge {
   display: block;
   width: 100%;
@@ -320,6 +340,9 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.disclaimer-modal {
+  max-width: 1000px;
 }
 .disclaimer-modal-content {
   background-color: #ebebeb;
@@ -359,22 +382,39 @@ td {
     height: 61px;
     width: 128px;
   }
-  .banners-container > .heading > .close-window {
+  .giws-banners-container > .heading > .close-window {
     height: 35px;
     width: 35px;
   }
-
-}
-@media (max-width: 768px) {
-  .banners-container > .heading > .select-banner {
-    margin-top: 1.2rem;
-    flex-wrap: wrap;
+  .action-container > .button-container > button {
+    font-size: .8rem;
   }
-  .banners-container > .heading > .close-window {
+  .giws-banners-container > .heading > .close-window {
     display: none;
   }
   .wish-button {
+    width:  160px;
+  }
+}
+@media (max-width: 769px) {
+  .wish-item-single-content {
+    height: 20% !important;
+  }
+  .wish-item-single {
+    height: 80% !important;
+  }
+}
+@media (max-width: 768px) {
+  .giws-banners-container > .heading > .select-banner {
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .wish-button {
     width:  150px;
+  }
+  .action-container > .button-container > button {
+    font-size: .8rem;
+    padding: 5px 15px;
   }
 }
 @media (max-width: 576px) {
@@ -382,7 +422,7 @@ td {
     height: 50px;
     width: 100px;
   }
-  .banners-container > .heading > .current-banner {
+  .giws-banners-container > .heading > .current-banner {
     font-size: 1rem;
     width: 100px;
     margin-left: 1.2rem;
@@ -394,5 +434,18 @@ td {
   }
   .wish-button {
     width:  123px;
+  }
+}
+@media (max-width: 320px) {
+  .current-banner {
+    display: none;
+  }
+
+  .action-container > .button-container{
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  .action-container > .button-container > button {
+    width: 100%;
   }
 }
