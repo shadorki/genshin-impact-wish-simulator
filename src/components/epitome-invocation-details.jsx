@@ -28,14 +28,14 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'Lost Prayer to the Sacred Winds'}
+            title={'Vortex Vanquisher'}
             isWeapon={true}
-            src={'lost-prayer-to-the-sacred-winds.png'}
+            src={'vortex-vanquisher.png'}
           />
           <DetailsBox
-            title={'Wolf\'s Gravestone'}
+            title={'The Unforged'}
             isWeapon={true}
-            src={'wolfs-gravestone.png'}
+            src={'the-unforged.png'}
           />
         </Row>
         <StarsBar
@@ -45,14 +45,14 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'Sacrificial Bow'}
+            title={'Favonius Warbow'}
             isWeapon={true}
-            src={'sacrificial-bow.png'}
+            src={'favonius-warbow.png'}
           />
           <DetailsBox
-            title={'Sacrificial Fragments'}
+            title={'Favonius Codex'}
             isWeapon={true}
-            src={'sacrificial-fragments.png'}
+            src={'favonius-codex.png'}
           />
           <DetailsBox
             title={'Dragon\'s Bane'}
@@ -60,14 +60,14 @@ export default function EpitomeInvocationDetails(props) {
             src={'dragons-bane.png'}
           />
           <DetailsBox
-            title={'Sacrificial Greatsword'}
+            title={'The Bell'}
             isWeapon={true}
-            src={'sacrificial-greatsword.png'}
+            src={'the-bell.png'}
           />
           <DetailsBox
-            title={'Sacrificial Sword'}
+            title={'Lions Roar'}
             isWeapon={true}
-            src={'sacrificial-sword.png'}
+            src={'lions-roar.png'}
           />
         </Row>
         <SubheadingSeparator
@@ -79,7 +79,9 @@ export default function EpitomeInvocationDetails(props) {
         <Row>
           <Col xs="12">
             <p className="my-3">
-              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the 5-star weapons <span className="orange">Lost Prayer to the Sacred Winds (Catalyst)</span> and <span className="orange">Wolf's Gravestone (Claymore)</span> as well as 4-star weapons <span className="purple">Sacrificial Sword (Sword)</span>, <span className="purple">Sacrificial Bow (Bow)</span>, <span className="purple">Sacrificial Greatsword (Claymore)</span>, <span className="purple">Sacrificial Fragments (Catalyst)</span>, and <span className="purple">Dragon's Bane (Polearm)</span> will get a <span className="orange">huge drop-rate boost</span>!
+              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star weapons <span className="brass">Vortex Vanquisher (Polearm)</span> and <span className="brass">The Unforged (Claymore)</span> as well as 4-star weapons <span className="purple">The Bell (Claymore)</span>, <span className="purple">Dragon's Bane (Polearm)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Favonius Codex (Catalyst)</span>, and <span className="purple">Favonius Warbow (Bow)</span> will get a <span className="orange">huge drop-rate boost</span>!
+              <br/>
+              <span className="orange">※ Of the above weapons, the event-exclusive weapon will not be available in the standard wish "Wanderlust Invocation".</span>
             </p>
             <p className="my-3">
               〓Rules〓
@@ -89,14 +91,15 @@ export default function EpitomeInvocationDetails(props) {
             </p>
             <p className="my-3">
               For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 5-star weapon = <span className="orange">0.700%</span>; consolidated probability (incl. guarantee) = <span className="orange">1.850%</span>; guaranteed to win 5-star weapon at least once per <span className="orange">80</span> attempts. <br/>
-              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="orange">Lost Prayer to the Sacred Winds (Catalyst)</span> and <span className="orange">Wolf's Gravestone (Claymore)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
+              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="orange">Vortex Vanquisher (Polearm)</span> and <span className="orange">The Unforged (Claymore)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
             </p>
             <p className="my-3">
               4-Star Items
             </p>
             <p className="my-3">
-              For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 4-star item = <span className="orange">6.000%</span>; consolidated probability (incl. guarantee) = <span className="orange">14.500%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts. <br/>
-              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">Sacrificial Sword (Sword)</span>, <span className="purple">Sacrificial Bow (Bow)</span>, <span className="purple">Sacrificial Greatsword (Claymore)</span>, <span className="purple">Sacrificial Fragments (Catalyst)</span>, and <span className="purple">Dragon's Bane (Polearm)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
+              For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 4-star item = <span className="orange">6.000%</span>; base probability of winning 4-star character = <span className="orange">3.000%</span>, and base probability of winning 4-star weapon = <span className="orange">3.000%</span>; consolidated probability (incl. guarantee) of winning 4-star item = <span className="orange">14.500%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts.
+              <br/>
+              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">The Bell (Claymore)</span>, <span className="purple">Dragon's Bane (Polearm)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Favonius Codex (Catalyst)</span>, and <span className="purple">Favonius Warbow (Bow)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
             </p>
             <p className="my-3">
               5-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×10; 4-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×2; 3-star weapons won in this wish come with <span className="purple">Masterless Stardust</span> ×15.

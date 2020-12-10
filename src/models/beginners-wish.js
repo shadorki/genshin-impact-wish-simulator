@@ -2,22 +2,26 @@ import BaseGacha from './base-gacha'
 import drops from '../data/beginners-wish.json'
 
 export default class BeginnersWish extends BaseGacha {
-  constructor(setBeginnersWishDisable = () => {}) {
+  constructor(setBeginnersWishDisable = () => {}, setBeginnersWishX10Disable = () => {}) {
     super(drops)
     this.attemptsCount = 0;
     this.guaranteedNoelle = true
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     this.setBeginnersWishDisable = setBeginnersWishDisable
+    this.setBeginnersWishX10Disable = setBeginnersWishX10Disable
   }
   set attempts(amount) {
     this.attemptsCount += amount
-    if(this.attemptsCount === 20) {
+    if(this.attemptsCount >= 20) {
       this.setBeginnersWishDisable(true)
+    }
+    if(this.attemptsCount > 10) {
+      this.setBeginnersWishX10Disable()
     }
   }
   roll() {
     // Beginners wish is limited to 20 rolls
-    if(this.attemptsCount === 20) {
+    if(this.attemptsCount > 10) {
       console.error('Exceed beginners wish limit')
       return null;
     }
@@ -39,6 +43,14 @@ export default class BeginnersWish extends BaseGacha {
     }
     return roll
   }
+  rollOnce() {
+    if (this.attemptsCount >= 20) {
+      console.error('Exceed beginners wish limit')
+      return null;
+    }
+    this.attempts = 1
+    return this.singlePull()
+  }
   rollBasedOffProbability() {
     return this.getRandomItem(this.getRandomRating())
   }
@@ -46,9 +58,6 @@ export default class BeginnersWish extends BaseGacha {
     const itemsList = this.getDrops(rating)
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
     return item
-  }
-  getRandomRating() {
-    return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
   }
   getGuaranteed4StarItemOrHigher() {
     // .5% chance of getting 5 star item

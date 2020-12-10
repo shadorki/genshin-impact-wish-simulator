@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import WishItem from './wish-item'
+import WishItemSingle from './wish-item-single'
 export default class WishResults extends Component {
   isNewItem(key) {
     return !this.props.inventory[key]
   }
   render() {
     const { wishes, setView, updateInventory } = this.props
+    const isSingleItem = wishes.length === 1
     return (
       <div className="wish-results">
         <Container>
@@ -22,13 +24,22 @@ export default class WishResults extends Component {
           </Row>
           <Row className="vh-90 justify-content-center align-items-center">
             {
-              wishes.sort((item1, item2) => item2.rating - item1.rating).map((item, index) => (
-                <WishItem
-                  key={index}
-                  item={item}
-                  isNewItem={this.isNewItem(item.name)}
+              isSingleItem
+              ? (
+                <WishItemSingle
+                item={wishes[0]}
+                isNewItem={this.isNewItem(wishes[0].name)}
                 />
-              ))
+              )
+              : (
+                wishes.sort((item1, item2) => item2.rating - item1.rating).map((item, index) => (
+                  <WishItem
+                    key={index}
+                    item={item}
+                    isNewItem={this.isNewItem(item.name)}
+                  />
+                  ))
+              )
             }
           </Row>
         </Container>

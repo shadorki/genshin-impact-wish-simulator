@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import SparklingSteps from '../models/sparkling-steps'
+import GentryOfHermitage from '../models/gentry-of-hermitage'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -18,14 +18,16 @@ export default class App extends Component {
       currentDetails: 'beginners-wish',
       selectedWish: 'beginnersWish',
       isBeginnersWishLimited: false,
+      isBeginnersWishOver10: false,
       inventory: {},
       wasDisclaimerSeen: false,
       currentWishes: []
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
-    this.sparklingSteps = new SparklingSteps()
-    this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable)
+    this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
+    this.gentryOfHermitage = new GentryOfHermitage()
+    this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
   }
@@ -53,9 +55,9 @@ export default class App extends Component {
   setSelectedWish(selectedWish) {
     this.setState({selectedWish})
   }
-  wish(selectedWish) {
+  wish(selectedWish, isOneWish = false) {
     this.setState({
-      currentWishes: this[selectedWish].roll(),
+      currentWishes: isOneWish ? [this[selectedWish].rollOnce()] : this[selectedWish].roll(),
       selectedWish
     }, () => this.setView('wish'))
   }
@@ -77,28 +79,31 @@ export default class App extends Component {
     }
     this.setState({inventory, currentWishes: []}, this.saveData)
   }
-  reset() {
+  reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.sparklingSteps.attemptsCount = 0
+    this.gentryOfHermitage.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
       isBeginnersWishLimited: false,
-      currentDetails: 'beginners-wish',
+      isBeginnersWishOver10: false,
+      selectedWish: previouslySelectedWish,
       inventory: {}
     }, this.saveData)
   }
   saveData() {
     const {
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory
     } = this.state
     const data = {
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      sparklingStepsCount: this.sparklingSteps.attemptsCount,
+      gentryOfHermitage: this.gentryOfHermitage.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
     }
@@ -109,22 +114,27 @@ export default class App extends Component {
     if(!data) return;
     const {
       isBeginnersWishLimited,
-      inventory,
+      isBeginnersWishOver10,
+      inventory
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
-    this.sparklingSteps.attempts = data.sparklingStepsCount
+    this.gentryOfHermitage.attempts = data.gentryOfHermitage
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
       isBeginnersWishLimited,
+      isBeginnersWishOver10,
       inventory
     }, this.backToHome)
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'sparkling-steps' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'gentry-of-hermitage' : 'beginners-wish'
     })
+  }
+  setBeginnersWishOver10() {
+    this.setState({isBeginnersWishOver10: true})
   }
   clearLocalStorageEveryNewBuild() {
     // If there is a new update or the user does not have the 'appVersion', we'll give one.
@@ -140,6 +150,7 @@ export default class App extends Component {
           currentDetails,
           view,
           isBeginnersWishLimited,
+          isBeginnersWishOver10,
           inventory,
           wasDisclaimerSeen,
           selectedDetail,
@@ -153,6 +164,7 @@ export default class App extends Component {
               setSelectedWish={this.setSelectedWish.bind(this)}
               selectedBanner={currentDetails}
               isBeginnersWishLimited={isBeginnersWishLimited}
+              isBeginnersWishOver10={isBeginnersWishOver10}
               wasDisclaimerSeen={wasDisclaimerSeen}
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
@@ -167,6 +179,7 @@ export default class App extends Component {
             return <Wish
             setView={this.setView}
             is5StarItem={currentWishes.some(item => item.rating === 5)}
+            isSingleItem={currentWishes.length === 1}
             />
           case 'wish-results':
             return <WishResults
