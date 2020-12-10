@@ -22,7 +22,7 @@ module.exports = {
       metaName: 'Genshin Impact Wish Simulator',
       metaDesc: 'A simulator to let your wish come true. Test your luck here',
       metaUrl: 'https://uzair-ashraf.github.io/genshin-impact-wish-simulator',
-      // metaImage: `${__dirname}/src/assets/images/banners/sparkling-steps.png`
+      metaImage: `${__dirname}/src/assets/images/banners/sparkling-steps.png`
     })
   ],
   devServer: {
