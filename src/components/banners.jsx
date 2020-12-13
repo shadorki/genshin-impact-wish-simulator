@@ -11,12 +11,14 @@ export default class Banners extends Component {
       banners: {
         'beginners-wish': 'Novice Wishes',
         'gentry-of-hermitage': 'Character Event Wish',
+        'farewell-of-snezhnaya': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
         'gentry-of-hermitage': 'gentryOfHermitage',
+        'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -48,11 +50,13 @@ export default class Banners extends Component {
         selectedBanner: 'gentry-of-hermitage',
         banners: {
           'gentry-of-hermitage': 'Character Event Wish',
+          'farewell-of-snezhnaya': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'gentry-of-hermitage': 'gentryOfHermitage',
+          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -63,12 +67,14 @@ export default class Banners extends Component {
         banners: {
           'beginners-wish': 'Novice Wishes',
           'gentry-of-hermitage': 'Character Event Wish',
+          'farewell-of-snezhnaya': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
           'gentry-of-hermitage': 'gentryOfHermitage',
+          'farewell-of-snezhnaya': 'farewellOfSnezhnaya',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },

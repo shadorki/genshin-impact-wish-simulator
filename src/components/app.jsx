@@ -7,6 +7,7 @@ import Inventory from './inventory'
 import GentryOfHermitage from '../models/gentry-of-hermitage'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
+import FarewellOfSnezhnaya from '../models/farewell-of-snezhnaya'
 import WanderlustInvocation from '../models/wanderlust-invocation'
 import { version } from '../../package.json';
 
@@ -29,6 +30,7 @@ export default class App extends Component {
     this.gentryOfHermitage = new GentryOfHermitage()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
+    this.farewellOfSnezhnaya = new FarewellOfSnezhnaya()
     this.wanderlustInvocation = new WanderlustInvocation()
   }
   componentDidMount() {
@@ -85,6 +87,7 @@ export default class App extends Component {
     this.gentryOfHermitage.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
+    this.farewellOfSnezhnaya.attemptsCount = 0
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -106,6 +109,7 @@ export default class App extends Component {
       gentryOfHermitage: this.gentryOfHermitage.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
+      farewellOfSnezhnayaCount: this.farewellOfSnezhnaya.attemptsCount,
     }
     localStorage.setItem('data', JSON.stringify(data))
   }
@@ -121,6 +125,7 @@ export default class App extends Component {
     this.gentryOfHermitage.attempts = data.gentryOfHermitage
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
+    this.farewellOfSnezhnaya.attempts = data.farewellOfSnezhnayaCount
     this.setState({
       isBeginnersWishLimited,
       isBeginnersWishOver10,
