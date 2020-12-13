@@ -1,5 +1,5 @@
 # Genshin Impact Wish Simulator
-A React web application to simulate Genshin Impact gacha in the browser
+A React web application to simulate Genshin Impact gacha in the browser :)
 
 ## Disclaimer
 
