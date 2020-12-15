@@ -47,6 +47,17 @@ export default class WanderlustInvocation extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
+
+    if (rating === 4) {
+      const isCharacter = this.flipACoin();
+
+      if (isCharacter) {
+        return this.getRandom4StarCharacters();
+      }
+
+      return this.getRandom4StarWeapons();
+    }
+
     return item
   }
   getGuaranteed4StarItemOrHigher() {
@@ -56,5 +67,15 @@ export default class WanderlustInvocation extends BaseGacha {
       return this.getRandomItem(5)
     }
       return this.getRandomItem(4)
+  }
+  getRandom4StarCharacters() {
+    const items = this.getDrops(4);
+    const characters = items.filter(item => item.rating === 4 && item.type === 'character');
+    return characters[this.generateRandomNumber(characters.length)];
+  }
+  getRandom4StarWeapons() {
+    const items = this.getDrops(4);
+    const weapons = items.filter(item => item.rating === 4 && item.type === 'weapon');
+    return weapons[this.generateRandomNumber(weapons.length)];
   }
 }

@@ -48,13 +48,22 @@ export default class GentryOfHermitage extends BaseGacha {
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
-    let item;
 
     if (this.guaranteedZhongli && rating === 5) {
       return this.grabAZhongli();
-    } else {
-      item = itemsList[this.generateRandomNumber(itemsList.length)];
     }
+
+    if (rating === 4) {
+      const isCharacter = this.flipACoin();
+
+      if (isCharacter) {
+        return this.getRandom4StarCharacters();
+      }
+
+      return this.getRandom4StarWeapons();
+    }
+
+    const item = itemsList[this.generateRandomNumber(itemsList.length)];
 
     if (item.rating === 5 && item.name !== 'Zhongli') {
       this.guaranteedZhongli = true;
@@ -94,5 +103,15 @@ export default class GentryOfHermitage extends BaseGacha {
   grabAZhongli() {
     this.guaranteedZhongli = false
     return this.drops.find(item => item.name === 'Zhongli')
+  }
+  getRandom4StarCharacters() {
+    const items = this.getDrops(4);
+    const characters = items.filter(item => item.rating === 4 && item.type === 'character');
+    return characters[this.generateRandomNumber(characters.length)];
+  }
+  getRandom4StarWeapons() {
+    const items = this.getDrops(4);
+    const weapons = items.filter(item => item.rating === 4 && item.type === 'weapon');
+    return weapons[this.generateRandomNumber(weapons.length)];
   }
 }
