@@ -55,6 +55,17 @@ export default class EpitomeInvocation extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
+    
+    if (rating === 4) {
+      const isCharacter = this.flipACoin();
+
+      if (isCharacter) {
+        return this.getRandom4StarCharacters();
+      }
+
+      return this.getRandom4StarWeapons();
+    }
+
     return item
   }
   getGuaranteed5StarItem() {
@@ -100,5 +111,15 @@ export default class EpitomeInvocation extends BaseGacha {
     const items = this.getDrops(rating)
     const featuredItems = items.filter(item => item.rating === rating && item.isFeatured === true)
     return featuredItems[this.generateRandomNumber(featuredItems.length)]
+  }
+  getRandom4StarCharacters() {
+    const items = this.getDrops(4);
+    const characters = items.filter(item => item.rating === 4 && item.type === 'character');
+    return characters[this.generateRandomNumber(characters.length)];
+  }
+  getRandom4StarWeapons() {
+    const items = this.getDrops(4);
+    const weapons = items.filter(item => item.rating === 4 && item.type === 'weapon');
+    return weapons[this.generateRandomNumber(weapons.length)];
   }
 }
