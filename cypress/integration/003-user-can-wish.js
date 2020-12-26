@@ -25,11 +25,11 @@ describe('User can wish', () => {
   })
   it('Stress wish test', () => {
     const banners = [
-      'gentry-of-hermitage',
+      'secretum-secretorum',
       'epitome-invocation',
       'wanderlust-invocation'
     ]
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < 200; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
       cy.wish(banner)
     }
