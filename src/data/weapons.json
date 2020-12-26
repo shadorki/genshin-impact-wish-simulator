@@ -96,7 +96,6 @@
         "rating": 4,
         "type": "weapon",
         "class": "Sword",
-        "isFeatured": true,
         "src": "sacrificial-greatsword.png"
     },
     {
