@@ -1,17 +1,17 @@
 [
   {
-    "name": "Vortex Vanquisher",
+    "name": "Skyward Atlas",
     "rating": 5,
-    "class": "Polearm",
-    "src": "vortex-vanquisher.png",
+    "class": "Catalyst",
+    "src": "skyward-atlas.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "The Unforged",
+    "name": "Summit Shaper",
     "rating": 5,
-    "class": "Claymore",
-    "src": "the-unforged.png",
+    "class": "Sword",
+    "src": "summit-shaper.png",
     "isFeatured": true,
     "type": "weapon"
   },
@@ -34,13 +34,6 @@
     "rating": 5,
     "class": "Catalyst",
     "src": "lost-prayer-to-the-sacred-winds.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Skyward Atlas",
-    "rating": 5,
-    "class": "Catalyst",
-    "src": "skyward-atlas.png",
     "type": "weapon"
   },
   {
@@ -86,44 +79,51 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Warbow",
+    "name": "The Stringless",
     "rating": 4,
     "class": "Bow",
-    "src": "favonius-warbow.png",
+    "src": "the-stringless.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Favonius Codex",
+    "name": "Sacrificial Fragments",
     "rating": 4,
     "class": "Catalyst",
-    "src": "favonius-codex.png",
+    "src": "sacrificial-fragments.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Dragon's Bane",
+    "name": "Favonius Lance",
     "rating": 4,
-    "class": "Polearm",
-    "src": "dragons-bane.png",
+    "class": "Lance",
+    "type": "weapon",
     "isFeatured": true,
-    "type": "weapon"
+    "src": "favonius-lance.png"
   },
   {
-    "name": "The Bell",
+    "name": "Favonius Greatsword",
     "rating": 4,
     "class": "Claymore",
-    "src": "the-bell.png",
+    "src": "favonius-greatsword.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Lions Roar",
+    "name": "Favonius Sword",
     "rating": 4,
     "class": "Sword",
+    "src": "favonius-sword.png",
     "isFeatured": true,
-    "src": "lions-roar.png",
     "type": "weapon"
+  },
+  {
+    "name": "Xinyan",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "src": "Xinyan.png"
   },
   {
     "name": "Sucrose",
@@ -132,6 +132,13 @@
     "rating": 4,
     "id": "749031457019658401",
     "src": "Sucrose.png"
+  },
+  {
+    "name": "Diona",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "src": "Diona.png"
   },
   {
     "name": "Chongyun",
@@ -228,10 +235,10 @@
     "type": "weapon"
   },
   {
-    "name": "The Stringless",
+    "name": "Favonius Warbow",
     "rating": 4,
     "class": "Bow",
-    "src": "the-stringless.png",
+    "src": "favonius-warbow.png",
     "type": "weapon"
   },
   {
@@ -242,13 +249,6 @@
     "type": "weapon"
   },
   {
-    "name": "Sacrificial Fragments",
-    "rating": 4,
-    "class": "Catalyst",
-    "src": "sacrificial-fragments.png",
-    "type": "weapon"
-  },
-  {
     "name": "The Widsith",
     "rating": 4,
     "class": "Catalyst",
@@ -256,11 +256,18 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Lance",
+    "name": "Favonius Codex",
     "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
-    "src": "favonius-lance.png"
+    "class": "Catalyst",
+    "src": "favonius-codex.png",
+    "type": "weapon"
+  },
+  {
+    "name": "Dragon's Bane",
+    "rating": 4,
+    "class": "Polearm",
+    "src": "dragons-bane.png",
+    "type": "weapon"
   },
   {
     "name": "Rainslasher",
@@ -274,15 +281,21 @@
     "rating": 4,
     "type": "weapon",
     "class": "Sword",
-    "isFeatured": true,
     "src": "sacrificial-greatsword.png"
   },
   {
-    "name": "Favonius Greatsword",
+    "name": "The Bell",
     "rating": 4,
     "class": "Claymore",
-    "src": "favonius-greatsword.png",
+    "src": "the-bell.png",
     "type": "weapon"
+  },
+  {
+    "name": "Lions Roar",
+    "rating": 4,
+    "class": "Sword",
+    "type": "weapon",
+    "src": "lions-roar.png"
   },
   {
     "name": "Sacrificial Sword",
@@ -296,13 +309,6 @@
     "rating": 4,
     "class": "Sword",
     "src": "the-flute.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Favonius Sword",
-    "rating": 4,
-    "class": "Sword",
-    "src": "favonius-sword.png",
     "type": "weapon"
   },
   {

@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import GentryOfHermitage from '../models/gentry-of-hermitage'
+import SecretumSecretorum from '../models/secretum-secretorum'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -26,7 +26,7 @@ export default class App extends Component {
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
-    this.gentryOfHermitage = new GentryOfHermitage()
+    this.secretumSecretorum = new SecretumSecretorum()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -82,7 +82,7 @@ export default class App extends Component {
   reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.gentryOfHermitage.attemptsCount = 0
+    this.secretumSecretorum.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
@@ -103,7 +103,7 @@ export default class App extends Component {
       isBeginnersWishOver10,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      gentryOfHermitage: this.gentryOfHermitage.attemptsCount,
+      secretumSecretorum: this.secretumSecretorum.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
     }
@@ -118,7 +118,7 @@ export default class App extends Component {
       inventory
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
-    this.gentryOfHermitage.attempts = data.gentryOfHermitage
+    this.secretumSecretorum.attempts = data.secretumSecretorum
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
@@ -130,7 +130,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'gentry-of-hermitage' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'secretum-secretorum' : 'beginners-wish'
     })
   }
   setBeginnersWishOver10() {

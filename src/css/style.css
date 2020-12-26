@@ -102,6 +102,12 @@ video {
 .banner-button.gentry-of-hermitage.selected {
   background-image: url('../assets/images/ui/zhongli-selected.png');
 }
+.banner-button.secretum-secretorum {
+  background-image: url('../assets/images/ui/albedo.png');
+}
+.banner-button.secretum-secretorum.selected {
+  background-image: url('../assets/images/ui/albedo-selected.png');
+}
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }

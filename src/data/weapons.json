@@ -96,7 +96,6 @@
         "rating": 4,
         "type": "weapon",
         "class": "Sword",
-        "isFeatured": true,
         "src": "sacrificial-greatsword.png"
     },
     {
@@ -618,5 +617,11 @@
         "rating": 4,
         "class": "Polearm",
         "src": "royal-spear.png"
+    },
+    {
+        "name": "Summit Shaper",
+        "rating": 5,
+        "class": "Sword",
+        "src": "summit-shaper.png"
     }
 ]

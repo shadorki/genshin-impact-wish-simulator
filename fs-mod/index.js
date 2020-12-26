@@ -10,12 +10,18 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
+Character
+Keqing
+Character
+Mona
+Character
+Qiqi
+Character
+Diluc
+Character
+Jean
 Weapon
- Vortex Vanquisher
-Weapon
- The Unforged
-Weapon
-Amos' Bow
+Amos Bow
 Weapon
 Skyward Harp
 Weapon
@@ -34,18 +40,12 @@ Weapon
 Skyward Blade
 Weapon
 Aquila Favonia
-Weapon
- Favonius Warbow
-Weapon
- Favonius Codex
-Weapon
- Dragon's Bane
-Weapon
- The Bell
-Weapon
- Lion's Roar
+Character
+Xinyan
 Character
 Sucrose
+Character
+Diona
 Character
 Chongyun
 Character
@@ -63,9 +63,15 @@ Beidou
 Character
 Xiangling
 Character
+Amber
+Character
 Razor
 Character
+Kaeya
+Character
 Barbara
+Character
+Lisa
 Weapon
 Rust
 Weapon
@@ -73,19 +79,29 @@ Sacrificial Bow
 Weapon
 The Stringless
 Weapon
+Favonius Warbow
+Weapon
 Eye of Perception
 Weapon
 Sacrificial Fragments
 Weapon
 The Widsith
 Weapon
+Favonius Codex
+Weapon
 Favonius Lance
+Weapon
+Dragon's Bane
 Weapon
 Rainslasher
 Weapon
 Sacrificial Greatsword
 Weapon
+The Bell
+Weapon
 Favonius Greatsword
+Weapon
+Lions Roar
 Weapon
 Sacrificial Sword
 Weapon
@@ -118,7 +134,7 @@ Weapon
 Harbinger of Dawn
 Weapon
 Cool Steel
-    `
+`
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
     itemList.shift()
@@ -143,7 +159,7 @@ Cool Steel
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    const path = p.join(__dirname, '../src/data/epitome-invocation.json')
+    const path = p.join(__dirname, '../src/data/wanderlust-invocation.json')
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -162,13 +178,13 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let gentry = require('../src/data/gentry-of-hermitage.json')
+  let secretum = require('../src/data/secretum-secretorum.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
   const characterPix = await readdir(p.join(__dirname, '../src/assets/images/characters'))
   const pics = [...weaponPix, ...characterPix]
-  const arrs = [gentry, wanderlust, epitome]
+  const arrs = [secretum, wanderlust, epitome]
   arrs.forEach((arr, i) => {
     arr.forEach(item => {
       if (!pics.some(pic => pic === item.src)) {
