@@ -110,12 +110,26 @@
     "type": "weapon"
   },
   {
+    "name": "Xinyan",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "src": "Xinyan.png"
+  },
+  {
     "name": "Sucrose",
     "element": "Anemo",
     "type": "character",
     "rating": 4,
     "id": "749031457019658401",
     "src": "Sucrose.png"
+  },
+  {
+    "name": "Diona",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "src": "Diona.png"
   },
   {
     "name": "Chongyun",
@@ -303,7 +317,6 @@
     "rating": 4,
     "type": "weapon",
     "class": "Sword",
-    "isFeatured": true,
     "src": "sacrificial-greatsword.png"
   },
   {
@@ -323,9 +336,9 @@
   {
     "name": "Lions Roar",
     "rating": 4,
-    "type": "weapon",
     "class": "Sword",
-    "src": "lions-roar.png"
+    "src": "lions-roar.png",
+    "type": "weapon"
   },
   {
     "name": "Sacrificial Sword",

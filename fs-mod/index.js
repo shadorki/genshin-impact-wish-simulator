@@ -10,16 +10,24 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
+Character
+Keqing
+Character
+Mona
+Character
+Qiqi
+Character
+Diluc
+Character
+Jean
 Weapon
- Skyward Atlas
-Weapon
- Summit Shaper
-Weapon
-Amos' Bow
+Amos Bow
 Weapon
 Skyward Harp
 Weapon
 Lost Prayer to the Sacred Winds
+Weapon
+Skyward Atlas
 Weapon
 Primordial Jade Winged-Spear
 Weapon
@@ -32,16 +40,6 @@ Weapon
 Skyward Blade
 Weapon
 Aquila Favonia
-Weapon
- The Stringless
-Weapon
- Sacrificial Fragments
-Weapon
- Favonius Lance
-Weapon
- Favonius Greatsword
-Weapon
- Favonius Sword
 Character
 Xinyan
 Character
@@ -65,21 +63,33 @@ Beidou
 Character
 Xiangling
 Character
+Amber
+Character
 Razor
 Character
+Kaeya
+Character
 Barbara
+Character
+Lisa
 Weapon
 Rust
 Weapon
 Sacrificial Bow
 Weapon
+The Stringless
+Weapon
 Favonius Warbow
 Weapon
 Eye of Perception
 Weapon
+Sacrificial Fragments
+Weapon
 The Widsith
 Weapon
 Favonius Codex
+Weapon
+Favonius Lance
 Weapon
 Dragon's Bane
 Weapon
@@ -89,11 +99,15 @@ Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
-Lion's Roar
+Favonius Greatsword
+Weapon
+Lions Roar
 Weapon
 Sacrificial Sword
 Weapon
 The Flute
+Weapon
+Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -145,7 +159,7 @@ Cool Steel
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    const path = p.join(__dirname, '../src/data/epitome-invocation.json')
+    const path = p.join(__dirname, '../src/data/wanderlust-invocation.json')
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
