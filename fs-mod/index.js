@@ -11,17 +11,15 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Vortex Vanquisher
+ Skyward Atlas
 Weapon
- The Unforged
+ Summit Shaper
 Weapon
 Amos' Bow
 Weapon
 Skyward Harp
 Weapon
 Lost Prayer to the Sacred Winds
-Weapon
-Skyward Atlas
 Weapon
 Primordial Jade Winged-Spear
 Weapon
@@ -35,17 +33,21 @@ Skyward Blade
 Weapon
 Aquila Favonia
 Weapon
- Favonius Warbow
+ The Stringless
 Weapon
- Favonius Codex
+ Sacrificial Fragments
 Weapon
- Dragon's Bane
+ Favonius Lance
 Weapon
- The Bell
+ Favonius Greatsword
 Weapon
- Lion's Roar
+ Favonius Sword
+Character
+Xinyan
 Character
 Sucrose
+Character
+Diona
 Character
 Chongyun
 Character
@@ -71,27 +73,27 @@ Rust
 Weapon
 Sacrificial Bow
 Weapon
-The Stringless
+Favonius Warbow
 Weapon
 Eye of Perception
 Weapon
-Sacrificial Fragments
-Weapon
 The Widsith
 Weapon
-Favonius Lance
+Favonius Codex
+Weapon
+Dragon's Bane
 Weapon
 Rainslasher
 Weapon
 Sacrificial Greatsword
 Weapon
-Favonius Greatsword
+The Bell
+Weapon
+Lion's Roar
 Weapon
 Sacrificial Sword
 Weapon
 The Flute
-Weapon
-Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -118,7 +120,7 @@ Weapon
 Harbinger of Dawn
 Weapon
 Cool Steel
-    `
+`
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
     itemList.shift()
@@ -162,13 +164,13 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let gentry = require('../src/data/gentry-of-hermitage.json')
+  let secretum = require('../src/data/secretum-secretorum.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
   const characterPix = await readdir(p.join(__dirname, '../src/assets/images/characters'))
   const pics = [...weaponPix, ...characterPix]
-  const arrs = [gentry, wanderlust, epitome]
+  const arrs = [secretum, wanderlust, epitome]
   arrs.forEach((arr, i) => {
     arr.forEach(item => {
       if (!pics.some(pic => pic === item.src)) {
