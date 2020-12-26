@@ -176,5 +176,11 @@
         "element": "Pyro",
         "type": "character",
         "rating": 4
-    }
+    },
+    {
+        "name": "Albedo",
+        "element": "Geo",
+        "type": "character",
+        "rating": 5
+    },
 ]
