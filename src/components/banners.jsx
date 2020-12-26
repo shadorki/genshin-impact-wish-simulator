@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'gentry-of-hermitage': 'Character Event Wish',
+        'secretum-secretorum': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'gentry-of-hermitage': 'gentryOfHermitage',
+        'secretum-secretorum': 'secretumSecretorum',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
-        selectedBanner: 'gentry-of-hermitage',
+        selectedBanner: 'secretum-secretorum',
         banners: {
-          'gentry-of-hermitage': 'Character Event Wish',
+          'secretum-secretorum': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'gentry-of-hermitage': 'gentryOfHermitage',
+          'secretum-secretorum': 'secretumSecretorum',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +62,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'gentry-of-hermitage': 'Character Event Wish',
+          'secretum-secretorum': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'gentry-of-hermitage': 'gentryOfHermitage',
+          'secretum-secretorum': 'secretumSecretorum',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
