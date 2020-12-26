@@ -4,6 +4,7 @@
     "rating": 5,
     "class": "Catalyst",
     "src": "skyward-atlas.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -11,6 +12,7 @@
     "rating": 5,
     "class": "Sword",
     "src": "summit-shaper.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -81,6 +83,7 @@
     "rating": 4,
     "class": "Bow",
     "src": "the-stringless.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -88,6 +91,7 @@
     "rating": 4,
     "class": "Catalyst",
     "src": "sacrificial-fragments.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -95,6 +99,7 @@
     "rating": 4,
     "class": "Lance",
     "type": "weapon",
+    "isFeatured": true,
     "src": "favonius-lance.png"
   },
   {
@@ -102,6 +107,7 @@
     "rating": 4,
     "class": "Claymore",
     "src": "favonius-greatsword.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -109,6 +115,7 @@
     "rating": 4,
     "class": "Sword",
     "src": "favonius-sword.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
