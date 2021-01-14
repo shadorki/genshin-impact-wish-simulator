@@ -3,6 +3,7 @@
     "name": "Amos Bow",
     "rating": 5,
     "class": "Bow",
+    "isFeatured": true,
     "src": "amos-bow.png",
     "type": "weapon"
   },
@@ -10,6 +11,7 @@
     "name": "Skyward Pride",
     "rating": 5,
     "class": "Claymore",
+    "isFeatured": true,
     "src": "skyward-pride.png",
     "type": "weapon"
   },
@@ -73,6 +75,7 @@
     "name": "Favonius Warbow",
     "rating": 4,
     "class": "Bow",
+    "isFeatured": true,
     "src": "favonius-warbow.png",
     "type": "weapon"
   },
@@ -80,6 +83,7 @@
     "name": "Eye of Perception",
     "rating": 4,
     "class": "Catalyst",
+    "isFeatured": true,
     "src": "eye-of-perception.png",
     "type": "weapon"
   },
@@ -87,6 +91,7 @@
     "name": "Dragon's Bane",
     "rating": 4,
     "class": "Polearm",
+    "isFeatured": true,
     "src": "dragons-bane.png",
     "type": "weapon"
   },
@@ -94,6 +99,7 @@
     "name": "The Bell",
     "rating": 4,
     "class": "Claymore",
+    "isFeatured": true,
     "src": "the-bell.png",
     "type": "weapon"
   },
@@ -101,6 +107,7 @@
     "name": "Sacrificial Sword",
     "rating": 4,
     "class": "Sword",
+    "isFeatured": true,
     "src": "sacrificial-sword.png",
     "type": "weapon"
   },

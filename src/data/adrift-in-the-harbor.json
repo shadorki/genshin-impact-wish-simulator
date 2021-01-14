@@ -4,6 +4,7 @@
     "element": "Cryo",
     "type": "character",
     "rating": 5,
+    "isFeatured": true,
     "src": "Ganyu.png"
   },
   {
@@ -51,6 +52,7 @@
     "element": "Geo",
     "type": "character",
     "rating": 4,
+    "isFeatured": true,
     "id": "749031431132545057",
     "src": "Noelle.png"
   },
@@ -59,6 +61,7 @@
     "element": "Hydro",
     "type": "character",
     "rating": 4,
+    "isFeatured": true,
     "id": "749031483263680563",
     "src": "Xingqiu.png"
   },
@@ -67,6 +70,7 @@
     "element": "Pyro",
     "type": "character",
     "rating": 4,
+    "isFeatured": true,
     "id": "749031470726905977",
     "src": "Xiangling.png"
   },
