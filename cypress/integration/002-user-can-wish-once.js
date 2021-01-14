@@ -24,7 +24,7 @@ describe('User can wish once', () => {
   })
   it('Stress single wish test', () => {
     const banners = [
-      'secretum-secretorum',
+      'adrift-in-the-harbor',
       'epitome-invocation',
       'wanderlust-invocation'
     ]
