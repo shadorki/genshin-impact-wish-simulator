@@ -1,17 +1,21 @@
 * {
   box-sizing: border-box;
 }
+
 *:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto !important;
 }
+
 body {
   margin: 0;
   cursor: url('../assets/images/ui/cursor.png'), auto;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
+
 p {
   font-size: 1.2rem
 }
+
 video {
   object-fit: cover;
   height: 100vh;
@@ -20,26 +24,31 @@ video {
   top: 0;
   left: 0;
 }
+
 .wrapper {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .banners {
   background-image: url('../assets/images/ui/background.png');
 }
+
 .giws-banners-container {
   max-width: 1440px;
   margin: 0 auto;
 }
-.giws-banners-container > .heading {
+
+.giws-banners-container>.heading {
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.giws-banners-container > .heading > .current-banner {
+
+.giws-banners-container>.heading>.current-banner {
   color: #d4bc8f;
   font-size: 1.5rem;
   text-shadow: 3px 2px 2px rgb(50, 50, 50);
@@ -47,7 +56,8 @@ video {
   margin-left: 1.2rem;
   text-align: center;
 }
-.giws-banners-container > .heading > .close-window, .close-button {
+
+.giws-banners-container>.heading>.close-window, .close-button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,16 +66,20 @@ video {
   width: 40px;
   margin-right: 1.2rem;
 }
+
 .close-button {
   margin: 0;
 }
-.giws-banners-container > .heading > .close-window:hover {
+
+.giws-banners-container>.heading>.close-window:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
 }
-.giws-banners-container > .heading > .select-banner {
+
+.giws-banners-container>.heading>.select-banner {
   display: flex;
   justify-content: space-around;
 }
+
 .banner-button {
   height: 90px;
   width: 180px;
@@ -75,75 +89,113 @@ video {
   margin: 0 1.2rem;
   transition-duration: 500ms;
 }
+
 .banner-button:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
 }
+
 .banner-button.beginners-wish {
   background-image: url('../assets/images/ui/noelle.png');
 }
+
 .banner-button.beginners-wish.selected {
   background-image: url('../assets/images/ui/noelle-selected.png');
 }
+
 .banner-button.ballad-in-goblets {
   background-image: url('../assets/images/ui/venti.png');
 }
+
 .banner-button.ballad-in-goblets.selected {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
+
 .banner-button.farewell-of-snezhnaya {
   background-image: url('../assets/images/ui/childe.png');
 }
+
 .banner-button.farewell-of-snezhnaya.selected {
   background-image: url('../assets/images/ui/childe-selected.png');
 }
+
 .banner-button.gentry-of-hermitage {
   background-image: url('../assets/images/ui/zhongli.png');
 }
+
 .banner-button.gentry-of-hermitage.selected {
   background-image: url('../assets/images/ui/zhongli-selected.png');
 }
+
 .banner-button.secretum-secretorum {
   background-image: url('../assets/images/ui/albedo.png');
 }
+
 .banner-button.secretum-secretorum.selected {
   background-image: url('../assets/images/ui/albedo-selected.png');
 }
+
+.banner-button.secretum-secretorum {
+  background-image: url('../assets/images/ui/albedo.png');
+}
+
+.banner-button.secretum-secretorum.selected {
+  background-image: url('../assets/images/ui/albedo-selected.png');
+}
+
+.banner-button.adrift-in-the-harbor {
+  background-image: url('../assets/images/ui/ganyu.png');
+}
+
+.banner-button.adrift-in-the-harbor.selected {
+  background-image: url('../assets/images/ui/ganyu-selected.png');
+}
+
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }
+
 .banner-button.epitome-invocation.selected {
   background-image: url('../assets/images/ui/weapon-selected.png');
 }
+
 .banner-button.wanderlust-invocation {
   background-image: url('../assets/images/ui/wanderlust.png');
 }
-.banner-button.wanderlust-invocation.selected{
+
+.banner-button.wanderlust-invocation.selected {
   background-image: url('../assets/images/ui/wanderlust-selected.png');
 }
+
 .carousel-container {
   position: relative;
   height: 65vh;
   margin: 2rem 15rem;
 }
+
 .carousel.carousel-slider {
   display: flex;
 }
+
 .carousel {
   height: 100%;
 }
+
 .action-container {
   height: 10vh;
   display: flex;
   justify-content: space-around;
 }
-.button-container > button {
+
+.button-container>button {
   margin: auto 5px;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 button {
   border: none;
   outline: none;
@@ -154,10 +206,12 @@ button {
   color: black;
   transition: color 250ms ease-in;
 }
+
 button:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
   background-color: rgb(230, 227, 227);
 }
+
 .skip-button {
   position: absolute;
   top: 7px;
@@ -166,9 +220,11 @@ button:hover {
   opacity: 0.4;
   transition: opacity 500ms;
 }
+
 .skip-button:hover {
   opacity: 1;
 }
+
 .wish-button {
   background-size: contain;
   background-position: center;
@@ -176,20 +232,27 @@ button:hover {
   background-image: url('../assets/images/ui/wish-button.png');
   color: #d4bc8f;
   height: 100%;
-  width:  240px;
+  width: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .wish-button.disabled {
-  filter: grayscale(100%); /* Current draft standard */
-  -webkit-filter: grayscale(100%); /* New WebKit */
+  filter: grayscale(100%);
+  /* Current draft standard */
+  -webkit-filter: grayscale(100%);
+  /* New WebKit */
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */
-  filter: gray; /* IE */
-  -webkit-filter: grayscale(1); /* Old WebKit */
+  -o-filter: grayscale(100%);
+  /* Not yet supported in Gecko, Opera or IE */
+  filter: gray;
+  /* IE */
+  -webkit-filter: grayscale(1);
+  /* Old WebKit */
 }
+
 .wish-button:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
   color: gold;
@@ -199,7 +262,7 @@ button:hover {
   background-color: #ebebeb;
 }
 
-.react-stars-container > div {
+.react-stars-container>div {
   justify-content: center;
 }
 
@@ -211,43 +274,54 @@ button:hover {
   background-repeat: no-repeat;
 }
 
-.details-box > div > div:last-child > hr {
+.details-box>div>div:last-child>hr {
   border-top: 2px solid white;
 }
 
 .teal {
   color: #359697;
 }
+
 .aqua {
   color: #25c0f5;
 }
+
 .blue {
   color: #4682b4;
 }
+
 .purple {
   color: #9763c4;
 }
+
 .orange {
   color: #ec4923;
 }
+
 .brass {
   color: #a38052;
 }
+
 .gold {
   color: #c8a079;
 }
+
 .dark-gray-bg {
   background-color: #dbdbdb;
 }
+
 table {
   text-align: center;
 }
+
 table, th, td {
   border: 2px solid #d0cfcd;
 }
+
 th {
   background-color: #dbd7d3;
 }
+
 td {
   color: #a7865a;
   text-transform: capitalize;
@@ -261,20 +335,24 @@ td {
   width: 100%;
   z-index: 2;
 }
-.navbar > svg {
+
+.navbar>svg {
   color: #5b5c5d;
   font-size: 1.2rem;
 }
-.navbar > svg:hover {
+
+.navbar>svg:hover {
   cursor: url('../assets/images/ui/cursor.png'), auto;
   color: goldenrod;
 }
+
 .wish-results {
   background-image: url('../assets/images/ui/wish-details-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .new-badge {
   position: absolute;
   top: -7px;
@@ -286,6 +364,7 @@ td {
   background-color: darkgoldenrod;
   opacity: 0.9;
 }
+
 .wish-item {
   position: relative;
   background-position: center;
@@ -297,16 +376,20 @@ td {
   font-size: .9rem;
   text-shadow: 3px 2px 2px rgb(29, 29, 29);
 }
+
 .wish-item.character {
   background-size: cover;
 }
+
 .wish-item.weapon {
   background-size: contain;
 }
+
 .wish-item-single {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .wish-item-single-container {
   position: relative;
   background-color: rgba(50, 50, 50, 0.5);
@@ -314,6 +397,7 @@ td {
   color: white;
   font-size: 2rem;
 }
+
 .amount-spent-badge {
   display: block;
   width: 100%;
@@ -327,6 +411,7 @@ td {
   border: 1px solid #ced4da;
   border-radius: .25rem;
 }
+
 .icon-item {
   background-position: center;
   background-size: contain;
@@ -335,6 +420,7 @@ td {
   color: white;
   font-size: .8rem;
 }
+
 .modal-container {
   position: fixed;
   top: 0;
@@ -347,29 +433,36 @@ td {
   justify-content: center;
   align-items: center;
 }
+
 .disclaimer-modal {
   max-width: 1000px;
 }
+
 .disclaimer-modal-content {
   background-color: #ebebeb;
   text-align: center;
   position: relative;
 }
-.disclaimer-modal-content > .close-button {
+
+.disclaimer-modal-content>.close-button {
   position: absolute;
   top: 2px;
   right: 5px;
 }
-.disclaimer-modal-content > p {
+
+.disclaimer-modal-content>p {
   font-size: 1rem;
   margin: .2rem;
 }
+
 .vh-90 {
   height: 90vh !important;
 }
+
 .vh-10 {
   height: 10vh !important;
 }
+
 .mw-50 {
   max-width: 50% !important;
 }
@@ -383,25 +476,27 @@ td {
     margin: 2rem;
   }
 }
+
 @media (max-width: 992px) {
   .banner-button {
     height: 61px;
     width: 128px;
   }
-  .giws-banners-container > .heading > .close-window {
+  .giws-banners-container>.heading>.close-window {
     height: 35px;
     width: 35px;
   }
-  .action-container > .button-container > button {
+  .action-container>.button-container>button {
     font-size: .8rem;
   }
-  .giws-banners-container > .heading > .close-window {
+  .giws-banners-container>.heading>.close-window {
     display: none;
   }
   .wish-button {
-    width:  160px;
+    width: 160px;
   }
 }
+
 @media (max-width: 769px) {
   .wish-item-single-content {
     height: 20% !important;
@@ -410,25 +505,27 @@ td {
     height: 80% !important;
   }
 }
+
 @media (max-width: 768px) {
-  .giws-banners-container > .heading > .select-banner {
+  .giws-banners-container>.heading>.select-banner {
     margin-top: 1.2rem;
     flex-wrap: wrap;
   }
   .wish-button {
-    width:  150px;
+    width: 150px;
   }
-  .action-container > .button-container > button {
+  .action-container>.button-container>button {
     font-size: .8rem;
     padding: 5px 15px;
   }
 }
+
 @media (max-width: 576px) {
   .banner-button {
     height: 50px;
     width: 100px;
   }
-  .giws-banners-container > .heading > .current-banner {
+  .giws-banners-container>.heading>.current-banner {
     font-size: 1rem;
     width: 100px;
     margin-left: 1.2rem;
@@ -439,19 +536,19 @@ td {
     margin-bottom: 1rem;
   }
   .wish-button {
-    width:  123px;
+    width: 123px;
   }
 }
+
 @media (max-width: 320px) {
   .current-banner {
     display: none;
   }
-
-  .action-container > .button-container{
+  .action-container>.button-container {
     flex-direction: column;
     margin-bottom: 3rem;
   }
-  .action-container > .button-container > button {
+  .action-container>.button-container>button {
     width: 100%;
   }
 }

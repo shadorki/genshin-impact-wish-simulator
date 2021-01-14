@@ -7,9 +7,9 @@ const { expect } = chai
 import BeginnersWish from '../src/models/beginners-wish'
 import EpitomeInvocation from '../src/models/epitome-invocation'
 import WanderlustInvocation from '../src/models/wanderlust-invocation'
-import SecretumSecretorum from '../src/models/secretum-secretorum'
+import AdriftInTheHarbor from '../src/models/adrift-in-the-harbor'
 import itemSchema from './schema/item'
-let secretum = null
+let adrift = null
 let beginners = null
 let epitome = null
 let wanderlust = null
@@ -17,13 +17,13 @@ let wanderlust = null
 describe('Validate that all data has valid images', () => {
   it('should have an image for each item', async () => {
       try {
-        let secretum = require('../src/data/secretum-secretorum.json')
+        let adrift = require('../src/data/adrift-in-the-harbor.json')
         let wanderlust = require('../src/data/wanderlust-invocation.json')
         let epitome = require('../src/data/epitome-invocation.json')
         const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
         const characterPix = await readdir(p.join(__dirname, '../src/assets/images/characters'))
         const pics = [...weaponPix, ...characterPix]
-        const arrs = [secretum, wanderlust, epitome]
+        const arrs = [adrift, wanderlust, epitome]
         const missingImages = []
         arrs.forEach((arr, i) => {
           arr.forEach(item => {
@@ -46,87 +46,87 @@ describe('Validate that all data has valid images', () => {
 
 describe('User can Wish x10', () => {
   ////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////Testing Secretum Secretorum//////////////////////////
+  /////////////////////////////Testing Adrift in the Harbor//////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  describe('Secretum Secretorum', () => {
-    it('should return an instance of Secretum Secretorum', done => {
-      secretum = new SecretumSecretorum()
-      expect(secretum instanceof SecretumSecretorum).to.be.true
+  describe('Adrift in the Harbor', () => {
+    it('should return an instance of Adrift in the Harbor', done => {
+      adrift = new AdriftInTheHarbor()
+      expect(adrift instanceof AdriftInTheHarbor).to.be.true
       done()
     })
     it('should have a 4 or 5 star item', done => {
-      const results = secretum.roll()
+      const results = adrift.roll()
       const item = results.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 10 attempts', done => {
-      expect(secretum.attemptsCount).to.be.equal(10)
+      expect(adrift.attemptsCount).to.be.equal(10)
       done()
     })
     it('should give us a total of 10 items', done => {
-      const results = secretum.roll()
+      const results = adrift.roll()
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
       for(let i = 0; i < 6; i++) {
-        secretum.roll()
+        adrift.roll()
       }
-      const results = secretum.roll()
+      const results = adrift.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 90 attempts', done => {
-      expect(secretum.attemptsCount).to.be.equal(90)
+      expect(adrift.attemptsCount).to.be.equal(90)
       done()
     })
     it('should have another guaranteed 5 star item', done => {
       for (let i = 0; i < 8; i++) {
-        secretum.roll()
+        adrift.roll()
       }
-      const results = secretum.roll()
+      const results = adrift.roll()
       const item = results.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
     it('should register 180 attempts', done => {
-      expect(secretum.attemptsCount).to.be.equal(180)
+      expect(adrift.attemptsCount).to.be.equal(180)
       done()
     })
-    it('should have guaranteed Albedo', done => {
+    it('should have guaranteed Ganyu', done => {
       // Initialize required variables.
       const results = [];
-      const secretumAlbedo = new SecretumSecretorum();
+      const adriftGanyu = new AdriftInTheHarbor();
       const guaranteedGachaLimit = 18;
-      let hasAlbedo = false;
+      let hasGanyu = false;
 
-      // Logically, we'll get Albedo after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Albedo).
+      // Logically, we'll get Ganyu after 180 pulls (guaranteed SSR every 90 pulls, then the next one will be Ganyu).
       // Henceforth, it is the maximum pull.
       for (let i = 0; i < guaranteedGachaLimit; i++) {
-        results.push(secretumAlbedo.roll());
+        results.push(adriftGanyu.roll());
 
-        // Then, if we get Albedo in less than 180 pulls, set 'hasAlbedo' to true and exit the loop.
-        if (results[i].find(item => item.rating === 5 && item.name === 'Albedo')) {
-          hasAlbedo = true;
+        // Then, if we get Ganyu in less than 180 pulls, set 'hasGanyu' to true and exit the loop.
+        if (results[i].find(item => item.rating === 5 && item.name === 'Ganyu')) {
+          hasGanyu = true;
           break;
         }
       }
 
-      expect(hasAlbedo).to.be.true;
+      expect(hasGanyu).to.be.true;
       done();
     })
-    it('should give a Albedo after pulling an SSR that is not Albedo (first Albedo pull is also acceptable)', done => {
+    it('should give a Ganyu after pulling an SSR that is not Ganyu (first Ganyu pull is also acceptable)', done => {
       const results = [];
-      const secretumAlbedo = new SecretumSecretorum();
-      let hasAlbedo = false;
+      const adriftGanyu = new AdriftInTheHarbor();
+      let hasGanyu = false;
       let hasSSR = false;
 
-      // Infinite loop, we want to keep pulling until we discovered a Albedo.
+      // Infinite loop, we want to keep pulling until we discovered a Ganyu.
       while (true) {
-        const roll = secretumAlbedo.roll();
+        const roll = adriftGanyu.roll();
         results.push(roll);
 
         // Filter all the results by its five star.
@@ -135,31 +135,31 @@ describe('User can Wish x10', () => {
         const names = filteredResults.map(e => e.name);
         const areNamesFilled = names.length > 0;
 
-        // This step will fail if the second SSR is not Albedo.
+        // This step will fail if the second SSR is not Ganyu.
         // We'll also have to check if we pulled any SSR, hence the 'names.length' to prevent false negatives.
-        if (hasSSR && !names.includes('Albedo') && areNamesFilled) {
-          expect.fail('The second SSR pulled was not Albedo!');
+        if (hasSSR && !names.includes('Ganyu') && areNamesFilled) {
+          expect.fail('The second SSR pulled was not Ganyu!');
         }
 
-        // If the first SSR is not Albedo, set 'hasSSR' to true.
-        if (!names.includes('Albedo') && areNamesFilled) {
+        // If the first SSR is not Ganyu, set 'hasSSR' to true.
+        if (!names.includes('Ganyu') && areNamesFilled) {
           hasSSR = true;
         }
 
-        // The next SSR, we have to check if it is truly Albedo.
-        if (hasSSR && names.includes('Albedo') && areNamesFilled) {
-          hasAlbedo = true;
+        // The next SSR, we have to check if it is truly Ganyu.
+        if (hasSSR && names.includes('Ganyu') && areNamesFilled) {
+          hasGanyu = true;
           break;
         }
 
-        // If the SSR is Albedo, then exit.
-        if (names.includes('Albedo') && areNamesFilled) {
-          hasAlbedo = true;
+        // If the SSR is Ganyu, then exit.
+        if (names.includes('Ganyu') && areNamesFilled) {
+          hasGanyu = true;
           break;
         }
       }
 
-      expect(hasAlbedo).to.be.true;
+      expect(hasGanyu).to.be.true;
       done();
     })
   })
@@ -309,24 +309,24 @@ describe('User can Wish x10', () => {
 
 describe('User can Wish x1', () => {
   it('Should pull 10 times and the 10th time should be a 4 star item', () => {
-    const secretum = new SecretumSecretorum()
+    const adrift = new AdriftInTheHarbor()
     const epitome = new EpitomeInvocation()
     const wanderlust = new WanderlustInvocation()
     for(let i = 0; i < 9; i++) {
-      const itemSecretum = secretum.rollOnce()
+      const itemAdrift = adrift.rollOnce()
       const itemEpitome = epitome.rollOnce()
       const itemWanderlust = wanderlust.rollOnce()
-      expect(itemSchema.isValidSync(itemSecretum)).to.be.true
+      expect(itemSchema.isValidSync(itemAdrift)).to.be.true
       expect(itemSchema.isValidSync(itemEpitome)).to.be.true
       expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
     }
-    const itemSecretum = secretum.rollOnce()
+    const itemAdrift = adrift.rollOnce()
     const itemEpitome = epitome.rollOnce()
     const itemWanderlust = wanderlust.rollOnce()
-    expect(itemSchema.isValidSync(itemSecretum)).to.be.true
+    expect(itemSchema.isValidSync(itemAdrift)).to.be.true
     expect(itemSchema.isValidSync(itemEpitome)).to.be.true
     expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
-    expect(itemSecretum.rating === 4 || itemSecretum.rating === 5).to.be.true
+    expect(itemAdrift.rating === 4 || itemAdrift.rating === 5).to.be.true
     expect(itemEpitome.rating === 4 || itemEpitome.rating === 5).to.be.true
     expect(itemWanderlust.rating === 4 || itemWanderlust.rating === 5).to.be.true
   })
