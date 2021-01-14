@@ -8,16 +8,22 @@ export default class SparklingSteps extends BaseGacha {
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
     this.guaranteedKlee = false
+    this.softPity75 = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   set attempts(amount) {
     this.attemptsCount += amount
     this.guaranteed5Star = !(this.attemptsCount % 90)
+    this.softPity75 = !(this.attemptsCount % 75)
   }
   roll() {
     const roll = []
     this.shuffle(this.probabilityRange)
     this.attempts = 10
+    //checks to see if it is the 75th attempt to apply soft pity (32% flat chance to pull 5 star)
+    if (this.softPity75) {
+      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
+    }
     // checks to see if 90 attempts have passed, and grabs 5 star item
     if (this.guaranteed5Star) {
       roll.push(this.getGuaranteed5StarItem())
@@ -38,6 +44,10 @@ export default class SparklingSteps extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
+    if (rating === 5) {
+      this.attemptsCount = 0;
+      this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    }
 
     // If our previous SSR didn't drop a Klee, then this time, we'll get her.
     if (this.guaranteedKlee && rating === 5) {

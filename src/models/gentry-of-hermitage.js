@@ -8,16 +8,21 @@ export default class GentryOfHermitage extends BaseGacha {
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
     this.guaranteedZhongli = false
+    this.softPity75 = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   set attempts(amount) {
     this.attemptsCount += amount
     this.guaranteed5Star = !(this.attemptsCount % 90)
+    this.softPity75 = !(this.attemptsCount % 75)
   }
   roll() {
     const roll = []
     this.shuffle(this.probabilityRange)
     this.attempts = 10
+    if (this.softPity75) {
+      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
+    }
     // checks to see if 90 attempts have passed, and grabs 5 star item
     if (this.guaranteed5Star) {
       roll.push(this.getGuaranteed5StarItem())
@@ -34,6 +39,9 @@ export default class GentryOfHermitage extends BaseGacha {
   }
   rollOnce() {
     this.attempts = 1
+    if (this.softPity75) {
+      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
+    }
     if (this.guaranteed5Star) {
       return this.getRandomItem(5)
     }
@@ -49,6 +57,11 @@ export default class GentryOfHermitage extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
+
+    if (rating === 5) {
+      this.attemptsCount = 0;
+      this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    }
 
     if (this.guaranteedZhongli && rating === 5) {
       return this.grabAZhongli();

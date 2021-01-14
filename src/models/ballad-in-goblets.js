@@ -11,16 +11,21 @@ export default class BalladInGoblets extends BaseGacha {
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
     this.guaranteedVenti = false
+    this.softPity75 = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   set attempts(amount) {
     this.attemptsCount += amount
     this.guaranteed5Star = !(this.attemptsCount % 90)
+    this.softPity75 = !(this.attemptsCount % 90)
   }
   roll() {
     const roll = []
     this.shuffle(this.probabilityRange)
     this.attempts = 10
+    if (this.softPity75) {
+      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
+    }
     // checks to see if 90 attempts have passed, and grabs 5 star item
     if(this.guaranteed5Star) {
       roll.push(this.getGuaranteed5StarItem())
@@ -41,6 +46,11 @@ export default class BalladInGoblets extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
+
+    if (rating === 5) {
+      this.attemptsCount = 0;
+      this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    }
 
     // If our previous SSR didn't drop a Venti, then this time, we'll get him.
     if (this.guaranteedVenti && rating === 5) {
