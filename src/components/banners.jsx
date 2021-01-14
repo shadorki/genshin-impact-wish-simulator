@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'secretum-secretorum': 'Character Event Wish',
+        'adrift-in-the-harbor': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'secretum-secretorum': 'secretumSecretorum',
+        'adrift-in-the-harbor': 'adriftInTheHarbor',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
-        selectedBanner: 'secretum-secretorum',
+        selectedBanner: 'adrift-in-the-harbor',
         banners: {
-          'secretum-secretorum': 'Character Event Wish',
+          'adrift-in-the-harbor': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'secretum-secretorum': 'secretumSecretorum',
+          'adrift-in-the-harbor': 'adriftInTheHarbor',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +62,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'secretum-secretorum': 'Character Event Wish',
+          'adrift-in-the-harbor': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'secretum-secretorum': 'secretumSecretorum',
+          'adrift-in-the-harbor': 'adriftInTheHarbor',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },

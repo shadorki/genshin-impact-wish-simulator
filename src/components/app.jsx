@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import SecretumSecretorum from '../models/secretum-secretorum'
+import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -26,7 +26,7 @@ export default class App extends Component {
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
-    this.secretumSecretorum = new SecretumSecretorum()
+    this.adriftInTheHarbor = new AdriftInTheHarbor()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -82,7 +82,7 @@ export default class App extends Component {
   reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.secretumSecretorum.attemptsCount = 0
+    this.adriftInTheHarbor.attemptsCount = 0
     this.wanderlustInvocation.attemptsCount = 0
     this.epitomeInvocation.attemptsCount = 0
     this.setState({
@@ -103,7 +103,7 @@ export default class App extends Component {
       isBeginnersWishOver10,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      secretumSecretorum: this.secretumSecretorum.attemptsCount,
+      adriftInTheHarbor: this.adriftInTheHarbor.attemptsCount,
       wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
       epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
     }
@@ -118,7 +118,7 @@ export default class App extends Component {
       inventory
     } = data
     this.beginnersWish.attempts = data.beginnersWishCount
-    this.secretumSecretorum.attempts = data.secretumSecretorum
+    this.adriftInTheHarbor.attempts = data.adriftInTheHarbor
     this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
     this.epitomeInvocation.attempts = data.epitomeInvocationCount
     this.setState({
@@ -130,7 +130,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'secretum-secretorum' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'adrift-in-the-harbor' : 'beginners-wish'
     })
   }
   setBeginnersWishOver10() {
