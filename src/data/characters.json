@@ -182,5 +182,11 @@
         "element": "Geo",
         "type": "character",
         "rating": 5
+    },
+    {
+        "name": "Ganyu",
+        "element": "Cryo",
+        "type": "character",
+        "rating": 5
     }
 ]
