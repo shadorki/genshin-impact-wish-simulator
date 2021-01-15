@@ -4,6 +4,7 @@ import drops from '../data/gentry-of-hermitage.json'
 export default class GentryOfHermitage extends BaseGacha {
   constructor() {
     super(drops)
+    this.pityCounter = 0;
     this.attemptsCount = 0;
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
@@ -12,9 +13,10 @@ export default class GentryOfHermitage extends BaseGacha {
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   set attempts(amount) {
+    this.pityCounter += amount
     this.attemptsCount += amount
-    this.guaranteed5Star = !(this.attemptsCount % 90)
-    this.softPity75 = !(this.attemptsCount % 75)
+    this.guaranteed5Star = !(this.pityCounter % 90)
+    this.softPity75 = !(this.pityCounter % 75)
   }
   roll() {
     const roll = []
@@ -45,7 +47,7 @@ export default class GentryOfHermitage extends BaseGacha {
     if (this.guaranteed5Star) {
       return this.getRandomItem(5)
     }
-    const guaranteed4Star = !(this.attemptsCount % 10)
+    const guaranteed4Star = !(this.pityCounter % 10)
     if (guaranteed4Star) {
       return this.getGuaranteed4StarItemOrHigher()
     }
@@ -59,7 +61,7 @@ export default class GentryOfHermitage extends BaseGacha {
     let item;
 
     if (rating === 5) {
-      this.attemptsCount = 0;
+      this.pityCounter = 0;
       this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     }
 

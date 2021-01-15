@@ -4,6 +4,7 @@ import drops from '../data/epitome-invocation.json'
 export default class EpitomeInvocation extends BaseGacha {
   constructor() {
     super(drops)
+    this.pityCounter = 0;
     this.attemptsCount = 0;
     this.guaranteedFeatured4Star = false
     this.guaranteedFeatured5Star = false
@@ -16,9 +17,10 @@ export default class EpitomeInvocation extends BaseGacha {
     this.chanceRange = this.generateProbabilityRange(0, 25, 75)
   }
   set attempts(amount) {
+    this.pityCounter += amount
     this.attemptsCount += amount
-    this.guaranteed5Star = !(this.attemptsCount % 80)
-    this.softPity65 = !(this.attemptsCount % 65)
+    this.guaranteed5Star = !(this.pityCounter % 80)
+    this.softPity65 = !(this.pityCounter % 65)
   }
   roll() {
     const roll = []
@@ -51,7 +53,7 @@ export default class EpitomeInvocation extends BaseGacha {
     if(this.guaranteed5Star) {
       return this.getGuaranteed5StarItem()
     }
-    const guaranteed4Star = !(this.attemptsCount % 10)
+    const guaranteed4Star = !(this.pityCounter % 10)
     if(guaranteed4Star) {
       return this.getGuaranteed4StarItemOrHigher()
     }
@@ -62,7 +64,7 @@ export default class EpitomeInvocation extends BaseGacha {
   }
   getRandomItem(rating) {
     if (rating === 5) {
-      this.attemptsCount = 0;
+      this.pityCounter = 0;
       this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
     }
     const itemsList = this.getDrops(rating)

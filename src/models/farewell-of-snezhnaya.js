@@ -4,6 +4,7 @@ import drops from '../data/farewell-of-snezhnaya.json'
 export default class FarewellOfSnezhnaya extends BaseGacha {
   constructor() {
     super(drops)
+    this.pityCounter = 0;
     this.attemptsCount = 0;
     this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
@@ -13,8 +14,9 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
   }
   set attempts(amount) {
     this.attemptsCount += amount
-    this.guaranteed5Star = !(this.attemptsCount % 90)
-    this.softPity75 = !(this.attemptsCount % 75)
+    this.pityCounter += amount
+    this.guaranteed5Star = !(this.pityCounter % 90)
+    this.softPity75 = !(this.pityCounter % 75)
   }
   roll() {
     const roll = []
@@ -44,7 +46,7 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
     if (rating === 5) {
-      this.attemptsCount = 0;
+      this.pityCounter = 0;
       this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     }
 

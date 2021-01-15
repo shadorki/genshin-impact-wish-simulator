@@ -4,6 +4,7 @@ import drops from '../data/wanderlust-invocation.json'
 export default class WanderlustInvocation extends BaseGacha {
   constructor() {
     super(drops)
+    this.pityCounter = 0;
     this.attemptsCount = 0;
     this.guaranteed5Star = false
     this.softPity75 = false
@@ -11,8 +12,9 @@ export default class WanderlustInvocation extends BaseGacha {
   }
   set attempts(amount) {
     this.attemptsCount += amount
-    this.guaranteed5Star = !(this.attemptsCount % 90)
-    this.softPity75 = !(this.attemptsCount % 75)
+    this.pityCounter += amount
+    this.guaranteed5Star = !(this.pityCounter % 90)
+    this.softPity75 = !(this.pityCounter % 75)
   }
   roll() {
     const roll = []
@@ -45,7 +47,7 @@ export default class WanderlustInvocation extends BaseGacha {
     if (this.guaranteed5Star) {
       return this.getRandomItem(5)
     }
-    const guaranteed4Star = !(this.attemptsCount % 10)
+    const guaranteed4Star = !(this.pityCounter % 10)
     if (guaranteed4Star) {
       return this.getGuaranteed4StarItemOrHigher()
     }
@@ -57,7 +59,7 @@ export default class WanderlustInvocation extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
     if (rating === 5) {
-      this.attemptsCount = 0;
+      this.pityCounter = 0;
       this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     }
     const item = itemsList[this.generateRandomNumber(itemsList.length)]

@@ -82,9 +82,9 @@ export default class App extends Component {
   reset(previouslySelectedWish) {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
-    this.secretumSecretorum.attemptsCount = 0
-    this.wanderlustInvocation.attemptsCount = 0
-    this.epitomeInvocation.attemptsCount = 0
+    this.secretumSecretorum.pityCounter = 0
+    this.wanderlustInvocation.pityCounter = 0
+    this.epitomeInvocation.pityCounter = 0
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -103,9 +103,9 @@ export default class App extends Component {
       isBeginnersWishOver10,
       inventory,
       beginnersWishCount: this.beginnersWish.attemptsCount,
-      secretumSecretorum: this.secretumSecretorum.attemptsCount,
-      wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
-      epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
+      secretumSecretorum: this.secretumSecretorum.pityCounter,
+      wanderlustInvocationCount: this.wanderlustInvocation.pityCounter,
+      epitomeInvocationCount: this.epitomeInvocation.pityCounter,
     }
     localStorage.setItem('data', JSON.stringify(data))
   }

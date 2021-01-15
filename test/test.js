@@ -50,6 +50,8 @@ describe('User can Wish x10', () => {
   ////////////////////////////////////////////////////////////////////////////////
 
   describe('Secretum Secretorum', () => {
+    var inventory = []
+
     it('should return an instance of Secretum Secretorum', done => {
       secretum = new SecretumSecretorum()
       expect(secretum instanceof SecretumSecretorum).to.be.true
@@ -57,7 +59,8 @@ describe('User can Wish x10', () => {
     })
     it('should have a 4 or 5 star item', done => {
       const results = secretum.roll()
-      const item = results.find(item => item.rating === 4 || item.rating === 5)
+      inventory.push(...results)
+      const item = inventory.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -67,15 +70,17 @@ describe('User can Wish x10', () => {
     })
     it('should give us a total of 10 items', done => {
       const results = secretum.roll()
+      inventory.push(...results)
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
-      for(let i = 0; i < 6; i++) {
-        secretum.roll()
+      var results = [];
+      for(let i = 0; i < 7; i++) {
+        results = secretum.roll()
+        inventory.push(...results)
       }
-      const results = secretum.roll()
-      const item = results.find(item => item.rating === 5)
+      const item = inventory.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -84,12 +89,13 @@ describe('User can Wish x10', () => {
       done()
     })
     it('should have another guaranteed 5 star item', done => {
-      for (let i = 0; i < 8; i++) {
-        secretum.roll()
+      var results = [];
+      for (let i = 0; i < 9; i++) {
+        results = secretum.roll()
+        inventory.push(...results)
       }
-      const results = secretum.roll()
-      const item = results.find(item => item.rating === 5)
-      expect(!!(item)).to.be.true
+      const item = inventory.filter(item => item.rating === 5)
+      expect(item.length >= 2).to.be.true
       done()
     })
     it('should register 180 attempts', done => {
@@ -206,6 +212,8 @@ describe('User can Wish x10', () => {
   ////////////////////////////////////////////////////////////////////////////////
 
   describe('Epitome Invocation', () => {
+    var inventory = [];
+
     it('should return an instance of Epitome Invocation', done => {
       epitome = new EpitomeInvocation()
       expect(epitome instanceof EpitomeInvocation).to.be.true
@@ -213,7 +221,8 @@ describe('User can Wish x10', () => {
     })
     it('should have a 4 or 5 star item', done => {
       const results = epitome.roll()
-      const item = results.find(item => item.rating === 4 || item.rating === 5)
+      inventory.push(...results)
+      const item = inventory.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -223,15 +232,17 @@ describe('User can Wish x10', () => {
     })
     it('should give us a total of 10 items', done => {
       const results = epitome.roll()
+      inventory.push(...results)
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
-      for (let i = 0; i < 5; i++) {
-        epitome.roll()
+      var results = [];
+      for (let i = 0; i < 6; i++) {
+        results = epitome.roll()
+        inventory.push(...results)
       }
-      const results = epitome.roll()
-      const item = results.find(item => item.rating === 5)
+      const item = inventory.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -240,12 +251,13 @@ describe('User can Wish x10', () => {
       done()
     })
     it('should have another guaranteed 5 star item', done => {
-      for (let i = 0; i < 7; i++) {
-        epitome.roll()
+      var results = [];
+      for (let i = 0; i < 8; i++) {
+        results = epitome.roll()
+        inventory.push(...results)
       }
-      const results = epitome.roll()
-      const item = results.find(item => item.rating === 5)
-      expect(!!(item)).to.be.true
+      const item = inventory.filter(item => item.rating === 5)
+      expect(item.length >= 2).to.be.true
       done()
     })
     it('should register 160 attempts', done => {
@@ -258,6 +270,8 @@ describe('User can Wish x10', () => {
   ////////////////////////////////////////////////////////////////////////////////
 
   describe('Wanderlust Invocation', () => {
+    var inventory = [];
+
     it('should return an instance of Wanderlust Invocation', done => {
       wanderlust = new WanderlustInvocation()
       expect(wanderlust instanceof WanderlustInvocation).to.be.true
@@ -265,7 +279,8 @@ describe('User can Wish x10', () => {
     })
     it('should have a 4 or 5 star item', done => {
       const results = wanderlust.roll()
-      const item = results.find(item => item.rating === 4 || item.rating === 5)
+      inventory.push(...results)
+      const item = inventory.find(item => item.rating === 4 || item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -275,15 +290,18 @@ describe('User can Wish x10', () => {
     })
     it('should give us a total of 10 items', done => {
       const results = wanderlust.roll()
+      inventory.push(...results)
       expect(results.length === 10).to.be.true
       done()
     })
     it('should have a guaranteed 5 star item', done => {
-      for (let i = 0; i < 6; i++) {
-        wanderlust.roll()
+      var results = [];
+      for (let i = 0; i < 7; i++) {
+        results = wanderlust.roll()
+        inventory.push(...results)
       }
-      const results = wanderlust.roll()
-      const item = results.find(item => item.rating === 5)
+
+      const item = inventory.find(item => item.rating === 5)
       expect(!!(item)).to.be.true
       done()
     })
@@ -292,12 +310,14 @@ describe('User can Wish x10', () => {
       done()
     })
     it('should have another guaranteed 5 star item', done => {
-      for (let i = 0; i < 8; i++) {
-        wanderlust.roll()
+      var results = [];
+      for (let i = 0; i < 9; i++) {
+        results = wanderlust.roll()
+        inventory.push(...results)
       }
-      const results = wanderlust.roll()
-      const item = results.find(item => item.rating === 5)
-      expect(!!(item)).to.be.true
+
+      const item = inventory.filter(item => item.rating === 5)
+      expect(item.length >= 2).to.be.true
       done()
     })
     it('should register 180 attempts', done => {
