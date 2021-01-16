@@ -328,28 +328,6 @@ describe('User can Wish x10', () => {
 })
 
 describe('User can Wish x1', () => {
-  it('Should pull 10 times and the 10th time should be a 4 star item', () => {
-    const adrift = new AdriftInTheHarbor()
-    const epitome = new EpitomeInvocation()
-    const wanderlust = new WanderlustInvocation()
-    for(let i = 0; i < 9; i++) {
-      const itemAdrift = adrift.rollOnce()
-      const itemEpitome = epitome.rollOnce()
-      const itemWanderlust = wanderlust.rollOnce()
-      expect(itemSchema.isValidSync(itemAdrift)).to.be.true
-      expect(itemSchema.isValidSync(itemEpitome)).to.be.true
-      expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
-    }
-    const itemAdrift = adrift.rollOnce()
-    const itemEpitome = epitome.rollOnce()
-    const itemWanderlust = wanderlust.rollOnce()
-    expect(itemSchema.isValidSync(itemAdrift)).to.be.true
-    expect(itemSchema.isValidSync(itemEpitome)).to.be.true
-    expect(itemSchema.isValidSync(itemWanderlust)).to.be.true
-    expect(itemAdrift.rating === 4 || itemAdrift.rating === 5).to.be.true
-    expect(itemEpitome.rating === 4 || itemEpitome.rating === 5).to.be.true
-    expect(itemWanderlust.rating === 4 || itemWanderlust.rating === 5).to.be.true
-  })
   it('Beginners wish should be blocked from doing 10 wishes', () => {
     let canUserWishFor10Items = true
     const disableUserCanWishFor10Items = () => {
