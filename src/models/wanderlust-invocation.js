@@ -29,11 +29,14 @@ export default class WanderlustInvocation extends BaseGacha {
       roll.push(this.getRandomItem(5))
     }
     // 4 star item or higher guaranteed every 10 rolls
-    roll.push(this.getGuaranteed4StarItemOrHigher())
 
     const rollsToGo = 10 - roll.length
 
     for (let i = 0; i < rollsToGo; i++) {
+      if((i === rollsToGo - 1) && !(roll.find(item => item.rating === 4))) {
+        roll.push(this.getGuaranteed4StarItemOrHigher())
+        break;
+      }
       roll.push(this.rollBasedOffProbability())
     }
     return roll

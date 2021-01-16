@@ -31,11 +31,14 @@ export default class SparklingSteps extends BaseGacha {
       roll.push(this.getGuaranteed5StarItem())
     }
     // 4 star item or higher guaranteed every 10 rolls
-    roll.push(this.getGuaranteed4StarItemOrHigher())
 
     const rollsToGo = 10 - roll.length
 
     for (let i = 0; i < rollsToGo; i++) {
+      if((i === rollsToGo - 1) && !(roll.find(item => item.rating === 4))) {
+        roll.push(this.getGuaranteed4StarItemOrHigher())
+        break;
+      }
       roll.push(this.rollBasedOffProbability())
     }
     return roll
@@ -95,6 +98,8 @@ export default class SparklingSteps extends BaseGacha {
   }
   grabAKlee() {
     this.guaranteedKlee = false
+    this.pityCounter = 0;
+    this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     return this.drops.find(item => item.name === 'Klee')
   }
 }

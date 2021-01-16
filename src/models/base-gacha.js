@@ -1,6 +1,7 @@
 export default class BaseGacha {
   constructor(drops) {
     this.drops = drops
+    this.pityCounter = 0
   }
   getDrops(rating) {
     if (!rating) {
@@ -15,6 +16,10 @@ export default class BaseGacha {
   singlePull() {
     this.shuffle(this.probabilityRange)
     const rating = this.getRandomRating()
+    if (rating === 5) {
+      this.pityCounter = 0
+      this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    }
     const items = this.getDrops(rating)
     return items[this.generateRandomNumber(items.length)]
   }
