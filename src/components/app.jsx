@@ -8,7 +8,6 @@ import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
-import BaseGacha from '../models/base-gacha'
 import { version } from '../../package.json';
 
 
@@ -32,7 +31,6 @@ export default class App extends Component {
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
-    this.BaseGacha = new BaseGacha()
   }
   componentDidMount() {
     this.clearLocalStorageEveryNewBuild();
@@ -86,17 +84,14 @@ export default class App extends Component {
     this.beginnersWish.attemptsCount = 0
     this.beginnersWish.guaranteedNoelle = true
     this.adriftInTheHarbor.attemptsCount = 0
-    this.adriftInTheHarbor.pityCounter = 0
-    this.adriftInTheHarbor.softPity75 = false
-    this.adriftInTheHarbor.probabilityRange = this.BaseGacha.generateProbabilityRange(943, 51, 6)
+    this.adriftInTheHarbor.pityCounter4 = 0
+    this.adriftInTheHarbor.resetProbability()
     this.wanderlustInvocation.attemptsCount = 0
-    this.wanderlustInvocation.pityCounter = 0
-    this.wanderlustInvocation.softPity75 = false
-    this.wanderlustInvocation.probabilityRange = this.BaseGacha.generateProbabilityRange(943, 51, 6)
+    this.wanderlustInvocation.pityCounter4 = 0
+    this.wanderlustInvocation.resetProbability()
     this.epitomeInvocation.attemptsCount = 0
-    this.epitomeInvocation.pityCounter = 0
-    this.epitomeInvocation.softPity65 = false
-    this.epitomeInvocation.probabilityRange = this.BaseGacha.generateProbabilityRange(933, 60, 7)
+    this.epitomeInvocation.pityCounter4 = 0
+    this.epitomeInvocation.resetProbability()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,

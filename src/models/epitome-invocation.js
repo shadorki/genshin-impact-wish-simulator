@@ -4,12 +4,8 @@ import drops from '../data/epitome-invocation.json'
 export default class EpitomeInvocation extends BaseGacha {
   constructor() {
     super(drops)
-    this.pityCounter = 0;
-    this.attemptsCount = 0;
     this.guaranteedFeatured4Star = false
     this.guaranteedFeatured5Star = false
-    this.guaranteed5Star = false
-    this.softPity65 = false
     this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
     // need a range for the 75% chance
     // 5 is featured
@@ -17,58 +13,44 @@ export default class EpitomeInvocation extends BaseGacha {
     this.chanceRange = this.generateProbabilityRange(0, 25, 75)
   }
   set attempts(amount) {
-    this.pityCounter += amount
+    this.pityCounter5 += amount
+    this.pityCounter4 += amount
     this.attemptsCount += amount
-    this.guaranteed5Star = !(this.pityCounter % 80)
-    this.softPity65 = !(this.pityCounter % 65)
+    this.guaranteed5Star = !(this.pityCounter5 % 80)
+    if (!this.softPity && this.pityCounter5 >= 65) {
+      this.probabilityRange = this.generateProbabilityRange(620, 60, 320)
+    }
+    this.softPity = (this.pityCounter5 >= 65);
   }
   roll() {
     const roll = []
-    this.shuffle(this.probabilityRange)
-    this.shuffle(this.chanceRange)
-    this.attempts = 10
-    if (this.softPity65) {
-      this.probabilityRange = this.generateProbabilityRange(620, 60, 320)
-    }
-    // checks to see if 80 attempts have passed, and grabs 5 star item
-    if (this.guaranteed5Star) {
-      roll.push(this.getGuaranteed5StarItem())
-    }
-    // 4 star item or higher guaranteed every 10 rolls
-
-    const rollsToGo = 10 - roll.length
-
-    for (let i = 0; i < rollsToGo; i++) {
-      if((i === rollsToGo - 1) && !(roll.find(item => item.rating === 4))) {
-        roll.push(this.getGuaranteed4StarItemOrHigher())
-        break;
-      }
-      roll.push(this.rollBasedOffProbability())
+    for (let i = 0; i < 10; i++) {
+      roll.push(this.rollOnce());
     }
     return roll
   }
   rollOnce() {
+    let item;
     this.attempts = 1
+    this.shuffle(this.probabilityRange)
     this.shuffle(this.chanceRange)
-    if (this.softPity65) {
-      this.probabilityRange = this.generateProbabilityRange(620, 60, 320)
-    }
     if(this.guaranteed5Star) {
       return this.getGuaranteed5StarItem()
     }
-    const guaranteed4Star = !(this.pityCounter % 10)
+    const guaranteed4Star = (this.pityCounter4 === 10)
     if(guaranteed4Star) {
+      this.pityCounter4 = 0
       return this.getGuaranteed4StarItemOrHigher()
     }
-    return this.singlePull()
-  }
-  rollBasedOffProbability() {
-    return this.getRandomItem(this.getRandomRating())
+    item = this.rollBasedOffProbability()
+    if (item.rating === 4) {
+      this.pityCounter4 = 0;
+    }
+    return item
   }
   getRandomItem(rating) {
     if (rating === 5) {
-      this.pityCounter = 0;
-      this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
+      this.resetProbability()
     }
     const itemsList = this.getDrops(rating)
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
@@ -116,10 +98,14 @@ export default class EpitomeInvocation extends BaseGacha {
   getRandomFeaturedItem(rating) {
     const items = this.getDrops(rating)
     if(rating === 5) {
-      this.pityCounter = 0
-      this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
+      this.resetProbability()
     }
     const featuredItems = items.filter(item => item.rating === rating && item.isFeatured === true)
     return featuredItems[this.generateRandomNumber(featuredItems.length)]
+  }
+  resetProbability() {
+    this.pityCounter5 = 0
+    this.softPity = false
+    this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
   }
 }

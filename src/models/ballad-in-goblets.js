@@ -7,54 +7,17 @@ import drops from '../data/ballad-in-goblets.json'
 export default class BalladInGoblets extends BaseGacha {
   constructor() {
     super(drops)
-    this.attemptsCount = 0;
-    this.pityCounter = 0;
     this.guaranteedFeatured4Star = false
-    this.guaranteed5Star = false
     this.guaranteedVenti = false
-    this.softPity75 = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
-  set attempts(amount) {
-    this.attemptsCount += amount
-    this.pityCounter += amount
-    this.guaranteed5Star = !(this.pityCounter % 90)
-    this.softPity75 = !(this.pityCounter % 75)
-  }
-  roll() {
-    const roll = []
-    this.shuffle(this.probabilityRange)
-    this.attempts = 10
-    if (this.softPity75) {
-      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
-    }
-    // checks to see if 90 attempts have passed, and grabs 5 star item
-    if(this.guaranteed5Star) {
-      roll.push(this.getGuaranteed5StarItem())
-    }
-    // 4 star item or higher guaranteed every 10 rolls
 
-    const rollsToGo = 10 - roll.length
-
-    for(let i = 0; i < rollsToGo; i++) {
-      if((i === rollsToGo - 1) && !(roll.find(item => item.rating === 4))) {
-        roll.push(this.getGuaranteed4StarItemOrHigher())
-        break;
-      }
-      roll.push(this.rollBasedOffProbability())
-    }
-    return roll
-  }
-  rollBasedOffProbability() {
-    return this.getRandomItem(this.getRandomRating())
-  }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
 
     if (rating === 5) {
-      this.pityCounter = 0;
-      this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+      this.resetProbability()
     }
 
     // If our previous SSR didn't drop a Venti, then this time, we'll get him.
@@ -101,8 +64,7 @@ export default class BalladInGoblets extends BaseGacha {
   }
   grabAVenti() {
     this.guaranteedVenti = false
-    this.pityCounter = 0
-    this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
+    this.resetProbability()
     return this.drops.find(item => item.name === 'Venti')
   }
 }
