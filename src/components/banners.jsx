@@ -3,7 +3,9 @@ import BannerButton from './banner-button';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from './modal';
 const banners = require.context('../assets/images/banners', true);
-export default class Banners extends Component {
+import { withTranslation } from 'react-i18next';
+
+class Banners extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -85,7 +87,8 @@ export default class Banners extends Component {
       hideModal,
       reset,
       wish,
-      isBeginnersWishOver10
+      isBeginnersWishOver10,
+      t
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -100,7 +103,7 @@ export default class Banners extends Component {
           <div className="giws-banners-container">
             <div className="heading">
               <div className="current-banner">
-                <div>{this.bannerText}</div>
+                <div>{t(this.bannerText)}</div>
               </div>
               <div className="select-banner">
                 {
@@ -143,13 +146,13 @@ export default class Banners extends Component {
               <div className="button-container">
                 <button
                   onClick={() => reset(selectedBanner)}
-                >Reset</button>
+                >{t("Reset")}</button>
                 <button
                   onClick={() => setView('details')}
-                >Details</button>
+                >{t("Details")}</button>
                 <button
                   onClick={() => setView('inventory')}
-                >Inventory</button>
+                >{t("Inventory")}</button>
               </div>
               <div className="wish-container d-flex justify-content-center">
                 <div
@@ -157,7 +160,7 @@ export default class Banners extends Component {
                     wish(this.state.wishes[selectedBanner], true)
                   }}
                   className="wish-button"
-                >Wish</div>
+                >{t("Wish")}</div>
                 <div
                   className={`wish-button ${selectedBanner === 'beginners-wish' && isBeginnersWishOver10 && 'disabled'}`}
                   onClick={() => {
@@ -165,7 +168,7 @@ export default class Banners extends Component {
                     wish(this.state.wishes[selectedBanner])
                   }}
                 >
-                  Wish x10
+                  {t("Wish x10")}
               </div>
               </div>
             </div>
@@ -175,3 +178,4 @@ export default class Banners extends Component {
     )
   }
 }
+export default withTranslation()(Banners);

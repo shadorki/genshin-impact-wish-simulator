@@ -20,9 +20,13 @@
     "bootstrap": "^4.5.2",
     "chai": "^4.2.0",
     "esm": "^3.2.25",
+    "i18next": "^19.8.4",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-http-backend": "^1.0.22",
     "mocha": "^8.1.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.8.5",
     "react-rating-stars-component": "^2.2.0",
     "react-responsive-carousel": "^3.2.10",
     "reactstrap": "^8.6.0",
@@ -49,7 +53,12 @@
     "type": "git",
     "url": "git+https://github.com/uzair-ashraf/genshin-impact-wish-simulator.git"
   },
-  "keywords": ["Genshin", "Impact", "Wish", "Simulator"],
+  "keywords": [
+    "Genshin",
+    "Impact",
+    "Wish",
+    "Simulator"
+  ],
   "author": "Uzair Ashraf",
   "license": "ISC",
   "bugs": {

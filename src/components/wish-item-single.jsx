@@ -1,11 +1,13 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap';
 import ReactStars from "react-rating-stars-component";
+import { withTranslation } from 'react-i18next';
+
 const characterImages = require.context('../assets/images/characters');
 const weaponImages = require.context('../assets/images/weapons');
 const characterIcons = require.context('../assets/images/details/character-icons');
-export default function WishItemSingle(props) {
-  const { isNewItem } = props
+function WishItemSingle(props) {
+  const { isNewItem, t } = props
   const {src, name, rating, type} = props.item
   const isCharacter = type === 'character'
   const backgroundImage = `url('${isCharacter ? characterImages('./' + src).default : weaponImages('./' + src).default}')`
@@ -29,7 +31,7 @@ export default function WishItemSingle(props) {
             md="3"
             >
             <div
-              className="text-center text-wrap pb-1">{name}</div>
+              className="text-center text-wrap pb-1">{t(name)}</div>
             <ReactStars
               count={rating}
               size={24}
@@ -52,3 +54,4 @@ export default function WishItemSingle(props) {
       </Col>
   )
 }
+export default withTranslation()(WishItemSingle);
