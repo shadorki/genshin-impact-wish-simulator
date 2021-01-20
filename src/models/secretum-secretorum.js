@@ -4,9 +4,6 @@ import drops from '../data/secretum-secretorum.json'
 export default class SecretumSecretorum extends BaseGacha {
   constructor() {
     super(drops)
-    this.attemptsCount = 0;
-    this.guaranteedFeatured4Star = false
-    this.guaranteed5Star = false
     this.guaranteedAlbedo = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
@@ -14,19 +11,16 @@ export default class SecretumSecretorum extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
-
     if (this.guaranteedAlbedo && rating === 5) {
       return this.grabAAlbedo();
     } else {
       item = itemsList[this.generateRandomNumber(itemsList.length)];
     }
-
     if (item.rating === 5 && item.name !== 'Albedo') {
       this.guaranteedAlbedo = true;
     }
-
     return item
   }
   getGuaranteed5StarItem() {
@@ -51,7 +45,6 @@ export default class SecretumSecretorum extends BaseGacha {
       this.guaranteedFeatured4Star = true
       return this.getRandomItem(4)
     }
-
   }
   getRandomFeatured4StarItem() {
     const items = this.getDrops(4)
@@ -60,7 +53,7 @@ export default class SecretumSecretorum extends BaseGacha {
   }
   grabAAlbedo() {
     this.guaranteedAlbedo = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Albedo')
   }
 }

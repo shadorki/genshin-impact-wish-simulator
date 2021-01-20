@@ -7,17 +7,15 @@ import drops from '../data/ballad-in-goblets.json'
 export default class BalladInGoblets extends BaseGacha {
   constructor() {
     super(drops)
-    this.guaranteedFeatured4Star = false
     this.guaranteedVenti = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
-
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
 
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
 
     // If our previous SSR didn't drop a Venti, then this time, we'll get him.
@@ -64,7 +62,7 @@ export default class BalladInGoblets extends BaseGacha {
   }
   grabAVenti() {
     this.guaranteedVenti = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Venti')
   }
 }

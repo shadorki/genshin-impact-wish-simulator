@@ -4,8 +4,6 @@ import drops from '../data/gentry-of-hermitage.json'
 export default class GentryOfHermitage extends BaseGacha {
   constructor() {
     super(drops)
-    this.attemptsCount = 0;
-    this.guaranteedFeatured4Star = false
     this.guaranteed5Star = false
     this.guaranteedZhongli = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
@@ -13,9 +11,8 @@ export default class GentryOfHermitage extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating);
     let item;
-
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
 
     if (this.guaranteedZhongli && rating === 5) {
@@ -27,7 +24,6 @@ export default class GentryOfHermitage extends BaseGacha {
     if (item.rating === 5 && item.name !== 'Zhongli') {
       this.guaranteedZhongli = true;
     }
-
     return item
   }
   getGuaranteed5StarItem() {
@@ -52,7 +48,6 @@ export default class GentryOfHermitage extends BaseGacha {
       this.guaranteedFeatured4Star = true
       return this.getRandomItem(4)
     }
-
   }
   getRandomFeatured4StarItem() {
     const items = this.getDrops(4)
@@ -61,7 +56,7 @@ export default class GentryOfHermitage extends BaseGacha {
   }
   grabAZhongli() {
     this.guaranteedZhongli = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Zhongli')
   }
 }

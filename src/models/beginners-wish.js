@@ -4,7 +4,6 @@ import drops from '../data/beginners-wish.json'
 export default class BeginnersWish extends BaseGacha {
   constructor(setBeginnersWishDisable = () => {}, setBeginnersWishX10Disable = () => {}) {
     super(drops)
-    this.attemptsCount = 0;
     this.guaranteedNoelle = true
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     this.setBeginnersWishDisable = setBeginnersWishDisable
@@ -75,5 +74,9 @@ export default class BeginnersWish extends BaseGacha {
       rating: 4,
       src: "Noelle.png"
     }
+  }
+  reset(){
+    super.reset()
+    this.guaranteedNoelle = true
   }
 }

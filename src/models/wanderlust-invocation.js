@@ -4,8 +4,6 @@ import drops from '../data/wanderlust-invocation.json'
 export default class WanderlustInvocation extends BaseGacha {
   constructor() {
     super(drops)
-    this.attemptsCount = 0;
-    this.guaranteed5Star = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   rollOnce() {
@@ -30,7 +28,7 @@ export default class WanderlustInvocation extends BaseGacha {
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
     const item = itemsList[this.generateRandomNumber(itemsList.length)]
     return item

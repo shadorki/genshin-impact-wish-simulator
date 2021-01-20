@@ -81,17 +81,10 @@ export default class App extends Component {
     this.setState({inventory, currentWishes: []}, this.saveData)
   }
   reset(previouslySelectedWish) {
-    this.beginnersWish.attemptsCount = 0
-    this.beginnersWish.guaranteedNoelle = true
-    this.adriftInTheHarbor.attemptsCount = 0
-    this.adriftInTheHarbor.pityCounter4 = 0
-    this.adriftInTheHarbor.resetProbability()
-    this.wanderlustInvocation.attemptsCount = 0
-    this.wanderlustInvocation.pityCounter4 = 0
-    this.wanderlustInvocation.resetProbability()
-    this.epitomeInvocation.attemptsCount = 0
-    this.epitomeInvocation.pityCounter4 = 0
-    this.epitomeInvocation.resetProbability()
+    this.beginnersWish.reset()
+    this.adriftInTheHarbor.reset()
+    this.wanderlustInvocation.reset()
+    this.epitomeInvocation.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,

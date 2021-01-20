@@ -4,9 +4,6 @@ import drops from '../data/sparkling-steps.json'
 export default class SparklingSteps extends BaseGacha {
   constructor() {
     super(drops)
-    this.attemptsCount = 0;
-    this.guaranteedFeatured4Star = false
-    this.guaranteed5Star = false
     this.guaranteedKlee = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
@@ -14,21 +11,18 @@ export default class SparklingSteps extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
-
     // If our previous SSR didn't drop a Klee, then this time, we'll get her.
     if (this.guaranteedKlee && rating === 5) {
       return this.grabAKlee();
     } else {
       item = itemsList[this.generateRandomNumber(itemsList.length)];
     }
-
     // This is a checker to check if our current pull does not contain a Klee.
     if (item.rating === 5 && item.name !== 'Klee') {
       this.guaranteedKlee = true;
     }
-
     return item
   }
   getGuaranteed5StarItem() {
@@ -52,7 +46,6 @@ export default class SparklingSteps extends BaseGacha {
       this.guaranteedFeatured4Star = true
       return this.getRandomItem(4)
     }
-
   }
   getRandomFeatured4StarItem() {
     const items = this.getDrops(4)
@@ -61,7 +54,7 @@ export default class SparklingSteps extends BaseGacha {
   }
   grabAKlee() {
     this.guaranteedKlee = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Klee')
   }
 }

@@ -7,7 +7,6 @@ export default class BaseGacha {
     this.softPity = 0
     this.guaranteed5Star = false
     this.guaranteedFeatured4Star = false
-
   }
   set attempts(amount) {
     this.attemptsCount += amount
@@ -34,7 +33,7 @@ export default class BaseGacha {
     this.shuffle(this.probabilityRange)
     const rating = this.getRandomRating()
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
     const items = this.getDrops(rating)
     return items[this.generateRandomNumber(items.length)]
@@ -116,9 +115,6 @@ export default class BaseGacha {
     }
     return item
   }
-
-
-
   shuffle(array) {
     for(let i = 0; i < array.length; i++) {
       var randomNumber = this.generateRandomNumber(array.length)
@@ -127,10 +123,15 @@ export default class BaseGacha {
       array[randomNumber] = placeHolder
     }
   }
-  resetProbability() {
+  reset(){
+    this.reset5StarProbability()
+    this.guaranteedFeatured4Star = false
+    this.pityCounter4 = 0
+    this.attemptsCount = 0
+  }
+  reset5StarProbability() {
     this.pityCounter5 = 0
     this.softPity = false
     this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
   }
-
 }

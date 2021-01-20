@@ -4,7 +4,6 @@ import drops from '../data/farewell-of-snezhnaya.json'
 export default class FarewellOfSnezhnaya extends BaseGacha {
   constructor() {
     super(drops)
-    this.guaranteedFeatured4Star = false
     this.guaranteedTartaglia = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
@@ -12,7 +11,7 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
 
     if (this.guaranteedTartaglia && rating === 5) {
@@ -58,7 +57,7 @@ export default class FarewellOfSnezhnaya extends BaseGacha {
   }
   grabATartaglia() {
     this.guaranteedTartaglia = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Tartaglia')
   }
 }

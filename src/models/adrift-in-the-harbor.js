@@ -4,7 +4,6 @@ import drops from '../data/adrift-in-the-harbor.json'
 export default class AdriftInTheHarbor extends BaseGacha {
   constructor() {
     super(drops)
-    this.guaranteedFeatured4Star = false
     this.guaranteedGanyu = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
@@ -12,7 +11,7 @@ export default class AdriftInTheHarbor extends BaseGacha {
     const itemsList = this.getDrops(rating);
     let item;
     if (rating === 5) {
-      this.resetProbability()
+      this.reset5StarProbability()
     }
 
     if (this.guaranteedGanyu && rating === 5) {
@@ -58,7 +57,11 @@ export default class AdriftInTheHarbor extends BaseGacha {
   }
   grabAGanyu() {
     this.guaranteedGanyu = false
-    this.resetProbability()
+    this.reset5StarProbability()
     return this.drops.find(item => item.name === 'Ganyu')
+  }
+  reset() {
+    super.reset()
+    this.guaranteedGanyu = false
   }
 }
