@@ -4,7 +4,6 @@ import drops from '../data/sparkling-steps.json'
 export default class SparklingSteps extends BaseGacha {
   constructor() {
     super(drops)
-    this.guaranteedKlee = false
     this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
   }
   getRandomItem(rating) {
@@ -24,37 +23,5 @@ export default class SparklingSteps extends BaseGacha {
       this.guaranteedKlee = true;
     }
     return item
-  }
-  getGuaranteed5StarItem() {
-    const isKlee = this.flipACoin()
-    if (this.guaranteedKlee || isKlee) {
-      return this.grabAKlee()
-    }
-    return this.getRandomItem(5)
-  }
-  getGuaranteed4StarItemOrHigher() {
-    // .5% chance of getting 5 star item
-    const itemRating = this.getRandomRating()
-    const didUserGet5StarItem = itemRating === 5
-    if (didUserGet5StarItem) {
-      return this.getRandomItem(5)
-    }
-    const isFeatured4StarCharacter = this.flipACoin()
-    if (isFeatured4StarCharacter || this.guaranteedFeatured4Star) {
-      return this.getRandomFeatured4StarItem()
-    } else {
-      this.guaranteedFeatured4Star = true
-      return this.getRandomItem(4)
-    }
-  }
-  getRandomFeatured4StarItem() {
-    const items = this.getDrops(4)
-    const featuredItems = items.filter(item => item.rating === 4 && item.isFeatured === true)
-    return featuredItems[this.generateRandomNumber(featuredItems.length)]
-  }
-  grabAKlee() {
-    this.guaranteedKlee = false
-    this.reset5StarProbability()
-    return this.drops.find(item => item.name === 'Klee')
   }
 }
