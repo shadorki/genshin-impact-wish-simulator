@@ -8,6 +8,9 @@ export default class BaseGacha {
     this.guaranteed5Star = false
     this.guaranteedFeatured4Star = false
     this.guaranteedFeatured5Star = false
+    this.standardRange = this.generateProbabilityRange(943, 51, 6)
+    this.standardSoftPityRange = this.generateProbabilityRange(629, 51, 320)
+    this.probabilityRange = this.standardRange
   }
   set attempts(amount) {
     this.attemptsCount += amount
@@ -15,7 +18,7 @@ export default class BaseGacha {
     this.pityCounter4 += amount
     this.guaranteed5Star = !(this.pityCounter5 % 90)
     if (!this.softPity && this.pityCounter5 >= 75) {
-      this.probabilityRange = this.generateProbabilityRange(629, 51, 320)
+      this.probabilityRange = this.standardSoftPityRange
     }
     this.softPity = (this.pityCounter5 >= 75);
 
@@ -29,15 +32,6 @@ export default class BaseGacha {
   }
   getRandomRating() {
     return this.probabilityRange[this.generateRandomNumber(this.probabilityRange.length)]
-  }
-  singlePull() {
-    this.shuffle(this.probabilityRange)
-    const rating = this.getRandomRating()
-    if (rating === 5) {
-      this.reset5StarProbability()
-    }
-    const items = this.getDrops(rating)
-    return items[this.generateRandomNumber(items.length)]
   }
   flipACoin() {
     return !!(Math.round(Math.random()))
@@ -78,30 +72,31 @@ export default class BaseGacha {
     const isFeatured4StarCharacter = this.flipACoin()
     if (isFeatured4StarCharacter || this.guaranteedFeatured4Star) {
       this.guaranteedFeatured4Star = false
-      return this.getRandomFeatured4StarItem()
+      return this.getItem(4,true)
     } else {
       this.guaranteedFeatured4Star = true
-      return this.getRandomNonfeatured4StarItem()
+      return this.getItem(4,undefined)
     }
+  }
+  getItem(rating,isFeatured) {
+    const drops = this.getDrops(rating)
+    let items
+    if (isFeatured) {
+      items = drops.filter(item => item.isFeatured === true)
+    } else {
+      items = drops.filter(item => !item.isFeatured)
+    }
+    return items[this.generateRandomNumber(items.length)]
   }
   getRandomFeatured4StarItem() {
     const items = this.getDrops(4)
-    const featuredItems = items.filter(item => item.rating === 4 && item.isFeatured === true)
+    const featuredItems = items.filter(item => item.isFeatured === true)
     return featuredItems[this.generateRandomNumber(featuredItems.length)]
-  }
-  getRandomNonfeatured4StarItem() {
-    const items = this.getDrops(4)
-    const nonfeaturedItems = items.filter(item => item.isFeatured)
-    return nonfeaturedItems[this.generateRandomNumber(nonfeaturedItems.length)]
   }
   getGuaranteed4StarItemOrHigher() {
     // .6% chance of getting 5 star item
-    const tempRange = this.probabilityRange
-    this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
-    const itemRating = this.getRandomRating()
-    this.probabilityRange = tempRange
-    const didUserGet5StarItem = itemRating === 5
-    if (didUserGet5StarItem) {
+    const itemRating = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
+    if (itemRating === 5) {
       return this.getGuaranteed5StarItem()
     }
   return this.getRandom4StarItem()
@@ -110,41 +105,10 @@ export default class BaseGacha {
     const isFeatured5Star = this.flipACoin()
     if (this.guaranteedFeatured5Star || isFeatured5Star) {
       this.guaranteedFeatured5Star = false
-      return this.getRandomFeatured5Star()
+      return this.getItem(5,true)
     }
     this.guaranteedFeatured5Star = true
-    return this.getRandomNonfeatured5Star()
-  }
-  getRandomFeatured5Star() {
-    const items = this.getDrops(5)
-    const featuredItems =  items.filter(item => item.rating === 5 && item.isFeatured === true)
-    return featuredItems[this.generateRandomNumber(featuredItems.length)]
-  }
-  getRandomNonfeatured5Star() {
-    const items = this.getDrops(5)
-    const nonfeaturedItems =  items.filter(item => item.rating === 5 && item.isFeatured)
-    return nonfeaturedItems[this.generateRandomNumber(nonfeaturedItems.length)]
-  }
-  getRandomItem(rating) {
-    const itemsList = this.getDrops(rating);
-    let item;
-    if (rating === 5) {
-      this.reset5StarProbability()
-    }
-
-    if (this.guaranteedFeatured5Star && rating === 5) {
-      return this.getRandomFeatured5Star();
-    } else {
-      item = itemsList[this.generateRandomNumber(itemsList.length)];
-    }
-
-    if (item.rating === 5 && item.isFeatured === true) {
-      this.guaranteedFeatured5Star = true;
-    }
-    return item
-  }
-  rollBasedOffProbability() {
-    return this.getRandomItem(this.getRandomRating())
+    return this.getItem(5,undefined)
   }
   roll() {
     const roll = []
@@ -160,7 +124,6 @@ export default class BaseGacha {
     if (this.guaranteed5Star) {
       this.reset5StarProbability()
       return this.getGuaranteed5StarItem()
-
     }
     const guaranteed4Star = (this.pityCounter4 === 10)
     if (guaranteed4Star) {
@@ -182,8 +145,8 @@ export default class BaseGacha {
   }
   shuffle(array) {
     for(let i = 0; i < array.length; i++) {
-      var randomNumber = this.generateRandomNumber(array.length)
-      var placeHolder = array[i]
+      let randomNumber = this.generateRandomNumber(array.length)
+      let placeHolder = array[i]
       array[i] = array[randomNumber]
       array[randomNumber] = placeHolder
     }
@@ -198,6 +161,6 @@ export default class BaseGacha {
   reset5StarProbability() {
     this.pityCounter5 = 0
     this.softPity = false
-    this.probabilityRange = this.generateProbabilityRange(933, 60, 7)
+    this.probabilityRange = this.standardRange
   }
 }

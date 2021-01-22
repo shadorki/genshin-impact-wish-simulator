@@ -5,7 +5,6 @@ export default class BeginnersWish extends BaseGacha {
   constructor(setBeginnersWishDisable = () => {}, setBeginnersWishX10Disable = () => {}) {
     super(drops)
     this.guaranteedNoelle = true
-    this.probabilityRange = this.generateProbabilityRange(943, 51, 6)
     this.setBeginnersWishDisable = setBeginnersWishDisable
     this.setBeginnersWishX10Disable = setBeginnersWishX10Disable
   }
@@ -38,7 +37,7 @@ export default class BeginnersWish extends BaseGacha {
     const rollsToGo = 10 - roll.length
 
     for (let i = 0; i < rollsToGo; i++) {
-      roll.push(this.rollBasedOffProbability())
+      roll.push(this.getRandomItem(this.getRandomRating()))
     }
     return roll
   }
@@ -49,9 +48,6 @@ export default class BeginnersWish extends BaseGacha {
     }
     this.attempts = 1
     return this.singlePull()
-  }
-  rollBasedOffProbability() {
-    return this.getRandomItem(this.getRandomRating())
   }
   getRandomItem(rating) {
     const itemsList = this.getDrops(rating)
@@ -78,5 +74,14 @@ export default class BeginnersWish extends BaseGacha {
   reset(){
     super.reset()
     this.guaranteedNoelle = true
+  }
+  singlePull() {
+    this.shuffle(this.probabilityRange)
+    const rating = this.getRandomRating()
+    if (rating === 5) {
+      this.reset5StarProbability()
+    }
+    const items = this.getDrops(rating)
+    return items[this.generateRandomNumber(items.length)]
   }
 }

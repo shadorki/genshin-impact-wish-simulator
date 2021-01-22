@@ -41,7 +41,7 @@ export default class EpitomeInvocation extends BaseGacha {
       this.pityCounter4 = 0
       return this.getGuaranteed4StarItemOrHigher()
     }
-    item = this.rollBasedOffProbability()
+    item = this.getRandomItem(this.getRandomRating())
     if (item.rating === 4) {
       this.pityCounter4 = 0;
     }
