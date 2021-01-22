@@ -29,12 +29,11 @@ export default class WanderlustInvocation extends BaseGacha {
     if (rating === 5) {
       this.reset5StarProbability()
     }
-    const item = itemsList[this.generateRandomNumber(itemsList.length)]
-    return item
+    return itemsList[this.generateRandomNumber(itemsList.length)]
   }
   getGuaranteed4StarItemOrHigher() {
     // .6% chance of getting 5 star item
-    const didUserGet5StarItem = this.standardRange[this.generateRandomNumber(this.probabilityRange.length)]
+    const didUserGet5StarItem = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
     if (didUserGet5StarItem === 5) {
       return this.getRandomItem(5)
     }

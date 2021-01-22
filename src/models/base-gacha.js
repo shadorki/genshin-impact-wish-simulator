@@ -21,7 +21,6 @@ export default class BaseGacha {
       this.probabilityRange = this.standardSoftPityRange
     }
     this.softPity = (this.pityCounter5 >= 75);
-
   }
   getDrops(rating) {
     if (!rating) {
@@ -88,11 +87,6 @@ export default class BaseGacha {
     }
     return items[this.generateRandomNumber(items.length)]
   }
-  getRandomFeatured4StarItem() {
-    const items = this.getDrops(4)
-    const featuredItems = items.filter(item => item.isFeatured === true)
-    return featuredItems[this.generateRandomNumber(featuredItems.length)]
-  }
   getGuaranteed4StarItemOrHigher() {
     // .6% chance of getting 5 star item
     const itemRating = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
@@ -118,6 +112,7 @@ export default class BaseGacha {
     return roll
   }
   rollOnce() {
+    this.beforeRollOnce()
     let rating;
     this.shuffle(this.probabilityRange)
     this.attempts = 1
@@ -162,5 +157,7 @@ export default class BaseGacha {
     this.pityCounter5 = 0
     this.softPity = false
     this.probabilityRange = this.standardRange
+  }
+  beforeRollOnce() {
   }
 }
