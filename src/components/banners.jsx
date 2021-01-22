@@ -143,13 +143,13 @@ export default class Banners extends Component {
               <div className="button-container">
                 <button
                   onClick={() => reset(selectedBanner)}
-                >Reset</button>
+                >重置(Reset)</button>
                 <button
                   onClick={() => setView('details')}
-                >Details</button>
+                >详情(Details)</button>
                 <button
                   onClick={() => setView('inventory')}
-                >Inventory</button>
+                >库存(Inventory)</button>
               </div>
               <div className="wish-container d-flex justify-content-center">
                 <div
@@ -157,7 +157,7 @@ export default class Banners extends Component {
                     wish(this.state.wishes[selectedBanner], true)
                   }}
                   className="wish-button"
-                >Wish</div>
+                >祈愿(Wish)</div>
                 <div
                   className={`wish-button ${selectedBanner === 'beginners-wish' && isBeginnersWishOver10 && 'disabled'}`}
                   onClick={() => {
@@ -165,7 +165,7 @@ export default class Banners extends Component {
                     wish(this.state.wishes[selectedBanner])
                   }}
                 >
-                  Wish x10
+                  祈愿(Wish) x10
               </div>
               </div>
             </div>
