@@ -29,6 +29,7 @@ export default class EpitomeInvocation extends BaseGacha {
    }
  }
  getGuaranteed5StarItem() {
+   this.reset5StarProbability()
    const isFeatured5Star = this.chanceRange[this.generateRandomNumber(100)] === 5
    if (this.guaranteedFeatured5Star || isFeatured5Star) {
      this.guaranteedFeatured5Star = false
