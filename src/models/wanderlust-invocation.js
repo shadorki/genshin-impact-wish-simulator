@@ -9,7 +9,7 @@ export default class WanderlustInvocation extends BaseGacha {
     let rating;
     this.shuffle(this.probabilityRange)
     this.attempts = 1
-    const guaranteed5Star = (this.pityCounter5 % this.hardPity5Limit)
+    const guaranteed5Star = !(this.pityCounter5 % this.hardPity5Limit)
     if (guaranteed5Star) {
       return this.getRandomItem(5)
     }
