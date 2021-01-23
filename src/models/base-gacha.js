@@ -96,12 +96,12 @@ export default class BaseGacha {
     this.pityCounter4 = 0
     const itemRating = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
     if (itemRating === 5) {
-      this.reset5StarProbability()
       return this.getGuaranteed5StarItem()
     }
     return this.getRandom4StarItem()
   }
   getGuaranteed5StarItem() {
+    this.reset5StarProbability()
     const isFeatured5Star = this.flipACoin()
     if (this.guaranteedFeatured5Star || isFeatured5Star) {
       this.guaranteedFeatured5Star = false
