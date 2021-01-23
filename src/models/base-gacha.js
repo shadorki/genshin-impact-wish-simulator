@@ -82,6 +82,13 @@ export default class BaseGacha {
     let items
     if (isFeatured) {
       items = drops.filter(item => item.isFeatured === true)
+    } else if (rating === 4) {
+      const coinFlip = this.flipACoin()
+      if (coinFlip) {
+        items = drops.filter(item => item.type === 'character' && !item.isFeatured)
+      } else {
+        items = drops.filter(item => item.type === 'weapon' && !item.isFeatured)
+      }
     } else {
       items = drops.filter(item => !item.isFeatured)
     }
@@ -91,8 +98,10 @@ export default class BaseGacha {
     // .6% chance of getting 5 star item
     const itemRating = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
     if (itemRating === 5) {
+      this.reset5StarProbability()
       return this.getGuaranteed5StarItem()
     }
+    this.pityCounter4 = 0
   return this.getRandom4StarItem()
   }
   getGuaranteed5StarItem() {
@@ -136,7 +145,6 @@ export default class BaseGacha {
     }
     this.reset5StarProbability()
     return this.getGuaranteed5StarItem()
-
   }
   shuffle(array) {
     for(let i = 0; i < array.length; i++) {
