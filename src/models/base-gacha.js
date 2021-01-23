@@ -85,7 +85,7 @@ export default class BaseGacha {
     } else if (rating === 4) {
       const coinFlip = this.flipACoin()
       const itemType = coinFlip ? 'character' : 'weapon'
-        result = items.filter(item => item.type === itemType && !item.isFeatured)
+      result = items.filter(item => item.type === itemType && !item.isFeatured)
     } else {
       result = items.filter(item => !item.isFeatured)
     }
@@ -124,7 +124,7 @@ export default class BaseGacha {
     let rating;
     this.shuffle(this.probabilityRange)
     this.attempts = 1
-    const guaranteed5Star = !(this.pityCounter5 % 90)
+    const guaranteed5Star = !(this.pityCounter5 % this.hardPity5Limit)
     if (guaranteed5Star) {
       return this.getGuaranteed5StarItem()
     }
