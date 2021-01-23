@@ -4,6 +4,8 @@ import drops from '../data/epitome-invocation.json'
 export default class EpitomeInvocation extends BaseGacha {
   constructor() {
     super(drops)
+    this.hardPity5Limit = 80
+    this.softPity5Start = 65
     this.guaranteedFeatured5Star = false
     this.standardRange = this.generateProbabilityRange(933, 60, 7)
     this.standardSoftPityRange = this.generateProbabilityRange(620, 60, 320)
@@ -12,16 +14,6 @@ export default class EpitomeInvocation extends BaseGacha {
     // 5 is featured
     // 4 is not featured
     this.chanceRange = this.generateProbabilityRange(0, 25, 75)
-  }
-  set attempts(amount) {
-    this.pityCounter5 += amount
-    this.pityCounter4 += amount
-    this.attemptsCount += amount
-    this.guaranteed5Star = !(this.pityCounter5 % 80)
-    if (!this.softPity && this.pityCounter5 >= 65) {
-      this.probabilityRange = this.standardSoftPityRange
-    }
-    this.softPity = (this.pityCounter5 >= 65);
   }
   beforeRollOnce() {
     this.shuffle(this.chanceRange)

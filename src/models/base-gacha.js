@@ -1,26 +1,26 @@
 export default class BaseGacha {
   constructor(drops) {
     this.drops = drops
+    this.hardPity5Limit = 90
+    this.softPity5Start = 75
     this.attemptsCount = 0
-    this.pityCounter5 = 0
     this.pityCounter4 = 0
-    this.softPity = 0
-    this.guaranteed5Star = false
+    this.pityCounter5 = 0
+    this.softPity = false
     this.guaranteedFeatured4Star = false
     this.guaranteedFeatured5Star = false
     this.standardRange = this.generateProbabilityRange(943, 51, 6)
-    this.standardSoftPityRange = this.generateProbabilityRange(629, 51, 320)
+    this.softPityRange = this.generateProbabilityRange(629, 51, 320)
     this.probabilityRange = this.standardRange
   }
   set attempts(amount) {
     this.attemptsCount += amount
-    this.pityCounter5 += amount
     this.pityCounter4 += amount
-    this.guaranteed5Star = !(this.pityCounter5 % 90)
-    if (!this.softPity && this.pityCounter5 >= 75) {
-      this.probabilityRange = this.standardSoftPityRange
+    this.pityCounter5 += amount
+    if (!this.softPity && this.pityCounter5 >= this.softPity5Start) {
+      this.probabilityRange = this.softPityRange
     }
-    this.softPity = (this.pityCounter5 >= 75);
+    this.softPity = (this.pityCounter5 >= this.softPity5Start);
   }
   getDrops(rating) {
     if (!rating) {
@@ -78,31 +78,28 @@ export default class BaseGacha {
     }
   }
   getItem(rating,isFeatured) {
-    const drops = this.getDrops(rating)
-    let items
+    const items = this.getDrops(rating)
+    let result
     if (isFeatured) {
-      items = drops.filter(item => item.isFeatured === true)
+      result = items.filter(item => item.isFeatured === true)
     } else if (rating === 4) {
       const coinFlip = this.flipACoin()
-      if (coinFlip) {
-        items = drops.filter(item => item.type === 'character' && !item.isFeatured)
-      } else {
-        items = drops.filter(item => item.type === 'weapon' && !item.isFeatured)
-      }
+      const itemType = coinFlip ? 'character' : 'weapon'
+        result = items.filter(item => item.type === itemType && !item.isFeatured)
     } else {
-      items = drops.filter(item => !item.isFeatured)
+      result = items.filter(item => !item.isFeatured)
     }
-    return items[this.generateRandomNumber(items.length)]
+    return result[this.generateRandomNumber(result.length)]
   }
   getGuaranteed4StarItemOrHigher() {
     // .6% chance of getting 5 star item
+    this.pityCounter4 = 0
     const itemRating = this.standardRange[this.generateRandomNumber(this.standardRange.length)]
     if (itemRating === 5) {
       this.reset5StarProbability()
       return this.getGuaranteed5StarItem()
     }
-    this.pityCounter4 = 0
-  return this.getRandom4StarItem()
+    return this.getRandom4StarItem()
   }
   getGuaranteed5StarItem() {
     const isFeatured5Star = this.flipACoin()
@@ -120,30 +117,28 @@ export default class BaseGacha {
     }
     return roll
   }
+  beforeRollOnce() {
+  }
   rollOnce() {
     this.beforeRollOnce()
     let rating;
     this.shuffle(this.probabilityRange)
     this.attempts = 1
-    if (this.guaranteed5Star) {
-      this.reset5StarProbability()
+    const guaranteed5Star = !(this.pityCounter5 % 90)
+    if (guaranteed5Star) {
       return this.getGuaranteed5StarItem()
     }
     const guaranteed4Star = (this.pityCounter4 === 10)
     if (guaranteed4Star) {
-      this.pityCounter4 = 0
-      this.guaranteed4Star = false
       return this.getGuaranteed4StarItemOrHigher()
     }
     rating = this.getRandomRating()
     if (rating === 3) {
       return this.getRandom3StarItem()
-
     } else if (rating === 4) {
       this.pityCounter4 = 0
       return this.getRandom4StarItem()
     }
-    this.reset5StarProbability()
     return this.getGuaranteed5StarItem()
   }
   shuffle(array) {
@@ -156,16 +151,14 @@ export default class BaseGacha {
   }
   reset(){
     this.reset5StarProbability()
-    this.guaranteedFeatured5Star = false
-    this.guaranteedFeatured4Star = false
-    this.pityCounter4 = 0
     this.attemptsCount = 0
+    this.pityCounter4 = 0
+    this.guaranteedFeatured4Star = false
+    this.guaranteedFeatured5Star = false
   }
   reset5StarProbability() {
     this.pityCounter5 = 0
     this.softPity = false
     this.probabilityRange = this.standardRange
-  }
-  beforeRollOnce() {
   }
 }
