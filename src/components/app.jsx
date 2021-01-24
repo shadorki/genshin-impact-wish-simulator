@@ -99,33 +99,54 @@ export default class App extends Component {
       inventory
     } = this.state
     const data = {
+      version: 1,
       isBeginnersWishLimited,
       isBeginnersWishOver10,
       inventory,
-      beginnersWishCount: this.beginnersWish.attemptsCount,
-      adriftInTheHarbor: this.adriftInTheHarbor.attemptsCount,
-      wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
-      epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
+      beginnersWish: this.beginnersWish.getState(),
+      adriftInTheHarbor: this.adriftInTheHarbor.getState(),
+      wanderlustInvocation: this.wanderlustInvocation.getState(),
+      epitomeInvocation: this.epitomeInvocation.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
   }
   loadData(){
     const data = JSON.parse(localStorage.getItem('data'))
     if(!data) return;
-    const {
-      isBeginnersWishLimited,
-      isBeginnersWishOver10,
-      inventory
-    } = data
-    this.beginnersWish.attempts = data.beginnersWishCount
-    this.adriftInTheHarbor.attempts = data.adriftInTheHarbor
-    this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
-    this.epitomeInvocation.attempts = data.epitomeInvocationCount
-    this.setState({
-      isBeginnersWishLimited,
-      isBeginnersWishOver10,
-      inventory
-    }, this.backToHome)
+    if (!data.version) {
+      // Load original version (without softPity4 and softPity5)
+      const {
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      } = data
+      this.beginnersWish.attemptsCount = data.beginnersWishCount
+      this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor
+      this.wanderlustInvocation.attemptsCount = data.wanderlustInvocationCount
+      this.epitomeInvocation.attemptsCount = data.epitomeInvocationCount
+      this.setState({
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      }, this.backToHome)
+    } else {
+      // Load version 1 with softPity4 and softPity5
+      const {
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      } = data
+      this.beginnersWish.setState(data.beginnersWish);
+      this.adriftInTheHarbor.setState(data.adriftInTheHarbor);
+      this.wanderlustInvocation.setState(data.wanderlustInvocation);
+      this.epitomeInvocation.setState(data.epitomeInvocation);
+      this.setState({
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      }, this.backToHome)
+    }
+
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({

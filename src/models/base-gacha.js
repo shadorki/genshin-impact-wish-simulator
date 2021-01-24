@@ -22,6 +22,18 @@ export default class BaseGacha {
     }
     this.softPity = (this.pityCounter5 >= this.softPity5Start);
   }
+  getState() {
+    return {
+      attemptsCount: this.attemptsCount,
+      pityCounter4: this.pityCounter4,
+      pityCounter5: this.pityCounter5
+    }
+  }
+  setState(state) {
+    this.attemptsCount = state.attemptsCount;
+    this.pityCounter4 = state.pityCounter4;
+    this.pityCounter5 = state.pityCounter5;
+  }
   getDrops(rating) {
     if (!rating) {
       return this.drops
