@@ -8,7 +8,7 @@ export default class EpitomeInvocation extends BaseGacha {
     this.softPity5Start = 65
     this.guaranteedFeatured5Star = false
     this.standardRange = this.generateProbabilityRange(933, 60, 7)
-    this.standardSoftPityRange = this.generateProbabilityRange(620, 60, 320)
+    this.softPityRange = this.generateProbabilityRange(620, 60, 320)
     this.probabilityRange = this.standardRange
     // need a range for the 75% chance
     // 5 is featured
