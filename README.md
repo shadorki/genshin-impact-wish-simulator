@@ -24,7 +24,7 @@ A React web application to simulate Genshin Impact gacha in the browser
 
 Thank you to all the supporters on Reddit, everyone's kind words mean a lot and the feedback has been awesome.
 
-Thank you to [lauslim12](https://github.com/lauslim12), your contributions have been an amazing help.
+Thank you to [lauslim12](https://github.com/lauslim12) and [elebitzero](https://github.com/elebitzero), your guy's contributions have been an amazing help.
 
 Thanks to the following redditors who sent me their 5 Star animation videos.
 
