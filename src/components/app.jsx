@@ -199,6 +199,7 @@ export default class App extends Component {
           case 'wish':
             return <Wish
             setView={this.setView}
+            is4StarItem={currentWishes.some(item => item.rating === 4)}
             is5StarItem={currentWishes.some(item => item.rating === 5)}
             isSingleItem={currentWishes.length === 1}
             />
