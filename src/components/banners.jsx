@@ -10,13 +10,13 @@ export default class Banners extends Component {
       selectedBanner: 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'adrift-in-the-harbor': 'Character Event Wish',
+        'invitation-to-mundane-life': 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'adrift-in-the-harbor': 'adriftInTheHarbor',
+        'invitation-to-mundane-life': 'invitationToMundaneLife',
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
@@ -45,14 +45,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
-        selectedBanner: 'adrift-in-the-harbor',
+        selectedBanner: 'invitation-to-mundane-life',
         banners: {
-          'adrift-in-the-harbor': 'Character Event Wish',
+          'invitation-to-mundane-life': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'adrift-in-the-harbor': 'adriftInTheHarbor',
+          'invitation-to-mundane-life': 'invitationToMundaneLife',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +62,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'adrift-in-the-harbor': 'Character Event Wish',
+          'invitation-to-mundane-life': 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'adrift-in-the-harbor': 'adriftInTheHarbor',
+          'invitation-to-mundane-life': 'invitationToMundaneLife',
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },

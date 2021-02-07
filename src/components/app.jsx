@@ -4,7 +4,7 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
+import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -27,7 +27,7 @@ export default class App extends Component {
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
-    this.adriftInTheHarbor = new AdriftInTheHarbor()
+    this.invitationToMundaneLife = new InvitationToMundaneLife()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -82,7 +82,7 @@ export default class App extends Component {
   }
   reset(previouslySelectedWish) {
     this.beginnersWish.reset()
-    this.adriftInTheHarbor.reset()
+    this.invitationToMundaneLife.reset()
     this.wanderlustInvocation.reset()
     this.epitomeInvocation.reset()
     this.setState({
@@ -104,7 +104,7 @@ export default class App extends Component {
       isBeginnersWishOver10,
       inventory,
       beginnersWish: this.beginnersWish.getState(),
-      adriftInTheHarbor: this.adriftInTheHarbor.getState(),
+      invitationToMundaneLife: this.invitationToMundaneLife.getState(),
       wanderlustInvocation: this.wanderlustInvocation.getState(),
       epitomeInvocation: this.epitomeInvocation.getState()
     }
@@ -121,7 +121,7 @@ export default class App extends Component {
         inventory
       } = data
       this.beginnersWish.attemptsCount = data.beginnersWishCount
-      this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor
+      this.invitationToMundaneLife.attemptsCount = data.invitationToMundaneLife
       this.wanderlustInvocation.attemptsCount = data.wanderlustInvocationCount
       this.epitomeInvocation.attemptsCount = data.epitomeInvocationCount
       this.setState({
@@ -137,7 +137,7 @@ export default class App extends Component {
         inventory
       } = data
       this.beginnersWish.setState(data.beginnersWish);
-      this.adriftInTheHarbor.setState(data.adriftInTheHarbor);
+      this.invitationToMundaneLife.setState(data.invitationToMundaneLife);
       this.wanderlustInvocation.setState(data.wanderlustInvocation);
       this.epitomeInvocation.setState(data.epitomeInvocation);
       this.setState({
@@ -151,7 +151,7 @@ export default class App extends Component {
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'adrift-in-the-harbor' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'invitation-to-mundane-life' : 'beginners-wish'
     })
   }
   setBeginnersWishOver10() {
