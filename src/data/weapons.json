@@ -349,6 +349,12 @@
         "src": "primordial-jade-winged-spear.png"
     },
     {
+        "name": "Primordial Jade Cutter",
+        "rating": 5,
+        "class": "Sword",
+        "src": "primordial-jade-cutter.png"
+    },
+    {
         "name": "Prototype Grudge",
         "rating": 4,
         "class": "Polearm",
