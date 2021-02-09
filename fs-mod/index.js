@@ -10,7 +10,116 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-
+Weapon
+ Primordial Jade Winged-Spear
+Weapon
+ Primordial Jade Cutter
+Weapon
+Amos Bow
+Weapon
+Skyward Harp
+Weapon
+Lost Prayer to the Sacred Winds
+Weapon
+Skyward Atlas
+Weapon
+Skyward Spine
+Weapon
+Wolf's Gravestone
+Weapon
+Skyward Pride
+Weapon
+Skyward Blade
+Weapon
+Aquila Favonia
+Weapon
+ Rust
+Weapon
+ Eye of Perception
+Weapon
+ Favonius Lance
+Weapon
+ Sacrificial Greatsword
+Weapon
+ The Flute
+Character
+Xinyan
+Character
+Sucrose
+Character
+Diona
+Character
+Chongyun
+Character
+Noelle
+Character
+Bennett
+Character
+Fischl
+Character
+Ningguang
+Character
+Xingqiu
+Character
+Beidou
+Character
+Xiangling
+Character
+Razor
+Character
+Barbara
+Weapon
+Sacrificial Bow
+Weapon
+The Stringless
+Weapon
+Favonius Warbow
+Weapon
+Sacrificial Fragments
+Weapon
+The Widsith
+Weapon
+Favonius Codex
+Weapon
+Dragon's Bane
+Weapon
+Rainslasher
+Weapon
+The Bell
+Weapon
+Favonius Greatsword
+Weapon
+Lions Roar
+Weapon
+Sacrificial Sword
+Weapon
+Favonius Sword
+Weapon
+Slingshot
+Weapon
+Sharpshooter's Oath
+Weapon
+Raven Bow
+Weapon
+Emerald Orb
+Weapon
+Thrilling Tales of Dragon Slayers
+Weapon
+Magic Guide
+Weapon
+Black Tassel
+Weapon
+Debate Club
+Weapon
+Bloodtainted Greatsword
+Weapon
+Ferrous Shadow
+Weapon
+Skyrider Sword
+Weapon
+Harbinger of Dawn
+Weapon
+Cool Steel
 `
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
@@ -55,13 +164,13 @@ const run = async () => {
 // run()
 
 const validateImages = async () => {
-  let adrift = require('../src/data/adrift-in-the-harbor.json')
+  let invitation = require('../src/data/invitation-to-mundane-life.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
   const characterPix = await readdir(p.join(__dirname, '../src/assets/images/characters'))
   const pics = [...weaponPix, ...characterPix]
-  const arrs = [adrift, wanderlust, epitome]
+  const arrs = [invitation, wanderlust, epitome]
   arrs.forEach((arr, i) => {
     arr.forEach(item => {
       if (!pics.some(pic => pic === item.src)) {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import AdriftInTheHarborDetails from './adrift-in-the-harbor-details'
+import InvitationToMundaneLifeDetails from './invitation-to-mundane-life-details'
 import EpitomeInvocationDetails from './epitome-invocation-details'
 import Navbar from './details-components/navbar'
 import WanderlustInvocationDetails from './wanderlust-invocation-details'
@@ -8,7 +8,7 @@ import BeginnersWishDetails from './beginners-wish-details'
 export default function Details(props) {
   const { selectedDetail, backToHome } = props
   const pages = {
-    'adrift-in-the-harbor': <AdriftInTheHarborDetails/>,
+    'invitation-to-mundane-life': <InvitationToMundaneLifeDetails/>,
     'epitome-invocation': <EpitomeInvocationDetails/>,
     'wanderlust-invocation': <WanderlustInvocationDetails/>,
     'beginners-wish': <BeginnersWishDetails/>

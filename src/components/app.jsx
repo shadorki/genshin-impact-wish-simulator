@@ -4,11 +4,12 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
-import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
+import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
 import { version } from '../../package.json';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class App extends Component {
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
-    this.adriftInTheHarbor = new AdriftInTheHarbor()
+    this.invitationToMundaneLife = new InvitationToMundaneLife()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -80,11 +81,10 @@ export default class App extends Component {
     this.setState({inventory, currentWishes: []}, this.saveData)
   }
   reset(previouslySelectedWish) {
-    this.beginnersWish.attemptsCount = 0
-    this.beginnersWish.guaranteedNoelle = true
-    this.adriftInTheHarbor.attemptsCount = 0
-    this.wanderlustInvocation.attemptsCount = 0
-    this.epitomeInvocation.attemptsCount = 0
+    this.beginnersWish.reset()
+    this.invitationToMundaneLife.reset()
+    this.wanderlustInvocation.reset()
+    this.epitomeInvocation.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -99,38 +99,59 @@ export default class App extends Component {
       inventory
     } = this.state
     const data = {
+      version: 1,
       isBeginnersWishLimited,
       isBeginnersWishOver10,
       inventory,
-      beginnersWishCount: this.beginnersWish.attemptsCount,
-      adriftInTheHarbor: this.adriftInTheHarbor.attemptsCount,
-      wanderlustInvocationCount: this.wanderlustInvocation.attemptsCount,
-      epitomeInvocationCount: this.epitomeInvocation.attemptsCount,
+      beginnersWish: this.beginnersWish.getState(),
+      invitationToMundaneLife: this.invitationToMundaneLife.getState(),
+      wanderlustInvocation: this.wanderlustInvocation.getState(),
+      epitomeInvocation: this.epitomeInvocation.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
   }
   loadData(){
     const data = JSON.parse(localStorage.getItem('data'))
     if(!data) return;
-    const {
-      isBeginnersWishLimited,
-      isBeginnersWishOver10,
-      inventory
-    } = data
-    this.beginnersWish.attempts = data.beginnersWishCount
-    this.adriftInTheHarbor.attempts = data.adriftInTheHarbor
-    this.wanderlustInvocation.attempts = data.wanderlustInvocationCount
-    this.epitomeInvocation.attempts = data.epitomeInvocationCount
-    this.setState({
-      isBeginnersWishLimited,
-      isBeginnersWishOver10,
-      inventory
-    }, this.backToHome)
+    if (!data.version) {
+      // Load original version (without softPity4 and softPity5)
+      const {
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      } = data
+      this.beginnersWish.attemptsCount = data.beginnersWishCount
+      this.invitationToMundaneLife.attemptsCount = data.invitationToMundaneLife
+      this.wanderlustInvocation.attemptsCount = data.wanderlustInvocationCount
+      this.epitomeInvocation.attemptsCount = data.epitomeInvocationCount
+      this.setState({
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      }, this.backToHome)
+    } else {
+      // Load version 1 with softPity4 and softPity5
+      const {
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      } = data
+      this.beginnersWish.setState(data.beginnersWish);
+      this.invitationToMundaneLife.setState(data.invitationToMundaneLife);
+      this.wanderlustInvocation.setState(data.wanderlustInvocation);
+      this.epitomeInvocation.setState(data.epitomeInvocation);
+      this.setState({
+        isBeginnersWishLimited,
+        isBeginnersWishOver10,
+        inventory
+      }, this.backToHome)
+    }
+
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'adrift-in-the-harbor' : 'beginners-wish'
+      currentDetails: isBeginnersWishLimited ? 'invitation-to-mundane-life' : 'beginners-wish'
     })
   }
   setBeginnersWishOver10() {
@@ -178,6 +199,7 @@ export default class App extends Component {
           case 'wish':
             return <Wish
             setView={this.setView}
+            is4StarItem={currentWishes.some(item => item.rating === 4)}
             is5StarItem={currentWishes.some(item => item.rating === 5)}
             isSingleItem={currentWishes.length === 1}
             />
