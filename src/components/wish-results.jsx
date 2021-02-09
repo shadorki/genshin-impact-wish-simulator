@@ -2,10 +2,23 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import WishItem from './wish-item'
 import WishItemSingle from './wish-item-single'
-import character from '../data/character.json'
+import characters from '../data/characters.json'
 export default class WishResults extends Component {
   isNewItem(key) {
     return !this.props.inventory[key]
+  }
+  getPercentX(item) {
+    if (item.type === 'character') {
+      let matches = characters.filter(c => c.name === item.name);
+      if (matches.length === 1) {
+        return matches[0].percentX || 50;
+      } else {
+        console.log('Cannot find character '+item.name+' in characters.json');
+        return 50;
+      }
+    } else {
+      return 50;
+    }
   }
   render() {
     const { wishes, setView, updateInventory } = this.props
@@ -38,7 +51,7 @@ export default class WishResults extends Component {
                     key={index}
                     item={item}
                     isNewItem={this.isNewItem(item.name)}
-                    characterPercentX={character[item.name] || 50}
+                    characterPercentX={this.getPercentX(item)}
                   />
                   ))
               )
