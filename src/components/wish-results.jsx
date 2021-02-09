@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import WishItem from './wish-item'
 import WishItemSingle from './wish-item-single'
+import character from '../data/character.json'
 export default class WishResults extends Component {
   isNewItem(key) {
     return !this.props.inventory[key]
@@ -37,6 +38,7 @@ export default class WishResults extends Component {
                     key={index}
                     item={item}
                     isNewItem={this.isNewItem(item.name)}
+                    characterPercentX={character[item.name] || 50}
                   />
                   ))
               )
