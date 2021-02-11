@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import Banners from './banners'
 import Details from './details'
 import Wish from './wish'
@@ -179,7 +179,7 @@ export default class App extends Component {
         } = this.state
         switch(view) {
           case 'banners':
-            return <Banners
+            return <Suspense fallback="loading"><Banners
               setView={this.setView}
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
@@ -190,31 +190,31 @@ export default class App extends Component {
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
               reset={this.reset.bind(this)}
-            />
+            /></Suspense>
           case 'details':
-            return <Details
+            return <Suspense fallback="loading"><Details
             backToHome={this.backToHome.bind(this)}
             selectedDetail={currentDetails}
-            />
+            /></Suspense>
           case 'wish':
-            return <Wish
+            return <Suspense fallback="loading"><Wish
             setView={this.setView}
             is4StarItem={currentWishes.some(item => item.rating === 4)}
             is5StarItem={currentWishes.some(item => item.rating === 5)}
             isSingleItem={currentWishes.length === 1}
-            />
+            /></Suspense>
           case 'wish-results':
-            return <WishResults
+            return <Suspense fallback="loading"><WishResults
             wishes={currentWishes}
             updateInventory={this.updateInventory.bind(this)}
             setView={this.setView}
             inventory={inventory}
-            />
+            /></Suspense>
           case 'inventory':
-            return <Inventory
+            return <Suspense fallback="loading"><Inventory
             inventory={inventory}
             backToHome={this.backToHome.bind(this)}
-            />
+            /></Suspense>
         }
   }
 }

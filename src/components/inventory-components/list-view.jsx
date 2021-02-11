@@ -1,10 +1,14 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap';
 import ReactStars from "react-rating-stars-component";
+import { useTranslation } from 'react-i18next';
+
 const characterDetailsThumbs = require.context('../../assets/images/characters/thumbnails')
 const weaponDetailsThumbs = require.context('../../assets/images/weapons')
 export default function ListView(props) {
   const {name, type, rating, src, quantity} = props.item
+  const { t, i18n } = useTranslation();
+
   return (
     <Col
       xs="12"
@@ -22,7 +26,7 @@ export default function ListView(props) {
             />
           </Col>
           <Col xs='3' className="d-flex justify-content-center align-items-center">
-            {name}
+            {t(name)}
           </Col>
           <Col xs='3' className="d-flex justify-content-center align-items-center">
             <ReactStars

@@ -5,8 +5,10 @@ import Navbar from './details-components/navbar'
 import ListView from './inventory-components/list-view'
 import sadPaimon from '../assets/images/sad-paimon.png'
 import IconView from './inventory-components/icon-view';
+import { withTranslation } from 'react-i18next';
 
-export default class Inventory extends Component {
+
+class Inventory extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -24,7 +26,7 @@ export default class Inventory extends Component {
     return `$${((0.0129 * 160) * wishes).toFixed(2)}`
   }
   render() {
-    const { backToHome, inventory } = this.props
+    const { backToHome, inventory, t } = this.props
     const { orderBy, view, showOnly } = this.state
     const inventoryList = Object.values(inventory)
     const sorting = {
@@ -50,7 +52,7 @@ export default class Inventory extends Component {
         <div className="details pt-5 min-vh-100">
           <Container>
             <Title>
-              <h1>| Inventory</h1>
+              <h1>| {t("Inventory")}</h1>
             </Title>
             <Form
             onSubmit={e => e.preventDefault()}
@@ -58,54 +60,54 @@ export default class Inventory extends Component {
               <Row>
                 <Col xs="6" sm="3">
                   <FormGroup>
-                    <Label for="orderBy">Order By</Label>
+                    <Label for="orderBy">{t("Order By")}</Label>
                     <Input
                       type="select"
                       name="orderBy"
                       id="orderBy"
                       onChange={this.onChange}
                     >
-                      <option value="rating">Rating</option>
-                      <option value="name">Name</option>
-                      <option value="quantity">Quantity</option>
+                      <option value="rating">{t("Rating")}</option>
+                      <option value="name">{t("Name")}</option>
+                      <option value="quantity">{t("Quantity")}</option>
                     </Input>
                   </FormGroup>
                 </Col>
                 <Col xs="6" sm="3">
                   <FormGroup>
-                    <Label for="showOnly">Show Only</Label>
+                    <Label for="showOnly">{t("Show Only")}</Label>
                     <Input
                       type="select"
                       name="showOnly"
                       id="showOnly"
                       onChange={this.onChange}
                     >
-                      <option value="all">All</option>
-                      <option value="characters">Characters</option>
-                      <option value="weapons">Weapons</option>
-                      <option value="fiveStars">5 Stars</option>
-                      <option value="fourStars">4 Stars</option>
-                      <option value="threeStars">3 Stars</option>
+                      <option value="all">{t("All")}</option>
+                      <option value="characters">{t("Characters")}</option>
+                      <option value="weapons">{t("Weapons")}</option>
+                      <option value="fiveStars">5 {t("Stars")}</option>
+                      <option value="fourStars">4 {t("Stars")}</option>
+                      <option value="threeStars">3 {t("Stars")}</option>
                     </Input>
                   </FormGroup>
                 </Col>
                 <Col xs="6" sm="3">
                   <FormGroup>
-                    <Label for="view">View</Label>
+                    <Label for="view">{t("View")}</Label>
                     <Input
                     type="select"
                     name="view"
                     id="view"
                     onChange={this.onChange}
                     >
-                      <option value="listView">List</option>
-                      <option value="iconView">Icons</option>
+                      <option value="listView">{t("List")}</option>
+                      <option value="iconView">{t("Icons")}</option>
                     </Input>
                   </FormGroup>
                 </Col>
                 <Col xs="6" sm="3">
                   <FormGroup>
-                    <Label>Spent</Label>
+                    <Label>{t("Spent")}</Label>
                       <Badge
                         color="warning"
                         className="amount-spent-badge"
@@ -153,3 +155,4 @@ export default class Inventory extends Component {
     )
   }
 }
+export default withTranslation()(Inventory);

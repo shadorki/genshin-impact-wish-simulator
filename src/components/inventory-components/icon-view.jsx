@@ -3,6 +3,7 @@ import { Row, Col } from 'reactstrap';
 import ReactStars from "react-rating-stars-component";
 import weaponBackground from '../../assets/images/details/weapon-backgrounds/background.jpg'
 import characterBackground from '../../assets/images/details/character-backgrounds/background.png'
+import { useTranslation } from 'react-i18next';
 
 const characterDetailsThumbs = require.context('../../assets/images/characters/thumbnails')
 const weaponDetailsThumbs = require.context('../../assets/images/weapons')
@@ -10,6 +11,8 @@ const backgroundElements = require.context('../../assets/images/details/characte
 
 export default function IconView(props) {
   const { name, type, rating, src, quantity } = props.item
+  const { t, i18n } = useTranslation();
+
   const backgroundStyle = type === 'weapon'
     ? {
       backgroundImage: `url('${weaponBackground}')`
@@ -40,7 +43,7 @@ export default function IconView(props) {
               />
               </Col>
             <Col xs='12' className="d-flex justify-content-center align-items-center mt-2">
-              {name}
+              {t(name)}
             </Col>
             </Row>
           </Col>
