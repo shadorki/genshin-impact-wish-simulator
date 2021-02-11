@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import WishItem from './wish-item'
 import WishItemSingle from './wish-item-single'
-import characters from '../data/characters.json'
 export default class WishResults extends Component {
   isNewItem(key) {
     return !this.props.inventory[key]
   }
   getPercentX(item) {
     if (item.type === 'character') {
-        return item.percentX || 50;x
+        return item.percentX || 50;
     } else {
       return 50;
     }
@@ -45,7 +44,7 @@ export default class WishResults extends Component {
                     key={index}
                     item={item}
                     isNewItem={this.isNewItem(item.name)}
-                    characterPercentX={this.getPercentX(item)}
+                    itemPercentX={this.getPercentX(item)}
                   />
                   ))
               )
