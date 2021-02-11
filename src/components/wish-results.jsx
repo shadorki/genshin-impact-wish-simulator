@@ -9,13 +9,7 @@ export default class WishResults extends Component {
   }
   getPercentX(item) {
     if (item.type === 'character') {
-      let matches = characters.filter(c => c.name === item.name);
-      if (matches.length === 1) {
-        return matches[0].percentX || 50;
-      } else {
-        console.log('Cannot find character '+item.name+' in characters.json');
-        return 50;
-      }
+        return item.percentX || 50;x
     } else {
       return 50;
     }
