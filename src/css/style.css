@@ -434,23 +434,24 @@ td {
   align-items: center;
 }
 
-.disclaimer-modal {
+.settings-modal, .disclaimer-modal {
   max-width: 1000px;
 }
 
-.disclaimer-modal-content {
+.settings-modal-content, .disclaimer-modal-content {
   background-color: #ebebeb;
   text-align: center;
   position: relative;
 }
 
-.disclaimer-modal-content>.close-button {
+.settings-modal-content > .close-button,
+.disclaimer-modal-content > .close-button {
   position: absolute;
   top: 2px;
   right: 5px;
 }
 
-.disclaimer-modal-content>p {
+.settings-modal-content > p, .disclaimer-modal-content > p {
   font-size: 1rem;
   margin: .2rem;
 }
