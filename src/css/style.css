@@ -438,20 +438,23 @@ td {
   max-width: 1000px;
 }
 
+.settings-modal {
+  width: 769px;
+}
+
 .settings-modal-content, .disclaimer-modal-content {
   background-color: #ebebeb;
   text-align: center;
   position: relative;
 }
 
-.settings-modal-content > .close-button,
-.disclaimer-modal-content > .close-button {
+.settings-modal-content>.close-button, .disclaimer-modal-content>.close-button {
   position: absolute;
   top: 2px;
   right: 5px;
 }
 
-.settings-modal-content > p, .disclaimer-modal-content > p {
+.settings-modal-content>p, .disclaimer-modal-content>p {
   font-size: 1rem;
   margin: .2rem;
 }
@@ -504,6 +507,9 @@ td {
   }
   .wish-item-single {
     height: 80% !important;
+  }
+  .settings-modal {
+    width: 100%;
   }
 }
 
