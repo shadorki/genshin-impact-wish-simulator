@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import BannerButton from './banner-button';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from './modal';
+import Settings from './settings'
+
 const banners = require.context('../assets/images/banners', true);
 export default class Banners extends Component {
   constructor(props) {
@@ -20,7 +22,8 @@ export default class Banners extends Component {
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
-      wasBeginnersWishDisabled: false
+      wasBeginnersWishDisabled: false,
+      isSettingsPageVisible: false
     }
   }
   componentDidMount() {
@@ -41,7 +44,11 @@ export default class Banners extends Component {
   get bannerText() {
     return this.state.banners[this.state.selectedBanner]
   }
-
+  toggleSettingsModal(isSettingsPageVisible) {
+    this.setState({
+      isSettingsPageVisible
+    })
+  }
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
@@ -77,7 +84,10 @@ export default class Banners extends Component {
     }
   }
   render() {
-    const { selectedBanner } = this.state
+    const {
+      selectedBanner,
+      isSettingsPageVisible
+     } = this.state
     const {
       wasDisclaimerSeen,
       setView,
@@ -85,6 +95,7 @@ export default class Banners extends Component {
       hideModal,
       reset,
       wish,
+      toggleSettingsModal,
       isBeginnersWishOver10
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
@@ -95,6 +106,11 @@ export default class Banners extends Component {
           wasDisclaimerSeen
             ? null
             : <Modal hideModal={hideModal} />
+        }
+        {
+          isSettingsPageVisible &&
+          <Settings
+          />
         }
         <div className="wrapper banners">
           <div className="giws-banners-container">
@@ -141,9 +157,12 @@ export default class Banners extends Component {
             </div>
             <div className="action-container">
               <div className="button-container">
-                <button
+                {/* <button
                   onClick={() => reset(selectedBanner)}
-                >Reset</button>
+                >Settings</button> */}
+                <button
+                  onClick={() => this.toggleSettingsModal(true)}
+                >Settings</button>
                 <button
                   onClick={() => setView('details')}
                 >Details</button>

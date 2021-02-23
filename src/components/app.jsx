@@ -22,6 +22,7 @@ export default class App extends Component {
       isBeginnersWishOver10: false,
       inventory: {},
       wasDisclaimerSeen: false,
+      isSettingsPageVisible: false,
       currentWishes: []
     }
     this.setView = this.setView.bind(this)
