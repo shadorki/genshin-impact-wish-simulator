@@ -95,8 +95,9 @@ export default class Banners extends Component {
       hideModal,
       reset,
       wish,
-      toggleSettingsModal,
-      isBeginnersWishOver10
+      isBeginnersWishOver10,
+      selectedCharacterEventWish,
+      updateCharacterEventWish
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -110,6 +111,10 @@ export default class Banners extends Component {
         {
           isSettingsPageVisible &&
           <Settings
+            closeSettings={() => this.toggleSettingsModal(false)}
+            reset={() => reset(selectedBanner)}
+            updateCharacterEventWish={updateCharacterEventWish}
+            selectedCharacterEventWish={selectedCharacterEventWish}
           />
         }
         <div className="wrapper banners">
