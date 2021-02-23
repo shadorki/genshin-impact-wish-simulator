@@ -23,7 +23,8 @@ export default class App extends Component {
       inventory: {},
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
-      currentWishes: []
+      currentWishes: [],
+      selectedCharacterEventWish: 'invitation-to-mundane-life'
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
@@ -80,6 +81,11 @@ export default class App extends Component {
       }
     }
     this.setState({inventory, currentWishes: []}, this.saveData)
+  }
+  updateCharacterEventWish(selectedCharacterEventWish) {
+    this.setState({
+      selectedCharacterEventWish
+    })
   }
   reset(previouslySelectedWish) {
     this.beginnersWish.reset()
@@ -176,7 +182,8 @@ export default class App extends Component {
           inventory,
           wasDisclaimerSeen,
           selectedDetail,
-          currentWishes
+          currentWishes,
+          selectedCharacterEventWish
         } = this.state
         switch(view) {
           case 'banners':
@@ -185,6 +192,8 @@ export default class App extends Component {
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
               selectedBanner={currentDetails}
+              selectedCharacterEventWish={selectedCharacterEventWish}
+              updateCharacterEventWish={this.updateCharacterEventWish.bind(this)}
               isBeginnersWishLimited={isBeginnersWishLimited}
               isBeginnersWishOver10={isBeginnersWishOver10}
               wasDisclaimerSeen={wasDisclaimerSeen}
