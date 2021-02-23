@@ -50,7 +50,12 @@
     "type": "git",
     "url": "git+https://github.com/uzair-ashraf/genshin-impact-wish-simulator.git"
   },
-  "keywords": ["Genshin", "Impact", "Wish", "Simulator"],
+  "keywords": [
+    "Genshin",
+    "Impact",
+    "Wish",
+    "Simulator"
+  ],
   "author": "Uzair Ashraf",
   "license": "ISC",
   "bugs": {
