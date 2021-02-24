@@ -18,7 +18,17 @@ export default class Settings extends Component {
     this.onChange = this.onChange.bind(this)
   }
   onChange({ target: { name, value } }) {
-    this.setState({ [name]: value }, () => console.log(this.state))
+    this.setState({ [name]: value })
+  }
+  submitChanges(e) {
+    e.preventDefault()
+    const {
+      closeSettings,
+      updateCharacterEventWish
+    } = this.props
+    const { characterBanner } = this.state
+    updateCharacterEventWish(characterBanner)
+    closeSettings()
   }
   renderBannerOptions() {
     const bannerArray = []
@@ -60,23 +70,30 @@ export default class Settings extends Component {
               onClick={closeSettings}
               className="close-button"></div>
             <h2>Settings</h2>
-            <Form>
+            <Form
+            onSubmit={this.submitChanges.bind(this)}
+            >
               <Container>
                 <Row>
                   <Col xs="12">
-                  <FormGroup>
-                    <Label for="characterBanner">Character Banner</Label>
-                    <Input
-                      type="select"
-                      name="characterBanner"
-                      id="characterBanner"
-                      onChange={this.onChange}
-                    >
-                      {
-                        this.renderBannerOptions()
-                      }
-                    </Input>
-                  </FormGroup>
+                    <FormGroup>
+                      <Label for="characterBanner" className="text-left">Character Banner</Label>
+                      <Input
+                        type="select"
+                        name="characterBanner"
+                        id="characterBanner"
+                        onChange={this.onChange}
+                      >
+                        {
+                          this.renderBannerOptions()
+                        }
+                      </Input>
+                    </FormGroup>
+                  </Col>
+                  <Col xs="12">
+                    <div className="button-container">
+                      <button>Apply</button>
+                    </div>
                   </Col>
                 </Row>
               </Container>

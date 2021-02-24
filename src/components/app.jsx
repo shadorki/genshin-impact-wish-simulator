@@ -185,6 +185,7 @@ export default class App extends Component {
           currentWishes,
           selectedCharacterEventWish
         } = this.state
+        console.log(selectedCharacterEventWish)
         switch(view) {
           case 'banners':
             return <Banners
