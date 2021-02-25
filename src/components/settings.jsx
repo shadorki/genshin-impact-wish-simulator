@@ -26,11 +26,13 @@ export default class Settings extends Component {
     e.preventDefault()
     const {
       closeSettings,
-      updateCharacterEventWish
+      updateCharacterEventWish,
+      saveData
     } = this.props
     const { characterBanner } = this.state
     updateCharacterEventWish(characterBanner)
     closeSettings()
+    saveData()
   }
   renderBannerOptions() {
     const bannerArray = []

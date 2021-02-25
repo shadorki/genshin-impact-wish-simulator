@@ -130,6 +130,12 @@ export default class App extends Component {
     this.invitationToMundaneLife.reset()
     this.wanderlustInvocation.reset()
     this.epitomeInvocation.reset()
+    this.balladInGoblets.reset()
+    this.sparklingSteps.reset()
+    this.gentryOfHermitage.reset()
+    this.farewellOfSnezhnaya.reset()
+    this.secretumSecretorum.reset()
+    this.adriftInTheHarbor.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -141,17 +147,25 @@ export default class App extends Component {
     const {
       isBeginnersWishLimited,
       isBeginnersWishOver10,
-      inventory
+      inventory,
+      selectedCharacterEventWish
     } = this.state
     const data = {
       version: 1,
       isBeginnersWishLimited,
       isBeginnersWishOver10,
       inventory,
+      selectedCharacterEventWish,
       beginnersWish: this.beginnersWish.getState(),
       invitationToMundaneLife: this.invitationToMundaneLife.getState(),
       wanderlustInvocation: this.wanderlustInvocation.getState(),
-      epitomeInvocation: this.epitomeInvocation.getState()
+      epitomeInvocation: this.epitomeInvocation.getState(),
+      balladInGoblets: this.balladInGoblets.getState(),
+      sparklingSteps: this.sparklingSteps.getState(),
+      gentryOfHermitage: this.gentryOfHermitage.getState(),
+      farewellOfSnezhnaya: this.farewellOfSnezhnaya.getState(),
+      secretumSecretorum: this.secretumSecretorum.getState(),
+      adriftInTheHarbor: this.adriftInTheHarbor.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
   }
@@ -165,10 +179,16 @@ export default class App extends Component {
         isBeginnersWishOver10,
         inventory
       } = data
-      this.beginnersWish.attemptsCount = data.beginnersWishCount
-      this.invitationToMundaneLife.attemptsCount = data.invitationToMundaneLife
-      this.wanderlustInvocation.attemptsCount = data.wanderlustInvocationCount
-      this.epitomeInvocation.attemptsCount = data.epitomeInvocationCount
+      this.beginnersWish.attemptsCount = data.beginnersWishCount || 0
+      this.invitationToMundaneLife.attemptsCount = data.invitationToMundaneLife || 0
+      this.wanderlustInvocation.attemptsCount = data.wanderlustInvocationCount || 0
+      this.epitomeInvocation.attemptsCount = data.epitomeInvocationCount || 0
+      this.balladInGoblets.attemptsCount = data.balladInGoblets || 0
+      this.sparklingSteps.attemptsCount = data.sparklingSteps || 0
+      this.gentryOfHermitage.attemptsCount = data.gentryOfHermitage || 0
+      this.farewellOfSnezhnaya.attemptsCount = data.farewellOfSnezhnaya || 0
+      this.secretumSecretorum.attemptsCount = data.secretumSecretorum || 0
+      this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -179,25 +199,34 @@ export default class App extends Component {
       const {
         isBeginnersWishLimited,
         isBeginnersWishOver10,
-        inventory
+        inventory,
+        selectedCharacterEventWish
       } = data
       this.beginnersWish.setState(data.beginnersWish);
       this.invitationToMundaneLife.setState(data.invitationToMundaneLife);
       this.wanderlustInvocation.setState(data.wanderlustInvocation);
       this.epitomeInvocation.setState(data.epitomeInvocation);
+      this.balladInGoblets.setState(data.balladInGoblets)
+      this.sparklingSteps.setState(data.sparklingSteps)
+      this.gentryOfHermitage.setState(data.gentryOfHermitage)
+      this.farewellOfSnezhnaya.setState(data.farewellOfSnezhnaya)
+      this.secretumSecretorum.setState(data.secretumSecretorum)
+      this.adriftInTheHarbor.setState(data.adriftInTheHarbor)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
-        inventory
+        inventory,
+        selectedCharacterEventWish
       }, this.backToHome)
     }
 
   }
   setBeginnersWishDisable(isBeginnersWishLimited) {
+    const { selectedCharacterEventWish } = this.state
     this.setState({
       isBeginnersWishLimited,
-      currentDetails: isBeginnersWishLimited ? 'invitation-to-mundane-life' : 'beginners-wish'
-    })
+      currentDetails: isBeginnersWishLimited ? selectedCharacterEventWish : 'beginners-wish'
+    }, console.log(this.state))
   }
   setBeginnersWishOver10() {
     this.setState({isBeginnersWishOver10: true})
@@ -238,6 +267,7 @@ export default class App extends Component {
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
               reset={this.reset.bind(this)}
+              saveData={this.saveData.bind(this)}
             />
           case 'details':
             return <Details

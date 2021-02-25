@@ -134,7 +134,8 @@ export default class Banners extends Component {
       wish,
       isBeginnersWishOver10,
       getFormattedCharacterEventWish,
-      updateCharacterEventWish
+      updateCharacterEventWish,
+      saveData
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -149,6 +150,7 @@ export default class Banners extends Component {
           isSettingsPageVisible &&
           <Settings
             closeSettings={() => this.toggleSettingsModal(false)}
+            saveData={saveData}
             reset={() => reset(selectedBanner)}
             updateCharacterEventWish={updateCharacterEventWish}
             getFormattedCharacterEventWish={getFormattedCharacterEventWish}
