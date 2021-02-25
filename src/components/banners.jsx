@@ -27,7 +27,6 @@ export default class Banners extends Component {
       wasBeginnersWishDisabled: false,
       isSettingsPageVisible: false
     }
-    console.log(this.state)
 
   }
   componentDidMount() {
@@ -40,9 +39,8 @@ export default class Banners extends Component {
     }
     const newSelectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
     // If the user selected a new banner
-    const { selectedCharacterEventWish } = this.state
+    const { selectedCharacterEventWish, selectedBanner } = this.state
     if(newSelectedCharacterEventWish !== selectedCharacterEventWish) {
-      console.log(newSelectedCharacterEventWish, selectedCharacterEventWish)
       const { banners: oldBanners, wishes: oldWishes } = this.state
       const banners = {}
       const wishes = {}
@@ -60,10 +58,17 @@ export default class Banners extends Component {
           wishes[w] = oldWishes[w]
         }
       }
+      let newSelectedBanner = null
+      if(selectedBanner === selectedCharacterEventWish) {
+        newSelectedBanner = newSelectedCharacterEventWish
+      } else {
+        newSelectedBanner = selectedBanner
+      }
       this.setState({
         selectedCharacterEventWish: newSelectedCharacterEventWish,
         banners,
-        wishes
+        wishes,
+        selectedBanner: newSelectedBanner
       })
     }
   }

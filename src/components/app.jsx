@@ -231,7 +231,6 @@ export default class App extends Component {
               setSelectedWish={this.setSelectedWish.bind(this)}
               selectedBanner={currentDetails}
               getFormattedCharacterEventWish={this.getFormattedCharacterEventWish.bind(this)}
-              // selectedCharacterEventWish={selectedCharacterEventWish}
               updateCharacterEventWish={this.updateCharacterEventWish.bind(this)}
               isBeginnersWishLimited={isBeginnersWishLimited}
               isBeginnersWishOver10={isBeginnersWishOver10}
