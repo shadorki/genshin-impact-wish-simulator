@@ -110,6 +110,14 @@ video {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
 
+.banner-button.sparkling-steps {
+  background-image: url('../assets/images/ui/klee.png');
+}
+
+.banner-button.sparkling-steps.selected {
+  background-image: url('../assets/images/ui/klee-selected.png');
+}
+
 .banner-button.farewell-of-snezhnaya {
   background-image: url('../assets/images/ui/childe.png');
 }

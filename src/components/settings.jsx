@@ -5,15 +5,17 @@ export default class Settings extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      characterBanner: this.props.selectedCharacterEventWish,
+      characterBanner: this.props.getFormattedCharacterEventWish('kebabCase'),
       language: 'English'
     }
     this.banners = {
       'ballad-in-goblets': 'Ballad In Goblets',
       'sparkling-steps': 'Sparkling Steps',
+      'gentry-of-hermitage': 'Gentry Of Hermitage',
       'farewell-of-snezhnaya': 'Farewell of Snezhnaya',
+      'secretum-secretorum': 'Secretum Secretorum',
+      'adrift-in-the-harbor': 'Adrift in the Harbor',
       'invitation-to-mundane-life': 'Invitation to Mundane Life',
-      'adrift-in-the-harbor': 'Adrift in the Harbor'
     }
     this.onChange = this.onChange.bind(this)
   }
@@ -37,7 +39,6 @@ export default class Settings extends Component {
         <option
           key={banner}
           value={banner}
-          selected={banner === this.state.characterBanner}
         >
           {this.banners[banner]}
         </option>
@@ -48,16 +49,9 @@ export default class Settings extends Component {
   render() {
     const {
       reset,
-      selectedCharacterEventWish,
       updateCharacterEventWish,
       closeSettings
     } = this.props
-    console.log({
-      reset,
-      selectedCharacterEventWish,
-      updateCharacterEventWish,
-      closeSettings
-    })
     return (
       <div
         onClick={closeSettings}
@@ -82,6 +76,7 @@ export default class Settings extends Component {
                         type="select"
                         name="characterBanner"
                         id="characterBanner"
+                        defaultValue={this.state.characterBanner}
                         onChange={this.onChange}
                       >
                         {

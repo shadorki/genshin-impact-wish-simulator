@@ -4,6 +4,12 @@ import Details from './details'
 import Wish from './wish'
 import WishResults from './wish-results'
 import Inventory from './inventory'
+import BalladInGoblets from '../models/ballad-in-goblets'
+import SparklingSteps from '../models/sparkling-steps'
+import GentryOfHermitage from '../models/gentry-of-hermitage'
+import FarewellOfSnezhnaya from '../models/farewell-of-snezhnaya'
+import SecretumSecretorum from '../models/secretum-secretorum'
+import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
@@ -29,6 +35,12 @@ export default class App extends Component {
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
+    this.balladInGoblets = new BalladInGoblets()
+    this.sparklingSteps = new SparklingSteps()
+    this.gentryOfHermitage = new GentryOfHermitage()
+    this.farewellOfSnezhnaya = new FarewellOfSnezhnaya()
+    this.secretumSecretorum = new SecretumSecretorum()
+    this.adriftInTheHarbor = new AdriftInTheHarbor()
     this.invitationToMundaneLife = new InvitationToMundaneLife()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
@@ -86,6 +98,32 @@ export default class App extends Component {
     this.setState({
       selectedCharacterEventWish
     })
+  }
+  getFormattedCharacterEventWish(format, selectedCharacterEventWish) {
+    if(!selectedCharacterEventWish) {
+      selectedCharacterEventWish = this.state.selectedCharacterEventWish
+    }
+    const options = {
+      camelCase() {
+        return this.formatter(true)
+      },
+      pascalCase() {
+        return this.formatter(false)
+      },
+      formatter(isCamel) {
+        const words = selectedCharacterEventWish.split('-')
+        for (let i = 0; i < words.length; i++) {
+          if(isCamel && !i) continue
+          const word = words[i]
+          words[i] = word[0].toUpperCase() + word.slice(1)
+        }
+        return words.join('')
+      },
+      kebabCase() {
+        return selectedCharacterEventWish
+      }
+    }
+    return options[format]()
   }
   reset(previouslySelectedWish) {
     this.beginnersWish.reset()
@@ -185,7 +223,6 @@ export default class App extends Component {
           currentWishes,
           selectedCharacterEventWish
         } = this.state
-        console.log(selectedCharacterEventWish)
         switch(view) {
           case 'banners':
             return <Banners
@@ -193,7 +230,8 @@ export default class App extends Component {
               setCurrentDetails={this.setCurrentDetails.bind(this)}
               setSelectedWish={this.setSelectedWish.bind(this)}
               selectedBanner={currentDetails}
-              selectedCharacterEventWish={selectedCharacterEventWish}
+              getFormattedCharacterEventWish={this.getFormattedCharacterEventWish.bind(this)}
+              // selectedCharacterEventWish={selectedCharacterEventWish}
               updateCharacterEventWish={this.updateCharacterEventWish.bind(this)}
               isBeginnersWishLimited={isBeginnersWishLimited}
               isBeginnersWishOver10={isBeginnersWishOver10}

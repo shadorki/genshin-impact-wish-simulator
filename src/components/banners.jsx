@@ -8,23 +8,27 @@ const banners = require.context('../assets/images/banners', true);
 export default class Banners extends Component {
   constructor(props) {
     super(props)
+    const selectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
     this.state = {
       selectedBanner: 'beginners-wish',
+      selectedCharacterEventWish,
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'invitation-to-mundane-life': 'Character Event Wish',
+        [selectedCharacterEventWish]: 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'invitation-to-mundane-life': 'invitationToMundaneLife',
+        [selectedCharacterEventWish]: this.props.getFormattedCharacterEventWish('camelCase', selectedCharacterEventWish),
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
       wasBeginnersWishDisabled: false,
       isSettingsPageVisible: false
     }
+    console.log(this.state)
+
   }
   componentDidMount() {
     this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
@@ -33,6 +37,34 @@ export default class Banners extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
       this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
+    }
+    const newSelectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
+    // If the user selected a new banner
+    const { selectedCharacterEventWish } = this.state
+    if(newSelectedCharacterEventWish !== selectedCharacterEventWish) {
+      console.log(newSelectedCharacterEventWish, selectedCharacterEventWish)
+      const { banners: oldBanners, wishes: oldWishes } = this.state
+      const banners = {}
+      const wishes = {}
+      for(const b in oldBanners) {
+        if(selectedCharacterEventWish === b) {
+          banners[newSelectedCharacterEventWish] = 'Character Event Wish'
+        } else {
+          banners[b] = oldBanners[b]
+        }
+      }
+      for(const w in oldWishes) {
+        if(selectedCharacterEventWish === w) {
+          wishes[newSelectedCharacterEventWish] = this.props.getFormattedCharacterEventWish('camelCase', newSelectedCharacterEventWish)
+        } else {
+          wishes[w] = oldWishes[w]
+        }
+      }
+      this.setState({
+        selectedCharacterEventWish: newSelectedCharacterEventWish,
+        banners,
+        wishes
+      })
     }
   }
   onCarouselChange(index) {
@@ -52,14 +84,14 @@ export default class Banners extends Component {
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
-        selectedBanner: 'invitation-to-mundane-life',
+        selectedBanner: this.props.getFormattedCharacterEventWish('kebabCase'),
         banners: {
-          'invitation-to-mundane-life': 'Character Event Wish',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'invitation-to-mundane-life': 'invitationToMundaneLife',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: this.props.getFormattedCharacterEventWish('camelCase'),
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -69,13 +101,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'invitation-to-mundane-life': 'Character Event Wish',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'invitation-to-mundane-life': 'invitationToMundaneLife',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: this.props.getFormattedCharacterEventWish('camelCase'),
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -96,7 +128,7 @@ export default class Banners extends Component {
       reset,
       wish,
       isBeginnersWishOver10,
-      selectedCharacterEventWish,
+      getFormattedCharacterEventWish,
       updateCharacterEventWish
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
@@ -114,7 +146,7 @@ export default class Banners extends Component {
             closeSettings={() => this.toggleSettingsModal(false)}
             reset={() => reset(selectedBanner)}
             updateCharacterEventWish={updateCharacterEventWish}
-            selectedCharacterEventWish={selectedCharacterEventWish}
+            getFormattedCharacterEventWish={getFormattedCharacterEventWish}
           />
         }
         <div className="wrapper banners">
