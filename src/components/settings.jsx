@@ -46,6 +46,7 @@ export default class Settings extends Component {
     }
     return bannerArray
   }
+
   render() {
     const {
       reset,
@@ -70,8 +71,8 @@ export default class Settings extends Component {
               <Container>
                 <Row>
                   <Col xs="12">
-                    <FormGroup>
-                      <Label for="characterBanner" className="text-left">Character Banner</Label>
+                    <FormGroup className="text-left">
+                      <Label for="characterBanner" className="pb-1 pl-1 h5">Character Banner</Label>
                       <Input
                         type="select"
                         name="characterBanner"
@@ -86,8 +87,14 @@ export default class Settings extends Component {
                     </FormGroup>
                   </Col>
                   <Col xs="12">
-                    <div className="button-container">
-                      <button>Apply</button>
+                    <div className="button-container justify-content-around my-2">
+                      <button
+                      onClick={() => {
+                          reset()
+                          closeSettings()
+                      }}
+                      type="button">Reset Inventory</button>
+                      <button>Apply Changes</button>
                     </div>
                   </Col>
                 </Row>
