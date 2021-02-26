@@ -4,14 +4,15 @@ import ReactStars from "react-rating-stars-component";
 const characterImages = require.context('../assets/images/characters');
 const weaponImages = require.context('../assets/images/weapons');
 export default function WishItem(props) {
-  const { isNewItem } = props
+  const { isNewItem, itemPercentX } = props
   const {src, name, rating, type} = props.item
   return (
     <Col
     xs="2"
     md="1"
     style={{
-      backgroundImage: `url('${type === 'character' ? characterImages('./' + src).default : weaponImages('./' + src).default}')`
+      backgroundImage: `url('${type === 'character' ? characterImages('./' + src).default : weaponImages('./' + src).default}')`,
+      backgroundPositionX: itemPercentX+'%'
     }}
     className={`wish-item ${type} mx-1 px-0`}>
       {
