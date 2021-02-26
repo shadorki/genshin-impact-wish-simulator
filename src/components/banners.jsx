@@ -200,9 +200,6 @@ export default class Banners extends Component {
             </div>
             <div className="action-container">
               <div className="button-container">
-                {/* <button
-                  onClick={() => reset(selectedBanner)}
-                >Settings</button> */}
                 <button
                   onClick={() => this.toggleSettingsModal(true)}
                 >Settings</button>
