@@ -7,7 +7,7 @@ export default class Banners extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedBanner: 'beginners-wish',
+      selectedBanner: this.props.selectedBanner || 'beginners-wish',
       banners: {
         'beginners-wish': 'Novice Wishes',
         'invitation-to-mundane-life': 'Character Event Wish',
