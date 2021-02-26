@@ -150,7 +150,6 @@ export default class App extends Component {
       inventory,
       selectedCharacterEventWish
     } = this.state
-    console.log(selectedCharacterEventWish)
     const data = {
       version: 1,
       isBeginnersWishLimited,
@@ -173,7 +172,6 @@ export default class App extends Component {
   loadData(){
     const data = JSON.parse(localStorage.getItem('data'))
     if(!data) return;
-    console.log(data)
     if (!data.version) {
       // Load original version (without softPity4 and softPity5)
       const {
