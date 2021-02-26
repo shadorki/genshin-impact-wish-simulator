@@ -99,6 +99,9 @@ Cypress.Commands.add("restoreLocalStorage", () => {
 
 Cypress.Commands.add("resetInventory", () => {
   cy.get('button')
+    .contains('Settings')
+    .click()
+  cy.get('button')
     .contains('Reset')
     .click()
 })
