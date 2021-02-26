@@ -97,7 +97,7 @@ export default class App extends Component {
   updateCharacterEventWish(selectedCharacterEventWish) {
     this.setState({
       selectedCharacterEventWish
-    })
+    }, this.saveData)
   }
   getFormattedCharacterEventWish(format, selectedCharacterEventWish) {
     if(!selectedCharacterEventWish) {
@@ -150,6 +150,7 @@ export default class App extends Component {
       inventory,
       selectedCharacterEventWish
     } = this.state
+    console.log(selectedCharacterEventWish)
     const data = {
       version: 1,
       isBeginnersWishLimited,
@@ -172,6 +173,7 @@ export default class App extends Component {
   loadData(){
     const data = JSON.parse(localStorage.getItem('data'))
     if(!data) return;
+    console.log(data)
     if (!data.version) {
       // Load original version (without softPity4 and softPity5)
       const {
@@ -226,7 +228,7 @@ export default class App extends Component {
     this.setState({
       isBeginnersWishLimited,
       currentDetails: isBeginnersWishLimited ? selectedCharacterEventWish : 'beginners-wish'
-    }, console.log(this.state))
+    })
   }
   setBeginnersWishOver10() {
     this.setState({isBeginnersWishOver10: true})
@@ -267,7 +269,6 @@ export default class App extends Component {
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
               reset={this.reset.bind(this)}
-              saveData={this.saveData.bind(this)}
             />
           case 'details':
             return <Details

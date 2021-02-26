@@ -150,7 +150,6 @@ export default class Banners extends Component {
           isSettingsPageVisible &&
           <Settings
             closeSettings={() => this.toggleSettingsModal(false)}
-            saveData={saveData}
             reset={() => reset(selectedBanner)}
             updateCharacterEventWish={updateCharacterEventWish}
             getFormattedCharacterEventWish={getFormattedCharacterEventWish}
