@@ -40,6 +40,7 @@ export default class Banners extends Component {
     const newSelectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
     // If the user selected a new banner
     const { selectedCharacterEventWish, selectedBanner } = this.state
+    const { isBeginnersWishLimited } = this.props
     if(newSelectedCharacterEventWish !== selectedCharacterEventWish) {
       const { banners: oldBanners, wishes: oldWishes } = this.state
       const banners = {}
@@ -63,6 +64,10 @@ export default class Banners extends Component {
         newSelectedBanner = newSelectedCharacterEventWish
       } else {
         newSelectedBanner = selectedBanner
+      }
+      if (isBeginnersWishLimited) {
+        delete banners['beginners-wish']
+        delete wishes['beginners-wish']
       }
       this.setState({
         selectedCharacterEventWish: newSelectedCharacterEventWish,

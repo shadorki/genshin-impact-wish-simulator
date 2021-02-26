@@ -16,6 +16,7 @@ export default class Settings extends Component {
       'secretum-secretorum': 'Secretum Secretorum',
       'adrift-in-the-harbor': 'Adrift in the Harbor',
       'invitation-to-mundane-life': 'Invitation to Mundane Life',
+      'dance-of-lanterns': 'Dance Of Lanterns'
     }
     this.onChange = this.onChange.bind(this)
   }

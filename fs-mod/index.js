@@ -10,38 +10,22 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-Weapon
- Primordial Jade Winged-Spear
-Weapon
- Primordial Jade Cutter
-Weapon
-Amos Bow
-Weapon
-Skyward Harp
-Weapon
-Lost Prayer to the Sacred Winds
-Weapon
-Skyward Atlas
-Weapon
-Skyward Spine
-Weapon
-Wolf's Gravestone
-Weapon
-Skyward Pride
-Weapon
-Skyward Blade
-Weapon
-Aquila Favonia
-Weapon
- Rust
-Weapon
- Eye of Perception
-Weapon
- Favonius Lance
-Weapon
- Sacrificial Greatsword
-Weapon
- The Flute
+Character
+ Keqing
+Character
+Mona
+Character
+Qiqi
+Character
+Diluc
+Character
+Jean
+Character
+ Bennett
+Character
+ Ningguang
+Character
+ Barbara
 Character
 Xinyan
 Character
@@ -53,11 +37,7 @@ Chongyun
 Character
 Noelle
 Character
-Bennett
-Character
 Fischl
-Character
-Ningguang
 Character
 Xingqiu
 Character
@@ -66,8 +46,8 @@ Character
 Xiangling
 Character
 Razor
-Character
-Barbara
+Weapon
+Rust
 Weapon
 Sacrificial Bow
 Weapon
@@ -75,23 +55,31 @@ The Stringless
 Weapon
 Favonius Warbow
 Weapon
+Eye of Perception
+Weapon
 Sacrificial Fragments
 Weapon
 The Widsith
 Weapon
 Favonius Codex
 Weapon
+Favonius Lance
+Weapon
 Dragon's Bane
 Weapon
 Rainslasher
+Weapon
+Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
 Favonius Greatsword
 Weapon
-Lions Roar
+Lion's Roar
 Weapon
 Sacrificial Sword
+Weapon
+The Flute
 Weapon
 Favonius Sword
 Weapon
@@ -145,7 +133,7 @@ Cool Steel
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    const path = p.join(__dirname, '../src/data/epitome-invocation.json')
+    const path = p.join(__dirname, '../src/data/dance-of-lanterns.json')
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -161,7 +149,7 @@ Cool Steel
   }
 }
 
-// run()
+run()
 
 const validateImages = async () => {
   let invitation = require('../src/data/invitation-to-mundane-life.json')
@@ -180,4 +168,4 @@ const validateImages = async () => {
   })
 }
 
-validateImages()
+// validateImages()

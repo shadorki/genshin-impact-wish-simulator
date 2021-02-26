@@ -158,6 +158,14 @@ video {
   background-image: url('../assets/images/ui/xiao-selected.png');
 }
 
+.banner-button.dance-of-lanterns {
+  background-image: url('../assets/images/ui/keqing.png');
+}
+
+.banner-button.dance-of-lanterns.selected {
+  background-image: url('../assets/images/ui/keqing-selected.png');
+}
+
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }

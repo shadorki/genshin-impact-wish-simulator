@@ -24,7 +24,7 @@ describe('User can wish once', () => {
   })
   it('Stress single wish test', () => {
     const banners = [
-      'invitation-to-mundane-life',
+      'dance-of-lanterns',
       'epitome-invocation',
       'wanderlust-invocation'
     ]

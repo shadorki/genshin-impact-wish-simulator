@@ -11,6 +11,7 @@ import FarewellOfSnezhnaya from '../models/farewell-of-snezhnaya'
 import SecretumSecretorum from '../models/secretum-secretorum'
 import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
+import DanceOfLanterns from '../models/dance-of-lanterns'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -30,7 +31,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'invitation-to-mundane-life'
+      selectedCharacterEventWish: 'dance-of-lanterns'
     }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
@@ -42,6 +43,7 @@ export default class App extends Component {
     this.secretumSecretorum = new SecretumSecretorum()
     this.adriftInTheHarbor = new AdriftInTheHarbor()
     this.invitationToMundaneLife = new InvitationToMundaneLife()
+    this.danceOfLanterns = new DanceOfLanterns()
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
@@ -54,7 +56,6 @@ export default class App extends Component {
     this.setState({view})
   }
   backToHome() {
-    const { isBeginnersWishLimited } = this.state
     this.setState({
       view: 'banners'
     })
@@ -136,6 +137,7 @@ export default class App extends Component {
     this.farewellOfSnezhnaya.reset()
     this.secretumSecretorum.reset()
     this.adriftInTheHarbor.reset()
+    this.danceOfLanterns.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -165,7 +167,8 @@ export default class App extends Component {
       gentryOfHermitage: this.gentryOfHermitage.getState(),
       farewellOfSnezhnaya: this.farewellOfSnezhnaya.getState(),
       secretumSecretorum: this.secretumSecretorum.getState(),
-      adriftInTheHarbor: this.adriftInTheHarbor.getState()
+      adriftInTheHarbor: this.adriftInTheHarbor.getState(),
+      danceOfLanterns: this.danceOfLanterns.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
   }
@@ -189,6 +192,7 @@ export default class App extends Component {
       this.farewellOfSnezhnaya.attemptsCount = data.farewellOfSnezhnaya || 0
       this.secretumSecretorum.attemptsCount = data.secretumSecretorum || 0
       this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor || 0
+      this.danceOfLanterns.attemptsCount = data.danceOfLanterns || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -212,12 +216,22 @@ export default class App extends Component {
       this.farewellOfSnezhnaya.setState(data.farewellOfSnezhnaya)
       this.secretumSecretorum.setState(data.secretumSecretorum)
       this.adriftInTheHarbor.setState(data.adriftInTheHarbor)
+      this.danceOfLanterns.setState(data.danceOfLanterns)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
         inventory,
         selectedCharacterEventWish
-      }, this.backToHome)
+      }, () => {
+          this.backToHome()
+        if(data.beginnersWish.attemptsCount >= 20) {
+          this.setBeginnersWishDisable(true)
+        }
+        if (data.beginnersWish.attemptsCount > 10) {
+          this.setBeginnersWishOver10()
+        }
+      })
+
     }
 
   }
