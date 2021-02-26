@@ -56,7 +56,6 @@ export default class App extends Component {
     this.setState({view})
   }
   backToHome() {
-    const { isBeginnersWishLimited } = this.state
     this.setState({
       view: 'banners'
     })
@@ -223,7 +222,16 @@ export default class App extends Component {
         isBeginnersWishOver10,
         inventory,
         selectedCharacterEventWish
-      }, this.backToHome)
+      }, () => {
+          this.backToHome()
+        if(data.beginnersWish.attemptsCount >= 20) {
+          this.setBeginnersWishDisable(true)
+        }
+        if (data.beginnersWish.attemptsCount > 10) {
+          this.setBeginnersWishOver10()
+        }
+      })
+
     }
 
   }
