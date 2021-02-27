@@ -110,6 +110,14 @@ video {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
 
+.banner-button.sparkling-steps {
+  background-image: url('../assets/images/ui/klee.png');
+}
+
+.banner-button.sparkling-steps.selected {
+  background-image: url('../assets/images/ui/klee-selected.png');
+}
+
 .banner-button.farewell-of-snezhnaya {
   background-image: url('../assets/images/ui/childe.png');
 }
@@ -148,6 +156,14 @@ video {
 
 .banner-button.invitation-to-mundane-life.selected {
   background-image: url('../assets/images/ui/xiao-selected.png');
+}
+
+.banner-button.dance-of-lanterns {
+  background-image: url('../assets/images/ui/keqing.png');
+}
+
+.banner-button.dance-of-lanterns.selected {
+  background-image: url('../assets/images/ui/keqing-selected.png');
 }
 
 .banner-button.epitome-invocation {
@@ -434,23 +450,27 @@ td {
   align-items: center;
 }
 
-.disclaimer-modal {
+.settings-modal, .disclaimer-modal {
   max-width: 1000px;
 }
 
-.disclaimer-modal-content {
+.settings-modal {
+  width: 769px;
+}
+
+.settings-modal-content, .disclaimer-modal-content {
   background-color: #ebebeb;
   text-align: center;
   position: relative;
 }
 
-.disclaimer-modal-content>.close-button {
+.settings-modal-content>.close-button, .disclaimer-modal-content>.close-button {
   position: absolute;
   top: 2px;
   right: 5px;
 }
 
-.disclaimer-modal-content>p {
+.settings-modal-content>p, .disclaimer-modal-content>p {
   font-size: 1rem;
   margin: .2rem;
 }
@@ -503,6 +523,9 @@ td {
   }
   .wish-item-single {
     height: 80% !important;
+  }
+  .settings-modal {
+    width: 100%;
   }
 }
 

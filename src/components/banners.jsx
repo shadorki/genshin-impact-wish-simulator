@@ -2,26 +2,32 @@ import React, { Component } from 'react';
 import BannerButton from './banner-button';
 import { Carousel } from 'react-responsive-carousel';
 import Modal from './modal';
+import Settings from './settings'
+
 const banners = require.context('../assets/images/banners', true);
 export default class Banners extends Component {
   constructor(props) {
     super(props)
+    const selectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
     this.state = {
       selectedBanner: 'beginners-wish',
+      selectedCharacterEventWish,
       banners: {
         'beginners-wish': 'Novice Wishes',
-        'invitation-to-mundane-life': 'Character Event Wish',
+        [selectedCharacterEventWish]: 'Character Event Wish',
         'epitome-invocation': 'Weapon Event Wish',
         'wanderlust-invocation': 'Standard Wish'
       },
       wishes: {
         'beginners-wish': 'beginnersWish',
-        'invitation-to-mundane-life': 'invitationToMundaneLife',
+        [selectedCharacterEventWish]: this.props.getFormattedCharacterEventWish('camelCase', selectedCharacterEventWish),
         'epitome-invocation': 'epitomeInvocation',
         'wanderlust-invocation': 'wanderlustInvocation'
       },
-      wasBeginnersWishDisabled: false
+      wasBeginnersWishDisabled: false,
+      isSettingsPageVisible: false
     }
+
   }
   componentDidMount() {
     this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
@@ -30,6 +36,45 @@ export default class Banners extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isBeginnersWishLimited !== this.props.isBeginnersWishLimited) {
       this.toggleBeginnersWish(this.props.isBeginnersWishLimited)
+    }
+    const newSelectedCharacterEventWish = this.props.getFormattedCharacterEventWish('kebabCase')
+    // If the user selected a new banner
+    const { selectedCharacterEventWish, selectedBanner } = this.state
+    const { isBeginnersWishLimited } = this.props
+    if(newSelectedCharacterEventWish !== selectedCharacterEventWish) {
+      const { banners: oldBanners, wishes: oldWishes } = this.state
+      const banners = {}
+      const wishes = {}
+      for(const b in oldBanners) {
+        if(selectedCharacterEventWish === b) {
+          banners[newSelectedCharacterEventWish] = 'Character Event Wish'
+        } else {
+          banners[b] = oldBanners[b]
+        }
+      }
+      for(const w in oldWishes) {
+        if(selectedCharacterEventWish === w) {
+          wishes[newSelectedCharacterEventWish] = this.props.getFormattedCharacterEventWish('camelCase', newSelectedCharacterEventWish)
+        } else {
+          wishes[w] = oldWishes[w]
+        }
+      }
+      let newSelectedBanner = null
+      if(selectedBanner === selectedCharacterEventWish) {
+        newSelectedBanner = newSelectedCharacterEventWish
+      } else {
+        newSelectedBanner = selectedBanner
+      }
+      if (isBeginnersWishLimited) {
+        delete banners['beginners-wish']
+        delete wishes['beginners-wish']
+      }
+      this.setState({
+        selectedCharacterEventWish: newSelectedCharacterEventWish,
+        banners,
+        wishes,
+        selectedBanner: newSelectedBanner
+      })
     }
   }
   onCarouselChange(index) {
@@ -41,18 +86,22 @@ export default class Banners extends Component {
   get bannerText() {
     return this.state.banners[this.state.selectedBanner]
   }
-
+  toggleSettingsModal(isSettingsPageVisible) {
+    this.setState({
+      isSettingsPageVisible
+    })
+  }
   toggleBeginnersWish(isLimited) {
     if (isLimited) {
       this.setState({
-        selectedBanner: 'invitation-to-mundane-life',
+        selectedBanner: this.props.getFormattedCharacterEventWish('kebabCase'),
         banners: {
-          'invitation-to-mundane-life': 'Character Event Wish',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
-          'invitation-to-mundane-life': 'invitationToMundaneLife',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: this.props.getFormattedCharacterEventWish('camelCase'),
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -62,13 +111,13 @@ export default class Banners extends Component {
       this.setState({
         banners: {
           'beginners-wish': 'Novice Wishes',
-          'invitation-to-mundane-life': 'Character Event Wish',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: 'Character Event Wish',
           'epitome-invocation': 'Weapon Event Wish',
           'wanderlust-invocation': 'Standard Wish'
         },
         wishes: {
           'beginners-wish': 'beginnersWish',
-          'invitation-to-mundane-life': 'invitationToMundaneLife',
+          [this.props.getFormattedCharacterEventWish('kebabCase')]: this.props.getFormattedCharacterEventWish('camelCase'),
           'epitome-invocation': 'epitomeInvocation',
           'wanderlust-invocation': 'wanderlustInvocation'
         },
@@ -77,7 +126,10 @@ export default class Banners extends Component {
     }
   }
   render() {
-    const { selectedBanner } = this.state
+    const {
+      selectedBanner,
+      isSettingsPageVisible
+     } = this.state
     const {
       wasDisclaimerSeen,
       setView,
@@ -85,7 +137,10 @@ export default class Banners extends Component {
       hideModal,
       reset,
       wish,
-      isBeginnersWishOver10
+      isBeginnersWishOver10,
+      getFormattedCharacterEventWish,
+      updateCharacterEventWish,
+      saveData
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -95,6 +150,15 @@ export default class Banners extends Component {
           wasDisclaimerSeen
             ? null
             : <Modal hideModal={hideModal} />
+        }
+        {
+          isSettingsPageVisible &&
+          <Settings
+            closeSettings={() => this.toggleSettingsModal(false)}
+            reset={() => reset(selectedBanner)}
+            updateCharacterEventWish={updateCharacterEventWish}
+            getFormattedCharacterEventWish={getFormattedCharacterEventWish}
+          />
         }
         <div className="wrapper banners">
           <div className="giws-banners-container">
@@ -142,8 +206,8 @@ export default class Banners extends Component {
             <div className="action-container">
               <div className="button-container">
                 <button
-                  onClick={() => reset(selectedBanner)}
-                >Reset</button>
+                  onClick={() => this.toggleSettingsModal(true)}
+                >Settings</button>
                 <button
                   onClick={() => setView('details')}
                 >Details</button>

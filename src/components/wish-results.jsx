@@ -6,6 +6,13 @@ export default class WishResults extends Component {
   isNewItem(key) {
     return !this.props.inventory[key]
   }
+  getPercentX(item) {
+    if (item.type === 'character') {
+        return item.percentX || 50;
+    } else {
+      return 50;
+    }
+  }
   render() {
     const { wishes, setView, updateInventory } = this.props
     const isSingleItem = wishes.length === 1
@@ -37,6 +44,7 @@ export default class WishResults extends Component {
                     key={index}
                     item={item}
                     isNewItem={this.isNewItem(item.name)}
+                    itemPercentX={this.getPercentX(item)}
                   />
                   ))
               )

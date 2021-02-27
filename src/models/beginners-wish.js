@@ -68,7 +68,8 @@ export default class BeginnersWish extends BaseGacha {
       element: "Geo",
       type: "character",
       rating: 4,
-      src: "Noelle.png"
+      src: "Noelle.png",
+      percentX: 58
     }
   }
   reset(){

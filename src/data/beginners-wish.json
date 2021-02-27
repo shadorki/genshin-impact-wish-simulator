@@ -5,7 +5,8 @@
     "type": "character",
     "rating": 5,
     "id": "749031397896749127",
-    "src": "Keqing.png"
+    "src": "Keqing.png",
+    "percentX": 58
   },
   {
     "name": "Mona",
@@ -13,7 +14,8 @@
     "type": "character",
     "rating": 5,
     "id": "749031417895452754",
-    "src": "Mona.png"
+    "src": "Mona.png",
+    "percentX": 58
   },
   {
     "name": "Qiqi",
@@ -21,7 +23,8 @@
     "type": "character",
     "rating": 5,
     "id": "749031442494914661",
-    "src": "Qiqi.png"
+    "src": "Qiqi.png",
+    "percentX": 63
   },
   {
     "name": "Diluc",
@@ -29,7 +32,8 @@
     "type": "character",
     "rating": 5,
     "id": "749031368255602861",
-    "src": "Diluc.png"
+    "src": "Diluc.png",
+    "percentX": 59
   },
   {
     "name": "Jean",
@@ -37,7 +41,8 @@
     "type": "character",
     "rating": 5,
     "id": "749031380716879922",
-    "src": "Jean.png"
+    "src": "Jean.png",
+    "percentX": 57
   },
   {
     "name": "Sucrose",
@@ -45,7 +50,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031457019658401",
-    "src": "Sucrose.png"
+    "src": "Sucrose.png",
+    "percentX": 60
   },
   {
     "name": "Chongyun",
@@ -53,7 +59,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031361934917682",
-    "src": "Chongyun.png"
+    "src": "Chongyun.png",
+    "percentX": 63
   },
   {
     "name": "Bennett",
@@ -61,7 +68,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031351533043772",
-    "src": "Bennett.png"
+    "src": "Bennett.png",
+    "percentX": 58
   },
   {
     "name": "Fischl",
@@ -69,7 +77,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031374052393120",
-    "src": "Fischl.png"
+    "src": "Fischl.png",
+    "percentX": 59
   },
   {
     "name": "Ningguang",
@@ -77,7 +86,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031423905759253",
-    "src": "Ningguang.png"
+    "src": "Ningguang.png",
+    "percentX": 58
   },
   {
     "name": "Xingqiu",
@@ -85,7 +95,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031483263680563",
-    "src": "Xingqiu.png"
+    "src": "Xingqiu.png",
+    "percentX": 58
   },
   {
     "name": "Beidou",
@@ -93,7 +104,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031334273613904",
-    "src": "Beidou.png"
+    "src": "Beidou.png",
+    "percentX": 55
   },
   {
     "name": "Xiangling",
@@ -101,7 +113,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031470726905977",
-    "src": "Xiangling.png"
+    "src": "Xiangling.png",
+    "percentX": 60
   },
   {
     "name": "Razor",
@@ -109,7 +122,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031449864306719",
-    "src": "Razor.png"
+    "src": "Razor.png",
+    "percentX": 42
   },
   {
     "name": "Barbara",
@@ -117,7 +131,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031327726174398",
-    "src": "Barbara.png"
+    "src": "Barbara.png",
+    "percentX": 58
   },
   {
     "name": "Slingshot",

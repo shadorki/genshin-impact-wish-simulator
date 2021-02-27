@@ -1,4 +1,4 @@
-const CharacterEventWish = require('../../src/models/invitation-to-mundane-life')
+const CharacterEventWish = require('../../src/models/dance-of-lanterns')
 const StandardWish = require('../../src/models/wanderlust-invocation')
 const WeaponWish = require('../../src/models/epitome-invocation')
 const BeginnersWish = require('../../src/models/beginners-wish')
