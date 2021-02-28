@@ -196,7 +196,7 @@ export default class Banners extends Component {
                 {
                   bannerKeys.map(banner => {
                     return (
-                      <div key={banner}>
+                      <div key={banner} className={`banner-slide ${banner}`}>
                         <div
                         title={`Your wish counter, you have wished ${userWishes[banner]} times`}
                         className="wish-counter">{userWishes[banner]}</div>
