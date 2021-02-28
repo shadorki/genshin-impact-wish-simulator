@@ -1,15 +1,5 @@
 describe('User can track wish counter', () => {
-  const banners = {
-      'ballad-in-goblets': 'Ballad In Goblets',
-      'sparkling-steps': 'Sparkling Steps',
-      'gentry-of-hermitage': 'Gentry Of Hermitage',
-      'farewell-of-snezhnaya': 'Farewell of Snezhnaya',
-      'secretum-secretorum': 'Secretum Secretorum',
-      'adrift-in-the-harbor': 'Adrift in the Harbor',
-      'invitation-to-mundane-life': 'Invitation to Mundane Life',
-      'dance-of-lanterns': 'Dance Of Lanterns'
-    }
-  const bannerList = [
+  const bannersList = [
     'dance-of-lanterns',
     'epitome-invocation',
     'wanderlust-invocation'
