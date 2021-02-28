@@ -140,7 +140,8 @@ export default class Banners extends Component {
       isBeginnersWishOver10,
       getFormattedCharacterEventWish,
       updateCharacterEventWish,
-      saveData
+      saveData,
+      userWishes
     } = this.props
     const bannerKeys = Object.keys(this.state.banners);
     const selectedBannerIndex = bannerKeys.findIndex(b => b === selectedBanner)
@@ -196,6 +197,9 @@ export default class Banners extends Component {
                   bannerKeys.map(banner => {
                     return (
                       <div key={banner}>
+                        <div
+                        title={`Your wish counter, you have wished ${userWishes[banner]} times`}
+                        className="wish-counter">{userWishes[banner]}</div>
                         <img src={banners(`./${banner}.png`).default} />
                       </div>
                     )
