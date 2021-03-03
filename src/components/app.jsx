@@ -12,6 +12,7 @@ import SecretumSecretorum from '../models/secretum-secretorum'
 import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
 import DanceOfLanterns from '../models/dance-of-lanterns'
+import MomentOfBloom from '../models/moment-of-bloom'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -21,18 +22,6 @@ import { version } from '../../package.json';
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      view: 'banners',
-      currentDetails: 'beginners-wish',
-      selectedWish: 'beginnersWish',
-      isBeginnersWishLimited: false,
-      isBeginnersWishOver10: false,
-      inventory: {},
-      wasDisclaimerSeen: false,
-      isSettingsPageVisible: false,
-      currentWishes: [],
-      selectedCharacterEventWish: 'dance-of-lanterns'
-    }
     this.setView = this.setView.bind(this)
     this.setBeginnersWishDisable = this.setBeginnersWishDisable.bind(this)
     this.setBeginnersWishOver10 = this.setBeginnersWishOver10.bind(this)
@@ -47,6 +36,33 @@ export default class App extends Component {
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
+    this.momentOfBloom = new MomentOfBloom()
+    this.state = {
+      view: 'banners',
+      currentDetails: 'beginners-wish',
+      selectedWish: 'beginnersWish',
+      isBeginnersWishLimited: false,
+      isBeginnersWishOver10: false,
+      inventory: {},
+      wasDisclaimerSeen: false,
+      isSettingsPageVisible: false,
+      currentWishes: [],
+      selectedCharacterEventWish: 'moment-of-bloom',
+      userWishes: {
+        'beginners-wish': 0,
+        'invitation-to-mundane-life': 0,
+        'wanderlust-invocation': 0,
+        'epitome-invocation': 0,
+        'ballad-in-goblets': 0,
+        'sparkling-steps': 0,
+        'gentry-of-hermitage': 0,
+        'farewell-of-snezhnaya': 0,
+        'secretum-secretorum': 0,
+        'adrift-in-the-harbor': 0,
+        'dance-of-lanterns': 0,
+        'moment-of-bloom': 0,
+      }
+    }
   }
   componentDidMount() {
     this.clearLocalStorageEveryNewBuild();
@@ -126,6 +142,24 @@ export default class App extends Component {
     }
     return options[format]()
   }
+  syncWishCountersWithState() {
+    this.setState({
+      userWishes: {
+        'beginners-wish': this.beginnersWish.getState().attemptsCount,
+        'invitation-to-mundane-life': this.invitationToMundaneLife.getState().attemptsCount,
+        'wanderlust-invocation': this.wanderlustInvocation.getState().attemptsCount,
+        'epitome-invocation': this.epitomeInvocation.getState().attemptsCount,
+        'ballad-in-goblets': this.balladInGoblets.getState().attemptsCount,
+        'sparkling-steps': this.sparklingSteps.getState().attemptsCount,
+        'gentry-of-hermitage': this.gentryOfHermitage.getState().attemptsCount,
+        'farewell-of-snezhnaya': this.farewellOfSnezhnaya.getState().attemptsCount,
+        'secretum-secretorum': this.secretumSecretorum.getState().attemptsCount,
+        'adrift-in-the-harbor': this.adriftInTheHarbor.getState().attemptsCount,
+        'dance-of-lanterns': this.danceOfLanterns.getState().attemptsCount,
+        'moment-of-bloom': this.momentOfBloom.getState().attemptsCount
+      }
+    })
+  }
   reset(previouslySelectedWish) {
     this.beginnersWish.reset()
     this.invitationToMundaneLife.reset()
@@ -138,6 +172,7 @@ export default class App extends Component {
     this.secretumSecretorum.reset()
     this.adriftInTheHarbor.reset()
     this.danceOfLanterns.reset()
+    this.momentOfBloom.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -168,9 +203,11 @@ export default class App extends Component {
       farewellOfSnezhnaya: this.farewellOfSnezhnaya.getState(),
       secretumSecretorum: this.secretumSecretorum.getState(),
       adriftInTheHarbor: this.adriftInTheHarbor.getState(),
-      danceOfLanterns: this.danceOfLanterns.getState()
+      danceOfLanterns: this.danceOfLanterns.getState(),
+      momentOfBloom: this.momentOfBloom.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
+    this.syncWishCountersWithState()
   }
   loadData(){
     const data = JSON.parse(localStorage.getItem('data'))
@@ -193,6 +230,7 @@ export default class App extends Component {
       this.secretumSecretorum.attemptsCount = data.secretumSecretorum || 0
       this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor || 0
       this.danceOfLanterns.attemptsCount = data.danceOfLanterns || 0
+      this.momentOfBloom.attemptsCount = data.momentOfBloom || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -217,6 +255,7 @@ export default class App extends Component {
       this.secretumSecretorum.setState(data.secretumSecretorum)
       this.adriftInTheHarbor.setState(data.adriftInTheHarbor)
       this.danceOfLanterns.setState(data.danceOfLanterns)
+      this.momentOfBloom.setState(data.momentOfBloom)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -224,6 +263,7 @@ export default class App extends Component {
         selectedCharacterEventWish
       }, () => {
           this.backToHome()
+          this.syncWishCountersWithState()
         if(data.beginnersWish.attemptsCount >= 20) {
           this.setBeginnersWishDisable(true)
         }
@@ -264,7 +304,8 @@ export default class App extends Component {
           wasDisclaimerSeen,
           selectedDetail,
           currentWishes,
-          selectedCharacterEventWish
+          selectedCharacterEventWish,
+          userWishes
         } = this.state
         switch(view) {
           case 'banners':
@@ -281,6 +322,7 @@ export default class App extends Component {
               wish={this.wish.bind(this)}
               hideModal={this.hideModal.bind(this)}
               reset={this.reset.bind(this)}
+              userWishes={userWishes}
             />
           case 'details':
             return <Details

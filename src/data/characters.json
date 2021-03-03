@@ -216,5 +216,12 @@
     "type": "character",
     "rating": 5,
     "percentX": 57
+  },
+  {
+    "name": "Hu-Tao",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 5,
+    "percentX": 57
   }
 ]
