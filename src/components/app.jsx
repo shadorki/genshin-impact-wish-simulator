@@ -12,6 +12,7 @@ import SecretumSecretorum from '../models/secretum-secretorum'
 import AdriftInTheHarbor from '../models/adrift-in-the-harbor'
 import InvitationToMundaneLife from '../models/invitation-to-mundane-life'
 import DanceOfLanterns from '../models/dance-of-lanterns'
+import MomentOfBloom from '../models/moment-of-bloom'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -35,6 +36,7 @@ export default class App extends Component {
     this.beginnersWish = new BeginnersWish(this.setBeginnersWishDisable, this.setBeginnersWishOver10)
     this.epitomeInvocation = new EpitomeInvocation()
     this.wanderlustInvocation = new WanderlustInvocation()
+    this.momentOfBloom = new MomentOfBloom()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -45,7 +47,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'dance-of-lanterns',
+      selectedCharacterEventWish: 'moment-of-bloom',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -57,7 +59,8 @@ export default class App extends Component {
         'farewell-of-snezhnaya': 0,
         'secretum-secretorum': 0,
         'adrift-in-the-harbor': 0,
-        'dance-of-lanterns': 0
+        'dance-of-lanterns': 0,
+        'moment-of-bloom': 0,
       }
     }
   }
@@ -152,7 +155,8 @@ export default class App extends Component {
         'farewell-of-snezhnaya': this.farewellOfSnezhnaya.getState().attemptsCount,
         'secretum-secretorum': this.secretumSecretorum.getState().attemptsCount,
         'adrift-in-the-harbor': this.adriftInTheHarbor.getState().attemptsCount,
-        'dance-of-lanterns': this.danceOfLanterns.getState().attemptsCount
+        'dance-of-lanterns': this.danceOfLanterns.getState().attemptsCount,
+        'moment-of-bloom': this.momentOfBloom.getState().attemptsCount
       }
     })
   }
@@ -168,6 +172,7 @@ export default class App extends Component {
     this.secretumSecretorum.reset()
     this.adriftInTheHarbor.reset()
     this.danceOfLanterns.reset()
+    this.momentOfBloom.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -198,7 +203,8 @@ export default class App extends Component {
       farewellOfSnezhnaya: this.farewellOfSnezhnaya.getState(),
       secretumSecretorum: this.secretumSecretorum.getState(),
       adriftInTheHarbor: this.adriftInTheHarbor.getState(),
-      danceOfLanterns: this.danceOfLanterns.getState()
+      danceOfLanterns: this.danceOfLanterns.getState(),
+      momentOfBloom: this.momentOfBloom.getState()
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -224,6 +230,7 @@ export default class App extends Component {
       this.secretumSecretorum.attemptsCount = data.secretumSecretorum || 0
       this.adriftInTheHarbor.attemptsCount = data.adriftInTheHarbor || 0
       this.danceOfLanterns.attemptsCount = data.danceOfLanterns || 0
+      this.momentOfBloom.attemptsCount = data.momentOfBloom || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -248,6 +255,7 @@ export default class App extends Component {
       this.secretumSecretorum.setState(data.secretumSecretorum)
       this.adriftInTheHarbor.setState(data.adriftInTheHarbor)
       this.danceOfLanterns.setState(data.danceOfLanterns)
+      this.momentOfBloom.setState(data.momentOfBloom)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,

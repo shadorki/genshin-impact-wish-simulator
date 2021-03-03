@@ -176,6 +176,14 @@ video {
   background-image: url('../assets/images/ui/keqing-selected.png');
 }
 
+.banner-button.moment-of-bloom {
+  background-image: url('../assets/images/ui/hu-tao.png');
+}
+
+.banner-button.moment-of-bloom.selected {
+  background-image: url('../assets/images/ui/hu-tao-selected.png');
+}
+
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }
