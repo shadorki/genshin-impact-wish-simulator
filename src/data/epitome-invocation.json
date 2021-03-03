@@ -1,18 +1,18 @@
 [
   {
-    "name": "Primordial Jade Winged-Spear",
+    "name": "Staff of Homa",
     "rating": 5,
     "class": "Polearm",
-    "src": "primordial-jade-winged-spear.png",
     "isFeatured": true,
+    "src": "staff-of-homa.png",
     "type": "weapon"
   },
   {
-    "name": "Primordial Jade Cutter",
+    "name": "Wolf's Gravestone",
     "rating": 5,
-    "class": "Sword",
-    "src": "primordial-jade-cutter.png",
+    "class": "Claymore",
     "isFeatured": true,
+    "src": "wolfs-gravestone.png",
     "type": "weapon"
   },
   {
@@ -44,18 +44,18 @@
     "type": "weapon"
   },
   {
+    "name": "Primordial Jade Winged-Spear",
+    "rating": 5,
+    "class": "Polearm",
+    "src": "primordial-jade-winged-spear.png",
+    "type": "weapon"
+  },
+  {
     "name": "Skyward Spine",
     "rating": 5,
     "type": "weapon",
     "class": "Polearm",
     "src": "skyward-spine.png"
-  },
-  {
-    "name": "Wolf's Gravestone",
-    "rating": 5,
-    "class": "Claymore",
-    "src": "wolfs-gravestone.png",
-    "type": "weapon"
   },
   {
     "name": "Skyward Pride",
@@ -79,43 +79,43 @@
     "type": "weapon"
   },
   {
-    "name": "Rust",
+    "name": "Sacrificial Bow",
     "rating": 4,
     "class": "Bow",
-    "src": "rust.png",
     "isFeatured": true,
+    "src": "sacrificial-bow.png",
     "type": "weapon"
   },
   {
-    "name": "Eye of Perception",
+    "name": "The Widsith",
     "rating": 4,
     "class": "Catalyst",
-    "src": "eye-of-perception.png",
     "isFeatured": true,
+    "src": "the-widsith.png",
     "type": "weapon"
   },
   {
-    "name": "Favonius Lance",
+    "name": "Lithic Spear",
     "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
+    "class": "Polearm",
     "isFeatured": true,
-    "src": "favonius-lance.png"
+    "src": "lithic-spear.png",
+    "type": "weapon"
   },
   {
-    "name": "Sacrificial Greatsword",
+    "name": "Lithic Blade",
     "rating": 4,
-    "type": "weapon",
-    "class": "Sword",
+    "class": "Claymore",
     "isFeatured": true,
-    "src": "sacrificial-greatsword.png"
+    "src": "lithic-blade.png",
+    "type": "weapon"
   },
   {
-    "name": "The Flute",
+    "name": "Lions Roar",
     "rating": 4,
     "class": "Sword",
-    "src": "the-flute.png",
     "isFeatured": true,
+    "src": "lions-roar.png",
     "type": "weapon"
   },
   {
@@ -123,8 +123,8 @@
     "element": "Pyro",
     "type": "character",
     "rating": 4,
-    "src": "Xinyan.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Xinyan.png"
   },
   {
     "name": "Sucrose",
@@ -132,16 +132,16 @@
     "type": "character",
     "rating": 4,
     "id": "749031457019658401",
-    "src": "Sucrose.png",
-    "percentX": 60
+    "percentX": 60,
+    "src": "Sucrose.png"
   },
   {
     "name": "Diona",
     "element": "Cryo",
     "type": "character",
     "rating": 4,
-    "src": "Diona.png",
-    "percentX": 57
+    "percentX": 57,
+    "src": "Diona.png"
   },
   {
     "name": "Chongyun",
@@ -149,8 +149,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031361934917682",
-    "src": "Chongyun.png",
-    "percentX": 63
+    "percentX": 63,
+    "src": "Chongyun.png"
   },
   {
     "name": "Noelle",
@@ -158,8 +158,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031431132545057",
-    "src": "Noelle.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Noelle.png"
   },
   {
     "name": "Bennett",
@@ -167,8 +167,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031351533043772",
-    "src": "Bennett.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Bennett.png"
   },
   {
     "name": "Fischl",
@@ -176,8 +176,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031374052393120",
-    "src": "Fischl.png",
-    "percentX": 59
+    "percentX": 59,
+    "src": "Fischl.png"
   },
   {
     "name": "Ningguang",
@@ -185,8 +185,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031423905759253",
-    "src": "Ningguang.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Ningguang.png"
   },
   {
     "name": "Xingqiu",
@@ -194,8 +194,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031483263680563",
-    "src": "Xingqiu.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Xingqiu.png"
   },
   {
     "name": "Beidou",
@@ -203,8 +203,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031334273613904",
-    "src": "Beidou.png",
-    "percentX": 55
+    "percentX": 55,
+    "src": "Beidou.png"
   },
   {
     "name": "Xiangling",
@@ -212,8 +212,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031470726905977",
-    "src": "Xiangling.png",
-    "percentX": 60
+    "percentX": 60,
+    "src": "Xiangling.png"
   },
   {
     "name": "Razor",
@@ -221,8 +221,8 @@
     "type": "character",
     "rating": 4,
     "id": "749031449864306719",
-    "src": "Razor.png",
-    "percentX": 42
+    "percentX": 42,
+    "src": "Razor.png"
   },
   {
     "name": "Barbara",
@@ -230,14 +230,14 @@
     "type": "character",
     "rating": 4,
     "id": "749031327726174398",
-    "src": "Barbara.png",
-    "percentX": 58
+    "percentX": 58,
+    "src": "Barbara.png"
   },
   {
-    "name": "Sacrificial Bow",
+    "name": "Rust",
     "rating": 4,
     "class": "Bow",
-    "src": "sacrificial-bow.png",
+    "src": "rust.png",
     "type": "weapon"
   },
   {
@@ -255,17 +255,17 @@
     "type": "weapon"
   },
   {
+    "name": "Eye of Perception",
+    "rating": 4,
+    "class": "Catalyst",
+    "src": "eye-of-perception.png",
+    "type": "weapon"
+  },
+  {
     "name": "Sacrificial Fragments",
     "rating": 4,
     "class": "Catalyst",
     "src": "sacrificial-fragments.png",
-    "type": "weapon"
-  },
-  {
-    "name": "The Widsith",
-    "rating": 4,
-    "class": "Catalyst",
-    "src": "the-widsith.png",
     "type": "weapon"
   },
   {
@@ -274,6 +274,13 @@
     "class": "Catalyst",
     "src": "favonius-codex.png",
     "type": "weapon"
+  },
+  {
+    "name": "Favonius Lance",
+    "rating": 4,
+    "class": "Lance",
+    "type": "weapon",
+    "src": "favonius-lance.png"
   },
   {
     "name": "Dragon's Bane",
@@ -290,6 +297,13 @@
     "src": "rainslasher.png"
   },
   {
+    "name": "Sacrificial Greatsword",
+    "rating": 4,
+    "type": "weapon",
+    "class": "Sword",
+    "src": "sacrificial-greatsword.png"
+  },
+  {
     "name": "The Bell",
     "rating": 4,
     "class": "Claymore",
@@ -304,17 +318,17 @@
     "type": "weapon"
   },
   {
-    "name": "Lions Roar",
-    "rating": 4,
-    "class": "Sword",
-    "src": "lions-roar.png",
-    "type": "weapon"
-  },
-  {
     "name": "Sacrificial Sword",
     "rating": 4,
     "class": "Sword",
     "src": "sacrificial-sword.png",
+    "type": "weapon"
+  },
+  {
+    "name": "The Flute",
+    "rating": 4,
+    "class": "Sword",
+    "src": "the-flute.png",
     "type": "weapon"
   },
   {
