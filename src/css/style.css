@@ -36,6 +36,16 @@ video {
   background-image: url('../assets/images/ui/background.png');
 }
 
+.wish-counter {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.4rem;
+  padding: .3rem .7rem;
+  background-color: gold;
+  border-radius: 5px;
+}
+
 .giws-banners-container {
   max-width: 1440px;
   margin: 0 auto;
@@ -164,6 +174,14 @@ video {
 
 .banner-button.dance-of-lanterns.selected {
   background-image: url('../assets/images/ui/keqing-selected.png');
+}
+
+.banner-button.moment-of-bloom {
+  background-image: url('../assets/images/ui/hu-tao.png');
+}
+
+.banner-button.moment-of-bloom.selected {
+  background-image: url('../assets/images/ui/hu-tao-selected.png');
 }
 
 .banner-button.epitome-invocation {
@@ -541,6 +559,10 @@ td {
     font-size: .8rem;
     padding: 5px 15px;
   }
+  .wish-counter {
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 576px) {
@@ -560,6 +582,9 @@ td {
   }
   .wish-button {
     width: 123px;
+  }
+  .wish-counter {
+    font-size: .8rem;
   }
 }
 

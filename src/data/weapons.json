@@ -629,5 +629,11 @@
         "rating": 5,
         "class": "Sword",
         "src": "summit-shaper.png"
+    },
+    {
+        "name": "Staff of Homa",
+        "rating": 5,
+        "class": "Polearm",
+        "src": "staff-of-homa.png"
     }
 ]

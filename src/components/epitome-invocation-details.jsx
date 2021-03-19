@@ -28,14 +28,14 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'Primordial Jade Cutter'}
+            title={'Staff Of Homa'}
             isWeapon={true}
-            src={'primordial-jade-cutter.png'}
+            src={'staff-of-homa.png'}
           />
           <DetailsBox
-            title={'Primordial Jade Winged-Spear'}
+            title={'Wolfs Gravestone'}
             isWeapon={true}
-            src={'primordial-jade-winged-spear.png'}
+            src={'wolfs-gravestone.png'}
           />
         </Row>
         <StarsBar
@@ -45,29 +45,29 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={'The Flute'}
+            title={'Lithic Blade'}
             isWeapon={true}
-            src={'the-flute.png'}
+            src={'lithic-blade.png'}
           />
           <DetailsBox
-            title={'Sacrificial Sword'}
+            title={'Lithic Spear'}
             isWeapon={true}
-            src={'sacrificial-sword.png'}
+            src={'lithic-spear.png'}
           />
           <DetailsBox
-            title={'Rust'}
+            title={'Lions Roar'}
             isWeapon={true}
-            src={'rust.png'}
+            src={'lions-roar.png'}
           />
           <DetailsBox
-            title={'Eye of Perception'}
+            title={'Sacrificial Bow'}
             isWeapon={true}
-            src={'eye-of-perception.png'}
+            src={'sacrificial-bow.png'}
           />
           <DetailsBox
-            title={'Favonius Lance'}
+            title={'The Widsith'}
             isWeapon={true}
-            src={'favonius-lance.png'}
+            src={'the-widsith.png'}
           />
         </Row>
         <SubheadingSeparator
@@ -79,7 +79,7 @@ export default function EpitomeInvocationDetails(props) {
         <Row>
           <Col xs="12">
             <p className="my-3">
-              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star weapons <span className="brass">Primordial Jade Cutter (Sword)</span> and <span className="brass">Primordial Jade Winged-Spear (Polearm)</span> as well as 4-star weapons <span className="purple">The Flute (Sword)</span>, <span className="purple">Sacrificial Greatsword (Claymore)</span>, <span className="purple">Rust (Bow)</span>, <span className="purple">Eye of Perception (Catalyst)</span>, and <span className="purple">Favonius Lance (Polearm)</span> will get a <span className="orange">huge drop-rate boost</span>!
+              Event Wish "<span className="orange">Epitome</span> Invocation" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star weapons <span className="brass">Staff Of Homa (Polearm) </span> and <span className="brass">Wolf's Gravestone (Claymore)</span> as well as 4-star weapons <span className="purple">Lithic Blade (Claymore)</span>, <span className="purple">Lithic Spear (Claymore)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Sacrificial Bow (Bow)</span>, and <span className="purple">The Widsith (Catalyst)</span> will get a <span className="orange">huge drop-rate boost</span>!
               <br/>
               <span className="orange">※ Of the above weapons, the event-exclusive weapon will not be available in the standard wish "Wanderlust Invocation".</span>
             </p>
@@ -91,7 +91,7 @@ export default function EpitomeInvocationDetails(props) {
             </p>
             <p className="my-3">
               For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 5-star weapon = <span className="orange">0.700%</span>; consolidated probability (incl. guarantee) = <span className="orange">1.850%</span>; guaranteed to win 5-star weapon at least once per <span className="orange">80</span> attempts. <br/>
-              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="brass">Primordial Jade Cutter (Sword)</span> and <span className="brass">Primordial Jade Winged-Spear (Polearm)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
+              The first time you win a 5-star weapon in this event, there is a <span className="orange">75%</span> chance it will be one of the promotional weapons <span className="brass">Staff Of Homa (Polearm) </span> and <span className="brass">Wolf's Gravestone (Claymore)</span>. If the first 5-star weapon you win in this event wish is not one of the promotional weapons, then the next 5-star weapon you win is <span className="orange">guaranteed</span> to be a promotional weapon.
             </p>
             <p className="my-3">
               4-Star Items
@@ -99,7 +99,7 @@ export default function EpitomeInvocationDetails(props) {
             <p className="my-3">
               For Event Wish "<span className="orange">Epitome</span> Invocation": Base probability of winning 4-star item = <span className="orange">6.000%</span>; base probability of winning 4-star character = <span className="orange">3.000%</span>, and base probability of winning 4-star weapon = <span className="orange">3.000%</span>; consolidated probability (incl. guarantee) of winning 4-star item = <span className="orange">14.500%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts; probability of winning 4-star item through the guarantee = <span className="orange">99.300%</span>, and probability of winning 5-star item through the guarantee = <span className="orange">0.700%</span>
               <br/>
-              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">The Flute (Sword)</span>, <span className="purple">Sacrificial Greatsword (Claymore)</span>, <span className="purple">Rust (Bow)</span>, <span className="purple">Eye of Perception (Catalyst)</span>, and <span className="purple">Favonius Lance (Polearm)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
+              The first time you win a 4-star item in this event wish, there is a <span className="orange">75%</span> chance that it will be one of the featured weapons <span className="purple">Lithic Blade (Claymore)</span>, <span className="purple">Lithic Spear (Claymore)</span>, <span className="purple">Lion's Roar (Sword)</span>, <span className="purple">Sacrificial Bow (Bow)</span>, and <span className="purple">The Widsith (Catalyst)</span>. If the first 4-star item you win in this event wish is not one of the featured weapons, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured weapon.
             </p>
             <p className="my-3">
               5-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×10; 4-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×2; 3-star weapons won in this wish come with <span className="purple">Masterless Stardust</span> ×15.
