@@ -112,11 +112,11 @@ video {
   background-image: url('../assets/images/ui/noelle-selected.png');
 }
 
-.banner-button.ballad-in-goblets {
+.banner-button.ballad-in-goblets, .banner-button.ballad-in-goblets-2 {
   background-image: url('../assets/images/ui/venti.png');
 }
 
-.banner-button.ballad-in-goblets.selected {
+.banner-button.ballad-in-goblets.selected, .banner-button.ballad-in-goblets-2.selected {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
 

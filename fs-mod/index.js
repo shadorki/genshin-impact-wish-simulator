@@ -11,9 +11,9 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Staff of Homa
+ Elegy for the End
 Weapon
- Wolf's Gravestone
+ Skyward Blade
 Weapon
 Amos' Bow
 Weapon
@@ -27,21 +27,21 @@ Primordial Jade Winged-Spear
 Weapon
 Skyward Spine
 Weapon
-Skyward Pride
+Wolf's Gravestone
 Weapon
-Skyward Blade
+Skyward Pride
 Weapon
 Aquila Favonia
 Weapon
- Sacrificial Bow
+ Favonius Warbow
 Weapon
- The Widsith
+ Wine and Song
 Weapon
- Lithic Spear
+ Dragon's Bane
 Weapon
- Lithic Blade
+ Favonius Greatsword
 Weapon
- Lion's Roar
+ The Alley Flash
 Character
 Xinyan
 Character
@@ -71,19 +71,19 @@ Barbara
 Weapon
 Rust
 Weapon
-The Stringless
+Sacrificial Bow
 Weapon
-Favonius Warbow
+The Stringless
 Weapon
 Eye of Perception
 Weapon
 Sacrificial Fragments
 Weapon
+The Widsith
+Weapon
 Favonius Codex
 Weapon
 Favonius Lance
-Weapon
-Dragon's Bane
 Weapon
 Rainslasher
 Weapon
@@ -91,7 +91,7 @@ Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
-Favonius Greatsword
+Lion's Roar
 Weapon
 Sacrificial Sword
 Weapon
