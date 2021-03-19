@@ -1,6 +1,6 @@
 describe('User can track wish counter', () => {
   const bannersList = [
-    'moment-of-bloom',
+    'ballad-in-goblets-2',
     'epitome-invocation',
     'wanderlust-invocation'
   ]
@@ -17,6 +17,7 @@ describe('User can track wish counter', () => {
     'adrift-in-the-harbor': 0,
     'dance-of-lanterns': 0,
     'moment-of-bloom': 0,
+    'ballad-in-goblets-2': 0,
   }
   before(() => {
     cy.visit('/')
