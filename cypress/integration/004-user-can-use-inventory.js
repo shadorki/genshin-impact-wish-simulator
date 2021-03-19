@@ -36,7 +36,7 @@ describe('User can use inventory', () => {
       'epitome-invocation',
       'wanderlust-invocation'
     ]
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 200; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
       const wishOnce = !!Math.round(Math.random())
       cy.get(`.banner-button.${banner}`)

@@ -28,7 +28,7 @@ describe('User can wish once', () => {
       'epitome-invocation',
       'wanderlust-invocation'
     ]
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < 200; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
       cy.wishOnce(banner)
     }
