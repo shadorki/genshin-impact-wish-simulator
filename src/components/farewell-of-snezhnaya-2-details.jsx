@@ -4,66 +4,69 @@ import DetailsBox from './details-components/details-box';
 import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
-import BalladInGoblets2 from '../models/ballad-in-goblets-2'
+import FarewellOfSnezhnaya2 from '../models/farewell-of-snezhnaya-2'
 import Table from './details-components/table'
 import Title from './details-components/title'
 
 
-export default function BalladInGoblets2Details() {
-  const ballad = new BalladInGoblets2()
+
+export default function FarewellOfSnezhnaya2Details() {
+  const farewell = new FarewellOfSnezhnaya2()
   return (
     <div className="details pt-5">
       <Container>
         <Title>
-          <h1>| Event Wish "<span className="teal">Ballad</span> in Goblets"</h1>
+          <h1>| Event Wish "Farewell of Snezhnaya" </h1>
         </Title>
         <SubheadingSeparator
           content="Increased Drop Rates!"
-        />
+          />
         <StarsBar
           starCount={5}
           content="Percentage of 5-Star Item Drops：50.000%"
           bgColor="#dcbba5"
-        />
+          />
         <Row>
           <DetailsBox
-            title={'venti'}
+            title={'tartaglia'}
             isWeapon={false}
-            element={'wind'}
-          />
+            element={'water'}
+            />
         </Row>
         <StarsBar
           starCount={4}
           content="Percentage of 4-Star Item Drops：50.000%"
           bgColor="#b6abbf"
-        />
+          />
         <Row>
           <DetailsBox
-            title={'sucrose'}
+            title={'rosaria'}
             isWeapon={false}
-            element={'wind'}
+            element={'cryo'}
+            />
+          <DetailsBox
+            title={'barbara'}
+            isWeapon={false}
+            element={'water'}
           />
           <DetailsBox
-            title={'razor'}
+            title={'fischl'}
             isWeapon={false}
             element={'electric'}
-          />
-          <DetailsBox
-            title={'noelle'}
-            isWeapon={false}
-            element={'geo'}
-          />
+            />
         </Row>
         <SubheadingSeparator
           content="Wish Details"
-        />
+          />
         <EventDurationHeading
           content="Limited Time Event"
-        />
+          />
         <Row>
           <Col xs="12">
             <p className="my-3">
-              Event Wish "<span className="teal">Ballad</span> in Goblets" is now available. During this event wish, the 5-star character <span className="teal">"Windborne Bard" Venti (Anemo)</span> as well as 4-star characters <span className="teal">"Harmless Sweetie" Sucrose (Anemo),</span>, <span className="purple">"Wolf Boy" Razor (Electro)</span>, and <span className="brass">"Chivalric Blossom" Noelle (Geo)</span> will get a <span className="orange">huge drop-rate boost</span>!
+              Event Wish "Farewell of Snezhnaya" is now available. During this event wish, the <span className="orange">event-exclusive</span> 5-star character <span className="aqua">"Childe" Tartaglia (Hydro)</span> as well as 4-star characters <span className="blue">"Thorny Benevolence" Rosaria (Cryo)</span>, <span className="aqua">"Shining Idol" Barbara (Hydro)</span>, and <span className="purple">"Prinzessin der Verurteilung!" Fischl (Electro)</span> will get a <span className="orange">huge drop-rate boost!</span>
+              <br />
+              <span className="orange">※ Of the above characters, the event-exclusive character will not be available in the standard wish "Wanderlust Invocation".</span>
             </p>
             <p className="my-3">
               〓Rules〓
@@ -72,15 +75,15 @@ export default function BalladInGoblets2Details() {
               5-Star Items
             </p>
             <p className="my-3">
-              For Event Wish "<span className="teal">Ballad</span> in Goblets": Base probability of winning 5-star character = <span className="orange">0.600%</span>; consolidated probability (incl. guarantee) = <span className="orange">1.600%</span>; guaranteed to win 5-star character at least once per <span className="orange">90</span> attempts.
-            The first time you win a 5-star item in this event wish, there is a <span className="orange">50%</span> chance it will be the promotional character <span className="teal">"Windborne Bard" Venti (Anemo).</span> If the first 5-star character you win in this event wish is not the promotional character, then the next 5-star character you win is <span className="orange">guaranteed</span> to be the promotional character.
+              For Event Wish "Farewell of Snezhnaya": Base probability of winning 5-star character = <span className="orange">0.600%</span>; consolidated probability (incl. guarantee) = <span className="orange">1.600%</span>; guaranteed to win 5-star character at least once per <span className="orange">90</span> attempts. <br />
+            The first time you win a 5-star item in this event wish, there is a <span className="orange">50%</span> chance it will be the promotional character <span className="aqua"> "Childe" Tartaglia (Hydro)</span>. If the first 5-star character you win in this event wish is not the promotional character, then the next 5-star character you win is <span className="orange">guaranteed</span> to be the promotional character.
             </p>
             <p className="my-3">
               4-Star Items
             </p>
             <p className="my-3">
-              For Event Wish "<span className="teal">Ballad</span> in Goblets": Base probability of winning 4-star item = <span className="orange">5.100%</span>; consolidated probability (incl. guarantee) = <span className="orange">13.000%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts. <br />
-              The first time you win a 4-star item in this event wish, there is a <span className="orange">50%</span> chance it will be one of the featured characters <span className="teal">"Harmless Sweetie" Sucrose (Anemo),</span>, <span className="purple">"Wolf Boy" Razor (Electro)</span>, and <span className="brass">"Chivalric Blossom" Noelle (Geo)</span>. If the first 4-star item you win in this event wish is not one of the featured characters, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured character.
+              For Event Wish "Farewell of Snezhnaya": Base probability of winning 4-star item = <span className="orange">5.100%</span>; base probability of winning 4-star character = <span className="orange">2.550%</span>, base probability of winning 4-star weapon = <span className="orange">2.550%</span>; consolidated probability (incl. guarantee) = <span className="orange">13.000%</span>; guaranteed to win 4-star or above item at least once per <span className="orange">10</span> attempts. <br />
+              The first time you win a 4-star item in this event wish, there is a <span className="orange">50%</span> chance it will be one of the featured characters <span className="blue">"Thorny Benevolence" Rosaria (Cryo)</span>, <span className="aqua">"Shining Idol" Barbara (Hydro)</span>, and <span className="purple">"Prinzessin der Verurteilung!" Fischl (Electro)</span>. If the first 4-star item you win in this event wish is not one of the featured characters, then the next 4-star item you win is <span className="orange">guaranteed</span> to be a featured character.
             </p>
             <p className="my-3">
               4-star weapons won in this wish come with <span className="orange">Masterless Starglitter</span> ×2; 3-star weapons won in this wish come with <span className="purple">Masterless Stardust</span> ×15.
@@ -108,7 +111,7 @@ export default function BalladInGoblets2Details() {
           bgColor="#dcbba5"
         />
         <Table
-          items={ballad.getDrops(5)}
+          items={farewell.getDrops(5)}
         />
         <StarsBar
           starCount={4}
@@ -116,7 +119,7 @@ export default function BalladInGoblets2Details() {
           bgColor="#b6abbf"
         />
         <Table
-          items={ballad.getDrops(4)}
+          items={farewell.getDrops(4)}
         />
         <StarsBar
           starCount={3}
@@ -124,7 +127,7 @@ export default function BalladInGoblets2Details() {
           bgColor="#a5bacc"
         />
         <Table
-          items={ballad.getDrops(3)}
+          items={farewell.getDrops(3)}
         />
       </Container>
     </div>

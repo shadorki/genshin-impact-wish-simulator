@@ -1,17 +1,17 @@
 [
   {
-    "name": "Elegy for the End",
+    "name": "Skyward Harp",
     "rating": 5,
-    "type": "weapon",
     "class": "Bow",
+    "src": "skyward-harp.png",
     "isFeatured": true,
-    "src": "elegy-for-the-end.png"
+    "type": "weapon"
   },
   {
-    "name": "Skyward Blade",
+    "name": "Lost Prayer to the Sacred Winds",
     "rating": 5,
-    "class": "Sword",
-    "src": "skyward-blade.png",
+    "class": "Catalyst",
+    "src": "lost-prayer-to-the-sacred-winds.png",
     "isFeatured": true,
     "type": "weapon"
   },
@@ -21,20 +21,6 @@
     "type": "weapon",
     "class": "Bow",
     "src": "amos-bow.png"
-  },
-  {
-    "name": "Skyward Harp",
-    "rating": 5,
-    "class": "Bow",
-    "src": "skyward-harp.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Lost Prayer to the Sacred Winds",
-    "rating": 5,
-    "class": "Catalyst",
-    "src": "lost-prayer-to-the-sacred-winds.png",
-    "type": "weapon"
   },
   {
     "name": "Skyward Atlas",
@@ -72,6 +58,13 @@
     "type": "weapon"
   },
   {
+    "name": "Skyward Blade",
+    "rating": 5,
+    "class": "Sword",
+    "src": "skyward-blade.png",
+    "type": "weapon"
+  },
+  {
     "name": "Aquila Favonia",
     "rating": 5,
     "class": "Sword",
@@ -79,42 +72,42 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Warbow",
+    "name": "Alley Hunter",
     "rating": 4,
     "class": "Bow",
+    "src": "alley-hunter.png",
     "isFeatured": true,
-    "src": "favonius-warbow.png",
     "type": "weapon"
   },
   {
-    "name": "Wine and Song",
+    "name": "Favonius Codex",
     "rating": 4,
     "class": "Catalyst",
+    "src": "favonius-codex.png",
     "isFeatured": true,
-    "src": "wine-and-song.png",
     "type": "weapon"
   },
   {
-    "name": "Dragon's Bane",
+    "name": "Favonius Lance",
     "rating": 4,
-    "class": "Polearm",
+    "class": "Lance",
+    "type": "weapon",
     "isFeatured": true,
-    "src": "dragons-bane.png",
-    "type": "weapon"
+    "src": "favonius-lance.png"
   },
   {
-    "name": "Favonius Greatsword",
+    "name": "Sacrificial Greatsword",
     "rating": 4,
-    "class": "Claymore",
+    "type": "weapon",
+    "class": "Sword",
     "isFeatured": true,
-    "src": "favonius-greatsword.png",
-    "type": "weapon"
+    "src": "sacrificial-greatsword.png"
   },
   {
-    "name": "The Alley Flash",
+    "name": "Favonius Sword",
     "rating": 4,
     "class": "Sword",
-    "src": "the-alley-flash.png",
+    "src": "favonius-sword.png",
     "isFeatured": true,
     "type": "weapon"
   },
@@ -255,6 +248,13 @@
     "type": "weapon"
   },
   {
+    "name": "Favonius Warbow",
+    "rating": 4,
+    "class": "Bow",
+    "src": "favonius-warbow.png",
+    "type": "weapon"
+  },
+  {
     "name": "Eye of Perception",
     "rating": 4,
     "class": "Catalyst",
@@ -276,18 +276,11 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Codex",
+    "name": "Dragon's Bane",
     "rating": 4,
-    "class": "Catalyst",
-    "src": "favonius-codex.png",
+    "class": "Polearm",
+    "src": "dragons-bane.png",
     "type": "weapon"
-  },
-  {
-    "name": "Favonius Lance",
-    "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
-    "src": "favonius-lance.png"
   },
   {
     "name": "Rainslasher",
@@ -297,13 +290,6 @@
     "src": "rainslasher.png"
   },
   {
-    "name": "Sacrificial Greatsword",
-    "rating": 4,
-    "type": "weapon",
-    "class": "Sword",
-    "src": "sacrificial-greatsword.png"
-  },
-  {
     "name": "The Bell",
     "rating": 4,
     "class": "Claymore",
@@ -311,11 +297,18 @@
     "type": "weapon"
   },
   {
+    "name": "Favonius Greatsword",
+    "rating": 4,
+    "class": "Claymore",
+    "src": "favonius-greatsword.png",
+    "type": "weapon"
+  },
+  {
     "name": "Lions Roar",
     "rating": 4,
     "class": "Sword",
-    "type": "weapon",
-    "src": "lions-roar.png"
+    "src": "lions-roar.png",
+    "type": "weapon"
   },
   {
     "name": "Sacrificial Sword",
@@ -329,13 +322,6 @@
     "rating": 4,
     "class": "Sword",
     "src": "the-flute.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Favonius Sword",
-    "rating": 4,
-    "class": "Sword",
-    "src": "favonius-sword.png",
     "type": "weapon"
   },
   {

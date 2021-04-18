@@ -11,15 +11,11 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Elegy for the End
+ Skyward Harp
 Weapon
- Skyward Blade
+ Lost Prayer to the Sacred Winds
 Weapon
 Amos' Bow
-Weapon
-Skyward Harp
-Weapon
-Lost Prayer to the Sacred Winds
 Weapon
 Skyward Atlas
 Weapon
@@ -31,17 +27,19 @@ Wolf's Gravestone
 Weapon
 Skyward Pride
 Weapon
+Skyward Blade
+Weapon
 Aquila Favonia
 Weapon
- Favonius Warbow
+ Alley Hunter
 Weapon
- Wine and Song
+ Favonius Codex
 Weapon
- Dragon's Bane
+ Favonius Lance
 Weapon
- Favonius Greatsword
+ Sacrificial Greatsword
 Weapon
- The Alley Flash
+ Favonius Sword
 Character
 Xinyan
 Character
@@ -75,29 +73,27 @@ Sacrificial Bow
 Weapon
 The Stringless
 Weapon
+Favonius Warbow
+Weapon
 Eye of Perception
 Weapon
 Sacrificial Fragments
 Weapon
 The Widsith
 Weapon
-Favonius Codex
-Weapon
-Favonius Lance
+Dragon's Bane
 Weapon
 Rainslasher
 Weapon
-Sacrificial Greatsword
-Weapon
 The Bell
+Weapon
+Favonius Greatsword
 Weapon
 Lion's Roar
 Weapon
 Sacrificial Sword
 Weapon
 The Flute
-Weapon
-Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -124,7 +120,7 @@ Weapon
 Harbinger of Dawn
 Weapon
 Cool Steel
-`
+    `
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
     itemList.shift()
@@ -158,17 +154,17 @@ Cool Steel
     //   }
     // })
     // console.log(epitome.find(item => item.name === "Dragon's Bane"))
-    fs.writeFileSync(path, JSON.stringify(newDetails))
+    fs.writeFileSync(path, JSON.stringify(newDetails, null, '\t'))
     console.log(newDetails)
   } catch(err) {
     console.log(err)
   }
 }
 
-// run()
+run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/moment-of-bloom.json')
+  let invitation = require('../src/data/farewell-of-snezhnaya-2.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
@@ -184,4 +180,4 @@ const validateImages = async () => {
   })
 }
 
-validateImages()
+// validateImages()
