@@ -27,20 +27,20 @@ const replaceAllInstancesInFile = (filePath, previous, next) => {
 }
 
 const appendAllInstancesInFile = (file, previous, next) => {
-      const newFile = []
-      file.forEach((a, i) => {
-        newFile.push(a)
-        if (doesStillNeedReplacing(a)) {
-          let str = a
-          while (doesStillNeedReplacing(str)) {
-            for (const key in previous) {
-              str = str.replace(previous[key], next[key])
-            }
-          }
-          newFile.push(str)
+  const newFile = []
+  file.forEach((a, i) => {
+    newFile.push(a)
+    if (doesStillNeedReplacing(a)) {
+      let str = a
+      while (doesStillNeedReplacing(str)) {
+        for (const key in previous) {
+          str = str.replace(previous[key], next[key])
         }
-      })
-      return newFile
+      }
+      newFile.push(str)
+    }
+  })
+  return newFile
 }
 
 
@@ -112,6 +112,23 @@ const appendAllInstancesInFile = (file, previous, next) => {
       const newDetailsfile = appendAllInstancesInFile(detailsFile, previous, next)
       fs.writeFileSync(detailsPath, newDetailsfile.join('\n'))
 
+      // Create a start details page
+      const singleDetailsPath = path.join(__dirname, '../src/components/' + previous.kebab + '-details.jsx')
+      const newSingleDetailsPath = path.join(__dirname, '../src/components/' + next.kebab + '-details.jsx')
+      const singleDetailsFile = fs.readFileSync(singleDetailsPath)
+                                  .toString()
+                                  .split('\n')
+                                  .map(line => {
+                                    while (doesStillNeedReplacing(line)) {
+                                      for (const key in previous) {
+                                        line = line.replace(previous[key], next[key])
+                                      }
+                                    }
+                                    return line
+                                  })
+      const [ previousKey, nextKey ] = [ previous.kebab, next.kebab ].map(s => s.split('-')[0])
+      const newSingleDetailsFile = singleDetailsFile.map(line => line.replace(previousKey, nextKey))
+      fs.writeFileSync(newSingleDetailsPath, newSingleDetailsFile.join('\n'))
 
     } catch (err) {
       console.error(err)
