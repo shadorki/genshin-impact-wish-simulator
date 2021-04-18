@@ -128,11 +128,11 @@ video {
   background-image: url('../assets/images/ui/klee-selected.png');
 }
 
-.banner-button.farewell-of-snezhnaya {
+.banner-button.farewell-of-snezhnaya, .banner-button.farewell-of-snezhnaya-2 {
   background-image: url('../assets/images/ui/childe.png');
 }
 
-.banner-button.farewell-of-snezhnaya.selected {
+.banner-button.farewell-of-snezhnaya.selected, .banner-button.farewell-of-snezhnaya-2.selected {
   background-image: url('../assets/images/ui/childe-selected.png');
 }
 
