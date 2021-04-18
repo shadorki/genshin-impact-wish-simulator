@@ -29,7 +29,7 @@ export default function Details(props) {
     'dance-of-lanterns': <DanceOfLanternsDetails />,
     'epitome-invocation': <EpitomeInvocationDetails/>,
     'wanderlust-invocation': <WanderlustInvocationDetails/>,
-    'beginners-wish': <BeginnersWishDetails/>
+    'beginners-wish': <BeginnersWishDetails/>,
   }
   return (
     <>

@@ -160,7 +160,7 @@ export default class App extends Component {
         'adrift-in-the-harbor': this.adriftInTheHarbor.getState().attemptsCount,
         'dance-of-lanterns': this.danceOfLanterns.getState().attemptsCount,
         'moment-of-bloom': this.momentOfBloom.getState().attemptsCount,
-        'ballad-in-goblets-2': this.balladInGoblets2.getState().attemptsCount
+        'ballad-in-goblets-2': this.balladInGoblets2.getState().attemptsCount,
       }
     })
   }
