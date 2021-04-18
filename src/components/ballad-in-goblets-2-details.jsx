@@ -4,13 +4,13 @@ import DetailsBox from './details-components/details-box';
 import StarsBar from './details-components/stars-bar';
 import SubheadingSeparator from './details-components/subheading-separator';
 import EventDurationHeading from './details-components/event-duration-heading'
-import BalladsInGoblets2 from '../models/ballad-in-goblets-2'
+import BalladInGoblets2 from '../models/ballad-in-goblets-2'
 import Table from './details-components/table'
 import Title from './details-components/title'
 
 
-export default function BalladsInGoblets2Details() {
-  const ballads = new BalladsInGoblets2()
+export default function BalladInGoblets2Details() {
+  const ballad = new BalladInGoblets2()
   return (
     <div className="details pt-5">
       <Container>
@@ -108,7 +108,7 @@ export default function BalladsInGoblets2Details() {
           bgColor="#dcbba5"
         />
         <Table
-          items={ballads.getDrops(5)}
+          items={ballad.getDrops(5)}
         />
         <StarsBar
           starCount={4}
@@ -116,7 +116,7 @@ export default function BalladsInGoblets2Details() {
           bgColor="#b6abbf"
         />
         <Table
-          items={ballads.getDrops(4)}
+          items={ballad.getDrops(4)}
         />
         <StarsBar
           starCount={3}
@@ -124,7 +124,7 @@ export default function BalladsInGoblets2Details() {
           bgColor="#a5bacc"
         />
         <Table
-          items={ballads.getDrops(3)}
+          items={ballad.getDrops(3)}
         />
       </Container>
     </div>
