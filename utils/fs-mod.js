@@ -11,11 +11,15 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Skyward Harp
+ Memory of Dust
 Weapon
- Lost Prayer to the Sacred Winds
+ Summit Shaper
 Weapon
-Amos' Bow
+Amos Bow
+Weapon
+Skyward Harp
+Weapon
+Lost Prayer to the Sacred Winds
 Weapon
 Skyward Atlas
 Weapon
@@ -31,15 +35,17 @@ Skyward Blade
 Weapon
 Aquila Favonia
 Weapon
- Alley Hunter
+ Sacrificial Bow
 Weapon
- Favonius Codex
+ Eye of Perception
 Weapon
- Favonius Lance
+ Lithic Spear
 Weapon
- Sacrificial Greatsword
+ Lithic Blade
 Weapon
- Favonius Sword
+ The Flute
+Character
+Rosaria
 Character
 Xinyan
 Character
@@ -69,21 +75,23 @@ Barbara
 Weapon
 Rust
 Weapon
-Sacrificial Bow
-Weapon
 The Stringless
 Weapon
 Favonius Warbow
-Weapon
-Eye of Perception
 Weapon
 Sacrificial Fragments
 Weapon
 The Widsith
 Weapon
+Favonius Codex
+Weapon
+Favonius Lance
+Weapon
 Dragon's Bane
 Weapon
 Rainslasher
+Weapon
+Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
@@ -93,7 +101,7 @@ Lion's Roar
 Weapon
 Sacrificial Sword
 Weapon
-The Flute
+Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -161,10 +169,10 @@ Cool Steel
   }
 }
 
-run()
+// run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/farewell-of-snezhnaya-2.json')
+  let invitation = require('../src/data/gentry-of-hermitage-2.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
@@ -180,4 +188,4 @@ const validateImages = async () => {
   })
 }
 
-// validateImages()
+validateImages()
