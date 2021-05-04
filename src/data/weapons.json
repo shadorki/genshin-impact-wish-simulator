@@ -175,6 +175,13 @@
         "src": "amos-bow.png"
     },
     {
+        "name": "Elegy for the End",
+        "rating": 5,
+        "type": "weapon",
+        "class": "Bow",
+        "src": "elegy-for-the-end.png"
+    },
+    {
         "name": "Blackcliff Warbow",
         "rating": 4,
         "class": "Bow",

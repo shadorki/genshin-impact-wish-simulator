@@ -48,6 +48,14 @@
     "percentX": 59
   },
   {
+    "name": "Rosaria",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031449864306720",
+    "percentX": 54
+  },
+  {
     "name": "Razor",
     "element": "Electro",
     "type": "character",

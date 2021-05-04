@@ -24,11 +24,11 @@ describe('User can wish once', () => {
   })
   it('Stress single wish test', () => {
     const banners = [
-      'moment-of-bloom',
+      'farewell-of-snezhnaya-2',
       'epitome-invocation',
       'wanderlust-invocation'
     ]
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < 200; i++) {
       const banner = banners[Math.floor(Math.random() * banners.length)]
       cy.wishOnce(banner)
     }

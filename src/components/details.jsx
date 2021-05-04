@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import BalladInGobletsDetails from './ballad-in-goblets-details'
+import BalladInGoblets2Details from './ballad-in-goblets-2-details'
+import FarewellOfSnezhnaya2Details from './farewell-of-snezhnaya-2-details'
 import SparklingStepsDetails from './sparkling-steps-details'
 import GentryOfHermitageDetails from './gentry-of-hermitage-details'
 import FarewellOfSnezhnayaDetails from './farewell-of-snezhnaya-details'
@@ -16,7 +18,9 @@ import BeginnersWishDetails from './beginners-wish-details'
 export default function Details(props) {
   const { selectedDetail, backToHome } = props
   const pages = {
-    'ballad-in-goblets': <BalladInGobletsDetails/>,
+    'ballad-in-goblets': <BalladInGobletsDetails />,
+    'ballad-in-goblets-2': <BalladInGoblets2Details />,
+    'farewell-of-snezhnaya-2': <FarewellOfSnezhnaya2Details />,
     'sparkling-steps': <SparklingStepsDetails/>,
     'gentry-of-hermitage': <GentryOfHermitageDetails/>,
     'farewell-of-snezhnaya': <FarewellOfSnezhnayaDetails/>,
@@ -27,7 +31,7 @@ export default function Details(props) {
     'dance-of-lanterns': <DanceOfLanternsDetails />,
     'epitome-invocation': <EpitomeInvocationDetails/>,
     'wanderlust-invocation': <WanderlustInvocationDetails/>,
-    'beginners-wish': <BeginnersWishDetails/>
+    'beginners-wish': <BeginnersWishDetails/>,
   }
   return (
     <>

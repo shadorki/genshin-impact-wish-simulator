@@ -1,18 +1,18 @@
 [
   {
-    "name": "Staff of Homa",
+    "name": "Skyward Harp",
     "rating": 5,
-    "class": "Polearm",
+    "class": "Bow",
+    "src": "skyward-harp.png",
     "isFeatured": true,
-    "src": "staff-of-homa.png",
     "type": "weapon"
   },
   {
-    "name": "Wolf's Gravestone",
+    "name": "Lost Prayer to the Sacred Winds",
     "rating": 5,
-    "class": "Claymore",
+    "class": "Catalyst",
+    "src": "lost-prayer-to-the-sacred-winds.png",
     "isFeatured": true,
-    "src": "wolfs-gravestone.png",
     "type": "weapon"
   },
   {
@@ -21,20 +21,6 @@
     "type": "weapon",
     "class": "Bow",
     "src": "amos-bow.png"
-  },
-  {
-    "name": "Skyward Harp",
-    "rating": 5,
-    "class": "Bow",
-    "src": "skyward-harp.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Lost Prayer to the Sacred Winds",
-    "rating": 5,
-    "class": "Catalyst",
-    "src": "lost-prayer-to-the-sacred-winds.png",
-    "type": "weapon"
   },
   {
     "name": "Skyward Atlas",
@@ -58,6 +44,13 @@
     "src": "skyward-spine.png"
   },
   {
+    "name": "Wolf's Gravestone",
+    "rating": 5,
+    "class": "Claymore",
+    "src": "wolfs-gravestone.png",
+    "type": "weapon"
+  },
+  {
     "name": "Skyward Pride",
     "rating": 5,
     "class": "Claymore",
@@ -79,43 +72,43 @@
     "type": "weapon"
   },
   {
-    "name": "Sacrificial Bow",
+    "name": "Alley Hunter",
     "rating": 4,
     "class": "Bow",
+    "src": "alley-hunter.png",
     "isFeatured": true,
-    "src": "sacrificial-bow.png",
     "type": "weapon"
   },
   {
-    "name": "The Widsith",
+    "name": "Favonius Codex",
     "rating": 4,
     "class": "Catalyst",
+    "src": "favonius-codex.png",
     "isFeatured": true,
-    "src": "the-widsith.png",
     "type": "weapon"
   },
   {
-    "name": "Lithic Spear",
+    "name": "Favonius Lance",
     "rating": 4,
-    "class": "Polearm",
+    "class": "Lance",
+    "type": "weapon",
     "isFeatured": true,
-    "src": "lithic-spear.png",
-    "type": "weapon"
+    "src": "favonius-lance.png"
   },
   {
-    "name": "Lithic Blade",
+    "name": "Sacrificial Greatsword",
     "rating": 4,
-    "class": "Claymore",
-    "isFeatured": true,
-    "src": "lithic-blade.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Lions Roar",
-    "rating": 4,
+    "type": "weapon",
     "class": "Sword",
     "isFeatured": true,
-    "src": "lions-roar.png",
+    "src": "sacrificial-greatsword.png"
+  },
+  {
+    "name": "Favonius Sword",
+    "rating": 4,
+    "class": "Sword",
+    "src": "favonius-sword.png",
+    "isFeatured": true,
     "type": "weapon"
   },
   {
@@ -241,6 +234,13 @@
     "type": "weapon"
   },
   {
+    "name": "Sacrificial Bow",
+    "rating": 4,
+    "class": "Bow",
+    "src": "sacrificial-bow.png",
+    "type": "weapon"
+  },
+  {
     "name": "The Stringless",
     "rating": 4,
     "class": "Bow",
@@ -269,18 +269,11 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Codex",
+    "name": "The Widsith",
     "rating": 4,
     "class": "Catalyst",
-    "src": "favonius-codex.png",
+    "src": "the-widsith.png",
     "type": "weapon"
-  },
-  {
-    "name": "Favonius Lance",
-    "rating": 4,
-    "class": "Lance",
-    "type": "weapon",
-    "src": "favonius-lance.png"
   },
   {
     "name": "Dragon's Bane",
@@ -297,13 +290,6 @@
     "src": "rainslasher.png"
   },
   {
-    "name": "Sacrificial Greatsword",
-    "rating": 4,
-    "type": "weapon",
-    "class": "Sword",
-    "src": "sacrificial-greatsword.png"
-  },
-  {
     "name": "The Bell",
     "rating": 4,
     "class": "Claymore",
@@ -318,6 +304,13 @@
     "type": "weapon"
   },
   {
+    "name": "Lions Roar",
+    "rating": 4,
+    "class": "Sword",
+    "src": "lions-roar.png",
+    "type": "weapon"
+  },
+  {
     "name": "Sacrificial Sword",
     "rating": 4,
     "class": "Sword",
@@ -329,13 +322,6 @@
     "rating": 4,
     "class": "Sword",
     "src": "the-flute.png",
-    "type": "weapon"
-  },
-  {
-    "name": "Favonius Sword",
-    "rating": 4,
-    "class": "Sword",
-    "src": "favonius-sword.png",
     "type": "weapon"
   },
   {

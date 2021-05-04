@@ -17,7 +17,9 @@ export default class Settings extends Component {
       'adrift-in-the-harbor': 'Adrift in the Harbor',
       'invitation-to-mundane-life': 'Invitation to Mundane Life',
       'dance-of-lanterns': 'Dance Of Lanterns',
-      'moment-of-bloom': 'Moment Of Bloom'
+      'moment-of-bloom': 'Moment Of Bloom',
+      'ballad-in-goblets-2': 'Ballad in Goblets 2',
+      'farewell-of-snezhnaya-2': 'Farewell of Snezhnaya 2',
     }
     this.onChange = this.onChange.bind(this)
   }
