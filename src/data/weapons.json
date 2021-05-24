@@ -6,6 +6,12 @@
         "src": "aquila-favonia.png"
     },
     {
+        "name": "Song of Broken Pines",
+        "rating": 5,
+        "class": "Sword",
+        "src": "song-of-broken-pines.png"
+    },
+    {
         "name": "Blackcliff Longsword",
         "rating": 4,
         "class": "Sword",

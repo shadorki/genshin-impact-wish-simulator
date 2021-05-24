@@ -1,6 +1,6 @@
 describe('User can track wish counter', () => {
   const bannersList = [
-    'gentry-of-hermitage-2',
+    'born-of-ocean-swell',
     'epitome-invocation',
     'wanderlust-invocation'
   ]

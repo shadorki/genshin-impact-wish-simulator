@@ -184,6 +184,15 @@ video {
   background-image: url('../assets/images/ui/hu-tao-selected.png');
 }
 
+.banner-button.born-of-ocean-swell {
+  background-image: url('../assets/images/ui/eula.png');
+}
+
+.banner-button.born-of-ocean-swell.selected {
+  background-image: url('../assets/images/ui/eula-selected.png');
+}
+
+
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }
