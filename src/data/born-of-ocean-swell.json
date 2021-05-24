@@ -1,122 +1,87 @@
 [
 	{
-		"name": "Song of Broken Pines",
+		"name": "Eula",
+		"element": "Cryo",
+		"type": "character",
 		"rating": 5,
-		"class": "Sword",
     "isFeatured": true,
-		"src": "song-of-broken-pines.png",
-		"type": "weapon"
+		"id": "749131411358288396",
+		"percentX": 66,
+		"src": "Eula.png"
 	},
 	{
-		"name": "Aquila Favonia",
+		"name": "Keqing",
+		"element": "Electro",
+		"type": "character",
 		"rating": 5,
-		"class": "Sword",
-    "isFeatured": true,
-		"src": "aquila-favonia.png",
-		"type": "weapon"
+		"id": "749031397896749127",
+		"percentX": 58,
+		"src": "Keqing.png"
 	},
 	{
-		"name": "Amos Bow",
+		"name": "Mona",
+		"element": "Hydro",
+		"type": "character",
 		"rating": 5,
-		"type": "weapon",
-		"class": "Bow",
-		"src": "amos-bow.png"
+		"id": "749031417895452754",
+		"percentX": 58,
+		"src": "Mona.png"
 	},
 	{
-		"name": "Skyward Harp",
+		"name": "Qiqi",
+		"element": "Cryo",
+		"type": "character",
 		"rating": 5,
-		"class": "Bow",
-		"src": "skyward-harp.png",
-		"type": "weapon"
+		"id": "749031442494914661",
+		"percentX": 63,
+		"src": "Qiqi.png"
 	},
 	{
-		"name": "Lost Prayer to the Sacred Winds",
+		"name": "Diluc",
+		"element": "Pyro",
+		"type": "character",
 		"rating": 5,
-		"class": "Catalyst",
-		"src": "lost-prayer-to-the-sacred-winds.png",
-		"type": "weapon"
+		"id": "749031368255602861",
+		"percentX": 59,
+		"src": "Diluc.png"
 	},
 	{
-		"name": "Skyward Atlas",
+		"name": "Jean",
+		"element": "Anemo",
+		"type": "character",
 		"rating": 5,
-		"class": "Catalyst",
-		"src": "skyward-atlas.png",
-		"type": "weapon"
+		"id": "749031380716879922",
+		"percentX": 57,
+		"src": "Jean.png"
 	},
 	{
-		"name": "Primordial Jade Winged-Spear",
-		"rating": 5,
-		"class": "Polearm",
-		"src": "primordial-jade-winged-spear.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Skyward Spine",
-		"rating": 5,
-		"type": "weapon",
-		"class": "Polearm",
-		"src": "skyward-spine.png"
-	},
-	{
-		"name": "Wolf's Gravestone",
-		"rating": 5,
-		"class": "Claymore",
-		"src": "wolfs-gravestone.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Skyward Pride",
-		"rating": 5,
-		"class": "Claymore",
-		"src": "skyward-pride.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Skyward Blade",
-		"rating": 5,
-		"class": "Sword",
-		"src": "skyward-blade.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Rust",
-		"rating": 4,
-		"class": "Bow",
-		"src": "rust.png",
-    "isFeatured": true,
-		"type": "weapon"
-	},
-	{
-		"name": "Sacrificial Fragments",
+		"name": "Xinyan",
+		"element": "Pyro",
+		"type": "character",
 		"rating": 4,
     "isFeatured": true,
-		"class": "Catalyst",
-		"src": "sacrificial-fragments.png",
-		"type": "weapon"
+		"percentX": 58,
+		"src": "Xinyan.png"
 	},
 	{
-		"name": "Dragon's Bane",
+		"name": "Xingqiu",
+		"element": "Hydro",
+		"type": "character",
 		"rating": 4,
-		"class": "Polearm",
+		"id": "749031483263680563",
     "isFeatured": true,
-		"src": "dragons-bane.png",
-		"type": "weapon"
+		"percentX": 58,
+		"src": "Xingqiu.png"
 	},
 	{
-		"name": "Rainslasher",
+		"name": "Beidou",
+		"element": "Electro",
+		"type": "character",
 		"rating": 4,
-		"type": "weapon",
-		"class": "Claymore",
+		"id": "749031334273613904",
     "isFeatured": true,
-		"src": "rainslasher.png"
-	},
-	{
-		"name": "Sacrificial Sword",
-		"rating": 4,
-		"class": "Sword",
-    "isFeatured": true,
-		"src": "sacrificial-sword.png",
-		"type": "weapon"
+		"percentX": 55,
+		"src": "Beidou.png"
 	},
 	{
 		"name": "Rosaria",
@@ -126,14 +91,6 @@
 		"id": "749031449864306720",
 		"percentX": 54,
 		"src": "Rosaria.png"
-	},
-	{
-		"name": "Xinyan",
-		"element": "Pyro",
-		"type": "character",
-		"rating": 4,
-		"percentX": 58,
-		"src": "Xinyan.png"
 	},
 	{
 		"name": "Sucrose",
@@ -198,24 +155,6 @@
 		"src": "Ningguang.png"
 	},
 	{
-		"name": "Xingqiu",
-		"element": "Hydro",
-		"type": "character",
-		"rating": 4,
-		"id": "749031483263680563",
-		"percentX": 58,
-		"src": "Xingqiu.png"
-	},
-	{
-		"name": "Beidou",
-		"element": "Electro",
-		"type": "character",
-		"rating": 4,
-		"id": "749031334273613904",
-		"percentX": 55,
-		"src": "Beidou.png"
-	},
-	{
 		"name": "Xiangling",
 		"element": "Pyro",
 		"type": "character",
@@ -241,6 +180,13 @@
 		"id": "749031327726174398",
 		"percentX": 58,
 		"src": "Barbara.png"
+	},
+	{
+		"name": "Rust",
+		"rating": 4,
+		"class": "Bow",
+		"src": "rust.png",
+		"type": "weapon"
 	},
 	{
 		"name": "Sacrificial Bow",
@@ -271,6 +217,13 @@
 		"type": "weapon"
 	},
 	{
+		"name": "Sacrificial Fragments",
+		"rating": 4,
+		"class": "Catalyst",
+		"src": "sacrificial-fragments.png",
+		"type": "weapon"
+	},
+	{
 		"name": "The Widsith",
 		"rating": 4,
 		"class": "Catalyst",
@@ -290,6 +243,20 @@
 		"class": "Lance",
 		"type": "weapon",
 		"src": "favonius-lance.png"
+	},
+	{
+		"name": "Dragon's Bane",
+		"rating": 4,
+		"class": "Polearm",
+		"src": "dragons-bane.png",
+		"type": "weapon"
+	},
+	{
+		"name": "Rainslasher",
+		"rating": 4,
+		"type": "weapon",
+		"class": "Claymore",
+		"src": "rainslasher.png"
 	},
 	{
 		"name": "Sacrificial Greatsword",
@@ -317,6 +284,13 @@
 		"rating": 4,
 		"class": "Sword",
 		"src": "lions-roar.png",
+		"type": "weapon"
+	},
+	{
+		"name": "Sacrificial Sword",
+		"rating": 4,
+		"class": "Sword",
+		"src": "sacrificial-sword.png",
 		"type": "weapon"
 	},
 	{

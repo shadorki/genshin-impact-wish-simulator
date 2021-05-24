@@ -24,7 +24,7 @@ describe('User can wish once', () => {
   })
   it('Stress single wish test', () => {
     const banners = [
-      'gentry-of-hermitage-2',
+      'born-of-ocean-swell',
       'epitome-invocation',
       'wanderlust-invocation'
     ]

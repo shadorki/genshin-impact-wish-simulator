@@ -32,6 +32,14 @@
     "percentX": 62
   },
   {
+    "name": "Eula",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 5,
+    "id": "749131411358288396",
+    "percentX": 66
+  },
+  {
     "name": "Kaeya",
     "element": "Cryo",
     "type": "character",

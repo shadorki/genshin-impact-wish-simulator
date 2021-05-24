@@ -25,7 +25,7 @@ describe('User can wish', () => {
   })
   it('Stress wish test', () => {
     const banners = [
-      'gentry-of-hermitage-2',
+      'born-of-ocean-swell',
       'epitome-invocation',
       'wanderlust-invocation'
     ]

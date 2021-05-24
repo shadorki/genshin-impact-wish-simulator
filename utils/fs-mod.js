@@ -11,9 +11,9 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Memory of Dust
+ Song of Broken Pines
 Weapon
- Summit Shaper
+ Aquila Favonia
 Weapon
 Amos Bow
 Weapon
@@ -33,17 +33,15 @@ Skyward Pride
 Weapon
 Skyward Blade
 Weapon
-Aquila Favonia
+ Rust
 Weapon
- Sacrificial Bow
+ Sacrificial Fragments
 Weapon
- Eye of Perception
+ Dragon's Bane
 Weapon
- Lithic Spear
+ Rainslasher
 Weapon
- Lithic Blade
-Weapon
- The Flute
+ Sacrificial Sword
 Character
 Rosaria
 Character
@@ -73,13 +71,13 @@ Razor
 Character
 Barbara
 Weapon
-Rust
+Sacrificial Bow
 Weapon
 The Stringless
 Weapon
 Favonius Warbow
 Weapon
-Sacrificial Fragments
+Eye of Perception
 Weapon
 The Widsith
 Weapon
@@ -87,19 +85,15 @@ Favonius Codex
 Weapon
 Favonius Lance
 Weapon
-Dragon's Bane
-Weapon
-Rainslasher
-Weapon
 Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
 Favonius Greatsword
 Weapon
-Lion's Roar
+Lions Roar
 Weapon
-Sacrificial Sword
+The Flute
 Weapon
 Favonius Sword
 Weapon
@@ -128,7 +122,7 @@ Weapon
 Harbinger of Dawn
 Weapon
 Cool Steel
-    `
+    `;
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
     itemList.shift()
