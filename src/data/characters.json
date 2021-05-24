@@ -24,6 +24,14 @@
     "percentX": 62
   },
   {
+    "name": "Yanfei",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031411358288396",
+    "percentX": 62
+  },
+  {
     "name": "Kaeya",
     "element": "Cryo",
     "type": "character",

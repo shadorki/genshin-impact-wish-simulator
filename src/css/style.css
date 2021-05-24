@@ -136,11 +136,11 @@ video {
   background-image: url('../assets/images/ui/childe-selected.png');
 }
 
-.banner-button.gentry-of-hermitage {
+.banner-button.gentry-of-hermitage, .banner-button.gentry-of-hermitage-2 {
   background-image: url('../assets/images/ui/zhongli.png');
 }
 
-.banner-button.gentry-of-hermitage.selected {
+.banner-button.gentry-of-hermitage.selected, .banner-button.gentry-of-hermitage-2.selected {
   background-image: url('../assets/images/ui/zhongli-selected.png');
 }
 
