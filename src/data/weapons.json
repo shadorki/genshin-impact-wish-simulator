@@ -18,6 +18,12 @@
         "src": "blackcliff-longsword.png"
     },
     {
+        "name": "Mitternachts Waltz",
+        "rating": 4,
+        "class": "Bow",
+        "src": "mitternachts-waltz.png"
+    },
+    {
         "name": "Cool Steel",
         "rating": 3,
         "class": "Sword",

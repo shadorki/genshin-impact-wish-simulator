@@ -22,6 +22,7 @@ export default class Settings extends Component {
       'farewell-of-snezhnaya-2': 'Farewell of Snezhnaya 2',
       'gentry-of-hermitage-2': 'Gentry of Hermitage 2',
       'born-of-ocean-swell': 'Born of Ocean Swell',
+      'sparkling-steps-2': 'Sparkling Steps 2',
     }
     this.onChange = this.onChange.bind(this)
   }
