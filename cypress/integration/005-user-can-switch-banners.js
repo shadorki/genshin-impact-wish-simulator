@@ -9,7 +9,7 @@ describe('User can switch banners', () => {
       'invitation-to-mundane-life': 'Invitation to Mundane Life',
       'dance-of-lanterns': 'Dance Of Lanterns',
       'moment-of-bloom': 'Moment Of Bloom',
-      'gentry-of-hermitage-2': 'Gentry of Hermitage 2',
+      'born-of-ocean-swell': 'Born of Ocean Swell',
     }
   before(() => {
     cy.visit('/')

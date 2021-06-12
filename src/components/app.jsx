@@ -16,6 +16,7 @@ import MomentOfBloom from '../models/moment-of-bloom'
 import BalladInGoblets2 from '../models/ballad-in-goblets-2'
 import FarewellOfSnezhnaya2 from '../models/farewell-of-snezhnaya-2'
 import GentryOfHermitage2 from '../models/gentry-of-hermitage-2'
+import BornOfOceanSwell from '../models/born-of-ocean-swell'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -43,6 +44,7 @@ export default class App extends Component {
     this.balladInGoblets2 = new BalladInGoblets2()
     this.farewellOfSnezhnaya2 = new FarewellOfSnezhnaya2()
     this.gentryOfHermitage2 = new GentryOfHermitage2()
+    this.bornOfOceanSwell = new BornOfOceanSwell()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -53,7 +55,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'gentry-of-hermitage-2',
+      selectedCharacterEventWish: 'born-of-ocean-swell',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -70,6 +72,7 @@ export default class App extends Component {
         'ballad-in-goblets-2': 0,
         'farewell-of-snezhnaya-2': 0,
         'gentry-of-hermitage-2': 0,
+        'born-of-ocean-swell': 0,
       }
     }
   }
@@ -169,6 +172,7 @@ export default class App extends Component {
         'ballad-in-goblets-2': this.balladInGoblets2.getState().attemptsCount,
         'farewell-of-snezhnaya-2': this.farewellOfSnezhnaya2.getState().attemptsCount,
         'gentry-of-hermitage-2': this.gentryOfHermitage2.getState().attemptsCount,
+        'born-of-ocean-swell': this.bornOfOceanSwell.getState().attemptsCount,
       }
     })
   }
@@ -188,6 +192,7 @@ export default class App extends Component {
     this.balladInGoblets2.reset()
     this.farewellOfSnezhnaya2.reset()
     this.gentryOfHermitage2.reset()
+    this.bornOfOceanSwell.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -223,6 +228,7 @@ export default class App extends Component {
       balladInGoblets2: this.balladInGoblets2.getState(),
       farewellOfSnezhnaya2: this.farewellOfSnezhnaya2.getState(),
       gentryOfHermitage2: this.gentryOfHermitage2.getState(),
+      bornOfOceanSwell: this.bornOfOceanSwell.getState(),
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -252,6 +258,7 @@ export default class App extends Component {
       this.balladInGoblets2.attemptsCount = data.balladInGoblets2 || 0
       this.farewellOfSnezhnaya2.attemptsCount = data.farewellOfSnezhnaya2 || 0
       this.gentryOfHermitage2.attemptsCount = data.gentryOfHermitage2 || 0
+      this.bornOfOceanSwell.attemptsCount = data.bornOfOceanSwell || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -280,6 +287,7 @@ export default class App extends Component {
       this.balladInGoblets2.setState(data.balladInGoblets2)
       this.farewellOfSnezhnaya2.setState(data.farewellOfSnezhnaya2)
       this.gentryOfHermitage2.setState(data.gentryOfHermitage2)
+      this.bornOfOceanSwell.setState(data.bornOfOceanSwell)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
