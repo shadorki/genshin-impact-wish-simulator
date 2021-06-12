@@ -10,44 +10,30 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-Weapon
- Song of Broken Pines
-Weapon
- Aquila Favonia
-Weapon
-Amos Bow
-Weapon
-Skyward Harp
-Weapon
-Lost Prayer to the Sacred Winds
-Weapon
-Skyward Atlas
-Weapon
-Primordial Jade Winged-Spear
-Weapon
-Skyward Spine
-Weapon
-Wolf's Gravestone
-Weapon
-Skyward Pride
-Weapon
-Skyward Blade
-Weapon
- Rust
-Weapon
- Sacrificial Fragments
-Weapon
- Dragon's Bane
-Weapon
- Rainslasher
-Weapon
- Sacrificial Sword
+Character
+ Klee
+Character
+Keqing
+Character
+Mona
+Character
+Qiqi
+Character
+Diluc
+Character
+Jean
+Character
+ Sucrose
+Character
+ Fischl
+Character
+ Barbara
+Character
+Yanfei
 Character
 Rosaria
 Character
 Xinyan
-Character
-Sucrose
 Character
 Diona
 Character
@@ -56,8 +42,6 @@ Character
 Noelle
 Character
 Bennett
-Character
-Fischl
 Character
 Ningguang
 Character
@@ -68,8 +52,8 @@ Character
 Xiangling
 Character
 Razor
-Character
-Barbara
+Weapon
+Rust
 Weapon
 Sacrificial Bow
 Weapon
@@ -79,11 +63,17 @@ Favonius Warbow
 Weapon
 Eye of Perception
 Weapon
+Sacrificial Fragments
+Weapon
 The Widsith
 Weapon
 Favonius Codex
 Weapon
 Favonius Lance
+Weapon
+Dragon's Bane
+Weapon
+Rainslasher
 Weapon
 Sacrificial Greatsword
 Weapon
@@ -92,6 +82,8 @@ Weapon
 Favonius Greatsword
 Weapon
 Lions Roar
+Weapon
+Sacrificial Sword
 Weapon
 The Flute
 Weapon
@@ -147,7 +139,8 @@ Cool Steel
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    const path = p.join(__dirname, '../src/data/epitome-invocation.json')
+    // const path = p.join(__dirname, "../src/data/epitome-invocation.json");
+    const path = p.join(__dirname, "../src/data/sparkling-steps-2.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -163,7 +156,7 @@ Cool Steel
   }
 }
 
-// run()
+run()
 
 const validateImages = async () => {
   let invitation = require('../src/data/gentry-of-hermitage-2.json')
@@ -182,4 +175,4 @@ const validateImages = async () => {
   })
 }
 
-validateImages()
+// validateImages()

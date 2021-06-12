@@ -1,115 +1,88 @@
 [
 	{
-		"name": "Lost Prayer to the Sacred Winds",
+		"name": "Klee",
+		"element": "Pyro",
+		"type": "character",
 		"rating": 5,
-		"class": "Catalyst",
+		"id": "749031404964151376",
     "isFeatured": true,
-		"src": "lost-prayer-to-the-sacred-winds.png",
-		"type": "weapon"
+		"percentX": 57,
+		"src": "Klee.png"
 	},
 	{
-		"name": "Skyward Pride",
+		"name": "Keqing",
+		"element": "Electro",
+		"type": "character",
 		"rating": 5,
-		"class": "Claymore",
-    "isFeatured": true,
-		"src": "skyward-pride.png",
-		"type": "weapon"
+		"id": "749031397896749127",
+		"percentX": 58,
+		"src": "Keqing.png"
 	},
 	{
-		"name": "Amos Bow",
+		"name": "Mona",
+		"element": "Hydro",
+		"type": "character",
 		"rating": 5,
-		"type": "weapon",
-		"class": "Bow",
-		"src": "amos-bow.png"
+		"id": "749031417895452754",
+		"percentX": 58,
+		"src": "Mona.png"
 	},
 	{
-		"name": "Skyward Harp",
+		"name": "Qiqi",
+		"element": "Cryo",
+		"type": "character",
 		"rating": 5,
-		"class": "Bow",
-		"src": "skyward-harp.png",
-		"type": "weapon"
+		"id": "749031442494914661",
+		"percentX": 63,
+		"src": "Qiqi.png"
 	},
 	{
-		"name": "Skyward Atlas",
+		"name": "Diluc",
+		"element": "Pyro",
+		"type": "character",
 		"rating": 5,
-		"class": "Catalyst",
-		"src": "skyward-atlas.png",
-		"type": "weapon"
+		"id": "749031368255602861",
+		"percentX": 59,
+		"src": "Diluc.png"
 	},
 	{
-		"name": "Primordial Jade Winged-Spear",
+		"name": "Jean",
+		"element": "Anemo",
+		"type": "character",
 		"rating": 5,
-		"class": "Polearm",
-		"src": "primordial-jade-winged-spear.png",
-		"type": "weapon"
+		"id": "749031380716879922",
+		"percentX": 57,
+		"src": "Jean.png"
 	},
 	{
-		"name": "Skyward Spine",
-		"rating": 5,
-		"type": "weapon",
-		"class": "Polearm",
-		"src": "skyward-spine.png"
-	},
-	{
-		"name": "Wolf's Gravestone",
-		"rating": 5,
-		"class": "Claymore",
-		"src": "wolfs-gravestone.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Skyward Blade",
-		"rating": 5,
-		"class": "Sword",
-		"src": "skyward-blade.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Aquila Favonia",
-		"rating": 5,
-		"class": "Sword",
-		"src": "aquila-favonia.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Mitternachts Waltz",
-		"rating": 4,
-		"class": "Bow",
-    "isFeatured": true,
-		"src": "mitternachts-waltz.png",
-		"type": "weapon"
-	},
-	{
-		"name": "The Widsith",
-		"rating": 4,
-		"class": "Catalyst",
-    "isFeatured": true,
-		"src": "the-widsith.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Favonius Lance",
+		"name": "Sucrose",
+		"element": "Anemo",
+		"type": "character",
 		"rating": 4,
     "isFeatured": true,
-		"class": "Lance",
-		"type": "weapon",
-		"src": "favonius-lance.png"
+		"id": "749031457019658401",
+		"percentX": 60,
+		"src": "Sucrose.png"
 	},
 	{
-		"name": "The Bell",
+		"name": "Fischl",
+		"element": "Electro",
+		"type": "character",
 		"rating": 4,
-		"class": "Claymore",
     "isFeatured": true,
-		"src": "the-bell.png",
-		"type": "weapon"
+		"id": "749031374052393120",
+		"percentX": 59,
+		"src": "Fischl.png"
 	},
 	{
-		"name": "Lions Roar",
+		"name": "Barbara",
+		"element": "Hydro",
+		"type": "character",
 		"rating": 4,
-		"class": "Sword",
     "isFeatured": true,
-		"src": "lions-roar.png",
-		"type": "weapon"
+		"id": "749031327726174398",
+		"percentX": 58,
+		"src": "Barbara.png"
 	},
 	{
 		"name": "Yanfei",
@@ -136,15 +109,6 @@
 		"rating": 4,
 		"percentX": 58,
 		"src": "Xinyan.png"
-	},
-	{
-		"name": "Sucrose",
-		"element": "Anemo",
-		"type": "character",
-		"rating": 4,
-		"id": "749031457019658401",
-		"percentX": 60,
-		"src": "Sucrose.png"
 	},
 	{
 		"name": "Diona",
@@ -180,15 +144,6 @@
 		"id": "749031351533043772",
 		"percentX": 58,
 		"src": "Bennett.png"
-	},
-	{
-		"name": "Fischl",
-		"element": "Electro",
-		"type": "character",
-		"rating": 4,
-		"id": "749031374052393120",
-		"percentX": 59,
-		"src": "Fischl.png"
 	},
 	{
 		"name": "Ningguang",
@@ -236,15 +191,6 @@
 		"src": "Razor.png"
 	},
 	{
-		"name": "Barbara",
-		"element": "Hydro",
-		"type": "character",
-		"rating": 4,
-		"id": "749031327726174398",
-		"percentX": 58,
-		"src": "Barbara.png"
-	},
-	{
 		"name": "Rust",
 		"rating": 4,
 		"class": "Bow",
@@ -287,11 +233,25 @@
 		"type": "weapon"
 	},
 	{
+		"name": "The Widsith",
+		"rating": 4,
+		"class": "Catalyst",
+		"src": "the-widsith.png",
+		"type": "weapon"
+	},
+	{
 		"name": "Favonius Codex",
 		"rating": 4,
 		"class": "Catalyst",
 		"src": "favonius-codex.png",
 		"type": "weapon"
+	},
+	{
+		"name": "Favonius Lance",
+		"rating": 4,
+		"class": "Lance",
+		"type": "weapon",
+		"src": "favonius-lance.png"
 	},
 	{
 		"name": "Dragon's Bane",
@@ -315,10 +275,24 @@
 		"src": "sacrificial-greatsword.png"
 	},
 	{
+		"name": "The Bell",
+		"rating": 4,
+		"class": "Claymore",
+		"src": "the-bell.png",
+		"type": "weapon"
+	},
+	{
 		"name": "Favonius Greatsword",
 		"rating": 4,
 		"class": "Claymore",
 		"src": "favonius-greatsword.png",
+		"type": "weapon"
+	},
+	{
+		"name": "Lions Roar",
+		"rating": 4,
+		"class": "Sword",
+		"src": "lions-roar.png",
 		"type": "weapon"
 	},
 	{
