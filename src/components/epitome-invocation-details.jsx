@@ -27,14 +27,14 @@ export default function EpitomeInvocationDetails() {
         />
         <Row>
           <DetailsBox
-            title={"Skyward Pride"}
+            title={"Freedom-Sworn"}
             isWeapon={true}
-            src={"skyward-pride.png"}
+            src={"freedom-sworn.png"}
           />
           <DetailsBox
-            title={"Lost Prayer to the Sacred Winds"}
+            title={"Skyward Atlas"}
             isWeapon={true}
-            src={"lost-prayer-to-the-sacred-winds.png"}
+            src={"skyward-atlas.png"}
           />
         </Row>
         <StarsBar
@@ -44,25 +44,25 @@ export default function EpitomeInvocationDetails() {
         />
         <Row>
           <DetailsBox
-            title={"Mitternachts Waltz"}
+            title={"The Alley Flash"}
             isWeapon={true}
-            src={"mitternachts-waltz.png"}
+            src={"the-alley-flash.png"}
           />
           <DetailsBox
-            title={"Lion's Roar"}
+            title={"Wine and Song"}
             isWeapon={true}
-            src={"lions-roar.png"}
+            src={"wine-and-song.png"}
           />
-          <DetailsBox title={"The Bell"} isWeapon={true} src={"the-bell.png"} />
+          <DetailsBox title={"Alley Hunter"} isWeapon={true} src={"alley-hunter.png"} />
           <DetailsBox
-            title={"Favonius Lance"}
+            title={"Favonius Greatsword"}
             isWeapon={true}
-            src={"favonius-lance.png"}
+            src={"favonius-greatsword.png"}
           />
           <DetailsBox
-            title={"The Widsith"}
+            title={"Dragon's Bane"}
             isWeapon={true}
-            src={"the-widsith.png"}
+            src={"dragons-bane.png"}
           />
         </Row>
         <SubheadingSeparator content="Wish Details" />
@@ -72,16 +72,14 @@ export default function EpitomeInvocationDetails() {
             <p className="my-3">
               Event Wish "<span className="orange">Epitome</span> Invocation" is
               now available. During this event wish, the 5-star weapons{" "}
-              <span className="brass">Skyward Pride (Claymore)</span> and
-              <span className="brass">
-                Lost Prayer to the Sacred Winds (Catalyst)
-              </span>{" "}
-              as well as the event-exclusive 4-star weapon{" "}
-              <span className="purple">Mitternachts Waltz (Bow)</span>, and the
-              4-star weapons <span className="purple">Lion's Roar (Sword)</span>
-              , <span className="purple">The Bell (Claymore),</span>,{" "}
-              <span className="purple">Favonius Lance (Polearm)</span>, and{" "}
-              <span className="purple">The Widsith (Catalyst)</span> will get a{" "}
+              <span className="brass">Freedom-Sworn (Sword)</span> and
+              <span className="brass">Skyward Atlas (Catalyst)</span> as well as
+              the event-exclusive 4-star weapon{" "}
+              <span className="purple">The Alley Flash (Sword)</span>, and the
+              4-star weapons <span className="purple">Wine and Song (Catalyst)</span>
+              , <span className="purple">Alley Hunter (Bow),</span>,{" "}
+              <span className="purple">Favonius Greatsword (Claymore)</span>, and{" "}
+              <span className="purple">Dragon's Bane (Polearm)</span> will get a{" "}
               <span className="orange">huge drop-rate boost</span>!
               <br />
               <span className="orange">
@@ -103,14 +101,11 @@ export default function EpitomeInvocationDetails() {
               promotional weapons{" "}
               <span className="brass">
                 {" "}
-                <span className="brass">Skyward Pride (Claymore)</span> and
+                <span className="brass">Freedom-Sworn (Sword)</span> and
               </span>{" "}
-              and{" "}
-              <span className="brass">
-                Lost Prayer to the Sacred Winds (Catalyst)
-              </span>
-              . If the first 5-star weapon you win in this event wish is not one
-              of the promotional weapons, then the next 5-star weapon you win is{" "}
+              and <span className="brass">Skyward Atlas (Catalyst)</span>. If
+              the first 5-star weapon you win in this event wish is not one of
+              the promotional weapons, then the next 5-star weapon you win is{" "}
               <span className="orange">guaranteed</span> to be a promotional
               weapon.
             </p>
@@ -133,11 +128,11 @@ export default function EpitomeInvocationDetails() {
               The first time you win a 4-star item in this event wish, there is
               a <span className="orange">75%</span> chance that it will be one
               of the featured weapons{" "}
-              <span className="purple">Mitternachts Waltz (Bow)</span>,{" "}
-              <span className="purple">Lion's Roar (Sword)</span>,{" "}
-              <span className="purple">The Bell (Claymore),</span>,{" "}
-              <span className="purple">Favonius Lance (Polearm)</span>, and{" "}
-              <span className="purple">The Widsith (Catalyst)</span>. If the
+              <span className="purple">The Alley Flash (Sword)</span>,{" "}
+              <span className="purple">Wine and Song (Catalyst)</span>,{" "}
+              <span className="purple">Alley Hunter (Bow),</span>,{" "}
+              <span className="purple">Favonius Greatsword (Claymore)</span>, and{" "}
+              <span className="purple">Dragon's Bane (Polearm)</span>. If the
               first 4-star item you win in this event wish is not one of the
               featured weapons, then the next 4-star item you win is{" "}
               <span className="orange">guaranteed</span> to be a featured

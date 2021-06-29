@@ -191,6 +191,13 @@ video {
 .banner-button.born-of-ocean-swell.selected {
   background-image: url('../assets/images/ui/eula-selected.png');
 }
+.banner-button.leaves-in-the-wind {
+  background-image: url('../assets/images/ui/kazuha.png');
+}
+
+.banner-button.leaves-in-the-wind.selected {
+  background-image: url('../assets/images/ui/kazuha-selected.png');
+}
 
 
 .banner-button.epitome-invocation {
