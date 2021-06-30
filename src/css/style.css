@@ -120,11 +120,11 @@ video {
   background-image: url('../assets/images/ui/venti-selected.png');
 }
 
-.banner-button.sparkling-steps {
+.banner-button.sparkling-steps, .banner-button.sparkling-steps-2 {
   background-image: url('../assets/images/ui/klee.png');
 }
 
-.banner-button.sparkling-steps.selected {
+.banner-button.sparkling-steps.selected, .banner-button.sparkling-steps-2.selected {
   background-image: url('../assets/images/ui/klee-selected.png');
 }
 

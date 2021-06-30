@@ -8,7 +8,7 @@ import Table from "./details-components/table";
 import Title from "./details-components/title";
 import EpitomeInvocation from "../models/epitome-invocation";
 
-export default function EpitomeInvocationDetails(props) {
+export default function EpitomeInvocationDetails() {
   const epitome = new EpitomeInvocation();
 
   return (
@@ -27,14 +27,14 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={"Song of Broken Pines"}
+            title={"Skyward Pride"}
             isWeapon={true}
-            src={"song-of-broken-pines.png"}
+            src={"skyward-pride.png"}
           />
           <DetailsBox
-            title={"Aquila Favonia"}
+            title={"Lost Prayer to the Sacred Winds"}
             isWeapon={true}
-            src={"aquila-favonia.png"}
+            src={"lost-prayer-to-the-sacred-winds.png"}
           />
         </Row>
         <StarsBar
@@ -44,26 +44,26 @@ export default function EpitomeInvocationDetails(props) {
         />
         <Row>
           <DetailsBox
-            title={"Sacrificial Sword"}
+            title={"Mitternachts Waltz"}
             isWeapon={true}
-            src={"sacrificial-sword.png"}
+            src={"mitternachts-waltz.png"}
           />
           <DetailsBox
-            title={"Rainslasher"}
+            title={"Lion's Roar"}
             isWeapon={true}
-            src={"rainslasher.png"}
+            src={"lions-roar.png"}
+          />
+          <DetailsBox title={"The Bell"} isWeapon={true} src={"the-bell.png"} />
+          <DetailsBox
+            title={"Favonius Lance"}
+            isWeapon={true}
+            src={"favonius-lance.png"}
           />
           <DetailsBox
-            title={"Dragons Bane"}
+            title={"The Widsith"}
             isWeapon={true}
-            src={"dragons-bane.png"}
+            src={"the-widsith.png"}
           />
-          <DetailsBox
-            title={"Sacrificial Fragments"}
-            isWeapon={true}
-            src={"sacrificial-fragments.png"}
-          />
-          <DetailsBox title={"Rust"} isWeapon={true} src={"rust.png"} />
         </Row>
         <SubheadingSeparator content="Wish Details" />
         <EventDurationHeading content="Limited Time Event" />
@@ -71,18 +71,17 @@ export default function EpitomeInvocationDetails(props) {
           <Col xs="12">
             <p className="my-3">
               Event Wish "<span className="orange">Epitome</span> Invocation" is
-              now available. During this event wish, the{" "}
-              <span className="orange">event-exclusive</span> 5-star weapon{" "}
-              <span className="brass">Song of Broken Pines (Claymore)</span> and
-              5-star weapon{" "}
-              <span className="brass">Aquila Favonia (Sword)</span> as well as
-              the event-exclusive 4-star weapon{" "}
-              <span className="purple">Sacrificial Sword (Sword)</span>, and the
-              4-star weapons{" "}
-              <span className="purple">Rainslasher (Claymore)</span>,{" "}
-              <span className="purple">Dragons Bane (Polearm),</span>,{" "}
-              <span className="purple">Sacrificial Fragments (Catalyst)</span>,
-              and <span className="purple">Rust (Bow)</span> will get a{" "}
+              now available. During this event wish, the 5-star weapons{" "}
+              <span className="brass">Skyward Pride (Claymore)</span> and
+              <span className="brass">
+                Lost Prayer to the Sacred Winds (Catalyst)
+              </span>{" "}
+              as well as the event-exclusive 4-star weapon{" "}
+              <span className="purple">Mitternachts Waltz (Bow)</span>, and the
+              4-star weapons <span className="purple">Lion's Roar (Sword)</span>
+              , <span className="purple">The Bell (Claymore),</span>,{" "}
+              <span className="purple">Favonius Lance (Polearm)</span>, and{" "}
+              <span className="purple">The Widsith (Catalyst)</span> will get a{" "}
               <span className="orange">huge drop-rate boost</span>!
               <br />
               <span className="orange">
@@ -102,10 +101,16 @@ export default function EpitomeInvocationDetails(props) {
               The first time you win a 5-star weapon in this event, there is a{" "}
               <span className="orange">75%</span> chance it will be one of the
               promotional weapons{" "}
-              <span className="brass">Song of Broken Pines (Sword)</span> and{" "}
-              <span className="brass">Aquila Favonia (Sword)</span>. If the
-              first 5-star weapon you win in this event wish is not one of the
-              promotional weapons, then the next 5-star weapon you win is{" "}
+              <span className="brass">
+                {" "}
+                <span className="brass">Skyward Pride (Claymore)</span> and
+              </span>{" "}
+              and{" "}
+              <span className="brass">
+                Lost Prayer to the Sacred Winds (Catalyst)
+              </span>
+              . If the first 5-star weapon you win in this event wish is not one
+              of the promotional weapons, then the next 5-star weapon you win is{" "}
               <span className="orange">guaranteed</span> to be a promotional
               weapon.
             </p>
@@ -128,13 +133,13 @@ export default function EpitomeInvocationDetails(props) {
               The first time you win a 4-star item in this event wish, there is
               a <span className="orange">75%</span> chance that it will be one
               of the featured weapons{" "}
-              <span className="purple">Sacrificial Sword (Sword)</span>,{" "}
-              <span className="purple">Rainslasher (Claymore)</span>,{" "}
-              <span className="purple">Dragons Bane (Polearm),</span>,{" "}
-              <span className="purple">Sacrificial Fragments (Catalyst)</span>,
-              and <span className="purple">Rust (Bow)</span>. If the first
-              4-star item you win in this event wish is not one of the featured
-              weapons, then the next 4-star item you win is{" "}
+              <span className="purple">Mitternachts Waltz (Bow)</span>,{" "}
+              <span className="purple">Lion's Roar (Sword)</span>,{" "}
+              <span className="purple">The Bell (Claymore),</span>,{" "}
+              <span className="purple">Favonius Lance (Polearm)</span>, and{" "}
+              <span className="purple">The Widsith (Catalyst)</span>. If the
+              first 4-star item you win in this event wish is not one of the
+              featured weapons, then the next 4-star item you win is{" "}
               <span className="orange">guaranteed</span> to be a featured
               weapon.
             </p>
