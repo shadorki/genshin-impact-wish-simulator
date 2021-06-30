@@ -18,6 +18,7 @@ import FarewellOfSnezhnaya2 from '../models/farewell-of-snezhnaya-2'
 import GentryOfHermitage2 from '../models/gentry-of-hermitage-2'
 import BornOfOceanSwell from '../models/born-of-ocean-swell'
 import SparklingSteps2 from '../models/sparkling-steps-2'
+import LeavesInTheWind from '../models/leaves-in-the-wind'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -47,6 +48,7 @@ export default class App extends Component {
     this.gentryOfHermitage2 = new GentryOfHermitage2()
     this.bornOfOceanSwell = new BornOfOceanSwell()
     this.sparklingSteps2 = new SparklingSteps2()
+    this.leavesInTheWind = new LeavesInTheWind()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -57,7 +59,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'sparkling-steps-2',
+      selectedCharacterEventWish: 'leaves-in-the-wind',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -76,6 +78,7 @@ export default class App extends Component {
         'gentry-of-hermitage-2': 0,
         'born-of-ocean-swell': 0,
         'sparkling-steps-2': 0,
+        'leaves-in-the-wind': 0,
       }
     }
   }
@@ -177,6 +180,7 @@ export default class App extends Component {
         'gentry-of-hermitage-2': this.gentryOfHermitage2.getState().attemptsCount,
         'born-of-ocean-swell': this.bornOfOceanSwell.getState().attemptsCount,
         'sparkling-steps-2': this.sparklingSteps2.getState().attemptsCount,
+        'leaves-in-the-wind': this.leavesInTheWind.getState().attemptsCount,
       }
     })
   }
@@ -198,6 +202,7 @@ export default class App extends Component {
     this.gentryOfHermitage2.reset()
     this.bornOfOceanSwell.reset()
     this.sparklingSteps2.reset()
+    this.leavesInTheWind.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -235,6 +240,7 @@ export default class App extends Component {
       gentryOfHermitage2: this.gentryOfHermitage2.getState(),
       bornOfOceanSwell: this.bornOfOceanSwell.getState(),
       sparklingSteps2: this.sparklingSteps2.getState(),
+      leavesInTheWind: this.leavesInTheWind.getState(),
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -266,6 +272,7 @@ export default class App extends Component {
       this.gentryOfHermitage2.attemptsCount = data.gentryOfHermitage2 || 0
       this.bornOfOceanSwell.attemptsCount = data.bornOfOceanSwell || 0
       this.sparklingSteps2.attemptsCount = data.sparklingSteps2 || 0
+      this.leavesInTheWind.attemptsCount = data.leavesInTheWind || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -296,6 +303,7 @@ export default class App extends Component {
       this.gentryOfHermitage2.setState(data.gentryOfHermitage2)
       this.bornOfOceanSwell.setState(data.bornOfOceanSwell)
       this.sparklingSteps2.setState(data.sparklingSteps2)
+      this.leavesInTheWind.setState(data.leavesInTheWind)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,

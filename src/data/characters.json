@@ -29,7 +29,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031411358288396",
-    "percentX": 62
+    "percentX": 53
   },
   {
     "name": "Eula",
@@ -246,6 +246,14 @@
     "element": "Pyro",
     "type": "character",
     "rating": 5,
+    "percentX": 57
+  },
+  {
+    "name": "Kazuha",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031380706879922",
     "percentX": 57
   }
 ]

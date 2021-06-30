@@ -5,6 +5,7 @@ import FarewellOfSnezhnaya2Details from './farewell-of-snezhnaya-2-details'
 import GentryOfHermitage2Details from './gentry-of-hermitage-2-details'
 import BornOfOceanSwellDetails from './born-of-ocean-swell-details'
 import SparklingSteps2Details from './sparkling-steps-2-details'
+import LeavesInTheWindDetails from './leaves-in-the-wind-details'
 import SparklingStepsDetails from './sparkling-steps-details'
 import GentryOfHermitageDetails from './gentry-of-hermitage-details'
 import FarewellOfSnezhnayaDetails from './farewell-of-snezhnaya-details'
@@ -27,6 +28,7 @@ export default function Details(props) {
     'gentry-of-hermitage-2': <GentryOfHermitage2Details />,
     'born-of-ocean-swell': <BornOfOceanSwellDetails />,
     'sparkling-steps-2': <SparklingSteps2Details />,
+    'leaves-in-the-wind': <LeavesInTheWindDetails />,
     'sparkling-steps': <SparklingStepsDetails/>,
     'gentry-of-hermitage': <GentryOfHermitageDetails/>,
     'farewell-of-snezhnaya': <FarewellOfSnezhnayaDetails/>,
