@@ -660,5 +660,17 @@
         "rating": 5,
         "class": "Sword",
         "src": "freedom-sworn.png"
+    },
+    {
+        "name": "Thundering Pulse",
+        "rating": 5,
+        "class": "Bow",
+        "src": "thundering-pulse.png"
+    },
+    {
+        "name": "Mistsplitter Reforged",
+        "rating": 5,
+        "class": "Sword",
+        "src": "mistsplitter-reforged.png"
     }
 ]

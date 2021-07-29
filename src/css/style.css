@@ -198,6 +198,14 @@ video {
 .banner-button.leaves-in-the-wind.selected {
   background-image: url('../assets/images/ui/kazuha-selected.png');
 }
+.banner-button.the-herons-court {
+  background-image: url('../assets/images/ui/ayaka.png');
+}
+
+.banner-button.the-herons-court.selected {
+  background-image: url('../assets/images/ui/ayaka-selected.png');
+}
+
 
 
 .banner-button.epitome-invocation {

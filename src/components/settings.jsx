@@ -24,6 +24,7 @@ export default class Settings extends Component {
       'born-of-ocean-swell': 'Born of Ocean Swell',
       'sparkling-steps-2': 'Sparkling Steps 2',
       'leaves-in-the-wind': 'Leaves in the Wind',
+      'the-herons-court': 'The Herons Court',
     }
     this.onChange = this.onChange.bind(this)
   }

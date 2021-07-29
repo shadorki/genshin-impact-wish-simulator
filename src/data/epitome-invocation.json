@@ -1,17 +1,18 @@
 [
 	{
-		"name": "Skyward Atlas",
+		"name": "Skyward Spine",
 		"rating": 5,
-		"class": "Catalyst",
-		"src": "skyward-atlas.png",
-		"type": "weapon"
+		"type": "weapon",
+    "isFeatured": true,
+		"class": "Polearm",
+		"src": "skyward-spine.png"
 	},
 	{
-		"name": "Freedom-Sworn",
+		"name": "Mistsplitter Reforged",
 		"rating": 5,
 		"class": "Sword",
+		"src": "mistsplitter-reforged.png",
     "isFeatured": true,
-		"src": "freedom-sworn.png",
 		"type": "weapon"
 	},
 	{
@@ -25,7 +26,6 @@
 		"name": "Skyward Harp",
 		"rating": 5,
 		"class": "Bow",
-    "isFeatured": true,
 		"src": "skyward-harp.png",
 		"type": "weapon"
 	},
@@ -37,18 +37,18 @@
 		"type": "weapon"
 	},
 	{
+		"name": "Skyward Atlas",
+		"rating": 5,
+		"class": "Catalyst",
+		"src": "skyward-atlas.png",
+		"type": "weapon"
+	},
+	{
 		"name": "Primordial Jade Winged-Spear",
 		"rating": 5,
 		"class": "Polearm",
 		"src": "primordial-jade-winged-spear.png",
 		"type": "weapon"
-	},
-	{
-		"name": "Skyward Spine",
-		"rating": 5,
-		"type": "weapon",
-		"class": "Polearm",
-		"src": "skyward-spine.png"
 	},
 	{
 		"name": "Wolf's Gravestone",
@@ -79,43 +79,43 @@
 		"type": "weapon"
 	},
 	{
-		"name": "Alley Hunter",
+		"name": "The Stringless",
 		"rating": 4,
 		"class": "Bow",
+		"src": "the-stringless.png",
     "isFeatured": true,
-		"src": "alley-hunter.png",
 		"type": "weapon"
 	},
 	{
-		"name": "Wine and Song",
+		"name": "Favonius Codex",
 		"rating": 4,
 		"class": "Catalyst",
     "isFeatured": true,
-		"src": "wine-and-song.png",
+		"src": "favonius-codex.png",
 		"type": "weapon"
 	},
 	{
-		"name": "Dragon's Bane",
+		"name": "Favonius Lance",
 		"rating": 4,
-		"class": "Polearm",
+		"class": "Lance",
     "isFeatured": true,
-		"src": "dragons-bane.png",
-		"type": "weapon"
+		"type": "weapon",
+		"src": "favonius-lance.png"
 	},
 	{
-		"name": "Favonius Greatsword",
+		"name": "Sacrificial Greatsword",
 		"rating": 4,
-		"class": "Claymore",
     "isFeatured": true,
-		"src": "favonius-greatsword.png",
-		"type": "weapon"
+		"type": "weapon",
+		"class": "Sword",
+		"src": "sacrificial-greatsword.png"
 	},
 	{
-		"name": "The Alley Flash",
+		"name": "Favonius Sword",
 		"rating": 4,
 		"class": "Sword",
+		"src": "favonius-sword.png",
     "isFeatured": true,
-		"src": "the-alley-flash.png",
 		"type": "weapon"
 	},
 	{
@@ -124,7 +124,7 @@
 		"type": "character",
 		"rating": 4,
 		"id": "749031411358288396",
-		"percentX": 62,
+		"percentX": 53,
 		"src": "Yanfei.png"
 	},
 	{
@@ -266,13 +266,6 @@
 		"type": "weapon"
 	},
 	{
-		"name": "The Stringless",
-		"rating": 4,
-		"class": "Bow",
-		"src": "the-stringless.png",
-		"type": "weapon"
-	},
-	{
 		"name": "Favonius Warbow",
 		"rating": 4,
 		"class": "Bow",
@@ -301,18 +294,11 @@
 		"type": "weapon"
 	},
 	{
-		"name": "Favonius Codex",
+		"name": "Dragon's Bane",
 		"rating": 4,
-		"class": "Catalyst",
-		"src": "favonius-codex.png",
+		"class": "Polearm",
+		"src": "dragons-bane.png",
 		"type": "weapon"
-	},
-	{
-		"name": "Favonius Lance",
-		"rating": 4,
-		"class": "Lance",
-		"type": "weapon",
-		"src": "favonius-lance.png"
 	},
 	{
 		"name": "Rainslasher",
@@ -322,17 +308,17 @@
 		"src": "rainslasher.png"
 	},
 	{
-		"name": "Sacrificial Greatsword",
-		"rating": 4,
-		"type": "weapon",
-		"class": "Sword",
-		"src": "sacrificial-greatsword.png"
-	},
-	{
 		"name": "The Bell",
 		"rating": 4,
 		"class": "Claymore",
 		"src": "the-bell.png",
+		"type": "weapon"
+	},
+	{
+		"name": "Favonius Greatsword",
+		"rating": 4,
+		"class": "Claymore",
+		"src": "favonius-greatsword.png",
 		"type": "weapon"
 	},
 	{
@@ -354,13 +340,6 @@
 		"rating": 4,
 		"class": "Sword",
 		"src": "the-flute.png",
-		"type": "weapon"
-	},
-	{
-		"name": "Favonius Sword",
-		"rating": 4,
-		"class": "Sword",
-		"src": "favonius-sword.png",
 		"type": "weapon"
 	},
 	{
