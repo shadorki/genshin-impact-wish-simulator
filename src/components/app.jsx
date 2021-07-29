@@ -19,6 +19,7 @@ import GentryOfHermitage2 from '../models/gentry-of-hermitage-2'
 import BornOfOceanSwell from '../models/born-of-ocean-swell'
 import SparklingSteps2 from '../models/sparkling-steps-2'
 import LeavesInTheWind from '../models/leaves-in-the-wind'
+import TheHeronsCourt from '../models/the-herons-court'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -49,6 +50,7 @@ export default class App extends Component {
     this.bornOfOceanSwell = new BornOfOceanSwell()
     this.sparklingSteps2 = new SparklingSteps2()
     this.leavesInTheWind = new LeavesInTheWind()
+    this.theHeronsCourt = new TheHeronsCourt()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -59,7 +61,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'leaves-in-the-wind',
+      selectedCharacterEventWish: 'the-herons-court',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -79,6 +81,7 @@ export default class App extends Component {
         'born-of-ocean-swell': 0,
         'sparkling-steps-2': 0,
         'leaves-in-the-wind': 0,
+        'the-herons-court': 0,
       }
     }
   }
@@ -181,6 +184,7 @@ export default class App extends Component {
         'born-of-ocean-swell': this.bornOfOceanSwell.getState().attemptsCount,
         'sparkling-steps-2': this.sparklingSteps2.getState().attemptsCount,
         'leaves-in-the-wind': this.leavesInTheWind.getState().attemptsCount,
+        'the-herons-court': this.theHeronsCourt.getState().attemptsCount,
       }
     })
   }
@@ -203,6 +207,7 @@ export default class App extends Component {
     this.bornOfOceanSwell.reset()
     this.sparklingSteps2.reset()
     this.leavesInTheWind.reset()
+    this.theHeronsCourt.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -241,6 +246,7 @@ export default class App extends Component {
       bornOfOceanSwell: this.bornOfOceanSwell.getState(),
       sparklingSteps2: this.sparklingSteps2.getState(),
       leavesInTheWind: this.leavesInTheWind.getState(),
+      theHeronsCourt: this.theHeronsCourt.getState(),
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -273,6 +279,7 @@ export default class App extends Component {
       this.bornOfOceanSwell.attemptsCount = data.bornOfOceanSwell || 0
       this.sparklingSteps2.attemptsCount = data.sparklingSteps2 || 0
       this.leavesInTheWind.attemptsCount = data.leavesInTheWind || 0
+      this.theHeronsCourt.attemptsCount = data.theHeronsCourt || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -304,6 +311,7 @@ export default class App extends Component {
       this.bornOfOceanSwell.setState(data.bornOfOceanSwell)
       this.sparklingSteps2.setState(data.sparklingSteps2)
       this.leavesInTheWind.setState(data.leavesInTheWind)
+      this.theHeronsCourt.setState(data.theHeronsCourt)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,

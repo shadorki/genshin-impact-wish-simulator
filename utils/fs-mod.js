@@ -11,9 +11,9 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Skyward Atlas
+ Skyward Spine
 Weapon
- Freedom-Sworn
+ Mistsplitter Reforged
 Weapon
 Amos Bow
 Weapon
@@ -21,9 +21,9 @@ Skyward Harp
 Weapon
 Lost Prayer to the Sacred Winds
 Weapon
-Primordial Jade Winged-Spear
+Skyward Atlas
 Weapon
-Skyward Spine
+Primordial Jade Winged-Spear
 Weapon
 Wolf's Gravestone
 Weapon
@@ -33,15 +33,15 @@ Skyward Blade
 Weapon
 Aquila Favonia
 Weapon
- Alley Hunter
+ The Stringless
 Weapon
- Wine and Song
+ Favonius Codex
 Weapon
- Dragon's Bane
+ Favonius Lance
 Weapon
- Favonius Greatsword
+ Sacrificial Greatsword
 Weapon
- The Alley Flash
+ Favonius Sword
 Character
 Yanfei
 Character
@@ -77,8 +77,6 @@ Rust
 Weapon
 Sacrificial Bow
 Weapon
-The Stringless
-Weapon
 Favonius Warbow
 Weapon
 Eye of Perception
@@ -87,23 +85,19 @@ Sacrificial Fragments
 Weapon
 The Widsith
 Weapon
-Favonius Codex
-Weapon
-Favonius Lance
+Dragon's Bane
 Weapon
 Rainslasher
 Weapon
-Sacrificial Greatsword
-Weapon
 The Bell
+Weapon
+Favonius Greatsword
 Weapon
 Lions Roar
 Weapon
 Sacrificial Sword
 Weapon
 The Flute
-Weapon
-Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -175,7 +169,7 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/leaves-in-the-wind.json')
+  let invitation = require('../src/data/the-herons-court.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
