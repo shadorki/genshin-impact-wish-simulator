@@ -10,30 +10,46 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-Character
- Klee
-Character
-Keqing
-Character
-Mona
-Character
-Qiqi
-Character
-Diluc
-Character
-Jean
-Character
- Sucrose
-Character
- Fischl
-Character
- Barbara
+Weapon
+ Skyward Atlas
+Weapon
+ Freedom-Sworn
+Weapon
+Amos Bow
+Weapon
+Skyward Harp
+Weapon
+Lost Prayer to the Sacred Winds
+Weapon
+Primordial Jade Winged-Spear
+Weapon
+Skyward Spine
+Weapon
+Wolf's Gravestone
+Weapon
+Skyward Pride
+Weapon
+Skyward Blade
+Weapon
+Aquila Favonia
+Weapon
+ Alley Hunter
+Weapon
+ Wine and Song
+Weapon
+ Dragon's Bane
+Weapon
+ Favonius Greatsword
+Weapon
+ The Alley Flash
 Character
 Yanfei
 Character
 Rosaria
 Character
 Xinyan
+Character
+Sucrose
 Character
 Diona
 Character
@@ -42,6 +58,8 @@ Character
 Noelle
 Character
 Bennett
+Character
+Fischl
 Character
 Ningguang
 Character
@@ -52,6 +70,8 @@ Character
 Xiangling
 Character
 Razor
+Character
+Barbara
 Weapon
 Rust
 Weapon
@@ -71,15 +91,11 @@ Favonius Codex
 Weapon
 Favonius Lance
 Weapon
-Dragon's Bane
-Weapon
 Rainslasher
 Weapon
 Sacrificial Greatsword
 Weapon
 The Bell
-Weapon
-Favonius Greatsword
 Weapon
 Lions Roar
 Weapon
@@ -139,8 +155,8 @@ Cool Steel
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    // const path = p.join(__dirname, "../src/data/epitome-invocation.json");
-    const path = p.join(__dirname, "../src/data/sparkling-steps-2.json");
+    const path = p.join(__dirname, "../src/data/epitome-invocation.json");
+    // const path = p.join(__dirname, "../src/data/sparkling-steps-2.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -156,10 +172,10 @@ Cool Steel
   }
 }
 
-run()
+// run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/gentry-of-hermitage-2.json')
+  let invitation = require('../src/data/leaves-in-the-wind.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
@@ -175,4 +191,4 @@ const validateImages = async () => {
   })
 }
 
-// validateImages()
+validateImages()

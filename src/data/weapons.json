@@ -654,5 +654,11 @@
         "rating": 5,
         "class": "Polearm",
         "src": "staff-of-homa.png"
+    },
+    {
+        "name": "Freedom-Sworn",
+        "rating": 5,
+        "class": "Sword",
+        "src": "freedom-sworn.png"
     }
 ]
