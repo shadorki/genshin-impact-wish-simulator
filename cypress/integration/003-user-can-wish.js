@@ -25,7 +25,7 @@ describe('User can wish', () => {
   })
   it('Stress wish test', () => {
     const banners = [
-      'leaves-in-the-wind',
+      'the-herons-court',
       'epitome-invocation',
       'wanderlust-invocation'
     ]

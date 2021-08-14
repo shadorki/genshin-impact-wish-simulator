@@ -255,5 +255,13 @@
     "rating": 5,
     "id": "749031380706879922",
     "percentX": 57
+  },
+  {
+    "name": "Ayaka",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 5,
+    "id": "749031381706879922",
+    "percentX": 54
   }
 ]
