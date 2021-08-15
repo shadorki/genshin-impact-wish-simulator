@@ -20,6 +20,7 @@ import BornOfOceanSwell from '../models/born-of-ocean-swell'
 import SparklingSteps2 from '../models/sparkling-steps-2'
 import LeavesInTheWind from '../models/leaves-in-the-wind'
 import TheHeronsCourt from '../models/the-herons-court'
+import TapestryOfGoldenFlames from '../models/tapestry-of-golden-flames'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -51,6 +52,7 @@ export default class App extends Component {
     this.sparklingSteps2 = new SparklingSteps2()
     this.leavesInTheWind = new LeavesInTheWind()
     this.theHeronsCourt = new TheHeronsCourt()
+    this.tapestryOfGoldenFlames = new TapestryOfGoldenFlames()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -61,7 +63,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'the-herons-court',
+      selectedCharacterEventWish: 'tapestry-of-golden-flames',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -82,6 +84,7 @@ export default class App extends Component {
         'sparkling-steps-2': 0,
         'leaves-in-the-wind': 0,
         'the-herons-court': 0,
+        'tapestry-of-golden-flames': 0,
       }
     }
   }
@@ -185,6 +188,7 @@ export default class App extends Component {
         'sparkling-steps-2': this.sparklingSteps2.getState().attemptsCount,
         'leaves-in-the-wind': this.leavesInTheWind.getState().attemptsCount,
         'the-herons-court': this.theHeronsCourt.getState().attemptsCount,
+        'tapestry-of-golden-flames': this.tapestryOfGoldenFlames.getState().attemptsCount,
       }
     })
   }
@@ -208,6 +212,7 @@ export default class App extends Component {
     this.sparklingSteps2.reset()
     this.leavesInTheWind.reset()
     this.theHeronsCourt.reset()
+    this.tapestryOfGoldenFlames.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -247,6 +252,7 @@ export default class App extends Component {
       sparklingSteps2: this.sparklingSteps2.getState(),
       leavesInTheWind: this.leavesInTheWind.getState(),
       theHeronsCourt: this.theHeronsCourt.getState(),
+      tapestryOfGoldenFlames: this.tapestryOfGoldenFlames.getState(),
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -280,6 +286,7 @@ export default class App extends Component {
       this.sparklingSteps2.attemptsCount = data.sparklingSteps2 || 0
       this.leavesInTheWind.attemptsCount = data.leavesInTheWind || 0
       this.theHeronsCourt.attemptsCount = data.theHeronsCourt || 0
+      this.tapestryOfGoldenFlames.attemptsCount = data.tapestryOfGoldenFlames || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -312,6 +319,7 @@ export default class App extends Component {
       this.sparklingSteps2.setState(data.sparklingSteps2)
       this.leavesInTheWind.setState(data.leavesInTheWind)
       this.theHeronsCourt.setState(data.theHeronsCourt)
+      this.tapestryOfGoldenFlames.setState(data.tapestryOfGoldenFlames)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,

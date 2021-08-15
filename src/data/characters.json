@@ -263,5 +263,21 @@
     "rating": 5,
     "id": "749031381706879922",
     "percentX": 54
+  },
+  {
+    "name": "Yoimiya",
+    "element": "Pyro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031317492203611",
+    "percentX": 63
+  },
+  {
+    "name": "Sayu",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031317492203611",
+    "percentX": 52
   }
 ]
