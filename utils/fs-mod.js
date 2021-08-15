@@ -11,9 +11,9 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
 Weapon
- Skyward Spine
+ Thundering Pulse
 Weapon
- Mistsplitter Reforged
+ Skyward Blade
 Weapon
 Amos Bow
 Weapon
@@ -25,23 +25,23 @@ Skyward Atlas
 Weapon
 Primordial Jade Winged-Spear
 Weapon
+Skyward Spine
+Weapon
 Wolf's Gravestone
 Weapon
 Skyward Pride
 Weapon
-Skyward Blade
-Weapon
 Aquila Favonia
 Weapon
- The Stringless
+ Favonius Warbow
 Weapon
- Favonius Codex
+ Sacrificial Fragments
 Weapon
- Favonius Lance
+ Dragon's Bane
 Weapon
- Sacrificial Greatsword
+ Rainslasher
 Weapon
- Favonius Sword
+ Sacrificial Sword
 Character
 Yanfei
 Character
@@ -77,17 +77,17 @@ Rust
 Weapon
 Sacrificial Bow
 Weapon
-Favonius Warbow
+The Stringless
 Weapon
 Eye of Perception
 Weapon
-Sacrificial Fragments
-Weapon
 The Widsith
 Weapon
-Dragon's Bane
+Favonius Codex
 Weapon
-Rainslasher
+Favonius Lance
+Weapon
+Sacrificial Greatsword
 Weapon
 The Bell
 Weapon
@@ -95,9 +95,9 @@ Favonius Greatsword
 Weapon
 Lions Roar
 Weapon
-Sacrificial Sword
-Weapon
 The Flute
+Weapon
+Favonius Sword
 Weapon
 Slingshot
 Weapon
@@ -124,7 +124,7 @@ Weapon
 Harbinger of Dawn
 Weapon
 Cool Steel
-    `;
+    `
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
     itemList.shift()
@@ -169,7 +169,7 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/the-herons-court.json')
+  let invitation = require('../src/data/tapestry-of-golden-flames.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))

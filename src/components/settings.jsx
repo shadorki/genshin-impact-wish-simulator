@@ -25,6 +25,7 @@ export default class Settings extends Component {
       'sparkling-steps-2': 'Sparkling Steps 2',
       'leaves-in-the-wind': 'Leaves in the Wind',
       'the-herons-court': 'The Herons Court',
+      'tapestry-of-golden-flames': 'Tapestry of Golden Flames',
     }
     this.onChange = this.onChange.bind(this)
   }

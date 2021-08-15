@@ -32,7 +32,7 @@ describe('User can use inventory', () => {
   })
   it('Validates the inventory', () => {
     const banners = [
-      'the-herons-court',
+      'tapestry-of-golden-flames',
       'epitome-invocation',
       'wanderlust-invocation'
     ]
