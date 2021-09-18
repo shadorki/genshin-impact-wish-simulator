@@ -206,6 +206,13 @@ video {
   background-image: url('../assets/images/ui/ayaka-selected.png');
 }
 
+.banner-button.tapestry-of-golden-flames {
+  background-image: url('../assets/images/ui/yoimiya.png');
+}
+
+.banner-button.tapestry-of-golden-flames.selected {
+  background-image: url('../assets/images/ui/yoimiya-selected.png');
+}
 
 
 .banner-button.epitome-invocation {

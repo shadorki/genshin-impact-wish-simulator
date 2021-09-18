@@ -1,13 +1,13 @@
 [
   {
-    "name": "Klee",
+    "name": "Yoimiya",
     "element": "Pyro",
     "type": "character",
     "rating": 5,
-    "id": "749031404964151376",
+    "id": "749031317492203611",
+    "percentX": 63,
     "isFeatured": true,
-    "percentX": 57,
-    "src": "Klee.png"
+    "src": "Yoimiya.png"
   },
   {
     "name": "Keqing",
@@ -55,34 +55,32 @@
     "src": "Jean.png"
   },
   {
-    "name": "Sucrose",
+    "name": "Sayu",
     "element": "Anemo",
     "type": "character",
     "rating": 4,
+    "id": "749031317492203611",
+    "percentX": 52,
     "isFeatured": true,
-    "id": "749031457019658401",
-    "percentX": 60,
-    "src": "Sucrose.png"
+    "src": "Sayu.png"
   },
   {
-    "name": "Fischl",
-    "element": "Electro",
+    "name": "Xinyan",
+    "element": "Pyro",
     "type": "character",
     "rating": 4,
-    "isFeatured": true,
-    "id": "749031374052393120",
-    "percentX": 59,
-    "src": "Fischl.png"
-  },
-  {
-    "name": "Barbara",
-    "element": "Hydro",
-    "type": "character",
-    "rating": 4,
-    "isFeatured": true,
-    "id": "749031327726174398",
     "percentX": 58,
-    "src": "Barbara.png"
+    "isFeatured": true,
+    "src": "Xinyan.png"
+  },
+  {
+    "name": "Diona",
+    "element": "Cryo",
+    "type": "character",
+    "rating": 4,
+    "percentX": 57,
+    "isFeatured": true,
+    "src": "Diona.png"
   },
   {
     "name": "Yanfei",
@@ -90,7 +88,7 @@
     "type": "character",
     "rating": 4,
     "id": "749031411358288396",
-    "percentX": 62,
+    "percentX": 53,
     "src": "Yanfei.png"
   },
   {
@@ -103,20 +101,13 @@
     "src": "Rosaria.png"
   },
   {
-    "name": "Xinyan",
-    "element": "Pyro",
+    "name": "Sucrose",
+    "element": "Anemo",
     "type": "character",
     "rating": 4,
-    "percentX": 58,
-    "src": "Xinyan.png"
-  },
-  {
-    "name": "Diona",
-    "element": "Cryo",
-    "type": "character",
-    "rating": 4,
-    "percentX": 57,
-    "src": "Diona.png"
+    "id": "749031457019658401",
+    "percentX": 60,
+    "src": "Sucrose.png"
   },
   {
     "name": "Chongyun",
@@ -144,6 +135,15 @@
     "id": "749031351533043772",
     "percentX": 58,
     "src": "Bennett.png"
+  },
+  {
+    "name": "Fischl",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031374052393120",
+    "percentX": 59,
+    "src": "Fischl.png"
   },
   {
     "name": "Ningguang",
@@ -189,6 +189,15 @@
     "id": "749031449864306719",
     "percentX": 42,
     "src": "Razor.png"
+  },
+  {
+    "name": "Barbara",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031327726174398",
+    "percentX": 58,
+    "src": "Barbara.png"
   },
   {
     "name": "Rust",
