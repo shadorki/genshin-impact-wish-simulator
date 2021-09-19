@@ -277,7 +277,31 @@
     "element": "Anemo",
     "type": "character",
     "rating": 4,
-    "id": "749031317492203611",
+    "id": "749031317492223611",
+    "percentX": 52
+  },
+  {
+    "name": "Shogun",
+    "element": "Electro",
+    "type": "character",
+    "rating": 5,
+    "id": "749031317492203621",
+    "percentX": 52
+  },
+  {
+    "name": "Sara",
+    "element": "Electro",
+    "type": "character",
+    "rating": 4,
+    "id": "749031397492203621",
+    "percentX": 52
+  },
+  {
+    "name": "Kokomi",
+    "element": "Hydro",
+    "type": "character",
+    "rating": 5,
+    "id": "749011397492203621",
     "percentX": 52
   }
 ]
