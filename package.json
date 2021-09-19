@@ -1,6 +1,6 @@
 {
   "name": "genshin-impact-wish-simulator",
-  "version": "2.1.0s",
+  "version": "2.1.0",
   "description": "A React.js web application to simulate Genshin Impact gacha in the browser",
   "main": "index.js",
   "scripts": {
