@@ -8,6 +8,7 @@ import SparklingSteps2Details from './sparkling-steps-2-details'
 import LeavesInTheWindDetails from './leaves-in-the-wind-details'
 import TheHeronsCourtDetails from './the-herons-court-details'
 import TapestryOfGoldenFlamesDetails from './tapestry-of-golden-flames-details'
+import ReignOfSerenityDetails from './reign-of-serenity-details'
 import SparklingStepsDetails from './sparkling-steps-details'
 import GentryOfHermitageDetails from './gentry-of-hermitage-details'
 import FarewellOfSnezhnayaDetails from './farewell-of-snezhnaya-details'
@@ -33,6 +34,7 @@ export default function Details(props) {
     'leaves-in-the-wind': <LeavesInTheWindDetails />,
     'the-herons-court': <TheHeronsCourtDetails />,
     'tapestry-of-golden-flames': <TapestryOfGoldenFlamesDetails />,
+    'reign-of-serenity': <ReignOfSerenityDetails />,
     'sparkling-steps': <SparklingStepsDetails/>,
     'gentry-of-hermitage': <GentryOfHermitageDetails/>,
     'farewell-of-snezhnaya': <FarewellOfSnezhnayaDetails/>,

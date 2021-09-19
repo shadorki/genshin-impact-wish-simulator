@@ -10,24 +10,40 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-    Character
-     Shogun
-    Character
-    Keqing
-    Character
-    Mona
-    Character
-    Qiqi
-    Character
-    Diluc
-    Character
-    Jean
-    Character
-     Sara
-    Character
-     Sucrose
-    Character
-     Xiangling
+    Weapon
+     Engulfing Lightning
+    Weapon
+     The Unforged
+    Weapon
+    Amos Bow
+    Weapon
+    Skyward Harp
+    Weapon
+    Lost Prayer to the Sacred Winds
+    Weapon
+    Skyward Atlas
+    Weapon
+    Primordial Jade Winged-Spear
+    Weapon
+    Skyward Spine
+    Weapon
+    Wolf's Gravestone
+    Weapon
+    Skyward Pride
+    Weapon
+    Skyward Blade
+    Weapon
+    Aquila Favonia
+    Weapon
+     Sacrificial Bow
+    Weapon
+     The Widsith
+    Weapon
+     Favonius Lance
+    Weapon
+     The Bell
+    Weapon
+     Lions Roar
     Character
     Sayu
     Character
@@ -36,6 +52,8 @@ const run = async () => {
     Rosaria
     Character
     Xinyan
+    Character
+    Sucrose
     Character
     Diona
     Character
@@ -53,13 +71,13 @@ const run = async () => {
     Character
     Beidou
     Character
+    Xiangling
+    Character
     Razor
     Character
     Barbara
     Weapon
     Rust
-    Weapon
-    Sacrificial Bow
     Weapon
     The Stringless
     Weapon
@@ -69,11 +87,7 @@ const run = async () => {
     Weapon
     Sacrificial Fragments
     Weapon
-    The Widsith
-    Weapon
     Favonius Codex
-    Weapon
-    Favonius Lance
     Weapon
     Dragon's Bane
     Weapon
@@ -81,11 +95,7 @@ const run = async () => {
     Weapon
     Sacrificial Greatsword
     Weapon
-    The Bell
-    Weapon
     Favonius Greatsword
-    Weapon
-    Lions Roar
     Weapon
     Sacrificial Sword
     Weapon
@@ -143,8 +153,8 @@ const run = async () => {
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    // const path = p.join(__dirname, "../src/data/epitome-invocation.json");
-    const path = p.join(__dirname, "../src/data/reign-of-serenity.json");
+    const path = p.join(__dirname, "../src/data/epitome-invocation.json");
+    // const path = p.join(__dirname, "../src/data/reign-of-serenity.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -160,10 +170,10 @@ const run = async () => {
   }
 }
 
-run()
+// run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/tapestry-of-golden-flames.json')
+  let invitation = require('../src/data/reign-of-serenity.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
@@ -179,4 +189,4 @@ const validateImages = async () => {
   })
 }
 
-// validateImages()
+validateImages()
