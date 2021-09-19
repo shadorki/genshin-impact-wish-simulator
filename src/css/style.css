@@ -214,6 +214,13 @@ video {
   background-image: url('../assets/images/ui/yoimiya-selected.png');
 }
 
+.banner-button.reign-of-serenity {
+  background-image: url('../assets/images/ui/shogun.png');
+}
+
+.banner-button.reign-of-serenity.selected {
+  background-image: url('../assets/images/ui/shogun-selected.png');
+}
 
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');

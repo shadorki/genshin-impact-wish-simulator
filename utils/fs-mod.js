@@ -10,120 +10,124 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-Weapon
- Thundering Pulse
-Weapon
- Skyward Blade
-Weapon
-Amos Bow
-Weapon
-Skyward Harp
-Weapon
-Lost Prayer to the Sacred Winds
-Weapon
-Skyward Atlas
-Weapon
-Primordial Jade Winged-Spear
-Weapon
-Skyward Spine
-Weapon
-Wolf's Gravestone
-Weapon
-Skyward Pride
-Weapon
-Aquila Favonia
-Weapon
- Favonius Warbow
-Weapon
- Sacrificial Fragments
-Weapon
- Dragon's Bane
-Weapon
- Rainslasher
-Weapon
- Sacrificial Sword
-Character
-Yanfei
-Character
-Rosaria
-Character
-Xinyan
-Character
-Sucrose
-Character
-Diona
-Character
-Chongyun
-Character
-Noelle
-Character
-Bennett
-Character
-Fischl
-Character
-Ningguang
-Character
-Xingqiu
-Character
-Beidou
-Character
-Xiangling
-Character
-Razor
-Character
-Barbara
-Weapon
-Rust
-Weapon
-Sacrificial Bow
-Weapon
-The Stringless
-Weapon
-Eye of Perception
-Weapon
-The Widsith
-Weapon
-Favonius Codex
-Weapon
-Favonius Lance
-Weapon
-Sacrificial Greatsword
-Weapon
-The Bell
-Weapon
-Favonius Greatsword
-Weapon
-Lions Roar
-Weapon
-The Flute
-Weapon
-Favonius Sword
-Weapon
-Slingshot
-Weapon
-Sharpshooter's Oath
-Weapon
-Raven Bow
-Weapon
-Emerald Orb
-Weapon
-Thrilling Tales of Dragon Slayers
-Weapon
-Magic Guide
-Weapon
-Black Tassel
-Weapon
-Debate Club
-Weapon
-Bloodtainted Greatsword
-Weapon
-Ferrous Shadow
-Weapon
-Skyrider Sword
-Weapon
-Harbinger of Dawn
-Weapon
-Cool Steel
+    Weapon
+     Engulfing Lightning
+    Weapon
+     The Unforged
+    Weapon
+    Amos Bow
+    Weapon
+    Skyward Harp
+    Weapon
+    Lost Prayer to the Sacred Winds
+    Weapon
+    Skyward Atlas
+    Weapon
+    Primordial Jade Winged-Spear
+    Weapon
+    Skyward Spine
+    Weapon
+    Wolf's Gravestone
+    Weapon
+    Skyward Pride
+    Weapon
+    Skyward Blade
+    Weapon
+    Aquila Favonia
+    Weapon
+     Sacrificial Bow
+    Weapon
+     The Widsith
+    Weapon
+     Favonius Lance
+    Weapon
+     The Bell
+    Weapon
+     Lions Roar
+    Character
+    Sayu
+    Character
+    Yanfei
+    Character
+    Rosaria
+    Character
+    Xinyan
+    Character
+    Sucrose
+    Character
+    Diona
+    Character
+    Chongyun
+    Character
+    Noelle
+    Character
+    Bennett
+    Character
+    Fischl
+    Character
+    Ningguang
+    Character
+    Xingqiu
+    Character
+    Beidou
+    Character
+    Xiangling
+    Character
+    Razor
+    Character
+    Barbara
+    Weapon
+    Rust
+    Weapon
+    The Stringless
+    Weapon
+    Favonius Warbow
+    Weapon
+    Eye of Perception
+    Weapon
+    Sacrificial Fragments
+    Weapon
+    Favonius Codex
+    Weapon
+    Dragon's Bane
+    Weapon
+    Rainslasher
+    Weapon
+    Sacrificial Greatsword
+    Weapon
+    Favonius Greatsword
+    Weapon
+    Sacrificial Sword
+    Weapon
+    The Flute
+    Weapon
+    Favonius Sword
+    Weapon
+    Slingshot
+    Weapon
+    Sharpshooter's Oath
+    Weapon
+    Raven Bow
+    Weapon
+    Emerald Orb
+    Weapon
+    Thrilling Tales of Dragon Slayers
+    Weapon
+    Magic Guide
+    Weapon
+    Black Tassel
+    Weapon
+    Debate Club
+    Weapon
+    Bloodtainted Greatsword
+    Weapon
+    Ferrous Shadow
+    Weapon
+    Skyrider Sword
+    Weapon
+    Harbinger of Dawn
+    Weapon
+    Cool Steel    
     `
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
@@ -150,7 +154,7 @@ Cool Steel
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
     const path = p.join(__dirname, "../src/data/epitome-invocation.json");
-    // const path = p.join(__dirname, "../src/data/sparkling-steps-2.json");
+    // const path = p.join(__dirname, "../src/data/reign-of-serenity.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -169,7 +173,7 @@ Cool Steel
 // run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/tapestry-of-golden-flames.json')
+  let invitation = require('../src/data/reign-of-serenity.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))

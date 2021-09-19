@@ -672,5 +672,11 @@
         "rating": 5,
         "class": "Sword",
         "src": "mistsplitter-reforged.png"
+    },
+    {
+        "name": "Engulfing Lightning",
+        "rating": 5,
+        "class": "Polearm",
+        "src": "engulfing-lightning.png"
     }
 ]
