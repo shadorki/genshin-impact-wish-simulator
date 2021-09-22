@@ -1,17 +1,17 @@
 [
   {
-    "name": "Thundering Pulse",
+    "name": "Engulfing Lightning",
     "rating": 5,
-    "class": "Bow",
-    "src": "thundering-pulse.png",
+    "class": "Polearm",
+    "src": "engulfing-lightning.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Skyward Blade",
+    "name": "The Unforged",
     "rating": 5,
-    "class": "Sword",
-    "src": "skyward-blade.png",
+    "class": "Claymore",
+    "src": "the-unforged.png",
     "isFeatured": true,
     "type": "weapon"
   },
@@ -72,6 +72,13 @@
     "type": "weapon"
   },
   {
+    "name": "Skyward Blade",
+    "rating": 5,
+    "class": "Sword",
+    "src": "skyward-blade.png",
+    "type": "weapon"
+  },
+  {
     "name": "Aquila Favonia",
     "rating": 5,
     "class": "Sword",
@@ -79,44 +86,53 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Warbow",
+    "name": "Sacrificial Bow",
     "rating": 4,
     "class": "Bow",
-    "src": "favonius-warbow.png",
+    "src": "sacrificial-bow.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Sacrificial Fragments",
+    "name": "The Widsith",
     "rating": 4,
     "class": "Catalyst",
-    "src": "sacrificial-fragments.png",
+    "src": "the-widsith.png",
     "isFeatured": true,
     "type": "weapon"
   },
   {
-    "name": "Dragon's Bane",
+    "name": "Favonius Lance",
     "rating": 4,
-    "class": "Polearm",
-    "src": "dragons-bane.png",
-    "isFeatured": true,
-    "type": "weapon"
-  },
-  {
-    "name": "Rainslasher",
-    "rating": 4,
+    "class": "Lance",
     "type": "weapon",
-    "class": "Claymore",
     "isFeatured": true,
-    "src": "rainslasher.png"
+    "src": "favonius-lance.png"
   },
   {
-    "name": "Sacrificial Sword",
+    "name": "The Bell",
+    "rating": 4,
+    "class": "Claymore",
+    "src": "the-bell.png",
+    "isFeatured": true,
+    "type": "weapon"
+  },
+  {
+    "name": "Lions Roar",
     "rating": 4,
     "class": "Sword",
-    "src": "sacrificial-sword.png",
+    "src": "lions-roar.png",
     "isFeatured": true,
     "type": "weapon"
+  },
+  {
+    "name": "Sayu",
+    "element": "Anemo",
+    "type": "character",
+    "rating": 4,
+    "id": "749031317492223611",
+    "percentX": 52,
+    "src": "Sayu.png"
   },
   {
     "name": "Yanfei",
@@ -259,17 +275,17 @@
     "type": "weapon"
   },
   {
-    "name": "Sacrificial Bow",
-    "rating": 4,
-    "class": "Bow",
-    "src": "sacrificial-bow.png",
-    "type": "weapon"
-  },
-  {
     "name": "The Stringless",
     "rating": 4,
     "class": "Bow",
     "src": "the-stringless.png",
+    "type": "weapon"
+  },
+  {
+    "name": "Favonius Warbow",
+    "rating": 4,
+    "class": "Bow",
+    "src": "favonius-warbow.png",
     "type": "weapon"
   },
   {
@@ -280,10 +296,10 @@
     "type": "weapon"
   },
   {
-    "name": "The Widsith",
+    "name": "Sacrificial Fragments",
     "rating": 4,
     "class": "Catalyst",
-    "src": "the-widsith.png",
+    "src": "sacrificial-fragments.png",
     "type": "weapon"
   },
   {
@@ -294,11 +310,18 @@
     "type": "weapon"
   },
   {
-    "name": "Favonius Lance",
+    "name": "Dragon's Bane",
     "rating": 4,
-    "class": "Lance",
+    "class": "Polearm",
+    "src": "dragons-bane.png",
+    "type": "weapon"
+  },
+  {
+    "name": "Rainslasher",
+    "rating": 4,
     "type": "weapon",
-    "src": "favonius-lance.png"
+    "class": "Claymore",
+    "src": "rainslasher.png"
   },
   {
     "name": "Sacrificial Greatsword",
@@ -308,13 +331,6 @@
     "src": "sacrificial-greatsword.png"
   },
   {
-    "name": "The Bell",
-    "rating": 4,
-    "class": "Claymore",
-    "src": "the-bell.png",
-    "type": "weapon"
-  },
-  {
     "name": "Favonius Greatsword",
     "rating": 4,
     "class": "Claymore",
@@ -322,10 +338,10 @@
     "type": "weapon"
   },
   {
-    "name": "Lions Roar",
+    "name": "Sacrificial Sword",
     "rating": 4,
     "class": "Sword",
-    "src": "lions-roar.png",
+    "src": "sacrificial-sword.png",
     "type": "weapon"
   },
   {
