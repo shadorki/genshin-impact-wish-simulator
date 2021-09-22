@@ -11,9 +11,9 @@ const run = async () => {
     const items = [...weapons, ...characters]
     let itemList = `
     Weapon
-     Engulfing Lightning
+     Everlasting Moonglow
     Weapon
-     The Unforged
+     Primordial Jade Cutter
     Weapon
     Amos Bow
     Weapon
@@ -35,15 +35,15 @@ const run = async () => {
     Weapon
     Aquila Favonia
     Weapon
-     Sacrificial Bow
+     The Stringless
     Weapon
-     The Widsith
+     Favonius Codex
     Weapon
-     Favonius Lance
+     Dragon's Bane
     Weapon
-     The Bell
+     Favonius Greatsword
     Weapon
-     Lions Roar
+     The Flute
     Character
     Sayu
     Character
@@ -79,7 +79,7 @@ const run = async () => {
     Weapon
     Rust
     Weapon
-    The Stringless
+    Sacrificial Bow
     Weapon
     Favonius Warbow
     Weapon
@@ -87,19 +87,19 @@ const run = async () => {
     Weapon
     Sacrificial Fragments
     Weapon
-    Favonius Codex
+    The Widsith
     Weapon
-    Dragon's Bane
+    Favonius Lance
     Weapon
     Rainslasher
     Weapon
     Sacrificial Greatsword
     Weapon
-    Favonius Greatsword
+    The Bell
+    Weapon
+    Lions Roar
     Weapon
     Sacrificial Sword
-    Weapon
-    The Flute
     Weapon
     Favonius Sword
     Weapon
@@ -127,7 +127,7 @@ const run = async () => {
     Weapon
     Harbinger of Dawn
     Weapon
-    Cool Steel    
+    Cool Steel
     `
     itemList = itemList.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "Character" && s !== "Weapon")
     itemList.pop()
@@ -154,7 +154,7 @@ const run = async () => {
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
     const path = p.join(__dirname, "../src/data/epitome-invocation.json");
-    // const path = p.join(__dirname, "../src/data/reign-of-serenity.json");
+    // const path = p.join(__dirname, "../src/data/drifting-luminescence.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -173,7 +173,7 @@ const run = async () => {
 // run()
 
 const validateImages = async () => {
-  let invitation = require('../src/data/reign-of-serenity.json')
+  let invitation = require('../src/data/drifting-luminescence.json')
   let wanderlust = require('../src/data/wanderlust-invocation.json')
   let epitome = require('../src/data/epitome-invocation.json')
   const weaponPix = await readdir(p.join(__dirname, '../src/assets/images/weapons'))
@@ -189,4 +189,4 @@ const validateImages = async () => {
   })
 }
 
-validateImages()
+// validateImages()

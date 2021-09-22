@@ -678,5 +678,11 @@
         "rating": 5,
         "class": "Polearm",
         "src": "engulfing-lightning.png"
+    },
+    {
+        "name": "Everlasting Moonglow",
+        "rating": 5,
+        "class": "Catalyst",
+        "src": "everlasting-moonglow.png"
     }
 ]
