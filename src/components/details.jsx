@@ -10,6 +10,7 @@ import TheHeronsCourtDetails from './the-herons-court-details'
 import TapestryOfGoldenFlamesDetails from './tapestry-of-golden-flames-details'
 import ReignOfSerenityDetails from './reign-of-serenity-details'
 import DriftingLuminescenceDetails from './drifting-luminescence-details'
+import MomentOfBloom2Details from './moment-of-bloom-2-details'
 import SparklingStepsDetails from './sparkling-steps-details'
 import GentryOfHermitageDetails from './gentry-of-hermitage-details'
 import FarewellOfSnezhnayaDetails from './farewell-of-snezhnaya-details'
@@ -37,6 +38,7 @@ export default function Details(props) {
     'tapestry-of-golden-flames': <TapestryOfGoldenFlamesDetails />,
     'reign-of-serenity': <ReignOfSerenityDetails />,
     'drifting-luminescence': <DriftingLuminescenceDetails />,
+    'moment-of-bloom-2': <MomentOfBloom2Details />,
     'sparkling-steps': <SparklingStepsDetails/>,
     'gentry-of-hermitage': <GentryOfHermitageDetails/>,
     'farewell-of-snezhnaya': <FarewellOfSnezhnayaDetails/>,

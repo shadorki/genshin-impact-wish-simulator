@@ -176,11 +176,12 @@ video {
   background-image: url('../assets/images/ui/keqing-selected.png');
 }
 
-.banner-button.moment-of-bloom {
+.banner-button.moment-of-bloom, 
+.banner-button.moment-of-bloom-2 {
   background-image: url('../assets/images/ui/hu-tao.png');
 }
 
-.banner-button.moment-of-bloom.selected {
+.banner-button.moment-of-bloom.selected, .banner-button.moment-of-bloom-2.selected {
   background-image: url('../assets/images/ui/hu-tao-selected.png');
 }
 
