@@ -27,6 +27,7 @@ export default class Settings extends Component {
       'the-herons-court': 'The Herons Court',
       'tapestry-of-golden-flames': 'Tapestry of Golden Flames',
       'reign-of-serenity': 'Reign of Serenity',
+      'drifting-luminescence': 'Drifting Luminescence',
     }
     this.onChange = this.onChange.bind(this)
   }

@@ -222,6 +222,14 @@ video {
   background-image: url('../assets/images/ui/shogun-selected.png');
 }
 
+.banner-button.drifting-luminescence {
+  background-image: url('../assets/images/ui/kokomi.png');
+}
+
+.banner-button.drifting-luminescence.selected {
+  background-image: url('../assets/images/ui/kokomi-selected.png');
+}
+
 .banner-button.epitome-invocation {
   background-image: url('../assets/images/ui/weapon.png');
 }

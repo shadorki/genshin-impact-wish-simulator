@@ -22,6 +22,7 @@ import LeavesInTheWind from '../models/leaves-in-the-wind'
 import TheHeronsCourt from '../models/the-herons-court'
 import TapestryOfGoldenFlames from '../models/tapestry-of-golden-flames'
 import ReignOfSerenity from '../models/reign-of-serenity'
+import DriftingLuminescence from '../models/drifting-luminescence'
 import BeginnersWish from '../models/beginners-wish'
 import EpitomeInvocation from '../models/epitome-invocation'
 import WanderlustInvocation from '../models/wanderlust-invocation'
@@ -55,6 +56,7 @@ export default class App extends Component {
     this.theHeronsCourt = new TheHeronsCourt()
     this.tapestryOfGoldenFlames = new TapestryOfGoldenFlames()
     this.reignOfSerenity = new ReignOfSerenity()
+    this.driftingLuminescence = new DriftingLuminescence()
     this.state = {
       view: 'banners',
       currentDetails: 'beginners-wish',
@@ -65,7 +67,7 @@ export default class App extends Component {
       wasDisclaimerSeen: false,
       isSettingsPageVisible: false,
       currentWishes: [],
-      selectedCharacterEventWish: 'reign-of-serenity',
+      selectedCharacterEventWish: 'drifting-luminescence',
       userWishes: {
         'beginners-wish': 0,
         'invitation-to-mundane-life': 0,
@@ -88,6 +90,7 @@ export default class App extends Component {
         'the-herons-court': 0,
         'tapestry-of-golden-flames': 0,
         'reign-of-serenity': 0,
+        'drifting-luminescence': 0,
       }
     }
   }
@@ -193,6 +196,7 @@ export default class App extends Component {
         'the-herons-court': this.theHeronsCourt.getState().attemptsCount,
         'tapestry-of-golden-flames': this.tapestryOfGoldenFlames.getState().attemptsCount,
         'reign-of-serenity': this.reignOfSerenity.getState().attemptsCount,
+        'drifting-luminescence': this.driftingLuminescence.getState().attemptsCount,
       }
     })
   }
@@ -218,6 +222,7 @@ export default class App extends Component {
     this.theHeronsCourt.reset()
     this.tapestryOfGoldenFlames.reset()
     this.reignOfSerenity.reset()
+    this.driftingLuminescence.reset()
     this.setState({
       isBeginnersWishLimited: false,
       isBeginnersWishOver10: false,
@@ -259,6 +264,7 @@ export default class App extends Component {
       theHeronsCourt: this.theHeronsCourt.getState(),
       tapestryOfGoldenFlames: this.tapestryOfGoldenFlames.getState(),
       reignOfSerenity: this.reignOfSerenity.getState(),
+      driftingLuminescence: this.driftingLuminescence.getState(),
     }
     localStorage.setItem('data', JSON.stringify(data))
     this.syncWishCountersWithState()
@@ -294,6 +300,7 @@ export default class App extends Component {
       this.theHeronsCourt.attemptsCount = data.theHeronsCourt || 0
       this.tapestryOfGoldenFlames.attemptsCount = data.tapestryOfGoldenFlames || 0
       this.reignOfSerenity.attemptsCount = data.reignOfSerenity || 0
+      this.driftingLuminescence.attemptsCount = data.driftingLuminescence || 0
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
@@ -328,6 +335,7 @@ export default class App extends Component {
       this.theHeronsCourt.setState(data.theHeronsCourt)
       this.tapestryOfGoldenFlames.setState(data.tapestryOfGoldenFlames)
       this.reignOfSerenity.setState(data.reignOfSerenity)
+      this.driftingLuminescence.setState(data.driftingLuminescence)
       this.setState({
         isBeginnersWishLimited,
         isBeginnersWishOver10,
