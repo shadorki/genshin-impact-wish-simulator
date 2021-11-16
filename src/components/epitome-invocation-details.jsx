@@ -27,14 +27,14 @@ export default function EpitomeInvocationDetails() {
         />
         <Row>
           <DetailsBox
-            title={"Everlasting Moonglow"}
+            title={"Staff of Homa"}
             isWeapon={true}
-            src={"everlasting-moonglow.png"}
+            src={"staff-of-homa.png"}
           />
           <DetailsBox
-            title={"Primordial Jade Cutter"}
+            title={"Elegy for the End"}
             isWeapon={true}
-            src={"primordial-jade-cutter.png"}
+            src={"elegy-for-the-end.png"}
           />
         </Row>
         <StarsBar
@@ -44,29 +44,29 @@ export default function EpitomeInvocationDetails() {
         />
         <Row>
           <DetailsBox
-            title={"The Flute"}
+            title={"Wavebreaker's Fin"}
             isWeapon={true}
-            src={"the-flute.png"}
+            src={"wavebreakers-fin.png"}
           />
           <DetailsBox
-            title={"Favonius Greatsword"}
+            title={"Mouun's Moon"}
             isWeapon={true}
-            src={"the-bell.png"}
+            src={"mouuns-moon.png"}
           />
           <DetailsBox
-            title={"Dragon's Bane"}
+            title={"Sacrificial Sword"}
             isWeapon={true}
-            src={"dragons-bane.png"}
+            src={"sacrificial-sword.png"}
           />
           <DetailsBox
-            title={"Favonius Codex"}
+            title={"Rainslasher"}
             isWeapon={true}
-            src={"favonius-codex.png"}
+            src={"rainslasher.png"}
           />
           <DetailsBox
-            title={"The Stringless"}
+            title={"The Widsith"}
             isWeapon={true}
-            src={"the-stringless.png"}
+            src={"the-widsith.png"}
           />
         </Row>
         <SubheadingSeparator content="Wish Details" />
@@ -77,15 +77,15 @@ export default function EpitomeInvocationDetails() {
               Event Wish "<span className="orange">Epitome</span> Invocation" is
               now available. During this event wish,the event-exclusive 5-star
               weapon{" "}
-              <span className="brass">Everlasting Moonglow (Catalyst)</span> and
+              <span className="brass">Staff of Homa (Polearm)</span> and
               the 5-star weapon
-              <span className="brass">Primordial Jade Cutter (Sword)</span> as well as
+              <span className="brass">Elegy for the End (Bow)</span> as well as
               the 4-star weapons{" "}
-              <span className="purple">The Flute (Sword)</span>,
-              <span className="purple">Favonius Greatsword (Claymore)</span>,{" "}
-              <span className="purple">Dragon's Bane (Polearm)</span>,{" "}
-              <span className="purple">Favonius Codex (Catalyst)</span>, and{" "}
-              <span className="purple">The Stringless (Bow)</span> will get a{" "}
+              <span className="purple">Wavebreaker's Fin (Polearm)</span>,
+              <span className="purple">Mouun's Moon (Bow)</span>,{" "}
+              <span className="purple">Sacrificial Sword (Sword)</span>,{" "}
+              <span className="purple">Rainslasher (Claymore)</span>, and{" "}
+              <span className="purple">The Widsith (Catalyst)</span> will get a{" "}
               <span className="orange">huge drop-rate boost</span>!
               <br />
               <span className="orange">
@@ -107,9 +107,9 @@ export default function EpitomeInvocationDetails() {
               promotional weapons{" "}
               <span className="brass">
                 {" "}
-                <span className="brass">Everlasting Moonglow (Catalyst)</span> and
+                <span className="brass">Staff of Homa (Polearm)</span> and
               </span>{" "}
-              and <span className="brass">Primordial Jade Cutter (Sword)</span>. If the
+              and <span className="brass">Elegy for the End (Bow)</span>. If the
               first 5-star weapon you win in this event wish is not one of the
               promotional weapons, then the next 5-star weapon you win is{" "}
               <span className="orange">guaranteed</span> to be a promotional
@@ -134,11 +134,11 @@ export default function EpitomeInvocationDetails() {
               The first time you win a 4-star item in this event wish, there is
               a <span className="orange">75%</span> chance that it will be one
               of the featured weapons{" "}
-              <span className="purple">The Flute (Sword)</span>,
-              <span className="purple">Favonius Greatsword (Claymore)</span>,{" "}
-              <span className="purple">Dragon's Bane (Polearm),</span>,{" "}
-              <span className="purple">Favonius Codex (Catalyst)</span>, and{" "}
-              <span className="purple">The Stringless (Bow)</span>. If the
+              <span className="purple">Wavebreaker's Fin (Polearm)</span>,
+              <span className="purple">Mouun's Moon (Bow)</span>,{" "}
+              <span className="purple">Sacrificial Sword (Sword),</span>,{" "}
+              <span className="purple">Rainslasher (Claymore)</span>, and{" "}
+              <span className="purple">The Widsith (Catalyst)</span>. If the
               first 4-star item you win in this event wish is not one of the
               featured weapons, then the next 4-star item you win is{" "}
               <span className="orange">guaranteed</span> to be a featured

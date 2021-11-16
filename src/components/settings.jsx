@@ -28,6 +28,7 @@ export default class Settings extends Component {
       'tapestry-of-golden-flames': 'Tapestry of Golden Flames',
       'reign-of-serenity': 'Reign of Serenity',
       'drifting-luminescence': 'Drifting Luminescence',
+      'moment-of-bloom-2': 'Moment of Bloom 2',
     }
     this.onChange = this.onChange.bind(this)
   }
