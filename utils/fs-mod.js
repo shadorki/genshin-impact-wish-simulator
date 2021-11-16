@@ -10,42 +10,26 @@ const run = async () => {
   try {
     const items = [...weapons, ...characters]
     let itemList = `
-    Weapon
-     Everlasting Moonglow
-    Weapon
-     Primordial Jade Cutter
-    Weapon
-    Amos Bow
-    Weapon
-    Skyward Harp
-    Weapon
-    Lost Prayer to the Sacred Winds
-    Weapon
-    Skyward Atlas
-    Weapon
-    Primordial Jade Winged-Spear
-    Weapon
-    Skyward Spine
-    Weapon
-    Wolf's Gravestone
-    Weapon
-    Skyward Pride
-    Weapon
-    Skyward Blade
-    Weapon
-    Aquila Favonia
-    Weapon
-     The Stringless
-    Weapon
-     Favonius Codex
-    Weapon
-     Dragon's Bane
-    Weapon
-     Favonius Greatsword
-    Weapon
-     The Flute
     Character
-    Sayu
+     Hu Tao
+    Character
+    Keqing
+    Character
+    Mona
+    Character
+    Qiqi
+    Character
+    Diluc
+    Character
+    Jean
+    Character
+     Sayu
+    Character
+     Thoma
+    Character
+     Diona
+    Character
+    Kujou Sara
     Character
     Yanfei
     Character
@@ -54,8 +38,6 @@ const run = async () => {
     Xinyan
     Character
     Sucrose
-    Character
-    Diona
     Character
     Chongyun
     Character
@@ -81,6 +63,8 @@ const run = async () => {
     Weapon
     Sacrificial Bow
     Weapon
+    The Stringless
+    Weapon
     Favonius Warbow
     Weapon
     Eye of Perception
@@ -89,7 +73,11 @@ const run = async () => {
     Weapon
     The Widsith
     Weapon
+    Favonius Codex
+    Weapon
     Favonius Lance
+    Weapon
+    Dragon's Bane
     Weapon
     Rainslasher
     Weapon
@@ -97,9 +85,13 @@ const run = async () => {
     Weapon
     The Bell
     Weapon
+    Favonius Greatsword
+    Weapon
     Lions Roar
     Weapon
     Sacrificial Sword
+    Weapon
+    The Flute
     Weapon
     Favonius Sword
     Weapon
@@ -153,8 +145,8 @@ const run = async () => {
       return item
     })
     // let epitome = require('../src/data/wanderlust-invocation.json')
-    const path = p.join(__dirname, "../src/data/epitome-invocation.json");
-    // const path = p.join(__dirname, "../src/data/drifting-luminescence.json");
+    // const path = p.join(__dirname, "../src/data/epitome-invocation.json");
+    const path = p.join(__dirname, "../src/data/moment-of-bloom-2.json");
     // epitome.forEach(item => {
     //   if(item.hasOwnProperty('class')) {
     //     if(!item.hasOwnProperty('type')) {
@@ -170,7 +162,7 @@ const run = async () => {
   }
 }
 
-// run()
+run()
 
 const validateImages = async () => {
   let invitation = require('../src/data/drifting-luminescence.json')
