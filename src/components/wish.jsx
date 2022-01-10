@@ -11,7 +11,7 @@ export default function Wish(props) {
     <>
     <button
     onClick={() => setView('wish-results')}
-    className="skip-button">Skip</button>
+    className="skip-button">跳过</button>
     <video
     className="min-vh-100 w-100 overflow-hidden"
     onEnded={() => setView('wish-results')}
