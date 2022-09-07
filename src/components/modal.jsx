@@ -1,4 +1,5 @@
 import React from "react";
+import sponsor from '../assets/images/sponsor.png'
 
 export default function Modal(props) {
   const { hideModal } = props;
@@ -35,14 +36,17 @@ export default function Modal(props) {
             All product names, logos, and brands are property of their
             respective owners in the United States and/or other countries.
           </p>
-          <a href="https://ko-fi.com/A0A569N3L" target="_blank">
+          <p>
+            Sponsored By:
+          </p>
+          <a href="https://chrome.google.com/webstore/detail/coupon-cat/ndpmdcidjakfglhdplgnkncjhcfdoglm" target="_blank">
             <img
               height="40"
               className="my-2"
               style={{ border: "0px", height: "40px" }}
-              src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3"
+              src={sponsor}
               border="0"
-              alt="Buy Me a Coffee at ko-fi.com"
+              alt="Coupon Cat"
             />
           </a>
         </div>

@@ -684,5 +684,17 @@
         "rating": 5,
         "class": "Catalyst",
         "src": "everlasting-moonglow.png"
+    },
+    {
+        "name": "Wavebreaker's Fin",
+        "rating": 4,
+        "class": "Polearm",
+        "src": "wavebreaker's-fin.png"
+    },
+    {
+        "name": "Mouun's Moon",
+        "rating": 4,
+        "class": "Bow",
+        "src": "mouun's-moon.png"
     }
 ]
