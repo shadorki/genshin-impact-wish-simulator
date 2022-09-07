@@ -39,7 +39,7 @@ export default function Modal(props) {
           <p>
             Sponsored By:
           </p>
-          <a href="https://chrome.google.com/webstore/detail/coupon-cat/ndpmdcidjakfglhdplgnkncjhcfdoglm" target="_blank">
+          <a href="https://www.ldplayer.net/?n=75519525#utm_source=aff&utm_medium=aff&utm_campaign=aff75519525" target="_blank">
             <img
               height="40"
               className="my-2"
